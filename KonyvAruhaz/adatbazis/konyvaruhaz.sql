@@ -2,7 +2,7 @@ CREATE DATABASE konyvaruhaz;
 USE konyvaruhaz;
 
 CREATE TABLE konyvek (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    konyv_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     cim VARCHAR(255) NOT NULL,
     szerzo VARCHAR(255),
     kiado VARCHAR(255),
@@ -11,11 +11,11 @@ CREATE TABLE konyvek (
     leiras TEXT,
     boritokep VARCHAR(255),
     ar DECIMAL(10,2),
-    keszleten BOOLEAN DEFAULT FALSE
+    keszleten ENUM('true', 'false') DEFAULT 'false'
 );
 
 CREATE TABLE felhasznalok (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    felhaszalo_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     felhasznalonev VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     jelszo VARCHAR(255) NOT NULL,
@@ -24,17 +24,17 @@ CREATE TABLE felhasznalok (
 );
 
 CREATE TABLE rendelesek (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    felhaszalo_id INT,
-    konyv_id INT,
+    rendeles_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    felhaszalo_id BIGINT UNSIGNED,
+    konyv_id BIGINT UNSIGNED,
     mennyiseg INT,
     datum DATE,
-    FOREIGN KEY (felhaszalo_id) REFERENCES felhasznalok(id),
-    FOREIGN KEY (konyv_id) REFERENCES konyvek(id)
+    FOREIGN KEY (felhaszalo_id) REFERENCES felhasznalok(felhaszalo_id),
+    FOREIGN KEY (konyv_id) REFERENCES konyvek(konyv_id)
 );
 
 
-INSERT INTO `konyvek` (`id`, `cim`, `szerzo`, `kiado`, `kiadas_ev`, `isbn`, `leiras`, `boritokep`, `ar`, `keszleten`) VALUES
+INSERT INTO `konyvek` (`konyv_id`, `cim`, `szerzo`, `kiado`, `kiadas_ev`, `isbn`, `leiras`, `boritokep`, `ar`, `keszleten`) VALUES
 (1, 'A Gyűrűk Ura', 'J.R.R. Tolkien', 'Káner', '1954', '9780261102354', 'Középfölde története...', 'borito1.jpg', 2990.00, 'true'),
 (2, '1984', 'George Orwell', 'Europa', '1949', '9780451524935', 'Egy disztópikus jövő...', 'borito2.jpg', 1990.00, 'false'),
 (3, 'Az Alkimista', 'Paulo Coelho', 'Kossuth', '1988', '9789630940694', 'Egy pásztorfiú utazása...', 'borito3.jpg', 1490.00, 'true'),
