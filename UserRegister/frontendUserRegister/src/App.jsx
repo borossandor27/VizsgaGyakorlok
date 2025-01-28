@@ -1,22 +1,28 @@
 import './App.css'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import UserList from './components/UserList'
 
+/**
+ * App component that sets up the main application routes.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ * 
+ * @example
+ * return (
+ *   <App />
+ * )
+ */
 function App() {
-
-
   return (
-    <>
-      <div>
-        <Router>
-          <Switch>
-            <Route path="/" component={UserList} />
-          </Switch>
-
-        </Router>
-      </div>
-    </>
-  )
+    <div className="App">
+      <header className="App-header">
+        <h1>Welcome to the User Management App</h1>
+      </header>
+      <main>
+        <UserList />
+      </main>
+    </div>
+  );
 }
 
 export default App
