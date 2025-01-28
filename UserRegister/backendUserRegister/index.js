@@ -6,9 +6,12 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/userRoutes.js';
+import cors from 'cors';
 
 const app = express();
 const PORT = 3000;
+
+app.use(cors());
 
 /**
  * Middleware to parse incoming request bodies in JSON format.
