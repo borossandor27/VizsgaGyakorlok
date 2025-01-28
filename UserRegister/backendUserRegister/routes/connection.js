@@ -11,5 +11,5 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     queueLimit: 0,
 });
-
+console.log('Connection pool created');
 export default pool.promise();
