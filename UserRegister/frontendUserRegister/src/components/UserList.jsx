@@ -50,21 +50,23 @@ import axios from 'axios';
 import ButtonUpdate from './ButtonUpdate';
 import ButtonDelete from './ButtonDelete';
 
-const baseUrl = 'http://localhost:3000/user';
+export const baseUrl = 'http://localhost:3000/user';
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
     const [form, setForm] = useState({ name: '', email: '', birthday: '' });
 
-    useEffect(() => {
+    // API hívás a felhasználók listájának lekéréséhez
+    const fetchUsers = () => {
         axios.get(baseUrl)
-            .then(response => {
-                console.log(response.data); // Ellenőrizd a pontos adatstruktúrát!
-                setUsers(response.data);
-            })
+            .then(response => setUsers(response.data))
             .catch(error => console.error(error));
-    }, []);
+    };
 
+    // Komponens betöltésekor lefut
+    useEffect(() => {
+        fetchUsers();
+    }, []);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });

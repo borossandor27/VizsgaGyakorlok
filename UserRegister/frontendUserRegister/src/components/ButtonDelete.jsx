@@ -14,11 +14,12 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import StyledButton from './StyledButton';
+import { baseUrl } from './UserList';
 
 const ButtonDelete = ({ id, onDeleteSuccess }) => {
-        const handleDelete = async () => {
+    const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:3000/users/${id}`);
+            await axios.delete(`${baseUrl}/${id}`);
             console.log('Delete successful');
             if (onDeleteSuccess) onDeleteSuccess();
         } catch (error) {
@@ -28,12 +29,12 @@ const ButtonDelete = ({ id, onDeleteSuccess }) => {
 
     return (
         <StyledButton variant="delete" onClick={handleDelete}>
-             &#x1F5D1; Delete
+            &#x1F5D1; Delete
         </StyledButton>
     );
 };
 ButtonDelete.propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     onDeleteSuccess: PropTypes.func.isRequired,
 };
 

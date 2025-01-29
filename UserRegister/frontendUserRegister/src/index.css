@@ -60,7 +60,11 @@ th,td {
   border: 1px solid #e0e0e0;
   padding: 0.5em;
 } 
-
+th {
+  background-color: #f0f0f0;
+  font-weight: 500;
+  font-style: italic;
+}
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
