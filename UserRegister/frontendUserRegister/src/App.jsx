@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to the User Management App</h1>
+        <h1>Felhasználók nyilvántartása</h1>
       </header>
       <main>
         <UserList />

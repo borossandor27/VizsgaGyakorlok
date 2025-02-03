@@ -62,7 +62,7 @@ const UserList = () => {
             .then(response => setUsers(response.data))
             .catch(error => console.error(error));
     };
-
+    
     // Komponens betöltésekor lefut
     useEffect(() => {
         fetchUsers();
@@ -85,7 +85,6 @@ const UserList = () => {
 
     return (
         <div>
-            <h1>Felhasználók nyilvántartása</h1>
             <form onSubmit={handleSubmit}>
                 <input type='text' name="name" value={form.name} onChange={handleChange} placeholder="Name" />
                 <input type='email' name="email" value={form.email} onChange={handleChange} placeholder="Email" />
@@ -111,20 +110,27 @@ const UserList = () => {
                             <td>{user.birthday}</td>
                             <td><ButtonDelete
                                 id={user.id}
-                                onDeleteSuccess={() => console.log('Delete completed!')}
+                                onDeleteSuccess={() => {
+                                    console.log('Delete completed!');
+                                    fetchUsers();
+                                }}
+
                             />
                             </td>
                             <td><ButtonUpdate
                                 id={user.id}
                                 updatedData={{ name: 'New Name', email: 'newemail@example.com' }}
-                                onUpdateSuccess={() => console.log('Update completed!')}
+                                onUpdateSuccess={() => {
+                                    console.log('Update completed!');
+                                    fetchUsers();
+                                }
+                                }
                             />
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-
         </div>
     );
 };
