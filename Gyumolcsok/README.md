@@ -28,11 +28,20 @@ Ez a projekt egy teljeskörű gyümölcs-nyilvántartó alkalmazás, amely MySQL
 
 ## Adatbázis szerkezet
 ```sql
-CREATE TABLE fruits (     
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR(255) NOT NULL,
-	quantity INT NOT NULL,
-	price DECIMAL(10,2) NOT NULL );
+CREATE TABLE `gyumolcs` (
+  `gyumolcsid` bigint(20) UNSIGNED NOT NULL,
+  `nev` varchar(200) NOT NULL,
+  `megjegyzes` varchar(500) DEFAULT NULL,
+  `nev_eng` varchar(200) DEFAULT NULL,
+  `alt_szoveg` varchar(200) NOT NULL,
+  `src` varchar(200) NOT NULL
+);
+
+CREATE TABLE `keszlet` (
+  `gyumolcsid` bigint(20) UNSIGNED NOT NULL,
+  `mennyiseg` int(11) NOT NULL,
+  `egysegar` decimal(10,2) NOT NULL
+);
 ```
 
 ## Várható eredmény
