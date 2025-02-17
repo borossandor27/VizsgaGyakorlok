@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import { Router } from 'express';
-import gyumolcsRouter from './gyumolcs.js';
-import keszletRouter from './keszlet.js';
+import gyumolcsRouter from './routes/gyumolcs.js';
+import keszletRouter from './routes/keszlet.js';
 const app = express();
 const port = 3000;
 app.use(cors());
