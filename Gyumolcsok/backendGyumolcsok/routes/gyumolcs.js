@@ -55,10 +55,35 @@ gyumolcsRouter.post('/', async (req, res) => {
 
 
 gyumolcsRouter.put('/:gyumolcsid', (req, res) => {
+  const sql = "UPDATE `gyumolcs` SET `nev`= ?,`megjegyzes`= ?,`nev_eng`= ?,`alt_szoveg`= ?,`src`= ? WHERE `gyumolcsid`= ?";
+  try {
+    if (!req.params.gyumolcsid) {
+      throw new Error('Hiányzó adat(ok)');
+    }
+    // kapott adatok ellenőrzése
+    const { nev, megjegyzes, nev_eng, alt_szoveg, src } = req.body;
+    if (!nev || !megjegyzes || !nev_eng || !alt_szoveg || !src) {
+      throw new Error('Hiányzó adat(ok)');
+    }
+    connection.query(sql, [nev, megjegyzes, nev_eng, alt_szoveg, src, req.params.gyumolcsid]);
+    res.status(201).send({ message: "Gyümölcs módosítva", id: req.params.gyumolcsid });
+
+  } catch (error) {
+    res.status(400).send({ error: error.message });
+  }
   res.send('Gyumolcsok PUT!');
 });
 gyumolcsRouter.delete('/:gyumolcsid', (req, res) => {
-  res.send('Gyumolcsok DELETE!');
+  if (!req.params.gyumolcsid) {
+    throw new Error('Hiányzó adat(ok)');
+  }
+  try {
+    const sql = "DELETE FROM gyumolcs WHERE gyumolcsid = ?";
+    connection.query(sql, [req.params.gyumolcsid]);
+    res.status(201).send({ message: "Gyümölcs törölve", id: req.params.gyumolcsid });
+  } catch (error) {
+    res.status(400).send({ error: error.message });
+  }
 });
 
 export default gyumolcsRouter;
