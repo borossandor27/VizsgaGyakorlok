@@ -6,6 +6,8 @@ import keszletRouter from './routes/keszlet.js';
 const app = express();
 const port = 3000;
 app.use(cors());
+app.use(express.json()); // JSON feldolgozás engedélyezése
+app.use(express.urlencoded({ extended: true }));// URL kódolás engedélyezése
 
 app.use('/gyumolcsok', gyumolcsRouter);
 app.use('/keszlet', keszletRouter);
