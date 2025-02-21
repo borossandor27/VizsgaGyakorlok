@@ -1,0 +1,3 @@
+- GET /api/ingatlan
+- POST /api/ingatlan
+- DELETE /api/ingatlan/{id}
