@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     try {
         const [rows] = await db.query('SELECT * FROM users');
         //rows.birthday = new Date(rows.birthday).toLocaleDateString();
-        res.status(201).json(rows);
+        res.status(200).json(rows);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Hiba történt a felhasználók lekérdezésekor.' });

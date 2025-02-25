@@ -1,21 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./Layout";
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './layouts/Header'
+import Footer from './layouts/Footer'
+import Navbar from './layouts/Navbar'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+
+
+import './App.css'
 
 function App() {
+
   return (
     <Router>
+      <Header />
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="contact" element={<ContactPage />} />
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

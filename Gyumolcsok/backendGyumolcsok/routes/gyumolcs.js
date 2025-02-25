@@ -26,14 +26,14 @@ async function getFruit(id) {
 
 gyumolcsRouter.get('/', (req, res) =>
   getFruits(req.params.gyumolcsid)
-    .then(data => res.status(201).send(data))
+    .then(data => res.status(200).send(data))
     .catch(err => res.status(403).send({ 'Hiba': err }))
 );
 
 gyumolcsRouter.get('/:gyumolcsid', (req, res) => {
   console.log(`id: ${req.params.gyumolcsid} gyümölcs lekérdezése`);
   getFruit(req.params.gyumolcsid)
-    .then(data => res.status(201).send(data))
+    .then(data => res.status(200).send(data))
     .catch(err => res.status(403).send({ 'Hiba': err }))
 });
 
@@ -47,7 +47,7 @@ gyumolcsRouter.post('/', async (req, res) => {
     const sql = "INSERT INTO `gyumolcs` (`gyumolcsid`, `nev`, `megjegyzes`, `nev_eng`, `alt_szoveg`, `src`) VALUES (NULL, ?, ?, ?, ?, ?);";
     const [result] = await connection.query(sql, [nev, megjegyzes, nev_eng, alt_szoveg, src]);
     console.log(result);
-    res.status(201).send({ message: "Gyümölcs hozzáadva", id: result.insertId });
+    res.status(200).send({ message: "Gyümölcs hozzáadva", id: result.insertId });
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
@@ -66,7 +66,7 @@ gyumolcsRouter.put('/:gyumolcsid', (req, res) => {
       throw new Error('Hiányzó adat(ok)');
     }
     connection.query(sql, [nev, megjegyzes, nev_eng, alt_szoveg, src, req.params.gyumolcsid]);
-    res.status(201).send({ message: "Gyümölcs módosítva", id: req.params.gyumolcsid });
+    res.status(200).send({ message: "Gyümölcs módosítva", id: req.params.gyumolcsid });
 
   } catch (error) {
     res.status(400).send({ error: error.message });
@@ -80,7 +80,7 @@ gyumolcsRouter.delete('/:gyumolcsid', (req, res) => {
   try {
     const sql = "DELETE FROM gyumolcs WHERE gyumolcsid = ?";
     connection.query(sql, [req.params.gyumolcsid]);
-    res.status(201).send({ message: "Gyümölcs törölve", id: req.params.gyumolcsid });
+    res.status(200).send({ message: "Gyümölcs törölve", id: req.params.gyumolcsid });
   } catch (error) {
     res.status(400).send({ error: error.message });
   }

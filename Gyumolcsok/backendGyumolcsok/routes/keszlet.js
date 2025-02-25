@@ -5,7 +5,7 @@ keszletRouter.get('/', async (req, res) => {
     const sql = 'SELECT * FROM keszlet';
     try {
         const [rows] = await connection.query(sql);
-        res.status(201).send(rows);
+        res.status(200).send(rows);
     } catch (error) {
         console.error("Hiba a lekérdezés során:", err);
         res.sendStatus(500);
@@ -23,7 +23,7 @@ keszletRouter.post('/', async (req, res) => {
         const sql = "INSERT INTO `keszlet` (`gyumolcsid`, `mennyiseg`, `egysegar`) VALUES (?, ?, ?);";
         const [result] = await connection.query(sql, [gyumolcsid, mennyiseg, egysegar]);
         console.log(result);
-        res.status(201).send({ message: "Készlet hozzáadva", id: result.insertId });
+        res.status(200).send({ message: "Készlet hozzáadva", id: result.insertId });
     } catch (error) {
         res.status(401).send({ error: error.message });
     }
@@ -43,7 +43,7 @@ keszletRouter.put('/:id', (req, res) => {
                 res.sendStatus(500);
                 return;
             }
-            res.status(201).send({ message: "Készlet módosítva", id: req.params.id });
+            res.status(200).send({ message: "Készlet módosítva", id: req.params.id });
         });
     } catch (error) {
         res.status(400).send({ error: error.message });
