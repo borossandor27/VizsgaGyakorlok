@@ -1,5 +1,6 @@
 import * as db from '../services/database.js'
 import { useEffect, useState } from 'react'
+import CardFruit from '../components/CardFruit'
 
 const Home = () => {
   const [gyumolcsok, setGyumolcsok] = useState([])
@@ -16,14 +17,11 @@ const Home = () => {
     <>
       <h1>Gyümölcsök</h1>
       <p>Üdvözöljük a gyümölcsök világában!</p>
-      <div>valami
-        <button onClick={readGyumolcsok}>Gyumolcsok</button>
-      </div>
-      <ul>
+      <div>
         {gyumolcsok.map(gyumolcs => (
-          <li key={gyumolcs.id}>{gyumolcs.nev}</li>
+          <CardFruit fruit={gyumolcs} key={gyumolcs.gyumolcsid} />
         ))}
-      </ul>
+      </div>
     </>
   )
 }
