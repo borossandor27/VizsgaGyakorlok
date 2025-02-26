@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <h1>Gyümölcsök</h1>
       <p>Üdvözöljük a gyümölcsök világában!</p>
-      <div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignContent: 'space-between' }}>
         {gyumolcsok.map(gyumolcs => (
           <CardFruit fruit={gyumolcs} key={gyumolcs.gyumolcsid} />
         ))}

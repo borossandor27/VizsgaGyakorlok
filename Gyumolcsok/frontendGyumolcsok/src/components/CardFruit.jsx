@@ -14,9 +14,8 @@ const CardFruitDiv = styled.div`
 `;
 const CardFruitImage = styled.img`
   border-radius: 8px;   
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    width: auto;
+    height: 15em;
 `;
 const CardFruitTitle = styled.h2`
     font-size: 1.5rem;
@@ -29,7 +28,6 @@ const CardFruitDescription = styled.p`
 `;
 
 const CardFruit = ({ fruit }) => {
-    console.log(fruit);
     return (
         <CardFruitDiv>
             <CardFruitImage src={`/gyumolcskepek/${fruit.src}`} alt={fruit.alt_szoveg} />
