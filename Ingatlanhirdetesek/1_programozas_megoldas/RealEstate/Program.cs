@@ -16,8 +16,20 @@ namespace RealEstateGUI
             Console.OutputEncoding = Encoding.UTF8;
             hirdetesek = LoadFromCsv("realestates.csv");
             feladat06();
-            Console.WriteLine("Program vége");
+            feladat08();
+            Console.WriteLine("\nProgram vége");
             Console.ReadLine();
+        }
+
+        private static void feladat08()
+        {
+            string gpsMesevar = "47.4164220114023,19.066342425796986";
+            Console.WriteLine( "\n2. Mesevár óvodához légvonalban legközelebbi tehermentes ingatlan adatai:" );
+            Ad legkozelebbi = hirdetesek.OrderBy(x => x.DistanceTo(gpsMesevar)).First();
+            Console.WriteLine($"\tEladó neve\t: {legkozelebbi.Seller.Name}");
+            Console.WriteLine($"\tEladó telefonja\t: {legkozelebbi.Seller.Phone}");
+            Console.WriteLine($"\tAlapterület\t: {legkozelebbi.Area}");
+            Console.WriteLine($"\tSzobák száma\t: {legkozelebbi.Rooms}");
         }
 
         private static void feladat06()
