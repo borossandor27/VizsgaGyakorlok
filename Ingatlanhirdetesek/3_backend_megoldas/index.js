@@ -22,7 +22,7 @@ app.get("/api/ingatlan", async (req, res) => {
 });
 
 // POST /api/ingatlan létrehoz egy új ingatlant JSON body alapján
-app.post("/api/ingatlan", async (req, res) => {
+app.post("/api/ujingatlan", async (req, res) => {
     const { kategoria, leiras, hirdetesDatuma, tehermentes, ar, kepUrl } = req.body;
     if (typeof kategoria !== 'number' || typeof leiras !== 'string' || typeof hirdetesDatuma !== 'string' || typeof tehermentes !== 'boolean' || typeof ar !== 'number' || typeof kepUrl !== 'string') {
         res.status(400).json({ error: 'Hiányos adatok' });
