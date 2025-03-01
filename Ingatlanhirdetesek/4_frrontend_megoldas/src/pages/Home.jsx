@@ -1,12 +1,46 @@
+import styled from 'styled-components';
+
+const StartDiv = styled.div`
+  width: 100% 100%;
+  background-image: url(img/real-estate-agent.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+`;
+const DivButtons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;   /* A szülő szélességét veszi át */
+  position: absolute;   /* Vagy 'fixed', ha mindig a képernyő aljához akarod igazítani */
+  bottom: 15vh;   /* 20vh távolság a szülőelem aljától */
+  left: 0;
+  `;
+
+
+const Button = styled.button`
+  width: 35vw;
+  padding: 10px 40px;
+  border-radius: 5px;
+  background-color: none;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px;
+`;
 export function Home() {
   return (
-    <div>
+    <StartDiv>
       <h1>Á.L.B. Ingatlanügynökség</h1>
-      <div className="startButtons">
-        <button onClick={() => window.location.href = '/offers'}>Nézze meg kínálatunkat!</button>
-        <button onClick={() => window.location.href = '/newad'}>Hirdessen nálunk!</button>
-      </div>
-    </div>
+      <DivButtons>
+        <Button onClick={() => window.location.href = '/offers'}>Nézze meg kínálatunkat!</Button>
+        <Button onClick={() => window.location.href = '/newad'}>Hirdessen nálunk!</Button>
+      </DivButtons>
+    </StartDiv>
   );
 }
 

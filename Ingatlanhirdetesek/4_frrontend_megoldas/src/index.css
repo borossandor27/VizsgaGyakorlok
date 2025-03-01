@@ -38,10 +38,7 @@ body {
   flex-direction: column;
   justify-content: top center;
   align-items: center;
-  background-image: url(img/real-estate-agent.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+ 
   min-height: 100vh;
 }
 
@@ -52,6 +49,8 @@ body {
   background-color: none;
   color: var(--menuitem-color);
   text-decoration: none;
+  transition: color 0.3s;
+  font-size: 1.2rem;
 }
 
 .nav-link:hover {
@@ -61,33 +60,4 @@ body {
 .nav-link.active {
   color: var(--menuitem-active-color);
   font-weight: bold;
-}
-
-
-.startButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  /* A szülő szélességét veszi át */
-  position: absolute;
-  /* Vagy 'fixed', ha mindig a képernyő aljához akarod igazítani */
-  bottom: 200px;
-  /* 200px távolság a szülőelem aljától */
-  left: 0;
-}
-
-
-
-.startButtons button {
-  width: 35vw;
-  padding: 10px 40px;
-  border-radius: 5px;
-  background-color: none;
-  background-color: #0d6efd;
-  color: white;
-  font-size: 1.2em;
-  font-weight: bold;
-  cursor: pointer;
 }
