@@ -4,11 +4,90 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(40, 38, 38, 0.87);
+  background-color: rgb(217, 243, 240);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --backgound-color-base: #d9f3f0;
+  --forecolor-base: #212529;
+  --menuitem-color: #626262;
+  --menuitem-active-color: rgba(71, 71, 150, 0.87);
+  --menuitem-active-font-weight: bold;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  min-height: 100vh;
+  color: var(--forecolor-base);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top center;
+  align-items: center;
+  background-image: url(img/real-estate-agent.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.nav-link {
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: none;
+  color: var(--menuitem-color);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  color: var(--menuitem-active-color);
+  font-weight: bold;
+}
+
+
+.startButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  /* A szülő szélességét veszi át */
+  position: absolute;
+  /* Vagy 'fixed', ha mindig a képernyő aljához akarod igazítani */
+  bottom: 200px;
+  /* 200px távolság a szülőelem aljától */
+  left: 0;
+}
+
+
+
+.startButtons button {
+  width: 35vw;
+  padding: 10px 40px;
+  border-radius: 5px;
+  background-color: none;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
 }

@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export function Navbar() {
   return (
     <>
       <nav>
-        <ul>
-          <Link to="/">Kezdőlap</Link>
-          <Link to="/offers">Ingatlan kínálat</Link>
-          <Link to="/newad">Hirdetés feladása</Link>
-        </ul >
+        <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Kezdőlap</NavLink>
+        <NavLink to="/offers" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Ingatlan kínálat</NavLink>
+        <NavLink to="/newad" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Hirdetés feladása</NavLink>
       </nav >
     </>
   );
