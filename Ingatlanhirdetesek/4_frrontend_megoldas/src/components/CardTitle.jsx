@@ -8,7 +8,7 @@ const TitleContainer = styled.div`
   padding: 10px 0px; /* Belső tér */
   border-bottom: 1px solid #ddd; /* Opcionális elválasztó */
   background-color: #6c757d;
-  color: var(--background-color-base);
+  color: #d9f3f0;
   font-size: 1.5em;
 
 `;
