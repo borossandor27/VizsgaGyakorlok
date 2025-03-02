@@ -17,6 +17,7 @@ const getAllIngatlan = async () => {
   return (
     <div>
       <h2>Aktuális ajánlataink</h2>
+      <div id="cards">
       {ingatlanok.map((ingatlan) => {
         let title = ingatlan.kategoria;
         let description = ingatlan.leiras;
@@ -26,6 +27,7 @@ const getAllIngatlan = async () => {
           <OfferCard key={ingatlan.id} title={title} description={description} date={date} img={img} />
         );
       })}
+      </div>
     </div>
   );
 }

@@ -31,14 +31,14 @@ body {
 
 .container {
   width: 100%;
+  border: 1px solid black;
+
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: top center;
-  align-items: center;
- 
   min-height: 100vh;
 }
 
@@ -60,4 +60,10 @@ body {
 .nav-link.active {
   color: var(--menuitem-active-color);
   font-weight: bold;
+}
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }

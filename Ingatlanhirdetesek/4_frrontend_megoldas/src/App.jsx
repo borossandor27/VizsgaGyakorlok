@@ -10,7 +10,6 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div className="container">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -18,7 +17,6 @@ function App() {
           <Route path="/newad" element={<NewAdForm />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
-      </div>
     </Router>
   );
 }
