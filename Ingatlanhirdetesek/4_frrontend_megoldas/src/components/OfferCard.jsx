@@ -23,7 +23,7 @@ const IngatlanKep = styled.img`
   min-height: 350px;
 `;
 export function OfferCard({ title, description, date, img }) {
-  console.log("OfferCard", title, description, date, img);
+  //console.log("OfferCard", title, description, date, img);
   return (
     <OfferCardDiv>
       <CardTitle title={title} date={date}/>

@@ -9,7 +9,7 @@ export function Offers() {
 const [ingatlanok, setIngatlanok] = useState([]);
 useEffect(() => {
   getAllIngatlan();
-});
+}),[];
 const getAllIngatlan = async () => {
   const response = await axios.get(baseUrl);
   setIngatlanok(response.data);
@@ -19,7 +19,7 @@ const getAllIngatlan = async () => {
       <h2>Aktuális ajánlataink</h2>
       <div id="cards">
       {ingatlanok.map((ingatlan) => {
-        let title = ingatlan.kategoria;
+        let title = ingatlan.kategoia;
         let description = ingatlan.leiras;
         let date = ingatlan.hirdetesDatuma;
         let img = ingatlan.kepUrl;
