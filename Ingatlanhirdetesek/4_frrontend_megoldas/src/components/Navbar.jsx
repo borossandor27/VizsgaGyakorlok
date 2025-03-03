@@ -5,6 +5,7 @@ export function Navbar() {
       <nav>
         <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Kezdőlap</NavLink>
         <NavLink to="/offers" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Ingatlan kínálat</NavLink>
+        <NavLink to="/offers2" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Ingatlan kínálat táblázatban</NavLink>
         <NavLink to="/newad" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Hirdetés feladása</NavLink>
       </nav >
     </>
