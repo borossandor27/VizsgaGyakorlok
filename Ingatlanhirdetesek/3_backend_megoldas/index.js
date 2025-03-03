@@ -33,19 +33,23 @@ app.get('/api/kategoriak', async (req, res) => {
 // POST /api/ingatlan létrehoz egy új ingatlant JSON body alapján
 app.post("/api/ujingatlan", async (req, res) => {
     const { kategoria, leiras, hirdetesDatuma, tehermentes, ar, kepUrl } = req.body;
-    if (typeof kategoria !== 'number' || typeof leiras !== 'string' || typeof hirdetesDatuma !== 'string' || typeof tehermentes !== 'boolean' || typeof ar !== 'number' || typeof kepUrl !== 'string') {
+    console.log(`uj ingatlan: ${kategoria}, ${leiras}, ${hirdetesDatuma}, ${tehermentes}, ${ar}, ${kepUrl}`);
+    if (typeof kategoria !== 'number' 
+        || typeof leiras !== 'string' 
+        || typeof hirdetesDatuma !== 'string' 
+        || typeof tehermentes !== 'boolean' 
+        || typeof ar !== 'number' 
+        || typeof kepUrl !== 'string') {
         res.status(400).json({ error: 'Hiányos adatok' });
         return;
     }
-console.log(kategoria, leiras, hirdetesDatuma, tehermentes, ar, kepUrl);
     const query = "INSERT INTO ingatlanok (kategoria, leiras, hirdetesDatuma, tehermentes, ar, kepUrl) VALUES (?, ?, ?, ?, ?, ?);";
     try {
         const [result] = await pool.query(query, [kategoria, leiras, hirdetesDatuma, tehermentes, ar, kepUrl]);
-        console.log(result);
         res.status(201).json({ id: result.insertId });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Hiba az új ingatlan létrehozása során' });
+        res.status(400).json({ error: 'Hiba az új ingatlan létrehozása során' });
     }
 });
 
