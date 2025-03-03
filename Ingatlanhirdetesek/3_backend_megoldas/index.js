@@ -20,7 +20,16 @@ app.get("/api/ingatlan", async (req, res) => {
         res.status(500).json({ error: 'Hiba a lekérdezés során' });
     }
 });
-
+app.get('/api/kategoriak', async (req, res) => {
+    const query = "SELECT * FROM kategoriak;";
+    try {
+        const [rows] = await pool.query(query);
+        res.status(200).json(rows);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Hiba a lekérdezés során' });
+    }
+});
 // POST /api/ingatlan létrehoz egy új ingatlant JSON body alapján
 app.post("/api/ujingatlan", async (req, res) => {
     const { kategoria, leiras, hirdetesDatuma, tehermentes, ar, kepUrl } = req.body;
