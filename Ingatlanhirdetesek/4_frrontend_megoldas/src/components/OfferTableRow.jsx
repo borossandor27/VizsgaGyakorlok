@@ -4,10 +4,12 @@ const MyTableRow = styled.tr`
   background-color: #f8f9fa;
     border: 1px solid #dee2e6;
     text-align: center;
+    min-height: 200px;
 `;
 const MyTableData = styled.td`
     padding: 10px;
     border: 1px solid #dee2e6;
+    min-height: 200px;
 `;
 
 const MyImage = styled.img`
