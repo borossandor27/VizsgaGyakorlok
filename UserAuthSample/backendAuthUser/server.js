@@ -52,7 +52,7 @@ app.post("/register", async (req, res) => {
 app.post("/login", async (req, res) => {
     try {
         const { username, password } = req.body;
-
+console.log(username, password);
         const [rows] = await db.execute("SELECT * FROM users WHERE username = ?", [username]);
         if (rows.length === 0) return res.status(401).json({ error: "❌ Hibás felhasználónév vagy jelszó" });
 
@@ -66,6 +66,32 @@ app.post("/login", async (req, res) => {
         console.error(err);
         res.status(500).json({ error: "❌ Bejelentkezési hiba" });
     }
+});
+
+const verifyToken = (req, res, next) => {
+    const authHeader = req.headers["authorization"];
+    if (!authHeader) {
+        return res.status(403).json({ error: "Nincs token megadva" });
+    }
+
+    const token = authHeader.split(" ")[1]; // "Bearer <token>" -> "<token>"
+    if (!token) {
+        return res.status(403).json({ error: "Token formátum hibás" });
+    }
+
+    jwt.verify(token, SECRET_KEY, (err, decoded) => {
+        if (err) {
+            console.error("JWT hiba:", err);
+            return res.status(401).json({ error: "Érvénytelen token" });
+        }
+        req.user = decoded;
+        next();
+    });
+};
+
+// **Védett végpont (middleware-rel)**
+app.get("/protected", verifyToken, (req, res) => {
+    res.json({ message: `Üdvözöllek, ${req.user.username}!` });
 });
 
 app.listen(5000, () => console.log("🚀 Server running on port 5000"));

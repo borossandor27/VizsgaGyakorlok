@@ -1,19 +1,43 @@
 import { useEffect, useState } from "react";
 
-const ProtectedPage = () => {
-  const [message, setMessage] = useState("");
+const ProtectedPage = ({ setToken }) => {
+    const [message, setMessage] = useState("Betöltés...");
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    fetch("http://localhost:5000/protected", {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch(() => setMessage("Hozzáférés megtagadva"));
-  }, []);
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            setMessage("Nincs token, hozzáférés megtagadva");
+            return;
+        }
 
-  return <h2>{message}</h2>;
+        fetch("http://localhost:5000/protected", {
+            headers: { 
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        })
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error("Hozzáférés megtagadva");
+            }
+            return res.json();
+        })
+        .then((data) => setMessage(data.message))
+        .catch((error) => setMessage(error.message));
+    }, []);
+
+    // **Kilépés funkció**
+    const handleLogout = () => {
+        localStorage.removeItem("token"); // Token törlése
+        setToken(null); // App állapot frissítése
+    };
+
+    return (
+        <div>
+            <h2>{message}</h2>
+            <button onClick={handleLogout}>Kilépés</button>
+        </div>
+    );
 };
 
 export default ProtectedPage;
