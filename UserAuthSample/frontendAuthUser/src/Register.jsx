@@ -1,21 +1,21 @@
 import { useState } from "react";
 
-const Login = ({ setToken, setShowRegister }) => {
+const Register = ({ setShowRegister }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = async (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
-        const res = await fetch("http://localhost:5000/login", {
+        const res = await fetch("http://localhost:5000/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password })
         });
 
         const data = await res.json();
-        if (data.token) {
-            localStorage.setItem("token", data.token);
-            setToken(data.token);
+        if (data.message) {
+            alert("Sikeres regisztráció! Most jelentkezz be.");
+            setShowRegister(false); // Visszavisz a login oldalra
         } else {
             alert(data.error);
         }
@@ -23,15 +23,15 @@ const Login = ({ setToken, setShowRegister }) => {
 
     return (
         <div>
-            <h2>Bejelentkezés</h2>
-            <form onSubmit={handleLogin}>
+            <h2>Regisztráció</h2>
+            <form onSubmit={handleRegister}>
                 <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Felhasználónév" required />
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Jelszó" required />
-                <button type="submit">Bejelentkezés</button>
+                <button type="submit">Regisztráció</button>
             </form>
-            <p>Még nincs fiókod? <button onClick={() => setShowRegister(true)}>Regisztráció</button></p>
+            <p>Van már fiókod? <button onClick={() => setShowRegister(false)}>Vissza a bejelentkezéshez</button></p>
         </div>
     );
 };
 
-export default Login;
+export default Register;
