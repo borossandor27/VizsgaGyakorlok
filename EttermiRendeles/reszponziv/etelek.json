@@ -1,0 +1,102 @@
+[
+    {
+        "kategoria": "levesek",
+        "etelek": [
+            {
+                "nev": "Gulyásleves",
+                "ar": 500,
+                "kepUrl": "gulyasleves.jpg"
+            },
+            {
+                "nev": "Paradicsomleves",
+                "ar": 400,
+                "kepUrl": "paradicsomleves.jpg"
+            },
+            {
+                "nev": "Zöldbableves",
+                "ar": 450,
+                "kepUrl": "zoldbableves.jpg"
+            }
+        ]
+    },
+    {
+        "kategoria": "főételek",
+        "etelek": [
+            {
+                "nev": "Rántott csirke",
+                "ar": 1200,
+                "kepUrl": "rantottcsirke.jpg"
+            },
+            {
+                "nev": "Sült csirke",
+                "ar": 1300,
+                "kepUrl": "sultcsirke.jpg"
+            },
+            {
+                "nev": "Sült krumpli",
+                "ar": 500,
+                "kepUrl": "sultkrumpli.jpg"
+            }
+        ]
+    },
+    {
+        "kategoria": "desszertek",
+        "etelek": [
+            {
+                "nev": "Palacsinta",
+                "ar": 300,
+                "kepUrl": "palacsinta.jpg"
+            },
+            {
+                "nev": "Túrós tészta",
+                "ar": 400,
+                "kepUrl": "turostest.jpg"
+            },
+            {
+                "nev": "Tiramisu",
+                "ar": 500,
+                "kepUrl": "tiramisu.jpg"
+            }
+        ]
+    },
+    {
+        "kategoria": "italok",
+        "etelek": [
+            {
+                "nev": "Ásványvíz",
+                "ar": 200,
+                "kepUrl": "asvanyviz.jpg"
+            },
+            {
+                "nev": "Coca Cola",
+                "ar": 300,
+                "kepUrl": "cocacola.jpg"
+            },
+            {
+                "nev": "Sör",
+                "ar": 400,
+                "kepUrl": "sor.jpg"
+            }
+        ]
+    },
+    {
+        "kategoria": "saláták",
+        "etelek": [
+            {
+                "nev": "Cézár saláta",
+                "ar": 600,
+                "kepUrl": "cezarsalata.jpg"
+            },
+            {
+                "nev": "Görög saláta",
+                "ar": 700,
+                "kepUrl": "gorogsalata.jpg"
+            },
+            {
+                "nev": "Közép-ázsiai saláta",
+                "ar": 800,
+                "kepUrl": "kozepazsiasalata.jpg"
+            }
+        ]
+    }
+]
