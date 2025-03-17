@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuContainer.appendChild(categoryTitle);
 
         const row = document.createElement("div");
-        row.setAttribute("id",category.kategoria);
+        row.setAttribute("id", category.kategoria);
         row.classList.add("row");
 
         category.etelek.forEach(food => {
@@ -81,13 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function (event) {
             const itemName = event.target.getAttribute("data-name");
             const itemPrice = event.target.getAttribute("data-price");
-    
+
             const cartItem = document.createElement("li");
             cartItem.textContent = `${itemName} - ${itemPrice} Ft`;
             cartList.appendChild(cartItem);
         });
     });
-    
+
     // kategóriák megjelenítése
     const categories = document.getElementById("category-container");
     menuData.forEach(category => {

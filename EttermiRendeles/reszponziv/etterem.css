@@ -82,9 +82,10 @@ nav a {
     display: none;
 }
 
-.category-filter input[type="checkbox"]:checked + label {
+.category-filter input[type="checkbox"]:checked+label {
     background: #218838;
 }
+
 /* Ételek megjelenítése */
 .foodCardDiv {
     display: flex;
@@ -92,6 +93,7 @@ nav a {
     justify-content: center;
     gap: 20px;
 }
+
 /* Bootstrap kártya formázás ételekhez */
 .card {
     border-radius: 8px;
@@ -194,26 +196,27 @@ nav a {
     nav {
         display: none;
     }
-    
+
     #menu-toggle {
         display: block;
     }
-    
+
     .card {
         width: 90%;
         margin: auto;
     }
-    
+
     .card img {
         height: 150px;
     }
-    
+
     .fixed-bottom-btn {
         width: 60px;
         height: 60px;
         font-size: 22px;
     }
 }
+
 main {
     display: flex;
     flex-wrap: wrap;
@@ -221,6 +224,7 @@ main {
     gap: 20px;
 
 }
+
 main h3 {
     width: 100%;
     text-align: center;
@@ -231,18 +235,24 @@ main h3 {
     text-shadow: 2px 2px 2px #333;
     letter-spacing: 3px;
 }
-header{
+
+header {
     background-color: var(--bs-green);
     color: white;
     padding: 10px 20px;
 }
+
 header h1 {
     display: flex;
-    align-items: center; /* Kép és szöveg egyvonalba hozása */
-    font-size: 2rem; /* Példa méret, ezt módosíthatod */
+    align-items: center;
+    /* Kép és szöveg egyvonalba hozása */
+    font-size: 2rem;
+    /* Példa méret, ezt módosíthatod */
 }
 
 .logo {
-    height: 1.3em; /* Ugyanakkora lesz, mint a h1 betűmérete */
-    margin-right: 10px; /* Kis távolság a szövegtől */
+    height: 1.3em;
+    /* Ugyanakkora lesz, mint a h1 betűmérete */
+    margin-right: 10px;
+    /* Kis távolság a szövegtől */
 }
