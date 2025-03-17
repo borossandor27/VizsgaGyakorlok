@@ -1,6 +1,6 @@
-**Éttermi Rendeléskezelő Rendszer**
+# Éttermi Rendeléskezelő Rendszer
 
-**Feladatleírás**  
+## Feladatleírás
 Készíts egy többkomponensű rendeléskezelő rendszert egy étterem számára. A rendszer három fő részből áll:  
 - Egy **konzolos C# alkalmazás**, amely lehetővé teszi az adminisztrátor számára az ételek és kategóriák kezelését.
 - Egy **grafikus asztali alkalmazás C#-ban (WinForms vagy WPF)**, amely a pincérek számára biztosít felületet az asztalokhoz tartozó rendelések kezelésére.
