@@ -12,7 +12,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: #333;
+    background-color: var(--bs-success);
     color: white;
 }
 
@@ -67,7 +67,7 @@ nav a {
 }
 
 .category-filter label {
-    background: #28a745;
+    background: var(--bs-success);
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
@@ -83,7 +83,7 @@ nav a {
 }
 
 .category-filter input[type="checkbox"]:checked+label {
-    background: #218838;
+    background: var(--bs-success);
 }
 
 /* Ételek megjelenítése */
@@ -132,7 +132,7 @@ nav a {
 }
 
 .card button {
-    background: #28a745;
+    background: var(--bs-success);
     color: white;
     border: none;
     padding: 10px;
@@ -149,7 +149,7 @@ nav a {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #28a745;
+    background: var(--bs-success);
     color: white;
     border: none;
     padding: 15px;
@@ -229,10 +229,10 @@ main h3 {
     width: 100%;
     text-align: center;
     margin: 20px 0;
-    color: darkgreen;
+    color: var(--bs-success);
     font-size: 1.5rem;
     font-weight: bold;
-    text-shadow: 2px 2px 2px #333;
+    text-shadow: 2px 2px 2px #07d176;
     letter-spacing: 3px;
 }
 
