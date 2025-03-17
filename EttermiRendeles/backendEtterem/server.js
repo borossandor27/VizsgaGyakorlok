@@ -11,7 +11,7 @@ app.use(cors());
 // MySQL kapcsolat létrehozása pool-al
 const pool = mysql.createPool({
     host: 'localhost',
-    user: 'root', // Módosítsd saját adatbázisod beállításai szerint
+    user: 'root', // MySQL felhasználó
     password: '',
     database: 'etterem',
     waitForConnections: true,
