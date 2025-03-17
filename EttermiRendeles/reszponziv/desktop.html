@@ -15,7 +15,7 @@
 <body>
     <div class="container">
             <header class="d-flex justify-content-between p-3">
-                <h1>Szász Étterem</h1>
+                <h1><img src="images/etterem_logo_white.png" alt="Szász Étterem logó" class="logo"> Szász Étterem</h1>
                 <nav>
                     <a href="#">Főoldal</a>
                     <a href="#">Menü</a>
@@ -24,13 +24,9 @@
             </header>
         
             <div class="row mt-3">
-                <aside class="col-md-3 category-filter">
+                <aside class="col-md-3 category-filter" id="category-container">
                     <h3>Kategóriák</h3>
-                        <input type="checkbox" id="levesek" name="levesek" value="levesek"><label for="">Levesek</label>
-                        <input type="checkbox" id="foetelek" name="foetelek" value="foetelek"><label for="">Főételek</label>
-                        <input type="checkbox" id="desszertek" name="desszertek" value="desszertek"><label for="">Desszertek</label>
-                        <input type="checkbox" id="italok" name="italok" value="italok"><label for="">Italok</label>
-                        <input type="checkbox" id="salatak" name="salatak" value="salatak"><label for="">Saláták</label>
+                    
                 </aside>
         
                 <main class="col-md-6">
@@ -38,9 +34,9 @@
                 </main>
         
                 <aside class="col-md-3">
-                    <h3>Kosár</h3>
+                    <h3>&#128722; Kosár</h3>
                     <ul id="cart">
-                        <li>Pizza - 1db</li>
+                        
                     </ul>
                 </aside>
             </div>
@@ -49,7 +45,7 @@
     <footer class="bg-light text-center p-3">
         <p>&copy; 2020 Szász étterem</p>
     </footer>
-    <script src="menu.js"></script>
+    <script src="etterem.js"></script>
 </body>
 
 </html>
