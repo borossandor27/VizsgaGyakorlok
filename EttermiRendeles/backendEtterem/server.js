@@ -140,7 +140,7 @@ app.get('/orderitems', async (req, res) => {
 // **GET /menuitems** – Rendelhető ételek listázása
 app.get('/menuitems', async (req, res) => {
     try {
-        const [rows] = await pool.query('SELECT menuitems.*, categories.name AS categori_name FROM `menuitems` JOIN categories ON menuitems.category_id=categories.id;');
+        const [rows] = await pool.query('SELECT menuitems.*, categories.name AS categori_name FROM `menuitems` JOIN categories ON menuitems.category_id=categories.id ORDER BY category_id;');
         res.json(rows);
     } catch (error) {
         res.status(500).json({ error: error.message });
