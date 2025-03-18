@@ -73,7 +73,7 @@ app.get('/orders', async (req, res) => {
 app.put('/order/:id', async (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
-    if (!status) {
+    if (!status || status !== 'folyamatban' || status !== 'elkeszult' || status !== 'fizetve') {
         return res.status(400).json({ error: 'Status is required' });
     }
     try {
@@ -81,7 +81,7 @@ app.put('/order/:id', async (req, res) => {
         if (result.affectedRows === 0) {
             return res.status(404).json({ error: 'Order not found' });
         }
-        res.json({ message: 'Order updated successfully' });
+        res.status(200).json({ message: 'Order updated successfully' });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -101,7 +101,60 @@ app.delete('/order/:id', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
+// **GET /tables** – Asztalok listázása
+app.get('/tables', async (req, res) => {
+    try {
+        const [rows] = await pool.query('SELECT * FROM tables');
+        res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+// **GET /users** – Felhasználók listázása
+app.get('/users', async (req, res) => {
+    try {
+        const [rows] = await pool.query('SELECT * FROM users');
+        res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+// **GET /categories** – Kategóriák listázása
+app.get('/categories', async (req, res) => {
+    try {
+        const [rows] = await pool.query('SELECT * FROM categories');
+        res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+// **GET /orderitems** – Rendelés tételek listázása
+app.get('/orderitems', async (req, res) => {
+    try {
+        const [rows] = await pool.query('SELECT * FROM orderitems');
+        res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+// **GET /menuitems** – Rendelhető ételek listázása
+app.get('/menuitems', async (req, res) => {
+    try {
+        const [rows] = await pool.query('SELECT menuitems.*, categories.name AS categori_name FROM `menuitems` JOIN categories ON menuitems.category_id=categories.id;');
+        res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+app.get('/orderitems/:tables_id', async (req, res) => {
+    const { tables_id } = req.params;
+    try {
+        const [rows] = await pool.query('SELECT * FROM orderitems WHERE tables_id = ?', [tables_id]);
+        res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port http://localhost:${PORT}`);
 });

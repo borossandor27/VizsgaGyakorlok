@@ -201,7 +201,11 @@ Hozz létre egy kiszolgálót, amely egy **MySQL *(vagy a tanult)* adatbázishoz
 - **POST /order** – Új rendelés rögzítése.  
 - **GET /orders** – Aktív rendelések listázása.  
 - **PUT /order/{id}** – Rendelés státuszának frissítése.  
-- **DELETE /order/{id}** – Rendelés törlése.  
+- **DELETE /order/{id}** – Rendelés törlése.
+- **GET /tables** - Összes asztal adatainak a lekérdezése
+- **GET /users** - Felhasználók adatait adja vissza
+- **GET /categories** - Ételek kategóriáinak a lekérdezése
+- **GET /menuitems** - Étlapon szereplő ételek lekérdezése
 
 ## **5. Frontend programozás – Webes rendelési felület (15 pont)**  
 Készíts egy **HTML, CSS és JavaScript (React vagy Vanilla JS) alapú rendelési felületet**, amely:  

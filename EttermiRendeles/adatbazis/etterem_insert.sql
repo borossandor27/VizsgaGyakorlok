@@ -52,4 +52,3 @@ INSERT INTO OrderItems (order_id, menu_item_id, quantity, price) VALUES
 -- Feltöltés a Payments táblába
 INSERT INTO Payments (order_id, amount, payment_method) VALUES
 (3, 800, 'készpénz');
-```
