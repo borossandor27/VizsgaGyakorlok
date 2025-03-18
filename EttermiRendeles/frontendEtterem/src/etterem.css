@@ -1,0 +1,259 @@
+/* Alapbeállítások */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Fejléc */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--bs-success);
+    color: white;
+    border-radius: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Hamburger menü mobilra */
+#menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#mobile-menu {
+    display: none;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#mobile-menu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Fő tartalom */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Kategória választó gombok */
+.category-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-filter label {
+    background: var(--bs-success);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: block;
+    text-align: center;
+    width: 200px;
+}
+
+.category-filter input[type="checkbox"] {
+    display: none;
+}
+
+.category-filter input[type="checkbox"]:checked+label {
+    background: var(--bs-success);
+}
+
+/* Ételek megjelenítése */
+.foodCardDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Bootstrap kártya formázás ételekhez */
+.card {
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card button {
+    background: var(--bs-success);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.card button:hover {
+    background: #218838;
+}
+
+/* Kosár lebegő gomb mobilra */
+.fixed-bottom-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bs-success);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Kosár Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal h3 {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Kategóriánként megjelenő ételek */
+.food-category {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+.food-category.visible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Reszponzivitás */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    .card {
+        width: 90%;
+        margin: auto;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .fixed-bottom-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+    }
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+main h3 {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--bs-success);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #07d176;
+    letter-spacing: 3px;
+}
+
+header {
+    background-color: var(--bs-green);
+    color: white;
+    padding: 10px 20px;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    /* Kép és szöveg egyvonalba hozása */
+    font-size: 2rem;
+    /* Példa méret, ezt módosíthatod */
+}
+
+.logo {
+    height: 1.3em;
+    /* Ugyanakkora lesz, mint a h1 betűmérete */
+    margin-right: 10px;
+    /* Kis távolság a szövegtől */
+}
