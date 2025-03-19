@@ -3,6 +3,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./etterem.css";
 
+const baseUrl="http://localhost:3000";
 const Navbar = () => (
   <header className="d-flex justify-content-between p-3 bg-success text-white">
     <h1>
@@ -28,24 +29,32 @@ const CategoryFilter = ({ categories, onSelectCategory }) => (
 );
 
 const Menu = ({ selectedCategory, addToCart }) => {
-  const [menu, setMenu] = useState([]);
+  const [menu, setMenu] = useState([
+    { id: 1, name: "Gulyásleves", category: "Levesek", image: "gulyas.jpg" },
+    { id: 2, name: "Rántott hús", category: "Főételek", image: "rantott.jpg" }
+  ]);
+  
 
   useEffect(() => {
-    axios.get("/menuitems").then((response) => {
+    axios.get(`${baseUrl}/menuitems`).then((response) => {
+      console.log(response.data);
       setMenu(response.data);
     });
   }, []);
 
   return (
     <main className="col-md-6 row">
-      {menu
-        .filter((item) => !selectedCategory || item.category === selectedCategory)
+      {
+      menu
+        .filter((item) => !selectedCategory || item.category_name === selectedCategory)
         .map((item) => (
           <div className="card" key={item.id}>
-            <img src={item.image} alt={item.name} />
+            <img src={item.image_url} alt={item.name} />
             <div className="card-body">
               <h5 className="card-title">{item.name}</h5>
               <p className="card-text">{item.description}</p>
+              <p className="card-text">{item.price} Ft</p>
+              <p className="card-text">{item.available ? "Elérhető" : "Nem elérhető"}</p>
               <button onClick={() => addToCart(item)}>Kosárba</button>
             </div>
           </div>
