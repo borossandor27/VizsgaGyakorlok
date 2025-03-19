@@ -29,15 +29,11 @@ const CategoryFilter = ({ categories, onSelectCategory }) => (
 );
 
 const Menu = ({ selectedCategory, addToCart }) => {
-  const [menu, setMenu] = useState([
-    { id: 1, name: "Gulyásleves", category: "Levesek", image: "gulyas.jpg" },
-    { id: 2, name: "Rántott hús", category: "Főételek", image: "rantott.jpg" }
-  ]);
+  const [menu, setMenu] = useState([]);
   
 
   useEffect(() => {
     axios.get(`${baseUrl}/menuitems`).then((response) => {
-      console.log(response.data);
       setMenu(response.data);
     });
   }, []);
@@ -84,7 +80,7 @@ const App = () => {
   };
 
   return (
-    <div className="container">
+    <>
       <Navbar />
       <div className="row mt-3">
         <CategoryFilter categories={categories} onSelectCategory={setSelectedCategory} />
@@ -92,7 +88,7 @@ const App = () => {
         <Cart cartItems={cart} />
       </div>
       <footer className="bg-light text-center p-3">&copy; 2020 Szász étterem</footer>
-    </div>
+    </>
   );
 };
 
