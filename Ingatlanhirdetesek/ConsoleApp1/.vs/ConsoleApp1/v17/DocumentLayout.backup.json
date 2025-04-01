@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Boros\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\2024\\szakmaiVizsga\\VizsgaGyakorlok\\Ingatlanhirdetesek\\ConsoleApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{537AF5B1-1F49-4CC2-B6B4-FCF0830AE758}|ConsoleApp1\\ConsoleApp1.csproj|c:\\users\\boros\\onedrive - bgaszc logisztikai \u00E9s kereskedelmi technikum \u00E9s szakiskola\\2024\\szakmaivizsga\\vizsgagyakorlok\\ingatlanhirdetesek\\consoleapp1\\consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{537AF5B1-1F49-4CC2-B6B4-FCF0830AE758}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Boros\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\2024\\szakmaiVizsga\\VizsgaGyakorlok\\Ingatlanhirdetesek\\ConsoleApp1\\ConsoleApp1\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\Boros\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\2024\\szakmaiVizsga\\VizsgaGyakorlok\\Ingatlanhirdetesek\\ConsoleApp1\\ConsoleApp1\\Program.cs",
+              "RelativeToolTip": "ConsoleApp1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:32:06.797Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
