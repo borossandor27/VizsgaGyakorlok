@@ -2,6 +2,7 @@
 Készítsünk egy olyan webes alkalmazást, ahol a felhasználók kereshetnek könyvek között, részletes információkat kaphatnak róluk, és akár vásárlási lehetőséget is biztosítunk.
 
 # Adatbázis (MySQL)
+
 ##	könyvek tábla 
 -	konyv_id (auto inkrementáló sorszám)
 -	cím
@@ -29,17 +30,20 @@ Készítsünk egy olyan webes alkalmazást, ahol a felhasználók kereshetnek k�
 -	mennyiség
 -	dátum
 
-# Backend Express.js API
+# Backend - Express.js API
+
 ##	Könyvekhez kapcsolódó 
 -	**GET /books**: Minden könyv lekérdezése
 -	**GET /books/:id**: Egy konkrét könyv lekérdezése az azonosítója alapján
 -	**POST /books**: Új könyv hozzáadása
 -	**PUT /books/:id**: Létező könyv módosítása
 -	**DELETE /books/:id**: Könyv törlése
-##	Felhasználók
+
+##	Felhasználókkal kapcsolatos
 -	**POST /users**: Új felhasználó regisztrálása
 -	**POST /users/login**: Bejelentkezés
-##	Rendelések
+
+##	Rendelésekkel kapcsolatos
 -	**POST /orders**: Új rendelés feladása
 -	**GET /orders/:userId**: Egy felhasználó összes rendelésének lekérdezése
 
@@ -50,7 +54,7 @@ Készítsünk egy olyan webes alkalmazást, ahol a felhasználók kereshetnek k�
 -	**Felhasználói profil**: Személyes adatok módosítása, rendelések megtekintése
 -	**Bejelentkezés/regisztráció**: Felhasználói fiók kezelése
 
-További lehetséges funkciók
+# További lehetséges funkciók
 -	Kategóriák: A könyveket kategóriák szerint lehet szűrni.
 -	Vélemények: A felhasználók értékelhetik a könyveket és írhatnak véleményeket.
 -	Ajánlások: A rendszer személyre szabott ajánlásokat tehet a felhasználóknak.

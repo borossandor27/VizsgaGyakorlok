@@ -1,5 +1,5 @@
 # Gyakorló feladatok
-A szakmai vizsgán lévő 240 perces gyakorlati (`projekt`) feladat adatbázis, backend, frontend vizsgrészre felkészülést segítő feladatok 
+A szakmai vizsga `projekt vizsga-tevékenység ` `adatbázis - backend - frontend` 240 perces gyakorlati vizsgafeladatára felkészülést segítő feladatok 
 
 ## [Könyv áruház](./KonyvAruhaz/)
 
