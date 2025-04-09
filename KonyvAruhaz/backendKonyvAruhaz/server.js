@@ -19,4 +19,4 @@ app.listen(PORT, () => {
   console.log(`Szerver fut a http://localhost:${PORT} címen`);
 });
 // A szerver elindításához futtassa a következő parancsot a terminálban:
-// node server.jsx
+// node server.js
