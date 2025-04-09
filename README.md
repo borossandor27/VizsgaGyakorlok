@@ -21,12 +21,17 @@ mkdir vizsga
 cd vizsga
 mkdir forras
 mkdir asztali
-npm create vite@latest frontend
 mkdir backend
 cd backend
-npm i express mysql2 cors 
-cd ../frontend
-npm i axios react-router-dom react-dom
+npm i express mysql2 cors
+npm pkg set type=module
+cd ..
+npm create vite@latest frontend -- --template react
+cd frontend
+npm install
+npm pkg set type=module
+npm install axios react-router-dom
+cd ..
 ```
 
 > [!WARNING]  
