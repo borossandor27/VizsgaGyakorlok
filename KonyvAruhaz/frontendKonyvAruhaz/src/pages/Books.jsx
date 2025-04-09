@@ -22,7 +22,7 @@ const Books = () => {
             <p>Itt található a könyvek listája.</p>
             <div className="books-list">
                 {books.map((book) => (
-                    <div key={book.id} className="book-card">
+                    <div key={Number(book.konyv_id)} className="book-card">
                         <img
                             src={`./../boritokepek/${book.boritokep}`}
                             alt={book.cim}
@@ -32,7 +32,7 @@ const Books = () => {
                         <p>Szerző: {book.szerzo}</p>
                         <p>Kiadás éve: {book.kiadas_eve}</p>
                         <p>Ár: {Number(book.ar).toLocaleString('hu-HU', { maximumFractionDigits: 0 })} Ft</p>
-                        <button onClick={() => window.location.href = `/books/${book.id}`}>Részletek</button>
+                        <button onClick={() => window.location.href = `/books/${book.konyv_id}`}>Részletek</button>
                     </div>
                 ))}
             </div>
