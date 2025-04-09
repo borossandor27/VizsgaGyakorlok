@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';   // useParams hook importálása
-import axios from 'axios'; // Axios importálása
-// A könyv részletes nézetének megjelenítése
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const Book = () => {
     const { id } = useParams();
@@ -26,13 +25,21 @@ const Book = () => {
     
     return (
         <div>
-        <h2>{book.cim}</h2>
-        <p>Szerző: {book.szerzo}</p>
-        <p>Kiadás éve: {book.kiadas_eve}</p>
-        <p>Ár: {book.ar} Ft</p>
+            <img 
+                src={`./../boritokepek/${book.boritokep}`} 
+                alt={book.cim} 
+                style={{ width: '200px', height: '300px' }} 
+            />
+            <h2>{book.cim}</h2>
+            <p>Szerző: {book.szerzo}</p>
+            <p>Kiadó: {book.kiado}</p>
+            <p>Tartalom: {book.leiras}</p>
+            <p>Kiadás éve: {book.kiadas_ev}</p>
+            <p>Ár: {Number(book.ar).toLocaleString('hu-HU', { maximumFractionDigits: 0 })} Ft</p>
         </div>
     );
-    }
+}
 
 export default Book;
-// A könyv részletes nézetének megjelenítése
+// Könyv részletei oldal
+// A könyv részleteit megjelenítő oldal, amely a könyv azonosítója alapján tölti be az adatokat
