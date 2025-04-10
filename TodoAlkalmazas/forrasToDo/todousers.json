@@ -1,0 +1,14 @@
+[
+    {
+        "user_id": 1,
+        "name": "Ádám",
+        "email": "adam@valahol.hu",
+        "birthday": "2014-01-06T23:00:00.000Z"
+    },
+    {
+        "user_id": 2,
+        "name": "Éva",
+        "email": "eva@valahol.hu",
+        "birthday": "2008-04-09T22:00:00.000Z"
+    }
+]

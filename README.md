@@ -53,6 +53,7 @@ cd frontend
 npm install
 npm pkg set type=module
 npm install axios react-router-dom
+npm install react-bootstrap bootstrap bootstrap-icons 
 cd ..
 ```
 

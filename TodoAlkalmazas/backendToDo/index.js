@@ -46,7 +46,32 @@ app.post('/users', (req,res)=>{ //-- Új felhasználó létrehozása
         }
     });
 })
+app.put('/users/:id', (req,res)=>{ //-- Felhasználó frissítése
+    let sql = 'UPDATE users SET name = ?, email = ? WHERE user_id = ?'; //-- SQL lekérdezés, ami a felhasználókat frissíti
+    db.query(sql, [req.body.name, req.body.email, req.params.id], (err, result) => { //-- Lekérdezzük az adatbázist
+        if (err) { //-- Ha hiba történt
+            console.log(err); //-- Kiírjuk a hibát a konzolra
+            res.status(500).send({'error': 'Internal Server Error'}); //-- Visszaküldjük a hibát a kliensnek
+        } else { //-- Ha minden rendben van
+            res.status(200).json(result); //-- Visszaküldjük az eredményt a kliensnek
+        }
+    });
+})
+
+app.delete('/users/:id', (req,res)=>{ //-- Felhasználó törlése
+    let sql = 'DELETE FROM users WHERE user_id = ?'; //-- SQL lekérdezés, ami a felhasználót törli
+    db.query(sql, [req.params.id], (err, result) => { //-- Lekérdezzük az adatbázist
+        if (err) { //-- Ha hiba történt
+            console.log(err); //-- Kiírjuk a hibát a konzolra
+            res.status(500).send({'error': 'Internal Server Error'}); //-- Visszaküldjük a hibát a kliensnek
+        } else { //-- Ha minden rendben van
+            res.status(200).json(result); //-- Visszaküldjük az eredményt a kliensnek
+        }
+    });
+})
 
 app.listen(3000, () => { //-- Az alkalmazás futtatásához
     console.log("Server is running on http://localhost:3000"); //-- A közvetlen készítés utána megjeleníteni a konzolon, hogy a szerver fut
 });
+//-- Az alkalmazás futtatásához a parancssorban a következő parancsot kell kiadni: node index.js
+//-- A parancs kiadása után a szerver elindul és a http://localhost:3000 címen elérhetővé válik
