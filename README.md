@@ -25,6 +25,28 @@ mkdir backend
 cd backend
 npm i express mysql2 cors
 npm pkg set type=module
+echo import express from 'express'; > index.js
+echo import cors from 'cors'; >> index.js
+echo import mysql from 'mysql2'; >> index.js
+echo. >> index.js
+echo const app = express(); >> index.js
+echo app.use(cors()); >> index.js
+echo app.use(express.json()); >> index.js
+echo. >> index.js
+echo const db = mysql.createConnection(^{ >> index.js
+echo     host: 'localhost', >> index.js
+echo     user: 'root', >> index.js
+echo     password: '', >> index.js
+echo     database: '', >> index.js
+echo     port: 3306 >> index.js
+echo }); >> index.js
+echo. >> index.js
+echo // végpontok >> index.js
+echo. >> index.js
+echo app.listen(3000, () =>^{ >> index.js
+echo     console.log('Server is running on http://localhost:3000'); >> index.js
+echo }); >> index.js
+
 cd ..
 npm create vite@latest frontend -- --template react
 cd frontend
