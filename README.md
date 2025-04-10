@@ -43,7 +43,7 @@ echo }); >> index.js
 echo. >> index.js
 echo // vegpontok >> index.js
 echo. >> index.js
-echo app.listen(3000, () =^>^{ >> index.js
+echo app.listen(3000, () =^> ^{ >> index.js
 echo     console.log('Server is running on http://localhost:3000'); >> index.js
 echo }); >> index.js
 
