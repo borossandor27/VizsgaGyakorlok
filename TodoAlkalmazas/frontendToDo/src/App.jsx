@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import {  Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
+import Users from './pages/Users'
 import About from './pages/About'
 
 export default function App() {
@@ -27,8 +28,11 @@ export default function App() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
-                <li className="nav-item">
+              <li className="nav-item">
                   <Link className="nav-link" to="/">Főoldal</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/users">Felhasználók</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/about">Rólunk</Link>
@@ -41,6 +45,7 @@ export default function App() {
         <div className="container mt-4">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/users" element={<Users />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
