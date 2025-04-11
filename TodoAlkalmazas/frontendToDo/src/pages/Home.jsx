@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 
 export default function Home() {
     const data = [
@@ -16,17 +15,21 @@ export default function Home() {
             "birthday": "2008-04-09T22:00:00.000Z"
         }
     ];
+
     return (
         <div>
             <h1>Főoldal</h1>
-            {data ? (
-                <div>
-                    <h2>{data.title}</h2>
-                    <p>{data.body}</p>
-                </div>
+            {data.length > 0 ? (
+                data.map(user => (
+                    <div key={user.user_id}>
+                        <h2>{user.name}</h2>
+                        <p>{user.email}</p>
+                        <p>Születésnap: {new Date(user.birthday).toLocaleDateString()}</p>
+                    </div>
+                ))
             ) : (
                 <p>Betöltés...</p>
             )}
         </div>
-    )
+    );
 }
