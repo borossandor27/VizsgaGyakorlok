@@ -6,12 +6,13 @@ import {  Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Users from './pages/Users'
 import About from './pages/About'
+import './App.css'
 
 export default function App() {
   return (
     <BrowserRouter>
 
-      <div>
+
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">Weboldalam</Link>
@@ -49,7 +50,12 @@ export default function App() {
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
-      </div>
+        <footer className="bg-light text-center text-lg-start mt-4">
+          <div className="text-center p-3">
+            © 2023 Weboldalam
+          </div>
+        </footer>
+    
     </BrowserRouter>
   )
 }
