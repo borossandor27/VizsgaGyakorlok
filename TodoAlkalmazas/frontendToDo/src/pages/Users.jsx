@@ -23,7 +23,7 @@ export default function Users() {
     return (
         <div>
             <h1>Főoldal</h1>
-            {data.length > 0 ? (
+            {data.length > 0 && !loading ? (
                 data.map(user => (
                     <div key={user.user_id}>
                         <h2>{user.name}</h2>
