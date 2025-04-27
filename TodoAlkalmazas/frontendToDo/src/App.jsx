@@ -6,13 +6,12 @@ import {  Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Users from './pages/Users'
 import About from './pages/About'
+import Calendar from './pages/Calendar'
 import './App.css'
 
 export default function App() {
   return (
     <BrowserRouter>
-
-
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">Weboldalam</Link>
@@ -36,6 +35,9 @@ export default function App() {
                   <Link className="nav-link" to="/users">Felhasználók</Link>
                 </li>
                 <li className="nav-item">
+                  <Link className="nav-link" to="/calendar">Naptár</Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to="/about">Rólunk</Link>
                 </li>
               </ul>
@@ -47,6 +49,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/calendar" element={<Calendar />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </div>

@@ -69,7 +69,17 @@ app.delete('/users/:id', (req,res)=>{ //-- Felhasználó törlése
         }
     });
 })
-
+app.get('/events', (req,res)=>{ //-- Lekérdezzük az eseményeket
+    let sql = 'SELECT * FROM `events` NATURAL JOIN category'; //-- SQL lekérdezés, ami az összes eseményt lekéri
+    db.query(sql, (err, result) => { //-- Lekérdezzük az adatbázist
+        if (err) { //-- Ha hiba történt
+            console.log(err); //-- Kiírjuk a hibát a konzolra
+            res.status(500).send({'error': 'Internal Server Error'}); //-- Visszaküldjük a hibát a kliensnek
+        } else { //-- Ha minden rendben van
+            res.status(200).json(result); //-- Visszaküldjük az eredményt a kliensnek
+        }
+    });
+})
 app.listen(3000, () => { //-- Az alkalmazás futtatásához
     console.log("Server is running on http://localhost:3000"); //-- A közvetlen készítés utána megjeleníteni a konzolon, hogy a szerver fut
 });
