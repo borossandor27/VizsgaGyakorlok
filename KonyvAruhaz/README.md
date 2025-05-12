@@ -70,6 +70,6 @@ Készítse el az alábbi végpontokat!
 -	Kategóriák: A könyveket kategóriák szerint lehet szűrni.
 -	Vélemények: A felhasználók értékelhetik a könyveket és írhatnak véleményeket.
 -	Ajánlások: A rendszer személyre szabott ajánlásokat tehet a felhasználóknak.
--	Fizetési integráció: Kapcsolat egy fizetési szolgáltatóval (pl. Stripe).
+-	Fizetési integráció: Kapcsolat egy fizetési szolgáltatóval *(pl. Stripe, PayPal, SimplePay)*.
 -	Admin felület: A könyvtárak kezelése, statisztikák.
 

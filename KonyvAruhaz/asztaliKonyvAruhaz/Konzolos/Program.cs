@@ -17,8 +17,23 @@ namespace Konzolos
             feladat01();
             feladat02();
             feladat03();
+            feladat04();
+            feladat05();
             Console.WriteLine("Program vége!");
             Console.ReadLine();
+        }
+
+        private static void feladat05()
+        {
+            Console.WriteLine("\n5. feladat");
+            Konyv legdragabbKonyv = konyvek.Find(a => a.ar == konyvek.Max(b => b.ar));
+            Console.WriteLine($"\tLegdrágább könyv: {legdragabbKonyv.szerzo}: {legdragabbKonyv.cim} ({legdragabbKonyv.ar.ToString("#,##0")} Ft)");
+        }
+
+        private static void feladat04()
+        {
+            Console.WriteLine("\n4. feladat");
+            Console.WriteLine($"\tKönyvek átlagos ára: {konyvek.Average(a => a.ar).ToString("#,##0.00")} Ft");
         }
 
         private static void feladat03()
