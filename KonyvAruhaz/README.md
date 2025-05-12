@@ -30,8 +30,20 @@ Készítsünk egy olyan webes alkalmazást, ahol a felhasználók kereshetnek k�
 -	mennyiség
 -	dátum
 
-# Backend - Express.js API
+# Asztali alkalmazás
+## Konzolos
+Készítsen konzolos asztali alkalmazást, amely a következő feladatokat megoldja
+- Készítsen a `könyvek entitás` adatainak a fogadására képes osztályt
+- Olvassa be az adatokat a `konyvek.csv`, `konyvek.json` szövegfájlból vagy a `konyvaruhaz` adatbázisból
+- Írassa ki a beolvasott könyvek darabszámát
+- Írassa ki azoknak a könyveknek a szerzőjét, címét és árát, amelyeknél a szerző neve tartalmazza az `Ernest` karakter sorozatot.
+- Jelenítse meg, melyik kiadónak mennyi könyve szerepel a listában
 
+## GUI
+- Készítsen olyan grafikus felüleltű alkalmazást, amely lehetőséget ad új könyv rögzítésére
+
+# Backend - Express.js API
+Készítse el az alábbi végpontokat!
 ##	Könyvekhez kapcsolódó 
 -	**GET /books**: Minden könyv lekérdezése
 -	**GET /books/:id**: Egy konkrét könyv lekérdezése az azonosítója alapján
