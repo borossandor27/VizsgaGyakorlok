@@ -31,27 +31,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.listBox_Konyvek = new System.Windows.Forms.ListBox();
             this.groupBox_Uj_konyv = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox_Id = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBoxBorito = new System.Windows.Forms.PictureBox();
+            this.button_Save = new System.Windows.Forms.Button();
+            this.checkBox_Keszleten = new System.Windows.Forms.CheckBox();
+            this.numericUpDown_Ar = new System.Windows.Forms.NumericUpDown();
+            this.button_Boritokep = new System.Windows.Forms.Button();
+            this.numericUpDown_KiadasEve = new System.Windows.Forms.NumericUpDown();
+            this.textBox_Szerzo = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox_Cim = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown_KiadasEve = new System.Windows.Forms.NumericUpDown();
+            this.textBox_Kiado = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox_ISBN = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox_Leiras = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox_Boritokep = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox_Id = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox_Uj_konyv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Ar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_KiadasEve)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,164 +65,147 @@
             this.listBox_Konyvek.ItemHeight = 16;
             this.listBox_Konyvek.Location = new System.Drawing.Point(0, 0);
             this.listBox_Konyvek.Name = "listBox_Konyvek";
-            this.listBox_Konyvek.Size = new System.Drawing.Size(396, 544);
+            this.listBox_Konyvek.Size = new System.Drawing.Size(356, 634);
             this.listBox_Konyvek.TabIndex = 0;
             // 
             // groupBox_Uj_konyv
             // 
+            this.groupBox_Uj_konyv.Controls.Add(this.pictureBoxBorito);
+            this.groupBox_Uj_konyv.Controls.Add(this.button_Save);
+            this.groupBox_Uj_konyv.Controls.Add(this.checkBox_Keszleten);
+            this.groupBox_Uj_konyv.Controls.Add(this.numericUpDown_Ar);
+            this.groupBox_Uj_konyv.Controls.Add(this.button_Boritokep);
             this.groupBox_Uj_konyv.Controls.Add(this.numericUpDown_KiadasEve);
-            this.groupBox_Uj_konyv.Controls.Add(this.textBox10);
+            this.groupBox_Uj_konyv.Controls.Add(this.textBox_Szerzo);
             this.groupBox_Uj_konyv.Controls.Add(this.label10);
             this.groupBox_Uj_konyv.Controls.Add(this.textBox_Cim);
             this.groupBox_Uj_konyv.Controls.Add(this.label9);
-            this.groupBox_Uj_konyv.Controls.Add(this.textBox8);
+            this.groupBox_Uj_konyv.Controls.Add(this.textBox_Kiado);
             this.groupBox_Uj_konyv.Controls.Add(this.label8);
             this.groupBox_Uj_konyv.Controls.Add(this.label7);
-            this.groupBox_Uj_konyv.Controls.Add(this.textBox6);
+            this.groupBox_Uj_konyv.Controls.Add(this.textBox_ISBN);
             this.groupBox_Uj_konyv.Controls.Add(this.label6);
-            this.groupBox_Uj_konyv.Controls.Add(this.textBox5);
+            this.groupBox_Uj_konyv.Controls.Add(this.textBox_Leiras);
             this.groupBox_Uj_konyv.Controls.Add(this.label5);
-            this.groupBox_Uj_konyv.Controls.Add(this.textBox4);
-            this.groupBox_Uj_konyv.Controls.Add(this.label4);
-            this.groupBox_Uj_konyv.Controls.Add(this.textBox3);
+            this.groupBox_Uj_konyv.Controls.Add(this.textBox_Boritokep);
             this.groupBox_Uj_konyv.Controls.Add(this.label3);
-            this.groupBox_Uj_konyv.Controls.Add(this.textBox2);
-            this.groupBox_Uj_konyv.Controls.Add(this.label2);
             this.groupBox_Uj_konyv.Controls.Add(this.textBox_Id);
             this.groupBox_Uj_konyv.Controls.Add(this.label1);
             this.groupBox_Uj_konyv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Uj_konyv.Location = new System.Drawing.Point(396, 0);
+            this.groupBox_Uj_konyv.Location = new System.Drawing.Point(356, 0);
             this.groupBox_Uj_konyv.Name = "groupBox_Uj_konyv";
-            this.groupBox_Uj_konyv.Size = new System.Drawing.Size(599, 544);
+            this.groupBox_Uj_konyv.Size = new System.Drawing.Size(964, 634);
             this.groupBox_Uj_konyv.TabIndex = 1;
             this.groupBox_Uj_konyv.TabStop = false;
             this.groupBox_Uj_konyv.Text = "Új könyv";
             // 
-            // label1
+            // pictureBoxBorito
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "id";
+            this.pictureBoxBorito.Location = new System.Drawing.Point(576, 76);
+            this.pictureBoxBorito.Name = "pictureBoxBorito";
+            this.pictureBoxBorito.Size = new System.Drawing.Size(267, 357);
+            this.pictureBoxBorito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBorito.TabIndex = 25;
+            this.pictureBoxBorito.TabStop = false;
             // 
-            // textBox_Id
+            // button_Save
             // 
-            this.textBox_Id.Location = new System.Drawing.Point(178, 34);
-            this.textBox_Id.Name = "textBox_Id";
-            this.textBox_Id.ReadOnly = true;
-            this.textBox_Id.Size = new System.Drawing.Size(100, 22);
-            this.textBox_Id.TabIndex = 1;
+            this.button_Save.Image = ((System.Drawing.Image)(resources.GetObject("button_Save.Image")));
+            this.button_Save.Location = new System.Drawing.Point(358, 497);
+            this.button_Save.Name = "button_Save";
+            this.button_Save.Size = new System.Drawing.Size(132, 87);
+            this.button_Save.TabIndex = 24;
+            this.button_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
-            // textBox2
+            // checkBox_Keszleten
             // 
-            this.textBox2.Location = new System.Drawing.Point(321, 261);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 3;
+            this.checkBox_Keszleten.AutoSize = true;
+            this.checkBox_Keszleten.Location = new System.Drawing.Point(391, 350);
+            this.checkBox_Keszleten.Name = "checkBox_Keszleten";
+            this.checkBox_Keszleten.Size = new System.Drawing.Size(87, 20);
+            this.checkBox_Keszleten.TabIndex = 23;
+            this.checkBox_Keszleten.Text = "Készleten";
+            this.checkBox_Keszleten.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox_Keszleten.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // numericUpDown_Ar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(177, 264);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.numericUpDown_Ar.Location = new System.Drawing.Point(221, 349);
+            this.numericUpDown_Ar.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericUpDown_Ar.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.numericUpDown_Ar.Name = "numericUpDown_Ar";
+            this.numericUpDown_Ar.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown_Ar.TabIndex = 22;
+            this.numericUpDown_Ar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_Ar.ThousandsSeparator = true;
+            this.numericUpDown_Ar.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
-            // textBox3
+            // button_Boritokep
             // 
-            this.textBox3.Location = new System.Drawing.Point(329, 269);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 5;
+            this.button_Boritokep.Location = new System.Drawing.Point(30, 402);
+            this.button_Boritokep.Name = "button_Boritokep";
+            this.button_Boritokep.Size = new System.Drawing.Size(164, 40);
+            this.button_Boritokep.TabIndex = 21;
+            this.button_Boritokep.Text = "Borítókép választás";
+            this.button_Boritokep.UseVisualStyleBackColor = true;
+            this.button_Boritokep.Click += new System.EventHandler(this.button_Boritokep_Click);
             // 
-            // label3
+            // numericUpDown_KiadasEve
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(185, 272);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
+            this.numericUpDown_KiadasEve.Location = new System.Drawing.Point(221, 216);
+            this.numericUpDown_KiadasEve.Maximum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.numericUpDown_KiadasEve.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.numericUpDown_KiadasEve.Name = "numericUpDown_KiadasEve";
+            this.numericUpDown_KiadasEve.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown_KiadasEve.TabIndex = 20;
+            this.numericUpDown_KiadasEve.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_KiadasEve.Value = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
             // 
-            // textBox4
+            // textBox_Szerzo
             // 
-            this.textBox4.Location = new System.Drawing.Point(337, 277);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 7;
+            this.textBox_Szerzo.Location = new System.Drawing.Point(221, 75);
+            this.textBox_Szerzo.Name = "textBox_Szerzo";
+            this.textBox_Szerzo.Size = new System.Drawing.Size(260, 22);
+            this.textBox_Szerzo.TabIndex = 19;
             // 
-            // label4
+            // label10
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(193, 280);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(345, 285);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(201, 288);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "label5";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(180, 239);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 242);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 16);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "label6";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 207);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 20);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Kiadás éve";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(180, 165);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(257, 22);
-            this.textBox8.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(36, 168);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 20);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Kiadó";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(43, 81);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(48, 16);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Szerzo";
             // 
             // textBox_Cim
             // 
-            this.textBox_Cim.Location = new System.Drawing.Point(177, 122);
+            this.textBox_Cim.Location = new System.Drawing.Point(221, 122);
             this.textBox_Cim.Name = "textBox_Cim";
             this.textBox_Cim.Size = new System.Drawing.Size(260, 22);
             this.textBox_Cim.TabIndex = 17;
@@ -227,41 +213,108 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 125);
+            this.label9.Location = new System.Drawing.Point(43, 125);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 20);
+            this.label9.Size = new System.Drawing.Size(30, 16);
             this.label9.TabIndex = 16;
             this.label9.Text = "Cím";
             // 
-            // textBox10
+            // textBox_Kiado
             // 
-            this.textBox10.Location = new System.Drawing.Point(177, 78);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(260, 22);
-            this.textBox10.TabIndex = 19;
+            this.textBox_Kiado.Location = new System.Drawing.Point(221, 168);
+            this.textBox_Kiado.Name = "textBox_Kiado";
+            this.textBox_Kiado.Size = new System.Drawing.Size(257, 22);
+            this.textBox_Kiado.TabIndex = 15;
             // 
-            // label10
+            // label8
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(33, 81);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 20);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Szerzo";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(43, 171);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 16);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Kiadó";
             // 
-            // numericUpDown_KiadasEve
+            // label7
             // 
-            this.numericUpDown_KiadasEve.Location = new System.Drawing.Point(177, 205);
-            this.numericUpDown_KiadasEve.Name = "numericUpDown_KiadasEve";
-            this.numericUpDown_KiadasEve.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown_KiadasEve.TabIndex = 20;
-            this.numericUpDown_KiadasEve.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(43, 222);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 16);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Kiadás éve";
+            // 
+            // textBox_ISBN
+            // 
+            this.textBox_ISBN.Location = new System.Drawing.Point(221, 264);
+            this.textBox_ISBN.Name = "textBox_ISBN";
+            this.textBox_ISBN.Size = new System.Drawing.Size(257, 22);
+            this.textBox_ISBN.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(43, 270);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "ISBN";
+            // 
+            // textBox_Leiras
+            // 
+            this.textBox_Leiras.Location = new System.Drawing.Point(221, 311);
+            this.textBox_Leiras.Name = "textBox_Leiras";
+            this.textBox_Leiras.Size = new System.Drawing.Size(257, 22);
+            this.textBox_Leiras.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(43, 311);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 16);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Leírás";
+            // 
+            // textBox_Boritokep
+            // 
+            this.textBox_Boritokep.Location = new System.Drawing.Point(233, 411);
+            this.textBox_Boritokep.Name = "textBox_Boritokep";
+            this.textBox_Boritokep.ReadOnly = true;
+            this.textBox_Boritokep.Size = new System.Drawing.Size(257, 22);
+            this.textBox_Boritokep.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 355);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Könyv ára";
+            // 
+            // textBox_Id
+            // 
+            this.textBox_Id.Location = new System.Drawing.Point(221, 37);
+            this.textBox_Id.Name = "textBox_Id";
+            this.textBox_Id.ReadOnly = true;
+            this.textBox_Id.Size = new System.Drawing.Size(100, 22);
+            this.textBox_Id.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "id";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 544);
+            this.ClientSize = new System.Drawing.Size(1320, 634);
             this.Controls.Add(this.groupBox_Uj_konyv);
             this.Controls.Add(this.listBox_Konyvek);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -270,6 +323,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox_Uj_konyv.ResumeLayout(false);
             this.groupBox_Uj_konyv.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Ar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_KiadasEve)).EndInit();
             this.ResumeLayout(false);
 
@@ -279,26 +334,27 @@
 
         private System.Windows.Forms.ListBox listBox_Konyvek;
         private System.Windows.Forms.GroupBox groupBox_Uj_konyv;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox_Szerzo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox_Cim;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox_Kiado;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox_ISBN;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox_Leiras;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_Boritokep;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_Id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown_KiadasEve;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Ar;
+        private System.Windows.Forms.Button button_Boritokep;
+        private System.Windows.Forms.CheckBox checkBox_Keszleten;
+        private System.Windows.Forms.Button button_Save;
+        private System.Windows.Forms.PictureBox pictureBoxBorito;
     }
 }
 

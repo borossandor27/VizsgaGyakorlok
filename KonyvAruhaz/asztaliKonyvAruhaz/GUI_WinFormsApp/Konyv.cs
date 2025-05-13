@@ -19,6 +19,19 @@ namespace GUI_WinFormsApp
         public double ar;
         public bool keszleten;
 
+        public Konyv(int konyv_id, string cim, string szerzo, string kiado, int kiadas_ev, string isbn, string leiras, string boritokep, double ar, bool keszleten)
+        {
+            this.konyv_id = konyv_id;
+            this.cim = cim;
+            this.szerzo = szerzo;
+            this.kiado = kiado;
+            this.kiadas_ev = kiadas_ev;
+            this.isbn = isbn;
+            this.leiras = leiras;
+            this.boritokep = boritokep;
+            this.ar = ar;
+            this.keszleten = keszleten;
+        }
 
         public Konyv(string adatsor)
         {
@@ -34,6 +47,11 @@ namespace GUI_WinFormsApp
             ar = double.Parse(adatok[8].Trim().Replace('.', ','));
             keszleten = bool.Parse(adatok[9].Trim());
         }
+
+        public Konyv()
+        {
+        }
+
         public override string ToString()
         {
             return $"{this.szerzo}: {this.cim}";

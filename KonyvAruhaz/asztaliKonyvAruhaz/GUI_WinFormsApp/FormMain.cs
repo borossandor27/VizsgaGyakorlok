@@ -15,7 +15,7 @@ namespace GUI_WinFormsApp
     public partial class FormMain : Form
     {
         List<Konyv> konyvek = new List<Konyv>();
-        private Dictionary<string, Control> inputMezok = new Dictionary<string, Control>();
+        OpenFileDialog boritokepValaszto = new OpenFileDialog();
         public FormMain()
         {
             InitializeComponent();
@@ -24,52 +24,14 @@ namespace GUI_WinFormsApp
         private void Form1_Load(object sender, EventArgs e)
         {
             beolvasas();
-            UjKonyvUrlapLetrehozasa();
             listBox_Konyvek.DataSource = konyvek;
+            numericUpDown_KiadasEve.Maximum = DateTime.Now.Year;
             numericUpDown_KiadasEve.Value = DateTime.Now.Year;
-            OpenFileDialog boritokepValaszto = new OpenFileDialog();
+            boritokepValaszto.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             boritokepValaszto.Filter = "Képfájlok (*.jpg;*.jpeg;*.png;*.bmp)|*.jpg;*.jpeg;*.png;*.bmp|Minden fájl (*.*)|*.*";
 
         }
-        private void UjKonyvUrlapLetrehozasa()
-        {
-            string[] mezok = { "cim", "szerzo", "kiado", "kiadas_ev", "isbn", "leiras", "boritokep", "ar", "keszleten" };
-            int y = 30;
 
-            foreach (var mezo in mezok)
-            {
-                var label = new Label
-                {
-                    Text = mezo.Replace('_', ' ').ToUpper(),
-                    Location = new Point(10, y),
-                    AutoSize = true
-                };
-                groupBox_Uj_konyv.Controls.Add(label);
-
-                Control input;
-                if (mezo == "keszleten")
-                {
-                    input = new CheckBox { Location = new Point(150, y - 3) };
-                }
-                else
-                {
-                    input = new TextBox { Location = new Point(150, y), Width = 200 };
-                }
-
-                input.Name = $"input_{mezo}";
-                inputMezok[mezo] = input;
-                groupBox_Uj_konyv.Controls.Add(input);
-
-                y += 30;
-            }
-
-            var btnMentes = new Button
-            {
-                Text = "Mentés",
-                Location = new Point(150, y + 10)
-            };
-             groupBox_Uj_konyv.Controls.Add(btnMentes);
-        }
         private void beolvasas()
         {
             string inputFajl = "konyvek.csv";
@@ -82,5 +44,46 @@ namespace GUI_WinFormsApp
                 }
             }
         }
+
+        private void button_Boritokep_Click(object sender, EventArgs e)
+        {
+            if (boritokepValaszto.ShowDialog() == DialogResult.OK)
+            {
+                string kepUt = boritokepValaszto.FileName;
+                pictureBoxBorito.Image = Image.FromFile(kepUt);
+                textBox_Boritokep.Text = boritokepValaszto.SafeFileName;
+            }
+
+        }
+
+        private void button_Save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ujKonyv = new Konyv
+                {
+                    konyv_id = konyvek.Max(a => a.konyv_id) + 1,
+                    cim = textBox_Cim.Text.Trim(),
+                    szerzo = textBox_Szerzo.Text.Trim(),
+                    kiado = textBox_Kiado.Text.Trim(),
+                    kiadas_ev = (int)numericUpDown_KiadasEve.Value,
+
+                    isbn = textBox_ISBN.Text.Trim(),
+                    leiras = textBox_Leiras.Text.Trim(),
+                    boritokep = textBox_Boritokep.Text.Trim(),
+                    ar = (double)numericUpDown_Ar.Value,
+                    keszleten = checkBox_Keszleten.Checked
+                };
+
+                konyvek.Add(ujKonyv);
+                File.AppendAllText("konyvek.csv", ujKonyv.ToCSV() + Environment.NewLine);
+
+                MessageBox.Show("Könyv sikeresen hozzáadva.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba a mentéskor: " + ex.Message);
+            }
+        }
     }
-}
+    }
