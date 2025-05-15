@@ -72,11 +72,15 @@ app.get('/api/nevnap/', (req, res) => {
             return res.status(404).json({ error: 'No name found for the given date' });
         }
         const nevnap = results[0];
-        res.json({
-            honap: honapNev,
-            nap: nap,
-            nev1: nevnap.nev1,
-            nev2: nevnap.nev2
+        res.status(200).json({
+            // {"datum":"április 30.","nevnap1":"Katalin","nevnap2":"Kitti"}
+            datum: `${honapNev} ${nap}.`,
+            nevnap1: nevnap.nev1,
+            nevnap2: nevnap.nev2
         });
     });
+});
 
+app.listen(port, () => {
+    console.log(`Server is running http://localhost:${port}`);
+});
