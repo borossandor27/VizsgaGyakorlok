@@ -13,5 +13,7 @@ namespace GUI_WpfApp
     /// </summary>
     public partial class App : Application
     {
+        public List<Konyv> konyvek = new List<Konyv>();
+
     }
 }
