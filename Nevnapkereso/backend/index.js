@@ -55,7 +55,6 @@ function honapszamToNev(honapszam) {
 app.get('/api/nevnap/', (req, res) => {
     const napszam = req.query.nap || null;
     const nevnap = req.query.nev || null;
-    console.log(nevnap, napszam);
 
     if (!napszam && !nevnap) {
         return res.status(400).json({ error: 'Please provide either a date or a name' });
@@ -66,7 +65,6 @@ app.get('/api/nevnap/', (req, res) => {
         const honapNev = honapszamToNev(honap);
         const nap = napszam.split('-')[1];
         const sql = `SELECT nev1, nev2 FROM nevnap WHERE ho=${honap} AND nap=${nap};`;
-        console.log(sql);
         db.query(sql, (err, results) => {
             if (err) {
                 console.error('Error executing query:', err);
