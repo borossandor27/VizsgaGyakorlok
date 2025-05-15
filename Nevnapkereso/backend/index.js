@@ -9,17 +9,17 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'nevnapkereso'
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'nevnapkereso'
 });
 db.connect((err) => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-    return;
-  }
-  console.log('Connected to the database');
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
+    }
+    console.log('Connected to the database');
 });
 function honapszamToNev(honapszam) {
     switch (honapszam) {
@@ -51,36 +51,58 @@ function honapszamToNev(honapszam) {
             return '';
     }
 }
+
 app.get('/api/nevnap/', (req, res) => {
-    // API endpoint: http://localhost:3000/api/nevnapok/?nap=4-30
-    const napszam= req.query.nap;
-    if (!napszam) {
-        return res.status(400).json({ error: 'Date is required' });
+    const napszam = req.query.nap || null;
+    const nevnap = req.query.nev || null;
+    console.log(nevnap, napszam);
+
+    if (!napszam && !nevnap) {
+        return res.status(400).json({ error: 'Please provide either a date or a name' });
     }
-
-    const honap = napszam.split('-')[0];
-    const honapNev= honapszamToNev(honap);
-    const nap = napszam.split('-')[1];
-    const sql= `SELECT nev1,nev2 FROM nevnap WHERE ho=${honap} AND nap=${nap};`;
-    console.log(sql);
-    db.query(sql, (err, results) => {
-        if (err) {
-            console.error('Error executing query:', err);
-            return res.status(500).json({ error: 'Internal server error' });
-        }
-        if (results.length === 0) {
-            return res.status(404).json({ error: 'No name found for the given date' });
-        }
-        const nevnap = results[0];
-        res.status(200).json({
-            // {"datum":"április 30.","nevnap1":"Katalin","nevnap2":"Kitti"}
-            datum: `${honapNev} ${nap}.`,
-            nevnap1: nevnap.nev1,
-            nevnap2: nevnap.nev2
+    
+    if (napszam !== null) {
+        const honap = napszam.split('-')[0];
+        const honapNev = honapszamToNev(honap);
+        const nap = napszam.split('-')[1];
+        const sql = `SELECT nev1, nev2 FROM nevnap WHERE ho=${honap} AND nap=${nap};`;
+        console.log(sql);
+        db.query(sql, (err, results) => {
+            if (err) {
+                console.error('Error executing query:', err);
+                return res.status(500).json({ error: 'Internal server error' });
+            }
+            if (results.length === 0) {
+                return res.status(404).json({ error: 'No name found for the given date' });
+            }
+            const result = results[0];
+            res.status(200).json({
+                datum: `${honapNev} ${nap}.`,
+                nevnap1: result.nev1,
+                nevnap2: result.nev2
+            });
         });
-    });
+    }
+    else if (nevnap !== null) {
+        const sql = `SELECT ho, nap, nev1, nev2 FROM nevnap WHERE nev1='${nevnap}' OR nev2='${nevnap}';`;
+        console.log(sql);
+        db.query(sql, (err, results) => {
+            if (err) {
+                console.error('Error executing query:', err);
+                return res.status(500).json({ error: 'Internal server error' });
+            }
+            if (results.length === 0) {
+                return res.status(404).json({ error: 'No date found for the given name' });
+            }
+            const result = results[0];
+            res.status(200).json({
+                datum: `${honapszamToNev(result.ho)} ${result.nap}.`,
+                nevnap1: result.nev1,
+                nevnap2: result.nev2
+            });
+        });
+    }
 });
-
 app.listen(port, () => {
     console.log(`Server is running http://localhost:${port}`);
 });
