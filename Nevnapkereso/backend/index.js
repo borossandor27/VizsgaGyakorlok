@@ -22,7 +22,6 @@ db.connect((err) => {
     console.log('Connected to the database');
 });
 function honapszamToNev(honapszam) {
-    console.log('honapszamToNev', honapszam);
     if (honapszam === null || honapszam === undefined) {
         return '';
     }
@@ -87,7 +86,6 @@ app.get('/api/nevnap/', (req, res) => {
     }
     else if (nevnap !== null) {
         const sql = `SELECT ho, nap, nev1, nev2 FROM nevnap WHERE nev1='${nevnap}' OR nev2='${nevnap}';`;
-        console.log(sql);
         db.query(sql, (err, results) => {
             if (err) {
                 console.error('Error executing query:', err);
