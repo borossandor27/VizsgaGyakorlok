@@ -66,7 +66,7 @@ app.get('/api/nevnap/', (req, res) => {
     
     if (napszam !== null) {
         const honap = napszam.split('-')[0];
-        const honapNev = honapszamToNev(int.Parse( honap));
+        const honapNev = honapszamToNev(parseInt( honap));
         const nap = napszam.split('-')[1];
         const sql = `SELECT nev1, nev2 FROM nevnap WHERE ho=${honap} AND nap=${nap};`;
         db.query(sql, (err, results) => {
@@ -98,7 +98,7 @@ app.get('/api/nevnap/', (req, res) => {
             }
             const result = results[0];
             res.status(200).json({
-                datum: `${honapszamToNev(int.Parse(result.ho))} ${result.ho} ${result.nap}.`,
+                datum: `${honapszamToNev(parseInt(result.ho))} ${result.nap}.`,
                 nevnap1: result.nev1,
                 nevnap2: result.nev2
             });
