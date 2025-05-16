@@ -22,30 +22,34 @@ db.connect((err) => {
     console.log('Connected to the database');
 });
 function honapszamToNev(honapszam) {
+    console.log('honapszamToNev', honapszam);
+    if (honapszam === null || honapszam === undefined) {
+        return '';
+    }
     switch (honapszam) {
-        case '1':
+        case 1:
             return 'január';
-        case '2':
+        case 2:
             return 'február';
-        case '3':
+        case 3:
             return 'március';
-        case '4':
+        case 4:
             return 'április';
-        case '5':
+        case 5:
             return 'május';
-        case '6':
+        case 6:
             return 'június';
-        case '7':
+        case 7:
             return 'július';
-        case '8':
+        case 8:
             return 'augusztus';
-        case '9':
+        case 9:
             return 'szeptember';
-        case '10':
+        case 10:
             return 'október';
-        case '11':
+        case 11:
             return 'november';
-        case '12':
+        case 12:
             return 'december';
         default:
             return '';
@@ -62,7 +66,7 @@ app.get('/api/nevnap/', (req, res) => {
     
     if (napszam !== null) {
         const honap = napszam.split('-')[0];
-        const honapNev = honapszamToNev(honap);
+        const honapNev = honapszamToNev(int.Parse( honap));
         const nap = napszam.split('-')[1];
         const sql = `SELECT nev1, nev2 FROM nevnap WHERE ho=${honap} AND nap=${nap};`;
         db.query(sql, (err, results) => {
@@ -94,7 +98,7 @@ app.get('/api/nevnap/', (req, res) => {
             }
             const result = results[0];
             res.status(200).json({
-                datum: `${honapszamToNev(result.ho)} ${result.nap}.`,
+                datum: `${honapszamToNev(int.Parse(result.ho))} ${result.ho} ${result.nap}.`,
                 nevnap1: result.nev1,
                 nevnap2: result.nev2
             });
