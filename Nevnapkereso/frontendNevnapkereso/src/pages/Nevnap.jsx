@@ -4,17 +4,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Nevnap = () => {
-    const [nevnapok, setNevnapok] = useState([]);
+    const [nevnap, setNevnap] = useState(null); // Most egy objektumot tárolunk
     const [month, setMonth] = useState('');
     const [day, setDay] = useState('');
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Ne töltse újra az oldalt
+        e.preventDefault();
         try {
+            if (month === '' || day === '') {
+                setNevnap(null);
+                alert('Kérjük, adja meg a hónapot és a napot!');
+                return;
+            }
             const response = await axios.get(`http://localhost:3000/api/nevnap/?nap=${month}-${day}`);
-            setNevnapok(response.data);
+            console.log(response.data);
+            setNevnap(response.data); // Az egész objektumot elmentjük
         } catch (error) {
             console.error('Hiba a névnapok lekérésekor:', error);
+            setNevnap(null);
         }
     };
 
@@ -56,12 +63,16 @@ const Nevnap = () => {
             <div className="result mt-4">
                 <h2>Eredmény</h2>
                 <div id="resultText">
-                    {nevnapok.length > 0 ? (
-                        <ul>
-                            {nevnapok.map((nevnap) => (
-                                <li key={nevnap.id}>{nevnap.nev}</li>
-                            ))}
-                        </ul>
+                    {nevnap ? (
+                        <>
+                            <p>
+                                A(z) {nevnap.datum} napra eső névnapok:
+                            </p>
+                            <ul>
+                                <li>{nevnap.nevnap1}</li>
+                                {nevnap.nevnap2 && <li>{nevnap.nevnap2}</li>}
+                            </ul>
+                        </>
                     ) : (
                         <p>Nincs találat.</p>
                     )}
