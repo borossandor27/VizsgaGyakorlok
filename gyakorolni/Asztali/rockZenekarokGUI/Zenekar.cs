@@ -19,6 +19,7 @@ namespace rockZenekarokGUI
         public string kep_url;
         public int megalakulas_eve;
         public int felbomlas_eve = 0;
+        public string stilus_neve;
 
         public Zenekar(string adatsor)
         {
@@ -38,6 +39,30 @@ namespace rockZenekarokGUI
             {
                 this.felbomlas_eve = DateTime.Now.Year;
             }
+        }
+
+        public Zenekar(int id, string nev, int stilus_id, string orszag, string varos, string aktiv_evek, string tagok, string legsikeresebb_album, string kep_url, string stilus_neve)
+        {
+            this.id = id;
+            this.nev = nev;
+            this.stilus_id = stilus_id;
+            this.orszag = orszag;
+            this.varos = varos;
+            this.aktiv_evek = aktiv_evek;
+            this.tagok = tagok;
+            this.legsikeresebb_album = legsikeresebb_album;
+            this.kep_url = kep_url;
+            this.stilus_neve = stilus_neve;
+            string[] evek = aktiv_evek.Split('–');
+            this.megalakulas_eve = int.Parse(evek[0]);
+            if (!int.TryParse(evek[1], out this.felbomlas_eve))
+            {
+                this.felbomlas_eve = DateTime.Now.Year;
+            }
+        }
+        public override string ToString()
+        {
+            return $"{this.nev} ({this.megalakulas_eve})";
         }
     }
 }

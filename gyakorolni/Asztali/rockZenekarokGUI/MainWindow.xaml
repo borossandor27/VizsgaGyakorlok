@@ -8,9 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/koncert.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="/Images/koncert.jpg" Stretch="UniformToFill"></ImageBrush>
         </Grid.Background>
-
-       
+        <Label Content="Rockzenekarok adatai:" HorizontalAlignment="Left" Margin="44,26,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <ListBox x:Name="ZenekarListBox"/>
     </Grid>
 </Window>
