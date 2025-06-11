@@ -1,0 +1,26 @@
+[
+{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"rock_zenekarok_70s"},
+{"type":"table","name":"stilusok","database":"rock_zenekarok_70s","data":
+[
+{"id":"1","stilus_neve":"Rock"},
+{"id":"2","stilus_neve":"Hard rock"},
+{"id":"3","stilus_neve":"Progresszív rock"},
+{"id":"4","stilus_neve":"Pszichedelikus rock"},
+{"id":"5","stilus_neve":"Altarnatív rock"},
+{"id":"6","stilus_neve":"Punk rock"},
+{"id":"7","stilus_neve":"Dzsesszrock"},
+{"id":"8","stilus_neve":"Heavy metal"}
+]
+}
+,{"type":"table","name":"zenekarok","database":"rock_zenekarok_70s","data":
+[
+{"id":"1","nev":"Queen","stilus_id":"1","orszag":"Egyesült Királyság","varos":"London","aktiv_evek":"1970–1991","tagok":"Freddie Mercury, Brian May, John Deacon, Roger Taylor","legsikeresebb_album":"A Night at the Opera","kep_url":"https:\/\/www.rockbook.hu\/sites\/default\/files\/queen.jpg"},
+{"id":"2","nev":"Led Zeppelin","stilus_id":"2","orszag":"Egyesült Királyság","varos":"London","aktiv_evek":"1968–1980","tagok":"Robert Plant, Jimmy Page, John Paul Jones, John Bonham","legsikeresebb_album":"Led Zeppelin IV","kep_url":"https:\/\/www.rockbook.hu\/sites\/default\/files\/Led_Zeppelin_1979%20rockbook.jpg"},
+{"id":"3","nev":"Pink Floyd","stilus_id":"3","orszag":"Egyesült Királyság","varos":"Cambridge","aktiv_evek":"1965–1995","tagok":"David Gilmour, Roger Waters, Nick Mason, Richard Wright","legsikeresebb_album":"The Dark Side of the Moon","kep_url":"https:\/\/www.rockbook.hu\/sites\/default\/files\/pink%20floyd%20rockbook%207.jpg"},
+{"id":"4","nev":"The Rolling Stones","stilus_id":"1","orszag":"Egyesült Királyság","varos":"London","aktiv_evek":"1962–napjainkig","tagok":"Mick Jagger, Keith Richards, Charlie Watts, Ronnie Wood","legsikeresebb_album":"Sticky Fingers","kep_url":"https:\/\/www.rockbook.hu\/sites\/default\/files\/the%20rolling%20stones%20rockbook%204.jpg"},
+{"id":"5","nev":"AC\/DC","stilus_id":"2","orszag":"Ausztrália","varos":"Sydney","aktiv_evek":"1973–napjainkig","tagok":"Angus Young, Malcolm Young, Bon Scott, Brian Johnson","legsikeresebb_album":"Back in Black","kep_url":"https:\/\/www.rockbook.hu\/sites\/default\/files\/ac_dc-4-band-photo.jpg"},
+{"id":"6","nev":"KISS","stilus_id":"2","orszag":"Egyesült Államok","varos":"New York","aktiv_evek":"1973–2023","tagok":"Paul Stanley, Gene Simmons, Ace Frehley, Peter Criss","legsikeresebb_album":"Destroyer","kep_url":"https:\/\/www.rockbook.hu\/sites\/default\/files\/kiss1.jpg"}
+]
+}
+]
