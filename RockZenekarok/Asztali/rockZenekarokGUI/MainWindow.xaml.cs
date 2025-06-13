@@ -24,7 +24,6 @@ namespace rockZenekarokGUI
         public MainWindow()
         {
             InitializeComponent();
-            LoadData();
         }
 
         private void LoadData()
@@ -74,6 +73,32 @@ namespace rockZenekarokGUI
             catch (System.Exception ex)
             {
                 MessageBox.Show($"Általános hiba: {ex.Message}");
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoadData();
+            LoadButton.IsEnabled = false;
+            LoadButton.Visibility = Visibility.Collapsed;
+        }
+
+        private void ZenekarListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ZenekarListBox.SelectedIndex < 0)
+            {
+                return;
+            }
+            Zenekar selectedZenekar = (Zenekar)ZenekarListBox.SelectedItem;
+            if (selectedZenekar != null)
+            {
+                ActiveYearsText.Text = (selectedZenekar.felbomlas_eve - selectedZenekar.megalakulas_eve).ToString();
+                ZenekarKepe.Source = new BitmapImage(new Uri(selectedZenekar.kep_url, UriKind.Absolute));
+            }
+            else
+            {
+                ActiveYearsText.Text = string.Empty;
+                ZenekarKepe.Source = null;
             }
         }
     }

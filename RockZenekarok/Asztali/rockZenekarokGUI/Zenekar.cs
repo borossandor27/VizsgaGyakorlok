@@ -62,7 +62,7 @@ namespace rockZenekarokGUI
         }
         public override string ToString()
         {
-            return $"{this.nev} ({this.megalakulas_eve})";
+            return $"{this.nev} tagok: {this.tagok})";
         }
     }
 }
