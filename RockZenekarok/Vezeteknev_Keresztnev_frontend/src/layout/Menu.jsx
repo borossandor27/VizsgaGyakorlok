@@ -24,7 +24,7 @@ const Menu = () => {
                 to="/zenekarok"
                 className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}
               >
-                Zenekarok
+                A rock zene nagy csapatai
               </NavLink>
             </li>
             <li className="nav-item">

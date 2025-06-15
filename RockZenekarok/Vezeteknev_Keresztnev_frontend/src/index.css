@@ -12,9 +12,3 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.active {
-  color: rgb(236, 236, 236);
-  font-weight: bold;
-
-  background-color: rgba(65, 67, 68, 0.2);
-}
