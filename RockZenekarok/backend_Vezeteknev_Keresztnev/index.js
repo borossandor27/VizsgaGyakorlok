@@ -97,31 +97,14 @@ app.post('/api/ujzenekar', (req, res) => {
     });
 });
 
-app.put('/api/zenekar/:id', (req, res) => {
-    const id = req.params.id;
-    const vegpont = req.body;
-    db.query('UPDATE vegpontok SET ? WHERE id = ?', [vegpont, id], (err, results) => {
+// Stílusok lekérése (8. feladat)
+app.get('/api/stilusok', (req, res) => {
+    db.query('SELECT * FROM stilusok', (err, results) => {
         if (err) {
             console.error(err);
-            res.status(500).send('Error updating vegpont');
-        } else if (results.affectedRows === 0) {
-            res.status(404).send('Vegpont not found');
+            res.status(500).send('Error retrieving stilusok');
         } else {
-            res.json({ id, ...vegpont });
-        }
-    });
-});
-
-app.delete('/api/zenekar/:id', (req, res) => {
-    const id = req.params.id;
-    db.query('DELETE FROM vegpontok WHERE id = ?', [id], (err, results) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Error deleting vegpont');
-        } else if (results.affectedRows === 0) {
-            res.status(404).send('Vegpont not found');
-        } else {
-            res.status(204).send();
+            res.status(200).json(results);
         }
     });
 });
