@@ -22,7 +22,7 @@ app.get('/api/zenekar', (req, res) => {
             console.error(err);
             res.status(500).send('Error retrieving vegpontok');
         } else {
-            res.json(results);
+            res.status(200).json(results);
         }
     });
 });
@@ -41,6 +41,7 @@ app.get('/api/zenekar/:id', (req, res) => {
     });
 });
 
+// Új zenekar hozzáadása (7. feladat)
 app.post('/api/ujzenekar', (req, res) => {
     const {
         id,
@@ -53,6 +54,10 @@ app.post('/api/ujzenekar', (req, res) => {
         legsikeresebb_album,
         kep_url
     } = req.body;
+    // Ellenőrzés, hogy minden szükséges adat megvan-e
+    if (!id || !nev || !stilus_id || !orszag || !varos || !aktiv_evek || !tagok || !legsikeresebb_album || !kep_url) {
+        return res.status(400).json({ error: 'Hiányzó adat(ok)! Minden mező kötelező.' });
+    }
     const sql = `
     INSERT INTO zenekarok 
     (id, nev, stilus_id, orszag, varos, aktiv_evek, tagok, legsikeresebb_album, kep_url)
