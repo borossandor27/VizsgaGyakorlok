@@ -17,6 +17,7 @@ const db = mysql.createConnection({
 // vegpontok 
 
 app.get('/api/zenekar', (req, res) => {
+    
     db.query("SELECT zenekarok.id,`nev`,`stilus_id`,`orszag`,`varos`,`aktiv_evek`,`tagok`,`legsikeresebb_album`,`kep_url`, stilusok.stilus_neve FROM `zenekarok` JOIN stilusok ON zenekarok.stilus_id=stilusok.id;", (err, results) => {
         if (err) {
             console.error(err);

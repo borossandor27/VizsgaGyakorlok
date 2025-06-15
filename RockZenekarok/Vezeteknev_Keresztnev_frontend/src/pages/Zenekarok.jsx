@@ -1,157 +1,114 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min';
 import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import '../style.css';
 
 const Zenekarok = () => {
-  return (
-    <div className="zenekarok-page">
-      <h2  className="mb-4 text-center">A Rock and Roll nagyjai</h2>
-      <div className="row">
+  const [bands, setBands] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-        <div className="col-12 offset-md-1 col-md-10 offset-lg-0 col-lg-6 ">
-          <div className="card border-light mb-3">
-            <div className="card-header bg-secondary">
-              <span className="fw-bold">Queen</span>
-              <span className="float-end">Rock</span>
-            </div>
-            <div className="card-body">
-              <p className="card-text">
-                <p>Származási helye: Egyesült Királyság, London</p>
-                <p> Aktív évek: 1970-1991</p>
-                <p>Tagok: Freddie Mercury, Brian May, John Deacon, Roger Taylor</p>
-                <p>Legsikeresebb album: A Night at the Opera</p>
+  useEffect(() => {
+    const fetchBands = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/api/zenekar');
+        setBands(response.data);
+      } catch (err) {
+        setError(err.message);
+        console.error('API hiba:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-              </p>
-            </div>
-            <img className="card-img-bottom p-2 img-fluid" alt="" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Queen_%E2%80%93_montagem_%E2%80%93_new.png" />
-            <div className="card-footer text-center">
-              <a id="gomb" className="btn btn-outline-secondary px-4" >
-                Aktív évek száma
-              </a>
-            </div>
-          </div>
-        </div>
+    fetchBands();
+  }, []);
 
-        <div className="col-12 offset-md-1 col-md-10 offset-lg-0 col-lg-6 ">
-          <div className="card border-light mb-3">
-            <div className="card-header bg-secondary">
-              <span className="fw-bold">AC/DC</span>
-              <span className="float-end">Hard Rock</span>
-            </div>
-            <div className="card-body">
-              <p className="card-text">
-                <p>Származási helye: Ausztrália, Sydney</p>
-                <p> Aktív évek: 1973-napjaink</p>
-                <p>Tagok: Angus Young, Malcolm Young, Bon Scott, Brian Johnson</p>
-                <p>Legsikeresebb album: Black in Black</p>
-              </p>
-            </div>
-            <img className="card-img-bottom p-2 img-fluid" alt="" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/ACDC_In_Tacoma_2009.jpg" />
-            <div className="card-footer text-center">
-              <a className="btn btn-outline-secondary px-4" >
-                Aktív évek száma
-              </a>
-            </div>
-          </div>
-        </div>
+  // Aktív évek számának kiszámítása (pl. "1970-1991" -> 21 év)
+  const calculateActiveYears = (activeYears) => {
+    if (!activeYears) return 0;
+    const years = activeYears.match(/\d{4}/g);
+    if (!years) return 0;
+    // Ha még napjainkban is aktív, akkor az aktuális évvel számolunk
+    if (years.length === 1) {
+      years.push(new Date().getFullYear().toString());
+    }
+    return parseInt(years[1]) - parseInt(years[0]);
+  };
 
-        <div className="col-12 offset-md-1 col-md-10 offset-lg-0 col-lg-6 ">
-          <div className="card border-light mb-3">
-            <div className="card-header bg-secondary">
-              <span className="fw-bold">Pink Floyd</span>
-              <span className="float-end">Progresszív rock</span>
-            </div>
-            <div className="card-body">
-              <p className="card-text">
-                <p>Származási helye: Egyesült Királyság, London</p>
-                <p> Aktív évek: 1965-1995</p>
-                <p>Tagok: David Gilmour, Roger Waters, Nick Mason, Richard Wright</p>
-                <p>Legsikeresebb album: The Dark Side of the Moon </p>
-              </p>
-            </div>
-            <img className="card-img-bottom p-2 img-fluid" alt="" src="https://upload.wikimedia.org/wikipedia/commons/b/be/PinkFloyd1973_retouched.jpg" />
-            <div className="card-footer text-center">
-              <a className="btn btn-outline-secondary px-4" >
-                Aktív évek száma
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-12 offset-md-1 col-md-10 offset-lg-0 col-lg-6 ">
-          <div className="card border-light mb-3">
-            <div className="card-header bg-secondary">
-              <span className="fw-bold">The Rolling Stones</span>
-              <span className="float-end">Rock</span>
-            </div>
-            <div className="card-body">
-              <p className="card-text">
-                <p>Származási helye: Egyesült Királyság, London</p>
-                <p> Aktív évek: 1962-napjaink</p>
-                <p>Tagok: Mick Jagger, Keith Richards, Charlie Watts, Ronnie Wood</p>
-                <p>Legsikeresebb album: Sticky Fingers</p>
-              </p>
-            </div>
-            <img className="card-img-bottom p-2 img-fluid" alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Rolling_Stones_bow_post-show_22_May_2018_in_London_%2841437870275%29.jpg/2560px-Rolling_Stones_bow_post-show_22_May_2018_in_London_%2841437870275%29.jpg" />
-            <div className="card-footer text-center">
-              <a className="btn btn-outline-secondary px-4" >
-                Aktív évek száma
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-12 offset-md-1 col-md-10 offset-lg-0 col-lg-6 ">
-          <div className="card border-light mb-3">
-            <div className="card-header bg-secondary">
-              <span className="fw-bold">KISS</span>
-              <span className="float-end">Hard Rock</span>
-            </div>
-            <div className="card-body">
-              <p className="card-text">
-                <p>Származási helye: Egyesült Államok, New York</p>
-                <p> Aktív évek: 1973-2023</p>
-                <p>Tagok: Paul Stanley, Gene Simmons, Ace Frehley, Peter Criss</p>
-                <p>Legsikeresebb album: Destroyer</p>
-              </p>
-            </div>
-            <img className="card-img-bottom p-2 img-fluid" alt="" src="https:\/\/www.rockbook.hu\/sites\/default\/files\/kiss1.jpg" />
-            <div className="card-footer text-center">
-              <a className="btn btn-outline-secondary px-4" >
-                Aktív évek száma
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-12 offset-md-1 col-md-10 offset-lg-0 col-lg-6 ">
-          <div className="card border-light mb-3">
-            <div className="card-header bg-secondary">
-              <span className="fw-bold">Led Zeppelin</span>
-              <span className="float-end">Hard Rock</span>
-            </div>
-            <div className="card-body">
-              <p className="card-text">
-                <p>Származási helye: Egyesült Királyság, London</p>
-                <p> Aktív évek: 1968-1980</p>
-                <p>Tagok: Robert Plant, Jimmy Page, John Paul Jones, John Bonham </p>
-                <p>Legsikeresebb album: Led Zeppelin IV</p>
-              </p>
-            </div>
-            <img className="card-img-bottom p-2 img-fluid " alt="" src="https://www.rockbook.hu/sites/default/files/Led_Zeppelin_1979%20rockbook.jpg" />
-            <div className="card-footer text-center">
-              <a className="btn btn-outline-secondary px-4" >
-                Aktív évek száma
-              </a>
-            </div>
-          </div>
-        </div>
-
+  if (loading) return (
+    <div className="text-center mt-5">
+      <div className="spinner-border text-secondary" role="status">
+        <span className="visually-hidden">Betöltés...</span>
       </div>
-
     </div>
   );
-}
+
+  if (error) return (
+    <div className="alert alert-danger mx-auto mt-5" style={{ maxWidth: '500px' }}>
+      <strong>Hiba történt:</strong> {error}<br />
+      <button 
+        className="btn btn-sm btn-secondary mt-2"
+        onClick={() => window.location.reload()}
+      >
+        Újrapróbálkozás
+      </button>
+    </div>
+  );
+
+  return (
+    <div className="zenekarok-page container py-4">
+      <h2 className="mb-4 text-center">A Rock and Roll nagyjai</h2>
+      
+      <div className="row g-4">
+        {bands.map((band) => (
+          <div key={band.id} className="col-12 col-md-6 col-lg-4">
+            <div className="card h-100 shadow-sm">
+              <div className="card-header bg-secondary text-white d-flex justify-content-between">
+                <span className="fw-bold">{band.nev}</span>
+                <span className="badge bg-light text-dark">{band.stilus_neve}</span>
+              </div>
+              
+              <div className="card-body d-flex flex-column">
+                <div className="mb-3">
+                  <img 
+                    className="img-fluid rounded"
+                    src={band.kep_url} 
+                    alt={band.nev}
+                    onError={(e) => {
+                      e.target.src = 'https://via.placeholder.com/300x200?text=Kép+nem+elérhető';
+                      e.target.className = 'img-fluid rounded border';
+                    }}
+                  />
+                </div>
+                
+                <ul className="list-unstyled mb-auto">
+                  <li><strong>Származás:</strong> {band.orszag}, {band.varos}</li>
+                  <li><strong>Aktív évek:</strong> {band.aktiv_evek}</li>
+                  <li><strong>Tagok:</strong> {band.tagok}</li>
+                  <li><strong>Legnépszerűbb album:</strong> {band.legsikeresebb_album}</li>
+                </ul>
+              </div>
+              
+              <div className="card-footer bg-transparent text-center">
+                <button 
+                  className="btn btn-outline-secondary"
+                  onClick={() => {
+                    const years = calculateActiveYears(band.aktiv_evek);
+                    alert(`${band.nev} aktív éveinek száma: ${years} év`);
+                  }}
+                >
+                  Aktív évek mutatása
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Zenekarok;

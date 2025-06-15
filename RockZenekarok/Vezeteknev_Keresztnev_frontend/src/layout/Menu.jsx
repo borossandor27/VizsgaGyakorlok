@@ -32,7 +32,7 @@ const Menu = () => {
                 to="/kapcsolat"
                 className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}
               >
-                Kapcsolat
+                Együttes feltöltése
               </NavLink>
             </li>
           </ul>
