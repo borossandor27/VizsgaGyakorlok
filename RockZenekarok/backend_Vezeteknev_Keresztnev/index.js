@@ -44,8 +44,8 @@ app.get('/api/zenekar/:id', (req, res) => {
 
 // Új zenekar hozzáadása (7. feladat)
 app.post('/api/ujzenekar', (req, res) => {
+    // A kérés törzséből kinyerjük az adatokat
     const {
-        id,
         nev,
         stilus_id,
         orszag,
@@ -54,28 +54,12 @@ app.post('/api/ujzenekar', (req, res) => {
         tagok,
         legsikeresebb_album,
         kep_url
-    } = req.body;
-    // Ellenőrzés, hogy minden szükséges adat megvan-e
-    if (!id || !nev || !stilus_id || !orszag || !varos || !aktiv_evek || !tagok || !legsikeresebb_album || !kep_url) {
-        return res.status(400).json({ error: 'Hiányzó adat(ok)! Minden mező kötelező.' });
-    }
-    const sql = `
-    INSERT INTO zenekarok 
-    (id, nev, stilus_id, orszag, varos, aktiv_evek, tagok, legsikeresebb_album, kep_url)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
-  `;
+    } = req.body; // Az 'id' eltávolítva innen
 
-    const values = [
-        id,
-        nev,
-        stilus_id,
-        orszag,
-        varos,
-        aktiv_evek,
-        tagok,
-        legsikeresebb_album,
-        kep_url
-    ];
+    // Ellenőrzés, hogy minden *szükséges* adat megvan-e (az 'id' már nem kötelező)
+    if (!nev || !stilus_id || !orszag || !varos || !aktiv_evek || !tagok || !legsikeresebb_album || !kep_url) {
+        return res.status(400).json({ error: 'Hiányzó adat(ok)! Minden mező kötelező, kivéve az id.' });
+    }
 
     // Ellenőrizzük, hogy a stilus_id létezik-e
     db.query('SELECT id FROM stilusok WHERE id = ?', [stilus_id], (err, results) => {
@@ -86,18 +70,36 @@ app.post('/api/ujzenekar', (req, res) => {
         if (results.length === 0) {
             return res.status(400).send('Invalid stilus_id');
         }
-    });
-    // Ha minden rendben van, beszúrjuk az új zenekart
-    db.query(sql, values, (err, results) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Error creating vegpont');
-        } else {
-            res.status(201).json({ message: 'Sikeres mentés', insertedId: results.insertId });
-        }
+
+        // Ha a stilus_id érvényes, folytatjuk a beszúrással
+        const sql = `
+            INSERT INTO zenekarok 
+            (nev, stilus_id, orszag, varos, aktiv_evek, tagok, legsikeresebb_album, kep_url)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+        `; // Az 'id' oszlop eltávolítva az INSERT-ből
+
+        const values = [
+            nev,
+            stilus_id,
+            orszag,
+            varos,
+            aktiv_evek,
+            tagok,
+            legsikeresebb_album,
+            kep_url
+        ]; // Az 'id' érték eltávolítva a values tömbből, ehhez az id tulajdonságát AUTO_INCREMENT-re állítottuk az adatbázisban
+
+        // Beszúrjuk az új zenekart
+        db.query(sql, values, (err, results) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error creating zenekar'); // Hibaüzenet pontosítása
+            } else {
+                res.status(201).json({ message: 'Sikeres mentés', insertedId: results.insertId });
+            }
+        });
     });
 });
-
 // Stílusok lekérése (8. feladat)
 app.get('/api/stilusok', (req, res) => {
     db.query('SELECT * FROM stilusok', (err, results) => {
