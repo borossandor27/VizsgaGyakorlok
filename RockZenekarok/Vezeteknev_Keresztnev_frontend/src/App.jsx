@@ -20,7 +20,6 @@ function Layout() {
           <Route path="/" element={<HomePage />} />
           <Route path="/zenekarok" element={<Zenekarok/>} />
           <Route path="/kapcsolat" element={<HozzaadasEgyuttes />} />
-          {/* További route-ok itt */}
           <Route path="*" element={<h1 className="text-danger">404 - Az oldal nem található!</h1>} />
         </Routes>
       </main>

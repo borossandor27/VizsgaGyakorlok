@@ -1,6 +1,6 @@
-# Reszponzív Zenekarok WinForms alkalmazás
+# ReszponzÃ­v Zenekarok WinForms alkalmazÃ¡s
 
-A kért reszponzivitás megoldható a WinForm nyújtotta lehetõségekkel, de a WinForms alapvetõen nem olyan rugalmas, mint a modern webes technológiák. Azonban néhány lépést követve elérhetjük a kívánt eredményt:
-- Mindkét panelnek állítsuk be a Dock tulajdonságát
-- A jobb oldalon lévõ panelnek, amelynek a mérete változik, az Anchor tulajdonságát állítsuk be, hogy a bal oldalhoz és a jobb oldalhoz is rögzítve legyen `Anchor = Top, Bottom, Left, Right`
-- Ellenõrízzük, hogy jobb oldali panel `Location.X` értéke a bal oldali panel szélességével megegyezõ legyen, így a jobb oldali panel mindig a bal oldal panel mellett lesz`
+BÃ¡r a WinForms alapvetÅ‘en nem olyan rugalmas a felÃ¼let kezelÃ©sben, mint a modern webes technolÃ³giÃ¡k, azonban nÃ©hÃ¡ny lÃ©pÃ©st kÃ¶vetve a kÃ©rt reszponzivitÃ¡s megoldhatÃ³ a WinForm nyÃºjtotta lehetÅ‘sÃ©gekkel:
+- MindkÃ©t panelnek Ã¡llÃ­tsuk be a Dock tulajdonsÃ¡gÃ¡t
+- A jobb oldalon lÃ©vÅ‘ panelnek, amelynek a mÃ©rete vÃ¡ltozik, az Anchor tulajdonsÃ¡gÃ¡t Ã¡llÃ­tsuk be, hogy a bal oldalhoz Ã©s a jobb oldalhoz is rÃ¶gzÃ­tve legyen `Anchor = Top, Bottom, Left, Right`
+- EllenÅ‘rÃ­zzÃ¼k, hogy jobb oldali panel `Location.X` Ã©rtÃ©ke a bal oldali panel szÃ©lessÃ©gÃ©vel megegyezÅ‘ legyen, Ã­gy a jobb oldali panel mindig a bal oldala mindig a mÃ¡sik panel mellett lesz Ã©s csak a jobb szÃ©le vÃ¡ltozik.
