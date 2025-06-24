@@ -161,6 +161,84 @@ CREATE TABLE Payments (
 );
 ```
 
+# Tesztadatok
+A tesztadatok betöltéséhez használhatod a következő SQL parancsokat:
+
+### **1. Users**
+
+```sql
+INSERT INTO Users (name, email, password, role) VALUES
+('Kiss Anna', 'anna.kiss@example.com', 'hashed_password_1', 'admin'),
+('Nagy Péter', 'peter.nagy@example.com', 'hashed_password_2', 'pincer'),
+('Szabó Júlia', 'julia.szabo@example.com', 'hashed_password_3', 'vendeg');
+```
+
+### **2. Categories**
+
+```sql
+INSERT INTO Categories (name) VALUES
+('Előételek'),
+('Főételek'),
+('Desszertek'),
+('Italok');
+```
+### **3. MenuItems**
+
+(Figyelem: `category_id` hivatkozik a fenti `Categories` táblára.)
+
+```sql
+INSERT INTO MenuItems (name, description, price, category_id, image_url, available) VALUES
+('Gulyásleves', 'Hagyományos magyar gulyás marhahússal', 1890.00, 1, 'https://example.com/gulyas.jpg', TRUE),
+('Rántott sajt', 'Ropogós panírban sült trappista sajt tartárral', 2290.00, 2, 'https://example.com/sajt.jpg', TRUE),
+('Somlói galuska', 'Házi készítésű desszert csokiöntettel', 1290.00, 3, 'https://example.com/somloi.jpg', TRUE),
+('Ásványvíz', '0.5 liter szénsavmentes ásványvíz', 490.00, 4, 'https://example.com/viz.jpg', TRUE);
+```
+
+### **4. Tables**
+
+```sql
+INSERT INTO Tables (table_number) VALUES
+(1),
+(2),
+(3);
+```
+
+### **5. Orders**
+
+(Figyelem: `user_id` és `table_id` kapcsolódik!)
+
+```sql
+INSERT INTO Orders (table_id, user_id, status, total_price) VALUES
+(1, 3, 'folyamatban', 2780.00),
+(2, 3, 'elkészült', 4170.00),
+(3, 3, 'fizetve', 2780.00);
+```
+
+### **6. OrderItems**
+
+```sql
+INSERT INTO OrderItems (order_id, menu_item_id, quantity, price) VALUES
+(1, 1, 1, 1890.00),
+(1, 4, 1, 490.00),
+(2, 2, 1, 2290.00),
+(2, 3, 1, 1290.00),
+(2, 4, 1, 490.00),
+(3, 2, 1, 2290.00),
+(3, 4, 1, 490.00);
+```
+
+
+### **7. Payments**
+
+(Csak a `fizetve` állapothoz illik)
+
+```sql
+INSERT INTO Payments (order_id, amount, payment_method) VALUES
+(3, 2780.00, 'bankkártya');
+```
+
+
+
 ## **1. Konzolos asztali alkalmazás (15 pont)**  
 Készíts egy konzolos C# alkalmazást, amely az adminisztrátor számára biztosítja az alábbi funkciókat:  
 - Alapvető statisztikák 
