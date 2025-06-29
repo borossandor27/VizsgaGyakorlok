@@ -3,11 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Jún 28. 17:22
+-- Létrehozás ideje: 2025. Jún 29. 11:06
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -56,7 +55,7 @@ INSERT INTO `categories` (`category_id`, `name`) VALUES
 --
 
 CREATE TABLE `menuitems` (
-  `menuItems_id` int(10) UNSIGNED NOT NULL COMMENT 'Étel/ital egyedi azonosítója',
+  `menuitem_id` int(10) UNSIGNED NOT NULL COMMENT 'Étel/ital egyedi azonosítója',
   `name` varchar(255) NOT NULL COMMENT 'Étel/ital neve',
   `description` text DEFAULT NULL COMMENT 'Leírás az ételről/italról',
   `price` decimal(10,2) NOT NULL COMMENT 'Ár forintban',
@@ -69,7 +68,7 @@ CREATE TABLE `menuitems` (
 -- A tábla adatainak kiíratása `menuitems`
 --
 
-INSERT INTO `menuitems` (`menuItems_id`, `name`, `description`, `price`, `category_id`, `image_url`, `available`) VALUES
+INSERT INTO `menuitems` (`menuitem_id`, `name`, `description`, `price`, `category_id`, `image_url`, `available`) VALUES
 (1, 'Gulyásleves', 'Hagyományos magyar gulyás marhahússal', 1890.00, 1, 'https://example.com/gulyas.jpg', 'true'),
 (2, 'Rántott sajt', 'Ropogós panírban sült trappista sajt tartárral', 2290.00, 2, 'https://example.com/sajt.jpg', 'true'),
 (3, 'Somlói galuska', 'Házi készítésű desszert csokiöntettel', 1290.00, 3, 'https://example.com/somloi.jpg', 'true'),
@@ -98,9 +97,9 @@ INSERT INTO `menuitems` (`menuItems_id`, `name`, `description`, `price`, `catego
 --
 
 CREATE TABLE `orderitems` (
-  `orderItems_id` int(10) UNSIGNED NOT NULL COMMENT 'Rendelési tétel azonosító',
+  `orderitem_id` int(10) UNSIGNED NOT NULL COMMENT 'Rendelési tétel azonosító',
   `order_id` int(10) UNSIGNED NOT NULL COMMENT 'Rendelés azonosító (hivatkozás az orders táblára)',
-  `menu_item_id` int(10) UNSIGNED NOT NULL COMMENT 'Étel/ital azonosító (hivatkozás a menuitems táblára)',
+  `menuitem_id` int(10) UNSIGNED NOT NULL COMMENT 'Étel/ital azonosító (hivatkozás a menuitems táblára)',
   `quantity` int(11) NOT NULL COMMENT 'Rendelt mennyiség',
   `price` decimal(10,2) NOT NULL COMMENT 'Egységár a rendelés pillanatában'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Rendelésekhez tartozó konkrét tételek';
@@ -109,7 +108,7 @@ CREATE TABLE `orderitems` (
 -- A tábla adatainak kiíratása `orderitems`
 --
 
-INSERT INTO `orderitems` (`orderItems_id`, `order_id`, `menu_item_id`, `quantity`, `price`) VALUES
+INSERT INTO `orderitems` (`orderitem_id`, `order_id`, `menuitem_id`, `quantity`, `price`) VALUES
 (1, 1, 1, 1, 1890.00),
 (2, 1, 4, 1, 490.00),
 (3, 2, 2, 1, 2290.00),
@@ -151,7 +150,7 @@ INSERT INTO `orderitems` (`orderItems_id`, `order_id`, `menu_item_id`, `quantity
 --
 
 CREATE TABLE `orders` (
-  `orders_id` int(10) UNSIGNED NOT NULL COMMENT 'Rendelés egyedi azonosítója',
+  `order_id` int(10) UNSIGNED NOT NULL COMMENT 'Rendelés egyedi azonosítója',
   `table_id` int(10) UNSIGNED NOT NULL COMMENT 'Asztal azonosítója',
   `user_id` int(10) UNSIGNED NOT NULL COMMENT 'Felhasználó azonosítója (ki rendelt)',
   `status` enum('folyamatban','elkészült','fizetve') NOT NULL COMMENT 'Rendelés állapota',
@@ -163,7 +162,7 @@ CREATE TABLE `orders` (
 -- A tábla adatainak kiíratása `orders`
 --
 
-INSERT INTO `orders` (`orders_id`, `table_id`, `user_id`, `status`, `total_price`, `created_at`) VALUES
+INSERT INTO `orders` (`order_id`, `table_id`, `user_id`, `status`, `total_price`, `created_at`) VALUES
 (1, 1, 3, 'folyamatban', 2780.00, '2025-06-28 12:22:17'),
 (2, 2, 3, 'elkészült', 4170.00, '2025-06-28 12:22:17'),
 (3, 3, 3, 'fizetve', 2780.00, '2025-06-28 12:22:17'),
@@ -190,7 +189,7 @@ INSERT INTO `orders` (`orders_id`, `table_id`, `user_id`, `status`, `total_price
 --
 
 CREATE TABLE `payments` (
-  `payments_id` int(10) UNSIGNED NOT NULL COMMENT 'Fizetés azonosító',
+  `payment_id` int(10) UNSIGNED NOT NULL COMMENT 'Fizetés azonosító',
   `order_id` int(10) UNSIGNED NOT NULL COMMENT 'Rendelés azonosító (kapcsolódik az orders táblához)',
   `amount` decimal(10,2) NOT NULL COMMENT 'Fizetett összeg',
   `payment_method` enum('készpénz','bankkártya','online') NOT NULL COMMENT 'Fizetési mód',
@@ -201,7 +200,7 @@ CREATE TABLE `payments` (
 -- A tábla adatainak kiíratása `payments`
 --
 
-INSERT INTO `payments` (`payments_id`, `order_id`, `amount`, `payment_method`, `paid_at`) VALUES
+INSERT INTO `payments` (`payment_id`, `order_id`, `amount`, `payment_method`, `paid_at`) VALUES
 (1, 3, 2780.00, 'bankkártya', '2025-06-28 12:22:28'),
 (2, 6, 1880.00, 'készpénz', '2025-06-28 14:50:36'),
 (3, 9, 2780.00, 'bankkártya', '2025-06-28 10:22:28'),
@@ -216,7 +215,7 @@ INSERT INTO `payments` (`payments_id`, `order_id`, `amount`, `payment_method`, `
 --
 
 CREATE TABLE `tables` (
-  `tables_id` int(10) UNSIGNED NOT NULL COMMENT 'Asztal egyedi azonosítója',
+  `table_id` int(10) UNSIGNED NOT NULL COMMENT 'Asztal egyedi azonosítója',
   `table_number` int(11) NOT NULL COMMENT 'Asztal sorszáma a vendégtérben'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Vendéglő asztalainak listája';
 
@@ -224,7 +223,7 @@ CREATE TABLE `tables` (
 -- A tábla adatainak kiíratása `tables`
 --
 
-INSERT INTO `tables` (`tables_id`, `table_number`) VALUES
+INSERT INTO `tables` (`table_id`, `table_number`) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
@@ -282,7 +281,7 @@ ALTER TABLE `categories`
 -- A tábla indexei `menuitems`
 --
 ALTER TABLE `menuitems`
-  ADD PRIMARY KEY (`menuItems_id`),
+  ADD PRIMARY KEY (`menuitem_id`),
   ADD UNIQUE KEY `name` (`name`),
   ADD KEY `fk_menuitems_category` (`category_id`);
 
@@ -290,15 +289,15 @@ ALTER TABLE `menuitems`
 -- A tábla indexei `orderitems`
 --
 ALTER TABLE `orderitems`
-  ADD PRIMARY KEY (`orderItems_id`),
-  ADD KEY `fk_orderitems_menuitem` (`menu_item_id`),
+  ADD PRIMARY KEY (`orderitem_id`),
+  ADD KEY `fk_orderitems_menuitem` (`menuitem_id`),
   ADD KEY `fk_orderitems_order` (`order_id`);
 
 --
 -- A tábla indexei `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`orders_id`),
+  ADD PRIMARY KEY (`order_id`),
   ADD KEY `fk_orders_table` (`table_id`),
   ADD KEY `fk_orders_user` (`user_id`);
 
@@ -306,14 +305,14 @@ ALTER TABLE `orders`
 -- A tábla indexei `payments`
 --
 ALTER TABLE `payments`
-  ADD PRIMARY KEY (`payments_id`),
+  ADD PRIMARY KEY (`payment_id`),
   ADD KEY `fk_payments_order` (`order_id`);
 
 --
 -- A tábla indexei `tables`
 --
 ALTER TABLE `tables`
-  ADD PRIMARY KEY (`tables_id`),
+  ADD PRIMARY KEY (`table_id`),
   ADD UNIQUE KEY `table_number` (`table_number`);
 
 --
@@ -337,22 +336,21 @@ ALTER TABLE `menuitems`
 -- Megkötések a táblához `orderitems`
 --
 ALTER TABLE `orderitems`
-  ADD CONSTRAINT `fk_orderitems_menuitem` FOREIGN KEY (`menu_item_id`) REFERENCES `menuitems` (`menuItems_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_orderitems_order` FOREIGN KEY (`order_id`) REFERENCES `orders` (`orders_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_orderitems_menuitem` FOREIGN KEY (`menuitem_id`) REFERENCES `menuitems` (`menuitem_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orderitems_order` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `fk_orders_table` FOREIGN KEY (`table_id`) REFERENCES `tables` (`tables_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orders_table` FOREIGN KEY (`table_id`) REFERENCES `tables` (`table_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_orders_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `payments`
 --
 ALTER TABLE `payments`
-  ADD CONSTRAINT `fk_payments_order` FOREIGN KEY (`order_id`) REFERENCES `orders` (`orders_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-SET FOREIGN_KEY_CHECKS=1;
+  ADD CONSTRAINT `fk_payments_order` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
