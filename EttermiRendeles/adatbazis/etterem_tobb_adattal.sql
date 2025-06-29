@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Jún 29. 11:06
+-- Létrehozás ideje: 2025. Jún 29. 22:43
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -47,6 +47,34 @@ INSERT INTO `categories` (`category_id`, `name`) VALUES
 (5, 'Levesek'),
 (6, 'Saláták'),
 (8, 'Vega ételek');
+
+-- --------------------------------------------------------
+
+--
+-- A nézet helyettes szerkezete `etteremall`
+-- (Lásd alább az aktuális nézetet)
+--
+CREATE TABLE `etteremall` (
+`rendelesAzonosito` int(10) unsigned
+,`kategoriaAzonosito` int(10) unsigned
+,`kategoria` varchar(100)
+,`etelNeve` varchar(255)
+,`etelInfo` text
+,`egysegAra` decimal(10,2)
+,`etelkepUrl` varchar(255)
+,`rendelheto` enum('true','false')
+,`rendeltMennyiseg` int(11)
+,`egysegar` decimal(10,2)
+,`allapot` enum('folyamatban','elkészült','fizetve')
+,`fizetendo` decimal(10,2)
+,`rendelesIdopontja` timestamp
+,`fizetettOsszeg` decimal(10,2)
+,`fizetesModja` enum('készpénz','bankkártya','online')
+,`fizetesIdeje` timestamp
+,`asztalSzama` int(11)
+,`szemelyNeve` varchar(100)
+,`szerepkor` enum('admin','pincer','vendeg')
+);
 
 -- --------------------------------------------------------
 
@@ -99,7 +127,7 @@ INSERT INTO `menuitems` (`menuitem_id`, `name`, `description`, `price`, `categor
 CREATE TABLE `orderitems` (
   `orderitem_id` int(10) UNSIGNED NOT NULL COMMENT 'Rendelési tétel azonosító',
   `order_id` int(10) UNSIGNED NOT NULL COMMENT 'Rendelés azonosító (hivatkozás az orders táblára)',
-  `menuitem_id` int(10) UNSIGNED NOT NULL COMMENT 'Étel/ital azonosító (hivatkozás a menuitems táblára)',
+  `menuItem_id` int(10) UNSIGNED NOT NULL COMMENT 'Étel/ital azonosító (hivatkozás a menuitems táblára)',
   `quantity` int(11) NOT NULL COMMENT 'Rendelt mennyiség',
   `price` decimal(10,2) NOT NULL COMMENT 'Egységár a rendelés pillanatában'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Rendelésekhez tartozó konkrét tételek';
@@ -108,7 +136,7 @@ CREATE TABLE `orderitems` (
 -- A tábla adatainak kiíratása `orderitems`
 --
 
-INSERT INTO `orderitems` (`orderitem_id`, `order_id`, `menuitem_id`, `quantity`, `price`) VALUES
+INSERT INTO `orderitems` (`orderitem_id`, `order_id`, `menuItem_id`, `quantity`, `price`) VALUES
 (1, 1, 1, 1, 1890.00),
 (2, 1, 4, 1, 490.00),
 (3, 2, 2, 1, 2290.00),
@@ -141,7 +169,17 @@ INSERT INTO `orderitems` (`orderitem_id`, `order_id`, `menuitem_id`, `quantity`,
 (30, 16, 5, 1, 2090.00),
 (31, 17, 6, 1, 2590.00),
 (32, 17, 7, 1, 1490.00),
-(33, 18, 8, 2, 780.00);
+(33, 18, 8, 2, 780.00),
+(34, 19, 11, 1, 2190.00),
+(35, 19, 19, 1, 690.00),
+(36, 20, 13, 1, 2390.00),
+(37, 20, 14, 1, 1290.00),
+(38, 21, 15, 1, 1990.00),
+(39, 21, 20, 1, 790.00),
+(40, 22, 9, 1, 2490.00),
+(41, 22, 8, 1, 390.00),
+(42, 23, 17, 2, 1780.00),
+(43, 23, 4, 1, 490.00);
 
 -- --------------------------------------------------------
 
@@ -152,7 +190,7 @@ INSERT INTO `orderitems` (`orderitem_id`, `order_id`, `menuitem_id`, `quantity`,
 CREATE TABLE `orders` (
   `order_id` int(10) UNSIGNED NOT NULL COMMENT 'Rendelés egyedi azonosítója',
   `table_id` int(10) UNSIGNED NOT NULL COMMENT 'Asztal azonosítója',
-  `user_id` int(10) UNSIGNED NOT NULL COMMENT 'Felhasználó azonosítója (ki rendelt)',
+  `user_id` int(10) UNSIGNED NOT NULL COMMENT 'Felhasználó azonosítója (ki adta le a rendelést)',
   `status` enum('folyamatban','elkészült','fizetve') NOT NULL COMMENT 'Rendelés állapota',
   `total_price` decimal(10,2) NOT NULL COMMENT 'Teljes ár (összesített)',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Rendelés időpontja'
@@ -180,7 +218,12 @@ INSERT INTO `orders` (`order_id`, `table_id`, `user_id`, `status`, `total_price`
 (15, 3, 3, 'fizetve', 2780.00, '2025-06-28 10:22:17'),
 (16, 1, 3, 'folyamatban', 2090.00, '2025-06-28 12:50:36'),
 (17, 2, 3, 'elkészült', 4080.00, '2025-06-28 12:50:36'),
-(18, 3, 3, 'fizetve', 1880.00, '2025-06-28 12:50:36');
+(18, 3, 3, 'fizetve', 1880.00, '2025-06-28 12:50:36'),
+(19, 4, 5, 'folyamatban', 3500.00, '2025-06-29 11:15:00'),
+(20, 4, 5, 'elkészült', 4200.00, '2025-06-29 11:30:00'),
+(21, 5, 6, 'fizetve', 2800.00, '2025-06-29 12:00:00'),
+(22, 5, 6, 'folyamatban', 3100.00, '2025-06-29 12:20:00'),
+(23, 6, 4, 'elkészült', 1950.00, '2025-06-29 13:00:00');
 
 -- --------------------------------------------------------
 
@@ -206,7 +249,9 @@ INSERT INTO `payments` (`payment_id`, `order_id`, `amount`, `payment_method`, `p
 (3, 9, 2780.00, 'bankkártya', '2025-06-28 10:22:28'),
 (4, 12, 1880.00, 'készpénz', '2025-06-28 12:50:36'),
 (5, 15, 2780.00, 'bankkártya', '2025-06-28 10:22:28'),
-(6, 18, 1880.00, 'készpénz', '2025-06-28 12:50:36');
+(6, 18, 1880.00, 'készpénz', '2025-06-28 12:50:36'),
+(7, 21, 2800.00, 'bankkártya', '2025-06-29 12:05:00'),
+(8, 23, 1950.00, 'készpénz', '2025-06-29 13:05:00');
 
 -- --------------------------------------------------------
 
@@ -266,6 +311,15 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `role`) VALUES
 (8, 'Varga Miklós', 'miklos.varga@example.com', 'hashed_password_8', 'pincer'),
 (9, 'Balogh Katalin', 'katalin.balogh@example.com', 'hashed_password_9', 'vendeg');
 
+-- --------------------------------------------------------
+
+--
+-- Nézet szerkezete `etteremall`
+--
+DROP TABLE IF EXISTS `etteremall`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `etteremall`  AS SELECT `o`.`order_id` AS `rendelesAzonosito`, `c`.`category_id` AS `kategoriaAzonosito`, `c`.`name` AS `kategoria`, `mi`.`name` AS `etelNeve`, `mi`.`description` AS `etelInfo`, `mi`.`price` AS `egysegAra`, `mi`.`image_url` AS `etelkepUrl`, `mi`.`available` AS `rendelheto`, `oi`.`quantity` AS `rendeltMennyiseg`, `oi`.`price` AS `egysegar`, `o`.`status` AS `allapot`, `o`.`total_price` AS `fizetendo`, `o`.`created_at` AS `rendelesIdopontja`, `p`.`amount` AS `fizetettOsszeg`, `p`.`payment_method` AS `fizetesModja`, `p`.`paid_at` AS `fizetesIdeje`, `t`.`table_number` AS `asztalSzama`, `u`.`name` AS `szemelyNeve`, `u`.`role` AS `szerepkor` FROM ((((((`categories` `c` join `menuitems` `mi` on(`c`.`category_id` = `mi`.`category_id`)) join `orderitems` `oi` on(`mi`.`menuitem_id` = `oi`.`menuItem_id`)) join `orders` `o` on(`oi`.`order_id` = `o`.`order_id`)) left join `payments` `p` on(`o`.`order_id` = `p`.`order_id`)) join `tables` `t` on(`o`.`table_id` = `t`.`table_id`)) join `users` `u` on(`o`.`user_id` = `u`.`user_id`)) ;
+
 --
 -- Indexek a kiírt táblákhoz
 --
@@ -290,7 +344,7 @@ ALTER TABLE `menuitems`
 --
 ALTER TABLE `orderitems`
   ADD PRIMARY KEY (`orderitem_id`),
-  ADD KEY `fk_orderitems_menuitem` (`menuitem_id`),
+  ADD KEY `fk_orderitems_menuitem` (`menuItem_id`),
   ADD KEY `fk_orderitems_order` (`order_id`);
 
 --
@@ -336,7 +390,7 @@ ALTER TABLE `menuitems`
 -- Megkötések a táblához `orderitems`
 --
 ALTER TABLE `orderitems`
-  ADD CONSTRAINT `fk_orderitems_menuitem` FOREIGN KEY (`menuitem_id`) REFERENCES `menuitems` (`menuitem_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_orderitems_menuitem` FOREIGN KEY (`menuItem_id`) REFERENCES `menuitems` (`menuitem_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_orderitems_order` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
