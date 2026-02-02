@@ -1,9 +1,17 @@
-- **Felhasználók (admin, pincér, vendég)**  
-- **Kategóriák (levesek, főételek, desszertek, italok, saláták)**  
-- **Étlap (Gulyásleves, Rántott csirke, Palacsinta, Coca Cola, Görög saláta)**  
-- **Asztalok (1-3)**  
+# Étteremi Rendelés Adatbázis Feltöltése
+
+Ez a dokumentum útmutatást nyújt az éttermi rendelési rendszer adatbázisának feltöltéséhez mintaadatokkal. Az alábbi SQL parancsok segítségével különböző táblákba tölthetünk be például felhasználókat, kategóriákat, étlap tételeket, asztalokat, rendeléseket és fizetéseket.
+
+## Egyedek
+
+Az adatbázis az alábbi egyedeket tartalmazza:
+
+- **Felhasználók *(admin, pincér, vendég)***  
+- **Kategóriák *(levesek, főételek, desszertek, italok, saláták)***  
+- **Étlap *(Gulyásleves, Rántott csirke, Palacsinta, Coca Cola, Görög saláta)***  
+- **Asztalok *(1-3)***  
 - **Rendelések és rendelési tételek**  
-- **Fizetések (pl. egy fizetett rendelés)**  
+- **Fizetések *(pl. egy fizetett rendelés)***  
 
 ```sql
 -- Feltöltés a Users táblába

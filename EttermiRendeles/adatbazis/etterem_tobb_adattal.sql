@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Jún 29. 22:43
+-- Létrehozás ideje: 2026. Feb 01. 16:01
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -97,26 +97,26 @@ CREATE TABLE `menuitems` (
 --
 
 INSERT INTO `menuitems` (`menuitem_id`, `name`, `description`, `price`, `category_id`, `image_url`, `available`) VALUES
-(1, 'Gulyásleves', 'Hagyományos magyar gulyás marhahússal', 1890.00, 1, 'https://example.com/gulyas.jpg', 'true'),
-(2, 'Rántott sajt', 'Ropogós panírban sült trappista sajt tartárral', 2290.00, 2, 'https://example.com/sajt.jpg', 'true'),
-(3, 'Somlói galuska', 'Házi készítésű desszert csokiöntettel', 1290.00, 3, 'https://example.com/somloi.jpg', 'true'),
-(4, 'Ásványvíz', '0.5 liter szénsavmentes ásványvíz', 490.00, 4, 'https://example.com/viz.jpg', 'true'),
-(5, 'Gulyásleves extra', 'Gulyás nagy adagban', 2090.00, 1, 'https://example.com/gulyas2.jpg', 'true'),
-(6, 'Rántott sajt dupla', 'Dupla adag sajt tartárral', 2590.00, 2, 'https://example.com/sajt2.jpg', 'true'),
-(7, 'Somlói deluxe', 'Somlói tejszínhabbal és dióval', 1490.00, 3, 'https://example.com/somloi2.jpg', 'true'),
-(8, 'Szódavíz', '0.5 liter szódavíz', 390.00, 4, 'https://example.com/szoda.jpg', 'true'),
-(9, 'Halászlé', 'Hagyományos magyar halászlé pontyból', 2490.00, 5, 'https://example.com/halaszle.jpg', 'true'),
-(10, 'Bableves', 'Füstölt csülökkel készült bableves', 1990.00, 5, 'https://example.com/bableves.jpg', 'true'),
-(11, 'Cézár saláta', 'Jégsaláta, csirkemell, parmezán, kruton', 2190.00, 6, 'https://example.com/caesar.jpg', 'true'),
-(12, 'Görög saláta', 'Uborka, paradicsom, feta sajt, olívabogyó', 1890.00, 6, 'https://example.com/greek.jpg', 'true'),
-(13, 'Rántott csirke', 'Ropogósra sült csirkemell filé', 2390.00, 7, 'https://example.com/csirke.jpg', 'true'),
-(14, 'Sült krumpli', 'Fűszeres sült krumpli házi mártással', 1290.00, 7, 'https://example.com/krumpli.jpg', 'true'),
-(15, 'Töltött paprika', 'Zöldpaprika tofuval és bulgurral', 1990.00, 8, 'https://example.com/paprika.jpg', 'true'),
-(16, 'Vega burger', 'Bab és quinoa alapú vega burger', 2290.00, 8, 'https://example.com/vegaburger.jpg', 'true'),
-(17, 'Palacsinta', 'Házi készítésű édes palacsinta', 890.00, 3, 'https://example.com/palacsinta.jpg', 'true'),
-(18, 'Tiramisu', 'Olasz desszert kávéval és mascarpone-val', 1590.00, 3, 'https://example.com/tiramisu.jpg', 'true'),
-(19, 'Cola', '0.5 literes üdítő ital', 690.00, 4, 'https://example.com/cola.jpg', 'true'),
-(20, 'Narancslé', 'Frissen facsart narancslé', 790.00, 4, 'https://example.com/orange.jpg', 'true');
+(1, 'Gulyásleves', 'Hagyományos magyar gulyás marhahússal', 1890.00, 1, 'https://image-api.nosalty.hu/nosalty/images/recipes/N1/f4/gulyasleves-serteshussal.jpeg?w=1200&h=920&s=539d884d226164309b8fa5337b80f3bb', 'true'),
+(2, 'Rántott sajt', 'Ropogós panírban sült trappista sajt tartárral', 2290.00, 2, 'https://image-api.nosalty.hu/nosalty/images/recipes/or/gP/klasszikus-rantott-sajt.jpeg?w=1200&h=920&s=deb7d85b632fd48884c074fb054a4ed0', 'true'),
+(3, 'Somlói galuska', 'Házi készítésű desszert csokiöntettel', 1290.00, 3, 'https://image-api.nosalty.hu/nosalty/images/recipes/2i/Nk/somloi-galuska.jpeg?w=1200&h=920&s=10fc0222cce566dcfac3dc9f9c2c23bb', 'true'),
+(4, 'Ásványvíz', '0.5 liter szénsavmentes ásványvíz', 490.00, 4, 'https://image-api.nosalty.hu/nosalty/images/gallery-images/jA/gW/w9ElhGpL5lqAya13IAaIQDt7BcJw08QhtsGvOQAH.jpg?s=37e7c234f36394c88f2bda0de7fb200c', 'true'),
+(5, 'Gulyásleves extra', 'Gulyás nagy adagban', 2090.00, 1, 'https://image-api.nosalty.hu/nosalty/images/recipes/ka/Mm/gulyasleves-5-serteshusbol.jpeg?w=1200&h=920&s=1cbc5650a24df0f75dd453e8e2e16cf0', 'true'),
+(6, 'Rántott sajt dupla', 'Dupla adag sajt tartárral', 2590.00, 2, 'https://image-api.nosalty.hu/nosalty/images/recipes/zJ/lm/dupla-sajtos-rantott-sajt.jpeg?w=670&fit=crop&fm=jpeg&crop=1806%2C1242%2C%2C108&h=460&mark=watermark.png&markpos=bottom-left&markpad=20&markw=&s=b9cb760c8950cd2a66a432e072e3adfc', 'true'),
+(7, 'Somlói deluxe', 'Somlói tejszínhabbal és dióval', 1490.00, 3, 'https://image-api.nosalty.hu/nosalty/images/recipes/dQ/NR/somloi-galuska-haromfele-piskotabol.jpeg?w=1200&h=920&s=9e4644f29a4e8dbc3b7a8fa9199ef54f', 'true'),
+(8, 'Szódavíz', '0.5 liter szódavíz', 390.00, 4, 'https://image-api.nosalty.hu/nosalty/images/ingredients/Cx/uL/Vhp3hCMr71VjJHtTBqtKawFTqySNoEAA6KCKW7qc.jpeg?w=1212&fit=crop&s=e14a0680c87bb588ba49a2cf703c8907', 'true'),
+(9, 'Halászlé', 'Hagyományos magyar halászlé pontyból', 2490.00, 5, 'https://image-api.nosalty.hu/nosalty/images/recipes/YL/jd/magyaros-halaszle.jpeg?w=1200&h=920&s=c49c2b7eee29d56bfdb4c1f8f6370bf1', 'true'),
+(10, 'Bableves', 'Füstölt csülökkel készült bableves', 1990.00, 5, 'https://image-api.nosalty.hu/nosalty/images/recipes/BF/Sj/bableves-fustolt-hussal-moncsitol.jpeg?w=1200&h=920&s=3b3b88cd42bbedac980261a17726c769', 'true'),
+(11, 'Cézár saláta', 'Jégsaláta, csirkemell, parmezán, kruton', 2190.00, 6, 'https://image-api.nosalty.hu/nosalty/images/recipes/qf/tp/cezar-salata.jpeg?w=1200&h=675&s=8019b4eb9b1ccecdf50353e9a896ac7d', 'true'),
+(12, 'Görög saláta', 'Uborka, paradicsom, feta sajt, olívabogyó', 1890.00, 6, 'https://image-api.nosalty.hu/nosalty/images/recipes/WA/je/eredeti-gorog-salata.jpg?w=1200&h=920&s=22c1a1e59f80cde45e2318c08af11ec4', 'true'),
+(13, 'Rántott csirke', 'Ropogósra sült csirkemell filé', 2390.00, 7, 'https://image-api.nosalty.hu/nosalty/images/recipes/QF/QJ/amerika-rantott-csirkecomb.jpg?w=1200&h=675&s=f5f7133ab130e112858536c6b1e201e1', 'true'),
+(14, 'Sült krumpli', 'Fűszeres sült krumpli házi mártással', 1290.00, 7, 'https://image-api.nosalty.hu/nosalty/images/recipes/fV/6s/sutoben-sult-sult-krumpli.jpeg?w=1200&h=920&s=00b76a3b6866dabc05b3f21589f43039', 'true'),
+(15, 'Töltött paprika', 'Zöldpaprika tofuval és bulgurral', 1990.00, 8, 'https://image-api.nosalty.hu/nosalty/images/recipes/KW/yR/hagyomanyos-toltott-paprika.jpeg?w=1200&h=920&s=40c513318b2a963f88e07e035c0717c3', 'true'),
+(16, 'Vega burger', 'Bab és quinoa alapú vega burger', 2290.00, 8, 'https://image-api.nosalty.hu/nosalty/images/recipes/yU/ez/vegan-hamburger-1.jpg?w=3000&fit=crop&s=8b903bdcabc7f8f3f884c9fa2239cfd1', 'true'),
+(17, 'Palacsinta', 'Házi készítésű édes palacsinta', 890.00, 3, 'https://image-api.nosalty.hu/nosalty/images/recipes/gR/h4/edes-sos-palacsinta-alapteszta.jpeg?w=1200&h=920&s=921d09be615ec6df5c98e5d489ed28a2', 'true'),
+(18, 'Tiramisu', 'Olasz desszert kávéval és mascarpone-val', 1590.00, 3, 'https://image-api.nosalty.hu/nosalty/images/recipes/3p/rD/legegyszerubb-tiramisu.jpg?w=1200&h=920&s=33ac6330b18379a9e1ddb55827a9d545', 'true'),
+(19, 'Cola', '0.5 literes üdítő ital', 690.00, 4, 'https://www.megyeriburgers.hu/wp-content/uploads/2021/06/16.png', 'true'),
+(20, 'Narancslé', 'Frissen facsart narancslé', 790.00, 4, 'https://image-api.nosalty.hu/nosalty/images/articles/YR/gC/ro6d5av5bi2WmzKFlKNl5CjodWiramOg3KtaM777.jpeg?w=1200&h=1200&fit=crop&s=d54e4db479e3bdb30caab6d37fe72a4d', 'true');
 
 -- --------------------------------------------------------
 
@@ -410,3 +410,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- Vége a dump fájlnak
