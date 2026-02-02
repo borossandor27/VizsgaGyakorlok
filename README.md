@@ -1,23 +1,23 @@
 # Gyakorló feladatok
 
-A szakmai vizsga `projekt vizsga-tevékenység ` `adatbázis - backend - frontend` 240&nbspperces gyakorlati vizsgafeladatára felkészülést segítő feladatok
+A szakmai vizsga `projekt vizsga-tevékenység ` `adatbázis - backend - frontend` 240&nbsp;perces gyakorlati vizsgafeladatára felkészülést segítő feladatok
 
 ## A gyakorlati vizsga
 
-A gyakorlati vizsga **240&nbspperc** időtartamú, amely során egy teljes körű webalkalmazást és konzolos és GUI felületű asztali alkalmazást kell elkészíteni a megadott követelmények alapján. A vizsga során a jelölteknek lehetőségük van bemutatni a megszerzett tudásukat és képességeiket a webfejlesztés és adatbázis-kezelés terén.
+A gyakorlati vizsga **240&nbsp;perc** időtartamú, amely során egy teljes körű webalkalmazást és konzolos és GUI felületű asztali alkalmazást kell elkészíteni a megadott követelmények alapján. A vizsga során a jelölteknek lehetőségük van bemutatni a megszerzett tudásukat és képességeiket a webfejlesztés és adatbázis-kezelés terén.
 
 ### A vizsga értékelése a megadott szempontok szerint történik
 
 | **Szempont**                                                                                                      | **pontszám** | **idő**  |
 |-------------------------------------------------------------------------------------------------------------------|--------------|----------|
-| konzolos asztali alkalmazásfejlesztés Java vagy C# nyelven                                                        | 15&nbsppont      | 55&nbspperc  |
-| grafikus asztali alkalmazásfejlesztés Java vagy C# nyelven                                                        | 10&nbsppont      | 37&nbspperc  |
-| reszponzív viselkedésű weboldal készítés és formázás                                                              | 10&nbsppont      | 37&nbspperc  |
-| backend programozás (adatbázis lekérdezést is végző, néhány végpontot tartalmazó REST API kiszolgáló létrehozása) | 15&nbsppont      | 55&nbspperc  |
-| frontend programozás (HTML / CSS /JavaScript / REST API kliens)                                                   | 15&nbsppont      | 55&nbspperc  |
-| mindösszesen                                                                                                      | 65&nbsppont      | 240&nbspperc |
+| konzolos asztali alkalmazásfejlesztés Java vagy C# nyelven                                                        | 15&nbsp;pont      | 55&nbsp;perc  |
+| grafikus asztali alkalmazásfejlesztés Java vagy C# nyelven                                                        | 10&nbsp;pont      | 37&nbsp;perc  |
+| reszponzív viselkedésű weboldal készítés és formázás                                                              | 10&nbsp;pont      | 37&nbsp;perc  |
+| backend programozás (adatbázis lekérdezést is végző, néhány végpontot tartalmazó REST API kiszolgáló létrehozása) | 15&nbsp;pont      | 55&nbsp;perc  |
+| frontend programozás (HTML / CSS /JavaScript / REST API kliens)                                                   | 15&nbsp;pont      | 55&nbsp;perc  |
+| mindösszesen                                                                                                      | 65&nbsp;pont      | 240&nbsp;perc |
 
-> [!NOTE] A maximálisan megszerezhető&nbsppontszám 65&nbsppont, amely a vizsga teljesítése esetén elérhető. A vizsga sikeres teljesítéséhez legalább 26&nbsppontot kell elérni.
+> [!NOTE] A maximálisan megszerezhető&nbsp;pontszám 65&nbsp;pont, amely a vizsga teljesítése esetén elérhető. A vizsga sikeres teljesítéséhez legalább 26&nbsp;pontot kell elérni.
 
 ### konzolos asztali alkalmazásfejlesztés
 
@@ -29,7 +29,7 @@ A feladat megoldása során egy grafikus felhasználói felülettel rendelkező 
 
 ### reszponzív viselkedésű weboldal készítés és formázás
 
-A feladat megoldása során egy reszponzív weboldalt kell készíteni HTML, CSS és JavaScript használatával. A weboldalnak alkalmazkodnia kell különböző eszközök képernyőméreteihez, és felhasználóbarát felületet kell biztosítania. A weboldal tartalmazhat statikus tartalmat, valamint interaktív elemeket is. Vannak olyan vizsgafeladatok, amelyeknél a frontend megvalósításánál kell reszponzív viselkedést alkalmazni és erre adják a&nbsppontot.
+A feladat megoldása során egy reszponzív weboldalt kell készíteni HTML, CSS és JavaScript használatával. A weboldalnak alkalmazkodnia kell különböző eszközök képernyőméreteihez, és felhasználóbarát felületet kell biztosítania. A weboldal tartalmazhat statikus tartalmat, valamint interaktív elemeket is. Vannak olyan vizsgafeladatok, amelyeknél a frontend megvalósításánál kell reszponzív viselkedést alkalmazni és erre adják a&nbsp;pontot.
 
 ### backend programozás
 
