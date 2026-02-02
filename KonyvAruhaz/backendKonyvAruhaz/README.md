@@ -1,3 +1,27 @@
+# Backend alkalmazás
+
+Készítse el az alábbi végpontokat megvalósító RESTful API-t Express.js segítségével:
+
+## Könyvek egyedhez kapcsolódó végpontok
+
+- **GET /books**: Minden könyv lekérdezése
+- **GET /books/:id**: Egy konkrét könyv lekérdezése az azonosítója alapján
+- **POST /books**: Új könyv hozzáadása
+- **PUT /books/:id**: Létező könyv módosítása
+- **DELETE /books/:id**: Könyv törlés
+
+## Felhasználókkal kapcsolatos végpontok
+
+- **POST /users**: Új felhasználó regisztrálása
+- **POST /users/login**: Bejelentkezés
+
+## Rendelésekkel kapcsolatos végpontok
+
+- **POST /orders**: Új rendelés feladása
+- **GET /orders/:userId**: Egy felhasználó összes rendelésének lekérdezése
+
+## Mappa struktúra javaslat
+
 ```bash
 /backend
 ├── db.js                ← adatbázis kapcsolat
@@ -11,8 +35,13 @@
     ├── usersController.js
     └── ordersController.js
 ```
-> [!NOTE]
-> A szerver elindításához futtassa a következő parancsot a terminálban:
+
+## Szerver indítása
+
+A szerver elindításához futtassa a következő parancsot a terminálban:
+
 > ```bash
->  node server.jsx
+>  node server.js
 > ```
+
+A szerver alapértelmezés szerint a `http://localhost:3000` címen lesz elérhető
