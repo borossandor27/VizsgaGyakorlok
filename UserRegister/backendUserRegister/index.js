@@ -4,7 +4,6 @@
  */
 
 import express from 'express';
-import bodyParser from 'body-parser';
 import userRoutes from './routes/userRoutes.js';
 import cors from 'cors';
 
@@ -16,14 +15,14 @@ app.use(cors());
 /**
  * Middleware to parse incoming request bodies in JSON format.
  */
-app.use(bodyParser.json());
+app.use(express.json());
 
 /**
  * Middleware to parse incoming request bodies with URL-encoded payloads.
  * @param {Object} options - Options for body-parser middleware.
  * @param {boolean} options.extended - Use the extended version of the querystring library.
  */
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 /**
  * Middleware to handle routes starting with '/user'.

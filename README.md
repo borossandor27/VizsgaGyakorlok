@@ -225,6 +225,8 @@ A feladat megoldása során egy webes frontend alkalmazást kell készíteni HTM
 
 ## 1. [Könyv áruház](./KonyvAruhaz/)
 
+Erős feladat authentikációval, jogosultság kezeléssel, adatbázis kapcsolattal, REST API backenddel és React front-enddel.
+
 ## 2. [Felhasználó nyilvántartás](./UserRegister/)
 
 ## 3. [Feladat ütemezés](./TodoAlkalmazas/)
