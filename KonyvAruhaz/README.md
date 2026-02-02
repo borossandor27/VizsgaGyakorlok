@@ -38,5 +38,5 @@ Készítsünk egy olyan webes alkalmazást, ahol a felhasználók kereshetnek k�
 
 ## [Backend - Express.js API](./backendKonyvAruhaz/)
 
-### React frontend
+## [React frontend](./frontendKonyvAruhaz/)
 
