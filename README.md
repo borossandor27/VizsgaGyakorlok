@@ -15,7 +15,7 @@ A gyakorlati vizsga **240&nbsp;perc** időtartamú, amely során egy teljes kör
 | reszponzív viselkedésű weboldal készítés és formázás                                                              | 10&nbsp;pont      | 37&nbsp;perc  |
 | backend programozás (adatbázis lekérdezést is végző, néhány végpontot tartalmazó REST API kiszolgáló létrehozása) | 15&nbsp;pont      | 55&nbsp;perc  |
 | frontend programozás (HTML / CSS /JavaScript / REST API kliens)                                                   | 15&nbsp;pont      | 55&nbsp;perc  |
-| mindösszesen                                                                                                      | 65&nbsp;pont      | 240&nbsp;perc |
+| mindösszesen                                                                                                      | **65&nbsp;pont**      | **240&nbsp;perc** |
 
 > A maximálisan megszerezhető&nbsp;pontszám 65&nbsp;pont, amely a vizsga teljesítése esetén elérhető. A vizsga sikeres teljesítéséhez legalább 26&nbsp;pontot kell elérni.
 
