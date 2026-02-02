@@ -17,21 +17,21 @@ A gyakorlati vizsga **240&nbsp;perc** időtartamú, amely során egy teljes kör
 | frontend programozás (HTML / CSS /JavaScript / REST API kliens)                                                   | 15&nbsp;pont      | 55&nbsp;perc  |
 | mindösszesen                                                                                                      | 65&nbsp;pont      | 240&nbsp;perc |
 
-> [!NOTE] A maximálisan megszerezhető&nbsp;pontszám 65&nbsp;pont, amely a vizsga teljesítése esetén elérhető. A vizsga sikeres teljesítéséhez legalább 26&nbsp;pontot kell elérni.
+> A maximálisan megszerezhető&nbsp;pontszám 65&nbsp;pont, amely a vizsga teljesítése esetén elérhető. A vizsga sikeres teljesítéséhez legalább 26&nbsp;pontot kell elérni.
 
-### konzolos asztali alkalmazásfejlesztés
+### 1. Konzolos asztali alkalmazásfejlesztés
 
 A feladat megoldása során egy konzolos alkalmazást kell készíteni Java vagy C# nyelven, amely képes adatokat kezelni és megjeleníteni a felhasználó számára. Az adatforrás lehet egy helyi `.txt`, `csv`, `json` fájl vagy adatbázis. A kapott adatokból a programozási tételek alkalmazásával különböző műveleteket kell végezni, például keresést, szűrést vagy rendezést.
 
-### grafikus asztali alkalmazásfejlesztés
+### 2. Grafikus asztali alkalmazásfejlesztés
 
 A feladat megoldása során egy grafikus felhasználói felülettel rendelkező alkalmazást kell készíteni Java vagy C# nyelven. Az alkalmazásnak képesnek kell lennie adatokat megjeleníteni és kezelni a felhasználó számára. Az adatforrás lehet egy helyi `.txt`, `csv`, `json` fájl vagy adatbázis. A kapott adatokból a programozási tételek alkalmazásával különböző műveleteket kell végezni, például keresést, szűrést vagy rendezést.
 
-### reszponzív viselkedésű weboldal készítés és formázás
+### 3. Reszponzív viselkedésű weboldal készítés és formázás
 
 A feladat megoldása során egy reszponzív weboldalt kell készíteni HTML, CSS és JavaScript használatával. A weboldalnak alkalmazkodnia kell különböző eszközök képernyőméreteihez, és felhasználóbarát felületet kell biztosítania. A weboldal tartalmazhat statikus tartalmat, valamint interaktív elemeket is. Vannak olyan vizsgafeladatok, amelyeknél a frontend megvalósításánál kell reszponzív viselkedést alkalmazni és erre adják a&nbsp;pontot.
 
-### backend programozás
+### 4. Backend programozás
 
 A feladat megoldása során egy REST API kiszolgálót kell létrehozni, amely képes adatbázis lekérdezéseket végrehajtani és adatokat szolgáltatni a frontend számára. A backend alkalmazásnak képesnek kell lennie különböző végpontokat kezelni, amelyek lehetővé teszik az adatok lekérését, hozzáadását, módosítását és törlését. A backend alkalmazás fejlesztéséhez használhatók különböző programozási nyelvek és keretrendszerek, például Node.js, Python, Java vagy C#. Ajánlott az Express.js használata Node.js környezetben.
 
@@ -67,7 +67,7 @@ A feladat megoldása során egy REST API kiszolgálót kell létrehozni, amely k
   echo }); >> index.js
   ````
 
-### frontend programozás
+### 5. Frontend programozás
 
 A feladat megoldása során egy webes frontend alkalmazást kell készíteni HTML, CSS és JavaScript használatával, amely képes kommunikálni a backend REST API-val. A frontend alkalmazásnak képesnek kell lennie adatokat lekérni a backendről, megjeleníteni azokat a felhasználó számára, valamint lehetőséget kell biztosítania az adatok hozzáadására, módosítására és törlésére. A frontend alkalmazás fejlesztéséhez használhatók különböző keretrendszerek és könyvtárak, például React, Angular vagy Vue.js. Ajánlott a React használata Vite környezetben.
 
