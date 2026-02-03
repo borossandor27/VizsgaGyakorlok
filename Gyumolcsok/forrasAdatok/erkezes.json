@@ -1,0 +1,194 @@
+[
+   {
+      "gyumolcsid":"1",
+      "mennyiseg":"120",
+      "egysegar":"199.00",
+      "erkezett":"2026-01-10 08:30:00"
+   },
+   {
+      "gyumolcsid":"2",
+      "mennyiseg":"45",
+      "egysegar":"799.00",
+      "erkezett":"2026-01-12 09:00:00"
+   },
+   {
+      "gyumolcsid":"3",
+      "mennyiseg":"30",
+      "egysegar":"999.00",
+      "erkezett":"2026-01-15 10:15:00"
+   },
+   {
+      "gyumolcsid":"4",
+      "mennyiseg":"60",
+      "egysegar":"649.00",
+      "erkezett":"2026-01-18 11:45:00"
+   },
+   {
+      "gyumolcsid":"5",
+      "mennyiseg":"25",
+      "egysegar":"899.00",
+      "erkezett":"2026-01-20 13:00:00"
+   },
+   {
+      "gyumolcsid":"6",
+      "mennyiseg":"15",
+      "egysegar":"1299.00",
+      "erkezett":"2026-01-22 14:30:00"
+   },
+   {
+      "gyumolcsid":"7",
+      "mennyiseg":"80",
+      "egysegar":"499.00",
+      "erkezett":"2026-01-25 08:00:00"
+   },
+   {
+      "gyumolcsid":"8",
+      "mennyiseg":"10",
+      "egysegar":"1999.00",
+      "erkezett":"2026-01-27 16:00:00"
+   },
+   {
+      "gyumolcsid":"9",
+      "mennyiseg":"55",
+      "egysegar":"559.00",
+      "erkezett":"2026-01-28 09:45:00"
+   },
+   {
+      "gyumolcsid":"10",
+      "mennyiseg":"40",
+      "egysegar":"699.00",
+      "erkezett":"2026-01-30 12:00:00"
+   },
+   {
+      "gyumolcsid":"11",
+      "mennyiseg":"90",
+      "egysegar":"459.00",
+      "erkezett":"2026-02-02 08:30:00"
+   },
+   {
+      "gyumolcsid":"12",
+      "mennyiseg":"35",
+      "egysegar":"1099.00",
+      "erkezett":"2026-02-04 10:00:00"
+   },
+   {
+      "gyumolcsid":"13",
+      "mennyiseg":"70",
+      "egysegar":"299.00",
+      "erkezett":"2026-02-06 07:45:00"
+   },
+   {
+      "gyumolcsid":"14",
+      "mennyiseg":"20",
+      "egysegar":"1399.00",
+      "erkezett":"2026-02-08 15:15:00"
+   },
+   {
+      "gyumolcsid":"15",
+      "mennyiseg":"50",
+      "egysegar":"749.00",
+      "erkezett":"2026-02-10 11:30:00"
+   },
+   {
+      "gyumolcsid":"16",
+      "mennyiseg":"65",
+      "egysegar":"399.00",
+      "erkezett":"2026-02-12 09:00:00"
+   },
+   {
+      "gyumolcsid":"1",
+      "mennyiseg":"80",
+      "egysegar":"189.00",
+      "erkezett":"2026-02-15 07:30:00"
+   },
+   {
+      "gyumolcsid":"1",
+      "mennyiseg":"150",
+      "egysegar":"209.00",
+      "erkezett":"2026-03-05 09:00:00"
+   },
+   {
+      "gyumolcsid":"2",
+      "mennyiseg":"30",
+      "egysegar":"829.00",
+      "erkezett":"2026-02-18 10:15:00"
+   },
+   {
+      "gyumolcsid":"2",
+      "mennyiseg":"60",
+      "egysegar":"789.00",
+      "erkezett":"2026-03-10 08:45:00"
+   },
+   {
+      "gyumolcsid":"7",
+      "mennyiseg":"100",
+      "egysegar":"479.00",
+      "erkezett":"2026-02-20 06:30:00"
+   },
+   {
+      "gyumolcsid":"7",
+      "mennyiseg":"120",
+      "egysegar":"519.00",
+      "erkezett":"2026-03-12 07:00:00"
+   },
+   {
+      "gyumolcsid":"9",
+      "mennyiseg":"40",
+      "egysegar":"549.00",
+      "erkezett":"2026-02-22 11:00:00"
+   },
+   {
+      "gyumolcsid":"9",
+      "mennyiseg":"70",
+      "egysegar":"579.00",
+      "erkezett":"2026-03-08 10:30:00"
+   },
+   {
+      "gyumolcsid":"11",
+      "mennyiseg":"60",
+      "egysegar":"449.00",
+      "erkezett":"2026-02-25 08:00:00"
+   },
+   {
+      "gyumolcsid":"11",
+      "mennyiseg":"110",
+      "egysegar":"469.00",
+      "erkezett":"2026-03-15 09:15:00"
+   },
+   {
+      "gyumolcsid":"13",
+      "mennyiseg":"90",
+      "egysegar":"289.00",
+      "erkezett":"2026-02-28 06:45:00"
+   },
+   {
+      "gyumolcsid":"13",
+      "mennyiseg":"140",
+      "egysegar":"309.00",
+      "erkezett":"2026-03-18 07:30:00"
+   },
+   {
+      "gyumolcsid":"15",
+      "mennyiseg":"25",
+      "egysegar":"769.00",
+      "erkezett":"2026-02-27 12:00:00"
+   },
+   {
+      "gyumolcsid":"15",
+      "mennyiseg":"40",
+      "egysegar":"729.00",
+      "erkezett":"2026-03-20 13:15:00"
+   },
+   {
+      "gyumolcsid":"16",
+      "mennyiseg":"50",
+      "egysegar":"389.00",
+      "erkezett":"2026-03-01 09:00:00"
+   },
+   {
+      "gyumolcsid":"16",
+      "mennyiseg":"90",
+      "egysegar":"419.00",
+      "erkezett":"2026-03-22 10:00:00"
+   }
+]

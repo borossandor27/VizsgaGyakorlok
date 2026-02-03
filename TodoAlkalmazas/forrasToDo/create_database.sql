@@ -1,0 +1,18 @@
+   CREATE DATABASE IF NOT EXISTS todo;
+    USE todo;
+
+    CREATE TABLE IF NOT EXISTS users (
+        user_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        email VARCHAR(100) NOT NULL UNIQUE,
+        birthday DATE DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS events (
+        events_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(200) NOT NULL,
+        description TEXT,
+        date DATETIME NOT NULL,
+        user_id BIGINT UNSIGNED NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+    );

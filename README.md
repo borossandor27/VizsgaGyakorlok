@@ -229,15 +229,23 @@ Erős feladat authentikációval, jogosultság kezeléssel, adatbázis kapcsolat
 
 ## 2. [Felhasználó nyilvántartás](./UserRegister/)
 
+Egyszerű felhasználó nyilvántartó alkalmazás konzolos és grafikus felülettel, valamint webes front-end és backend résszel.
+
 ## 3. [Feladat ütemezés](./TodoAlkalmazas/)
 
+Egy egyszerű feladat ütemező alkalmazás, amely lehetővé teszi a felhasználók számára, hogy eseményeket hozzanak létre, megtekintsék, frissítsék és töröljék őket egy webes felületen keresztül. Az alkalmazás backend része Express.js keretrendszerrel készült, míg a frontend React.js-t használ.
+
 ## 4. [Gyümölcsök](./Gyumolcsok/)
+
+Egyszerű gyümölcs nyilvántartó alkalmazás konzolos és grafikus felülettel, valamint webes front-end és backend résszel.
 
 ## 5. [Névnap kereső](./Nevnapkereso/)
 
 ## 6. [Ingatlan hirdetések](./Ingatlanhirdetesek/)
 
 ## 7. [Éttermi rendelések](./EttermiRendeles/)
+
+Egyszerű éttermi rendelés kezelő alkalmazás konzolos és grafikus felülettel, valamint webes front-end és backend résszel.
 
 ## 8. [Autó kölcsönzés](./AutoKolcsonzes/)
 

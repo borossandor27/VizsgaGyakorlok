@@ -1,0 +1,345 @@
+[
+   {
+      "events_id":"1",
+      "title":"Projekt kickoff",
+      "description":"Új projekt indító megbeszélés",
+      "date":"2026-02-05 09:00:00",
+      "user_id":"1"
+   },
+   {
+      "events_id":"2",
+      "title":"Orvosi vizsgálat",
+      "description":"Éves kontroll",
+      "date":"2026-02-10 15:30:00",
+      "user_id":"1"
+   },
+   {
+      "events_id":"3",
+      "title":"Határidő",
+      "description":"Dokumentáció leadása",
+      "date":"2026-02-20 23:59:00",
+      "user_id":"1"
+   },
+   {
+      "events_id":"4",
+      "title":"Csapatépítő",
+      "description":"Bowling est",
+      "date":"2026-03-01 18:00:00",
+      "user_id":"1"
+   },
+   {
+      "events_id":"5",
+      "title":"Prezentáció",
+      "description":"Ügyfél bemutató",
+      "date":"2026-03-10 10:00:00",
+      "user_id":"1"
+   },
+   {
+      "events_id":"6",
+      "title":"Sprint tervezés",
+      "description":"Következő sprint feladatok",
+      "date":"2026-02-06 10:00:00",
+      "user_id":"2"
+   },
+   {
+      "events_id":"7",
+      "title":"Fogorvos",
+      "description":"Kontroll",
+      "date":"2026-02-11 08:00:00",
+      "user_id":"2"
+   },
+   {
+      "events_id":"8",
+      "title":"Workshop",
+      "description":"REST API tervezés",
+      "date":"2026-02-18 13:00:00",
+      "user_id":"2"
+   },
+   {
+      "events_id":"9",
+      "title":"Release",
+      "description":"Verzió kiadás",
+      "date":"2026-02-28 17:00:00",
+      "user_id":"2"
+   },
+   {
+      "events_id":"10",
+      "title":"Retro",
+      "description":"Sprint retrospektív",
+      "date":"2026-03-05 16:00:00",
+      "user_id":"2"
+   },
+   {
+      "events_id":"11",
+      "title":"Tanulás",
+      "description":"SQL gyakorlás",
+      "date":"2026-02-07 19:00:00",
+      "user_id":"3"
+   },
+   {
+      "events_id":"12",
+      "title":"Meetup",
+      "description":"Tech előadás",
+      "date":"2026-02-14 18:00:00",
+      "user_id":"3"
+   },
+   {
+      "events_id":"13",
+      "title":"Vizsga",
+      "description":"Backend modul",
+      "date":"2026-02-21 09:00:00",
+      "user_id":"3"
+   },
+   {
+      "events_id":"14",
+      "title":"Határidő",
+      "description":"Projekt beadás",
+      "date":"2026-02-27 23:59:00",
+      "user_id":"3"
+   },
+   {
+      "events_id":"15",
+      "title":"Interjú",
+      "description":"Állásinterjú",
+      "date":"2026-03-06 11:00:00",
+      "user_id":"3"
+   },
+   {
+      "events_id":"16",
+      "title":"Edzés",
+      "description":"Kondi",
+      "date":"2026-02-05 17:30:00",
+      "user_id":"4"
+   },
+   {
+      "events_id":"17",
+      "title":"Bevásárlás",
+      "description":"Heti nagybevásárlás",
+      "date":"2026-02-08 10:00:00",
+      "user_id":"4"
+   },
+   {
+      "events_id":"18",
+      "title":"Tanulás",
+      "description":"C# gyakorlás",
+      "date":"2026-02-15 18:00:00",
+      "user_id":"4"
+   },
+   {
+      "events_id":"19",
+      "title":"Határidő",
+      "description":"WinForms projekt",
+      "date":"2026-02-25 23:00:00",
+      "user_id":"4"
+   },
+   {
+      "events_id":"20",
+      "title":"Mozi",
+      "description":"Premier film",
+      "date":"2026-03-02 20:00:00",
+      "user_id":"4"
+   },
+   {
+      "events_id":"21",
+      "title":"Meeting",
+      "description":"HR megbeszélés",
+      "date":"2026-02-06 14:00:00",
+      "user_id":"5"
+   },
+   {
+      "events_id":"22",
+      "title":"Prezentáció",
+      "description":"Belső demo",
+      "date":"2026-02-12 09:30:00",
+      "user_id":"5"
+   },
+   {
+      "events_id":"23",
+      "title":"Határidő",
+      "description":"Tesztelési jegyzőkönyv",
+      "date":"2026-02-22 23:59:00",
+      "user_id":"5"
+   },
+   {
+      "events_id":"24",
+      "title":"Csapatlunch",
+      "description":"Közös ebéd",
+      "date":"2026-02-26 12:00:00",
+      "user_id":"5"
+   },
+   {
+      "events_id":"25",
+      "title":"Workshop",
+      "description":"UI\/UX",
+      "date":"2026-03-04 10:00:00",
+      "user_id":"5"
+   },
+   {
+      "events_id":"26",
+      "title":"Meeting",
+      "description":"Vezetői egyeztetés",
+      "date":"2026-02-07 11:00:00",
+      "user_id":"6"
+   },
+   {
+      "events_id":"27",
+      "title":"Határidő",
+      "description":"Riport leadás",
+      "date":"2026-02-16 23:59:00",
+      "user_id":"6"
+   },
+   {
+      "events_id":"28",
+      "title":"Utazás",
+      "description":"Üzleti út",
+      "date":"2026-02-19 06:00:00",
+      "user_id":"6"
+   },
+   {
+      "events_id":"29",
+      "title":"Visszatérés",
+      "description":"Hazautazás",
+      "date":"2026-02-21 20:00:00",
+      "user_id":"6"
+   },
+   {
+      "events_id":"30",
+      "title":"Prezentáció",
+      "description":"Eredmények bemutatása",
+      "date":"2026-03-03 09:00:00",
+      "user_id":"6"
+   },
+   {
+      "events_id":"31",
+      "title":"Tanulás",
+      "description":"Node.js",
+      "date":"2026-02-08 18:00:00",
+      "user_id":"7"
+   },
+   {
+      "events_id":"32",
+      "title":"Hackathon",
+      "description":"24 órás kódolás",
+      "date":"2026-02-15 09:00:00",
+      "user_id":"7"
+   },
+   {
+      "events_id":"33",
+      "title":"Pihenés",
+      "description":"Szabadnap",
+      "date":"2026-02-17 00:00:00",
+      "user_id":"7"
+   },
+   {
+      "events_id":"34",
+      "title":"Határidő",
+      "description":"Hackathon leadás",
+      "date":"2026-02-16 23:59:00",
+      "user_id":"7"
+   },
+   {
+      "events_id":"35",
+      "title":"Bemutató",
+      "description":"Projekt prezentáció",
+      "date":"2026-03-01 14:00:00",
+      "user_id":"7"
+   },
+   {
+      "events_id":"36",
+      "title":"Meeting",
+      "description":"Ügyfél egyeztetés",
+      "date":"2026-02-09 10:00:00",
+      "user_id":"8"
+   },
+   {
+      "events_id":"37",
+      "title":"Határidő",
+      "description":"Szerződés aláírás",
+      "date":"2026-02-13 12:00:00",
+      "user_id":"8"
+   },
+   {
+      "events_id":"38",
+      "title":"Admin",
+      "description":"Számlázás",
+      "date":"2026-02-18 09:00:00",
+      "user_id":"8"
+   },
+   {
+      "events_id":"39",
+      "title":"Prezentáció",
+      "description":"Éves terv",
+      "date":"2026-02-24 15:00:00",
+      "user_id":"8"
+   },
+   {
+      "events_id":"40",
+      "title":"Szabadság",
+      "description":"Pihenés",
+      "date":"2026-03-07 00:00:00",
+      "user_id":"8"
+   },
+   {
+      "events_id":"41",
+      "title":"Edzés",
+      "description":"Futás",
+      "date":"2026-02-05 06:30:00",
+      "user_id":"9"
+   },
+   {
+      "events_id":"42",
+      "title":"Orvos",
+      "description":"Szemészet",
+      "date":"2026-02-12 16:00:00",
+      "user_id":"9"
+   },
+   {
+      "events_id":"43",
+      "title":"Határidő",
+      "description":"Projekt zárás",
+      "date":"2026-02-20 18:00:00",
+      "user_id":"9"
+   },
+   {
+      "events_id":"44",
+      "title":"Kirándulás",
+      "description":"Hétvégi túra",
+      "date":"2026-03-08 08:00:00",
+      "user_id":"9"
+   },
+   {
+      "events_id":"45",
+      "title":"Meeting",
+      "description":"Napi standup",
+      "date":"2026-02-05 09:15:00",
+      "user_id":"10"
+   },
+   {
+      "events_id":"46",
+      "title":"Tanulás",
+      "description":"Adatbázis optimalizálás",
+      "date":"2026-02-11 19:00:00",
+      "user_id":"10"
+   },
+   {
+      "events_id":"47",
+      "title":"Határidő",
+      "description":"Indexelési terv",
+      "date":"2026-02-23 23:59:00",
+      "user_id":"10"
+   },
+   {
+      "events_id":"48",
+      "title":"Workshop",
+      "description":"Biztonság",
+      "date":"2026-02-27 10:00:00",
+      "user_id":"10"
+   },
+   {
+      "events_id":"49",
+      "title":"Prezentáció",
+      "description":"Záró előadás",
+      "date":"2026-03-09 11:00:00",
+      "user_id":"10"
+   }
+]

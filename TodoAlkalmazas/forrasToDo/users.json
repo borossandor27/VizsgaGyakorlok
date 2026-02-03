@@ -1,0 +1,62 @@
+[
+   {
+      "user_id":"1",
+      "name":"Kiss Anna",
+      "email":"anna.kiss@example.com",
+      "birthday":"1995-03-12"
+   },
+   {
+      "user_id":"2",
+      "name":"Nagy Béla",
+      "email":"bela.nagy@example.com",
+      "birthday":"1990-07-22"
+   },
+   {
+      "user_id":"3",
+      "name":"Tóth Csilla",
+      "email":"csilla.toth@example.com",
+      "birthday":"1988-11-05"
+   },
+   {
+      "user_id":"4",
+      "name":"Szabó Dániel",
+      "email":"daniel.szabo@example.com",
+      "birthday":"1998-01-30"
+   },
+   {
+      "user_id":"5",
+      "name":"Varga Eszter",
+      "email":"eszter.varga@example.com",
+      "birthday":"1993-06-18"
+   },
+   {
+      "user_id":"6",
+      "name":"Horváth Ferenc",
+      "email":"ferenc.horvath@example.com",
+      "birthday":"1985-09-09"
+   },
+   {
+      "user_id":"7",
+      "name":"Molnár Gabriella",
+      "email":"gabriella.molnar@example.com",
+      "birthday":"1997-12-01"
+   },
+   {
+      "user_id":"8",
+      "name":"Kovács Imre",
+      "email":"imre.kovacs@example.com",
+      "birthday":"1992-04-14"
+   },
+   {
+      "user_id":"9",
+      "name":"Balogh Júlia",
+      "email":"julia.balogh@example.com",
+      "birthday":"2000-08-27"
+   },
+   {
+      "user_id":"10",
+      "name":"Papp László",
+      "email":"laszlo.papp@example.com",
+      "birthday":"1989-02-10"
+   }
+]

@@ -1,0 +1,171 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Gép: 127.0.0.1
+-- Létrehozás ideje: 2026. Feb 03. 11:33
+-- Kiszolgáló verziója: 10.4.32-MariaDB
+-- PHP verzió: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Adatbázis: `todo`
+--
+CREATE DATABASE IF NOT EXISTS `todo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `todo`;
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `events`
+--
+
+CREATE TABLE `events` (
+  `events_id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `description` text DEFAULT NULL,
+  `date` datetime NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- A tábla adatainak kiíratása `events`
+--
+
+INSERT INTO `events` (`events_id`, `title`, `description`, `date`, `user_id`) VALUES
+(1, 'Projekt kickoff', 'Új projekt indító megbeszélés', '2026-02-05 09:00:00', 1),
+(2, 'Orvosi vizsgálat', 'Éves kontroll', '2026-02-10 15:30:00', 1),
+(3, 'Határidő', 'Dokumentáció leadása', '2026-02-20 23:59:00', 1),
+(4, 'Csapatépítő', 'Bowling est', '2026-03-01 18:00:00', 1),
+(5, 'Prezentáció', 'Ügyfél bemutató', '2026-03-10 10:00:00', 1),
+(6, 'Sprint tervezés', 'Következő sprint feladatok', '2026-02-06 10:00:00', 2),
+(7, 'Fogorvos', 'Kontroll', '2026-02-11 08:00:00', 2),
+(8, 'Workshop', 'REST API tervezés', '2026-02-18 13:00:00', 2),
+(9, 'Release', 'Verzió kiadás', '2026-02-28 17:00:00', 2),
+(10, 'Retro', 'Sprint retrospektív', '2026-03-05 16:00:00', 2),
+(11, 'Tanulás', 'SQL gyakorlás', '2026-02-07 19:00:00', 3),
+(12, 'Meetup', 'Tech előadás', '2026-02-14 18:00:00', 3),
+(13, 'Vizsga', 'Backend modul', '2026-02-21 09:00:00', 3),
+(14, 'Határidő', 'Projekt beadás', '2026-02-27 23:59:00', 3),
+(15, 'Interjú', 'Állásinterjú', '2026-03-06 11:00:00', 3),
+(16, 'Edzés', 'Kondi', '2026-02-05 17:30:00', 4),
+(17, 'Bevásárlás', 'Heti nagybevásárlás', '2026-02-08 10:00:00', 4),
+(18, 'Tanulás', 'C# gyakorlás', '2026-02-15 18:00:00', 4),
+(19, 'Határidő', 'WinForms projekt', '2026-02-25 23:00:00', 4),
+(20, 'Mozi', 'Premier film', '2026-03-02 20:00:00', 4),
+(21, 'Meeting', 'HR megbeszélés', '2026-02-06 14:00:00', 5),
+(22, 'Prezentáció', 'Belső demo', '2026-02-12 09:30:00', 5),
+(23, 'Határidő', 'Tesztelési jegyzőkönyv', '2026-02-22 23:59:00', 5),
+(24, 'Csapatlunch', 'Közös ebéd', '2026-02-26 12:00:00', 5),
+(25, 'Workshop', 'UI/UX', '2026-03-04 10:00:00', 5),
+(26, 'Meeting', 'Vezetői egyeztetés', '2026-02-07 11:00:00', 6),
+(27, 'Határidő', 'Riport leadás', '2026-02-16 23:59:00', 6),
+(28, 'Utazás', 'Üzleti út', '2026-02-19 06:00:00', 6),
+(29, 'Visszatérés', 'Hazautazás', '2026-02-21 20:00:00', 6),
+(30, 'Prezentáció', 'Eredmények bemutatása', '2026-03-03 09:00:00', 6),
+(31, 'Tanulás', 'Node.js', '2026-02-08 18:00:00', 7),
+(32, 'Hackathon', '24 órás kódolás', '2026-02-15 09:00:00', 7),
+(33, 'Pihenés', 'Szabadnap', '2026-02-17 00:00:00', 7),
+(34, 'Határidő', 'Hackathon leadás', '2026-02-16 23:59:00', 7),
+(35, 'Bemutató', 'Projekt prezentáció', '2026-03-01 14:00:00', 7),
+(36, 'Meeting', 'Ügyfél egyeztetés', '2026-02-09 10:00:00', 8),
+(37, 'Határidő', 'Szerződés aláírás', '2026-02-13 12:00:00', 8),
+(38, 'Admin', 'Számlázás', '2026-02-18 09:00:00', 8),
+(39, 'Prezentáció', 'Éves terv', '2026-02-24 15:00:00', 8),
+(40, 'Szabadság', 'Pihenés', '2026-03-07 00:00:00', 8),
+(41, 'Edzés', 'Futás', '2026-02-05 06:30:00', 9),
+(42, 'Orvos', 'Szemészet', '2026-02-12 16:00:00', 9),
+(43, 'Határidő', 'Projekt zárás', '2026-02-20 18:00:00', 9),
+(44, 'Kirándulás', 'Hétvégi túra', '2026-03-08 08:00:00', 9),
+(45, 'Meeting', 'Napi standup', '2026-02-05 09:15:00', 10),
+(46, 'Tanulás', 'Adatbázis optimalizálás', '2026-02-11 19:00:00', 10),
+(47, 'Határidő', 'Indexelési terv', '2026-02-23 23:59:00', 10),
+(48, 'Workshop', 'Biztonság', '2026-02-27 10:00:00', 10),
+(49, 'Prezentáció', 'Záró előadás', '2026-03-09 11:00:00', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `birthday` date DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- A tábla adatainak kiíratása `users`
+--
+
+INSERT INTO `users` (`user_id`, `name`, `email`, `birthday`) VALUES
+(1, 'Kiss Anna', 'anna.kiss@example.com', '1995-03-12'),
+(2, 'Nagy Béla', 'bela.nagy@example.com', '1990-07-22'),
+(3, 'Tóth Csilla', 'csilla.toth@example.com', '1988-11-05'),
+(4, 'Szabó Dániel', 'daniel.szabo@example.com', '1998-01-30'),
+(5, 'Varga Eszter', 'eszter.varga@example.com', '1993-06-18'),
+(6, 'Horváth Ferenc', 'ferenc.horvath@example.com', '1985-09-09'),
+(7, 'Molnár Gabriella', 'gabriella.molnar@example.com', '1997-12-01'),
+(8, 'Kovács Imre', 'imre.kovacs@example.com', '1992-04-14'),
+(9, 'Balogh Júlia', 'julia.balogh@example.com', '2000-08-27'),
+(10, 'Papp László', 'laszlo.papp@example.com', '1989-02-10');
+
+--
+-- Indexek a kiírt táblákhoz
+--
+
+--
+-- A tábla indexei `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`events_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- A tábla indexei `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- A kiírt táblák AUTO_INCREMENT értéke
+--
+
+--
+-- AUTO_INCREMENT a táblához `events`
+--
+ALTER TABLE `events`
+  MODIFY `events_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+
+--
+-- AUTO_INCREMENT a táblához `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Megkötések a kiírt táblákhoz
+--
+
+--
+-- Megkötések a táblához `events`
+--
+ALTER TABLE `events`
+  ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

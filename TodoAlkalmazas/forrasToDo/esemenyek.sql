@@ -63,19 +63,19 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`events_id`, `title`, `description`, `date`, `user_id`, `category_id`) VALUES
-(1, 'Fontos meeting', 'Fontos meeting', '2025-04-01 00:00:00', 1, 1),
-(2, 'Szülinap', 'Szülinap', '2025-04-22 00:00:00', 1, 2),
-(3, 'Projekt kickoff', 'Projektindító megbeszélés', '2025-04-05 09:00:00', 1, 1),
-(4, 'Húsvéti ünnep', 'Húsvéti szabadnap', '2025-04-21 00:00:00', 2, 2),
-(5, 'Kávézás a csapattal', 'Közös reggeli', '2025-04-08 08:30:00', 2, 3),
-(6, 'Fejlesztői workshop', 'Fejlesztési újítások bemutatása', '2025-05-10 10:00:00', 1, 1),
-(7, 'Gyereknap', 'Gyereknapi rendezvény', '2025-05-25 00:00:00', 2, 2),
-(8, 'Prezentáció', 'Kliens előtti prezentáció', '2025-05-12 14:00:00', 1, 1),
-(9, 'Szünetnap', 'Céges szabadnap', '2025-06-01 00:00:00', 2, 2),
-(10, 'Dokumentáció frissítés', 'Új verzió dokumentációja', '2025-06-07 13:00:00', 1, 3),
-(11, 'Csapatépítő', 'Outdoor csapatépítő program', '2025-06-15 09:00:00', 2, 3),
-(12, 'Karbantartás', 'Szerver karbantartás', '2025-07-02 22:00:00', 1, 1),
-(13, 'Céges party', 'Nyári céges party', '2025-07-20 19:00:00', 2, 2);
+(1, 'Fontos meeting', 'Fontos meeting', '2026-04-01 00:00:00', 1, 1),
+(2, 'Szülinap', 'Szülinap', '2026-04-22 00:00:00', 1, 2),
+(3, 'Projekt kickoff', 'Projektindító megbeszélés', '2026-04-05 09:00:00', 1, 1),
+(4, 'Húsvéti ünnep', 'Húsvéti szabadnap', '2026-04-21 00:00:00', 2, 2),
+(5, 'Kávézás a csapattal', 'Közös reggeli', '2026-04-08 08:30:00', 2, 3),
+(6, 'Fejlesztői workshop', 'Fejlesztési újítások bemutatása', '2026-05-10 10:00:00', 1, 1),
+(7, 'Gyereknap', 'Gyereknapi rendezvény', '2026-05-25 00:00:00', 2, 2),
+(8, 'Prezentáció', 'Kliens előtti prezentáció', '2026-05-12 14:00:00', 1, 1),
+(9, 'Szünetnap', 'Céges szabadnap', '2026-06-01 00:00:00', 2, 2),
+(10, 'Dokumentáció frissítés', 'Új verzió dokumentációja', '2026-06-07 13:00:00', 1, 3),
+(11, 'Csapatépítő', 'Outdoor csapatépítő program', '2026-06-15 09:00:00', 2, 3),
+(12, 'Karbantartás', 'Szerver karbantartás', '2026-07-02 22:00:00', 1, 1),
+(13, 'Céges party', 'Nyári céges party', '2026-07-20 19:00:00', 2, 2);
 
 -- --------------------------------------------------------
 
