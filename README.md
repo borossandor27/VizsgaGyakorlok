@@ -93,6 +93,80 @@ A gyakorlati vizsga **240&nbsp;perc** időtartamú, amely során egy teljes kör
 
 A feladat megoldása során egy konzolos alkalmazást kell készíteni Java vagy C# nyelven, amely képes adatokat kezelni és megjeleníteni a felhasználó számára. Az adatforrás lehet egy helyi `.txt`, `csv`, `json` fájl vagy adatbázis. A kapott adatokból a programozási tételek alkalmazásával különböző műveleteket kell végezni, például keresést, szűrést vagy rendezést.
 
+#### Adatbázis (API) osztály .NET Frameworkre
+
+    ````Csharp
+    uusing System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Newtonsoft.Json; // Newtonsoft-ot használunk .NET Framework alatt
+
+    public class ApiService<T> where T : class
+    {
+        private readonly string _baseUrl;
+        // .NET Frameworkben a HttpClient-et érdemes statikusnak vagy singletonnak hagyni
+        private static readonly HttpClient _client = new HttpClient();
+
+        public ApiService(string baseUrl)
+        {
+            _baseUrl = baseUrl.EndsWith("/") ? baseUrl : baseUrl + "/";
+        }
+
+        // GET: Összes lekérése
+        public async Task<List<T>> GetAllAsync(string endpoint)
+        {
+            var response = await _client.GetAsync(_baseUrl + endpoint);
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<T>>(json);
+            }
+            return new List<T>();
+        }
+
+        // POST: Létrehozás
+        public async Task<bool> CreateAsync(string endpoint, T item)
+        {
+            var json = JsonConvert.SerializeObject(item);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            
+            var response = await _client.PostAsync(_baseUrl + endpoint, content);
+            return response.IsSuccessStatusCode;
+        }
+
+        // PUT: Frissítés
+        public async Task<bool> UpdateAsync(string endpoint, int id, T item)
+        {
+            var json = JsonConvert.SerializeObject(item);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await _client.PutAsync($"{_baseUrl}{endpoint}/{id}", content);
+            return response.IsSuccessStatusCode;
+        }
+
+        // DELETE: Törlés
+        public async Task<bool> DeleteAsync(string endpoint, int id)
+        {
+            var response = await _client.DeleteAsync($"{_baseUrl}{endpoint}/{id}");
+            return response.IsSuccessStatusCode;
+        }
+    }
+    ````
+
+    Használat:
+
+    ```Csharp
+    // Példa használat (pl. egy gombnyomásra):
+    var userService = new ApiService<User>("https://api.pelda.hu/api/");
+    var users = await userService.GetAllAsync("users");
+    foreach (var user in users)
+    {
+        Console.WriteLine($"ID: {user.Id}, Name: {user.Name}");
+    }
+    ```
+
 ### 2. Grafikus asztali alkalmazásfejlesztés
 
 A feladat megoldása során egy grafikus felhasználói felülettel rendelkező alkalmazást kell készíteni Java vagy C# nyelven. Az alkalmazásnak képesnek kell lennie adatokat megjeleníteni és kezelni a felhasználó számára. Az adatforrás lehet egy helyi `.txt`, `csv`, `json` fájl vagy adatbázis. A kapott adatokból a programozási tételek alkalmazásával különböző műveleteket kell végezni, például keresést, szűrést vagy rendezést.
