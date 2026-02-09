@@ -2,20 +2,42 @@
 
 ## Projekt leírása
 
-Ez a projekt egy teljeskörű gyümölcs-nyilvántartó alkalmazás, amely MySQL adatbázisban tárolja a gyümölcsök nevét, mennyiségét és egységárát. A backend egy Express.js alapú szerver, amely REST API végpontokat biztosít a React frontend számára az adatok megjelenítéséhez és módosításához.
+Ez a projekt gyümölcs érkezzését nyilvántartó alkalmazás, amely adatbázisban tárolja a gyümölcsök nevét, mennyiségét és egységárát. Az alkalmazás lehetővé teszi a gyümölcsök listázását, új gyümölcs hozzáadását, meglévő gyümölcs adatainak módosítását és gyümölcs törlését. A backend REST API végpontokat biztosít a frontend számára, amely egy felhasználóbarát felületen keresztül jeleníti meg az adatokat és kezeli a műveleteket.
 
-## Szükséges technológiai eszközök
+## Adatbázis szerkezet
 
-- **Backend**: Node.js, Express.js, MySQL
-- **Frontend**: React.js, Axios (HTTP kérésekhez)
-- **Adatbázis**: MySQL
+    ````sql
+    CREATE TABLE `gyumolcs` (
+      `gyumolcsid` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      `nev` varchar(200) UNIQUE NOT NULL,
+      `megjegyzes` varchar(500) DEFAULT NULL,
+      `nev_eng` varchar(200) DEFAULT NULL,
+      `alt_szoveg` varchar(200) NOT NULL,
+      `src` varchar(200) NOT NULL
+    );
 
-## Funkcionalitás
+    CREATE TABLE `erkezes` (
+      `gyumolcsid` bigint(20) UNSIGNED NOT NULL,
+      `mennyiseg` int(11) NOT NULL,
+      `egysegar` decimal(10,2) NOT NULL,
+      `erkezett` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
+    ````
 
-- Gyümölcsök listázása.
-- Új gyümölcs hozzáadása.
-- Meglévő gyümölcs adatainak módosítása.
-- Gyümölcs törlése.
+## Asztali konzolos alkalmazás
+
+Az asztali konzolos alkalmazás lehetővé teszi a gyümölcsök érkezési adatai alapján egyszerű mutatószámok megjelenítését. Az alábbi mutatószámokat kell megjeleníteni:
+
+    - 1. Az összes gyümölcs mennyisége.
+    - 2. Az összes gyümölcs értéke (mennyiség * egységár).
+    - 3. A legdrágább gyümölcs neve és egységára.
+    - 4. Mennyi volt az összértéke az "Alma" (gyumolcsid: 1) érkezéseinek?
+    - 5. Melyik gyümölcs érkezett a legtöbb alkalommal?
+    - 6. Hány szállítmány érkezett 2026 februárjában?
+
+## Asztali GUI alkalmazás
+
+Az asztali GUI alkalmazás egy grafikus felületet biztosít a gyümölcsök nyilvántartására. A felhasználó képes lesz megtekinteni a gyümölcsök listáját, hozzáadni új gyümölcsöket, szerkeszteni meglévő gyümölcsöket és törölni felesleges bejegyzéseket. Az alkalmazás a backend REST API végpontjait használja az adatok kezelésére.
 
 ## Backend REST API végpontok
 
@@ -32,25 +54,6 @@ Ez a projekt egy teljeskörű gyümölcs-nyilvántartó alkalmazás, amely MySQL
 - Szerkesztési lehetőség a meglévő gyümölcsökre.
 - Törlés gomb a felesleges bejegyzések eltávolítására.
 
-## Adatbázis szerkezet
-
-```sql
-CREATE TABLE `gyumolcs` (
-  `gyumolcsid` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nev` varchar(200) UNIQUE NOT NULL,
-  `megjegyzes` varchar(500) DEFAULT NULL,
-  `nev_eng` varchar(200) DEFAULT NULL,
-  `alt_szoveg` varchar(200) NOT NULL,
-  `src` varchar(200) NOT NULL
-);
-
-CREATE TABLE `erkezes` (
-  `gyumolcsid` bigint(20) UNSIGNED NOT NULL,
-  `mennyiseg` int(11) NOT NULL,
-  `egysegar` decimal(10,2) NOT NULL,
-  `erkezett` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-```
 
 ## Várható eredmény
 

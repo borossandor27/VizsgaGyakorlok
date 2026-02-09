@@ -12,7 +12,7 @@ Egyszerű felhasználó nyilvántartó alkalmazás.
 
 ## [3. Feladat ütemezés](./TodoAlkalmazas/)
 
-Egy egyszerű feladat ütemező alkalmazás, amely lehetővé teszi a felhasználók számára, hogy eseményeket hozzanak létre, megtekintsék, frissítsék és töröljék őket egy webes felületen keresztül. Az alkalmazás backend része Express.js keretrendszerrel készült, míg a frontend React.js-t használ.
+Egy egyszerű feladat ütemező alkalmazás, amely lehetővé teszi a felhasználók számára, hogy eseményeket hozzanak létre, megtekintsék, frissítsék és töröljék őket egy webes felületen keresztül.
 
 ## [4. Gyümölcsök](./Gyumolcsok/)
 
@@ -177,39 +177,39 @@ A feladat megoldása során egy reszponzív weboldalt kell készíteni HTML, CSS
 
 ### 4. Backend programozás
 
-A feladat megoldása során egy REST API kiszolgálót kell létrehozni, amely képes adatbázis lekérdezéseket végrehajtani és adatokat szolgáltatni a frontend számára. A backend alkalmazásnak képesnek kell lennie különböző végpontokat kezelni, amelyek lehetővé teszik az adatok lekérését, hozzáadását, módosítását és törlését. A backend alkalmazás fejlesztéséhez használhatók különböző programozási nyelvek és keretrendszerek, például Node.js, Python, Java vagy C#. Ajánlott az Express.js használata Node.js környezetben.
+A feladat megoldása során egy REST API kiszolgálót kell létrehozni, amely képes adatbázis lekérdezéseket végrehajtani és adatokat szolgáltatni a frontend számára. A backend alkalmazásnak képesnek kell lennie különböző végpontokat kezelni, amelyek lehetővé teszik az adatok lekérését, hozzáadását, módosítását és törlését. A backend alkalmazás fejlesztéséhez használhatók különböző programozási nyelvek és keretrendszerek, például Node.js, Python, Java vagy C#. Ajánlott az Express.js használata.
 
-  ````bash
-  mkdir vizsga
-  cd vizsga
-  mkdir forras
-  mkdir asztali
-  mkdir backend
-  cd backend
-  npm i express mysql2 cors
-  npm pkg set type=module
-  echo import express from 'express'; > index.js
-  echo import cors from 'cors'; >> index.js
-  echo import mysql from 'mysql2'; >> index.js
-  echo. >> index.js
-  echo const app = express(); >> index.js
-  echo app.use(cors()); >> index.js
-  echo app.use(express.json()); >> index.js
-  echo. >> index.js
-  echo const db = mysql.createConnection(^{ >> index.js
-  echo     host: 'localhost', >> index.js
-  echo     user: 'root', >> index.js
-  echo     password: '', >> index.js
-  echo     database: '', >> index.js
-  echo     port: 3306 >> index.js
-  echo }); >> index.js
-  echo. >> index.js
-  echo // vegpontok >> index.js
-  echo. >> index.js
-  echo app.listen(3000, () =^> ^{ >> index.js
-  echo     console.log('Server is running on http://localhost:3000'); >> index.js
-  echo }); >> index.js
-  ````
+    ````bash
+    mkdir vizsga
+    cd vizsga
+    mkdir forras
+    mkdir asztali
+    mkdir backend
+    cd backend
+    npm i express mysql2 cors
+    npm pkg set type=module
+    echo import express from 'express'; > index.js
+    echo import cors from 'cors'; >> index.js
+    echo import mysql from 'mysql2'; >> index.js
+    echo. >> index.js
+    echo const app = express(); >> index.js
+    echo app.use(cors()); >> index.js
+    echo app.use(express.json()); >> index.js
+    echo. >> index.js
+    echo const db = mysql.createConnection(^{ >> index.js
+    echo     host: 'localhost', >> index.js
+    echo     user: 'root', >> index.js
+    echo     password: '', >> index.js
+    echo     database: '', >> index.js
+    echo     port: 3306 >> index.js
+    echo }); >> index.js
+    echo. >> index.js
+    echo // vegpontok >> index.js
+    echo. >> index.js
+    echo app.listen(3000, () =^> ^{ >> index.js
+    echo     console.log('Server is running on http://localhost:3000'); >> index.js
+    echo }); >> index.js
+    ````
 
 ### 5. Frontend programozás
 
