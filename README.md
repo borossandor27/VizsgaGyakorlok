@@ -2,6 +2,76 @@
 
 A szakmai vizsga `projekt vizsga-tevékenység ` `adatbázis - backend - frontend` 240&nbsp;perces gyakorlati vizsgafeladatára felkészülést segítő feladatok
 
+## 1. [Könyv áruház](./KonyvAruhaz/)
+
+Erős feladat authentikációval, jogosultság kezeléssel.
+
+## 2. [Felhasználó nyilvántartás](./UserRegister/)
+
+Egyszerű felhasználó nyilvántartó alkalmazás.
+
+## 3. [Feladat ütemezés](./TodoAlkalmazas/)
+
+Egy egyszerű feladat ütemező alkalmazás, amely lehetővé teszi a felhasználók számára, hogy eseményeket hozzanak létre, megtekintsék, frissítsék és töröljék őket egy webes felületen keresztül. Az alkalmazás backend része Express.js keretrendszerrel készült, míg a frontend React.js-t használ.
+
+## 4. [Gyümölcsök](./Gyumolcsok/)
+
+Egyszerű gyümölcs nyilvántartó alkalmazás.
+
+## 5. [Névnap kereső](./Nevnapkereso/)
+
+## 6. [Ingatlan hirdetések](./Ingatlanhirdetesek/)
+
+## 7. [Éttermi rendelések](./EttermiRendeles/)
+
+Egyszerű éttermi rendelés kezelő alkalmazás.
+
+## 8. [Autó kölcsönzés](./AutoKolcsonzes/)
+
+## 9. [Diák nyilvántartás](./DiakNyilvantartas/)
+
+## 10. [Mozijegyek](./Mozijegyek/)
+
+## 11. [Zenelejátszó](./Zenelejatszo/)
+
+## 12. [Sportesemények](./Sportesemenyek/)
+
+## 13. [Utazási ajánlatok](./UtazasiAjanlatok/)
+
+## 14. [Kép galéria](./KepGaleria/)
+
+## 15. [Állatmenhely](./Allatmenhely/)
+
+## 16. [Online tanfolyamok](./OnlineTanfolyamok/)
+
+## 17. [Hírek olvasó](./HirOlvaso/)
+
+## 18. [Időjárás alkalmazás](./IdojarasAlkalmazas/)
+
+## 19. [Közösségi hálózat](./KozossegiHalozat/)
+
+## 20. [Egészségügyi napló](./EgeszsegugyiNaplo/)
+
+## 21. [Kertészeti napló](./KerteszetiNaplo/)
+
+## 22. [Film adatbázis](./FilmAdatbazis/)
+
+## 23. [Receptek gyűjteménye](./ReceptekGyujtemenye/)
+
+## 24. [Közlekedési menetrend](./KozlekedesiMenetrend/)
+
+## 25. [Könyvjelző kezelő](./KonyvjelzoKezele/)
+
+## 26. [Nyelvtanuló alkalmazás](./NyelvtanuloAlkalmazas/)
+
+## 27. [Pénzügyi nyilvántartás](./PenzugyiNyilvantartas/)
+
+## 28. [Művészeti galéria](./MuveszetiGaleria/)
+
+## 29. [Virtuális könyvtár](./VirtualisKonyvtar/)
+
+## 30. [Autóalkatrész bolt](./AutoalkatreszBolt/)
+
 ## A gyakorlati vizsga
 
 A gyakorlati vizsga **240&nbsp;perc** időtartamú, amely során egy teljes körű webalkalmazást és konzolos és GUI felületű asztali alkalmazást kell elkészíteni a megadott követelmények alapján. A vizsga során a jelölteknek lehetőségük van bemutatni a megszerzett tudásukat és képességeiket a webfejlesztés és adatbázis-kezelés terén.
@@ -222,73 +292,3 @@ A feladat megoldása során egy webes frontend alkalmazást kell készíteni HTM
     )
   }
   ````
-
-## 1. [Könyv áruház](./KonyvAruhaz/)
-
-Erős feladat authentikációval, jogosultság kezeléssel, adatbázis kapcsolattal, REST API backenddel és React front-enddel.
-
-## 2. [Felhasználó nyilvántartás](./UserRegister/)
-
-Egyszerű felhasználó nyilvántartó alkalmazás konzolos és grafikus felülettel, valamint webes front-end és backend résszel.
-
-## 3. [Feladat ütemezés](./TodoAlkalmazas/)
-
-Egy egyszerű feladat ütemező alkalmazás, amely lehetővé teszi a felhasználók számára, hogy eseményeket hozzanak létre, megtekintsék, frissítsék és töröljék őket egy webes felületen keresztül. Az alkalmazás backend része Express.js keretrendszerrel készült, míg a frontend React.js-t használ.
-
-## 4. [Gyümölcsök](./Gyumolcsok/)
-
-Egyszerű gyümölcs nyilvántartó alkalmazás konzolos és grafikus felülettel, valamint webes front-end és backend résszel.
-
-## 5. [Névnap kereső](./Nevnapkereso/)
-
-## 6. [Ingatlan hirdetések](./Ingatlanhirdetesek/)
-
-## 7. [Éttermi rendelések](./EttermiRendeles/)
-
-Egyszerű éttermi rendelés kezelő alkalmazás konzolos és grafikus felülettel, valamint webes front-end és backend résszel.
-
-## 8. [Autó kölcsönzés](./AutoKolcsonzes/)
-
-## 9. [Diák nyilvántartás](./DiakNyilvantartas/)
-
-## 10. [Mozijegyek](./Mozijegyek/)
-
-## 11. [Zenelejátszó](./Zenelejatszo/)
-
-## 12. [Sportesemények](./Sportesemenyek/)
-
-## 13. [Utazási ajánlatok](./UtazasiAjanlatok/)
-
-## 14. [Kép galéria](./KepGaleria/)
-
-## 15. [Állatmenhely](./Allatmenhely/)
-
-## 16. [Online tanfolyamok](./OnlineTanfolyamok/)
-
-## 17. [Hírek olvasó](./HirOlvaso/)
-
-## 18. [Időjárás alkalmazás](./IdojarasAlkalmazas/)
-
-## 19. [Közösségi hálózat](./KozossegiHalozat/)
-
-## 20. [Egészségügyi napló](./EgeszsegugyiNaplo/)
-
-## 21. [Kertészeti napló](./KerteszetiNaplo/)
-
-## 22. [Film adatbázis](./FilmAdatbazis/)
-
-## 23. [Receptek gyűjteménye](./ReceptekGyujtemenye/)
-
-## 24. [Közlekedési menetrend](./KozlekedesiMenetrend/)
-
-## 25. [Könyvjelző kezelő](./KonyvjelzoKezele/)
-
-## 26. [Nyelvtanuló alkalmazás](./NyelvtanuloAlkalmazas/)
-
-## 27. [Pénzügyi nyilvántartás](./PenzugyiNyilvantartas/)
-
-## 28. [Művészeti galéria](./MuveszetiGaleria/)
-
-## 29. [Virtuális könyvtár](./VirtualisKonyvtar/)
-
-## 30. [Autóalkatrész bolt](./AutoalkatreszBolt/)
