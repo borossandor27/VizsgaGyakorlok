@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="ConsoleApp/ConsoleApp.csproj" Id="190217ae-4348-46a6-a4e2-6e39aa8021fd" />
+  <Project Path="GUI_WinFormsListbox/GUI_WinFormsListbox.csproj" Id="d08dfe8b-2638-47fa-a659-ed27e3b6720c" />
 </Solution>

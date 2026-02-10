@@ -32,10 +32,25 @@ namespace ConsoleApp
 
             // 4.Mennyi volt az összértéke az "Alma"(gyumolcsid: 1) érkezéseinek ?
             feladat04();
-// 5.Melyik gyümölcs érkezett a legtöbb alkalommal?
+            // 5.Melyik gyümölcs érkezett a legtöbb alkalommal?
+            feladat05();
     // 6.Hány szállítmány érkezett 2026 februárjában?
+            feladat06();
             Console.WriteLine("\nProgram vége!");
             Console.ReadKey();
+        }
+
+        private static void feladat06()
+        {
+            Console.WriteLine("\n6. feladat");
+            Console.WriteLine($"\t2026 februárjában érkezett szállítmányok száma: {gyumolcsok.Sum(g => g.Erkezesek.Count(e => e.ErkezesDatum.Year == 2026 && e.ErkezesDatum.Month == 2))}");
+        }
+
+        private static void feladat05()
+        {
+            Console.WriteLine("\n5. feladat");
+            Gyumolcs legtobbszorErkezett = gyumolcsok.OrderByDescending(g => g.Erkezesek.Count).FirstOrDefault();
+            Console.WriteLine($"\tA legtöbbször érkezett gyümölcs neve: \"{legtobbszorErkezett.Nev}\" és érkezéseinek száma: {legtobbszorErkezett.Erkezesek.Count} db");
         }
 
         private static void feladat04()
