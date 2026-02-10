@@ -1,6 +1,6 @@
-# Feladat ütemezés
+# Feladat ütemezés feladat
 
-Egy egyszerű feladat ütemező alkalmazás, amely lehetővé teszi a felhasználók számára, hogy eseményeket hozzanak létre, megtekintsék, frissítsék és töröljék őket egy webes felületen keresztül. Az alkalmazás backend része Express.js keretrendszerrel készült, míg a frontend React.js-t használ.
+Egy egyszerű feladat ütemező alkalmazás, amely lehetővé teszi a felhasználók számára, hogy eseményeket hozzanak létre, megtekintsék, frissítsék és töröljék őket.
 
 ## Adatbázis
 

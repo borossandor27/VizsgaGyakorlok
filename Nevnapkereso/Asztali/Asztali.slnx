@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ConsoleApp/ConsoleApp.csproj" />
+  <Project Path="Fuggohidak/Fuggohidak.csproj" />
+</Solution>
