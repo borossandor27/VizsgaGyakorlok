@@ -4,7 +4,7 @@ const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'gyumolcsok',
+    database: 'gyumolcs_db',
     waitForConnections: true, // Ha nincs szabad kapcsolat, várakozzon
     connectionLimit: 10,   // Maximális egyidejű kapcsolatok száma
     queueLimit: 0 // Várakozási sor korlátlan
