@@ -17,9 +17,9 @@ namespace UserRegisterConsole
             string[] _adatok = inputSor.Split(';');
             Id = long.Parse(_adatok[0].Replace("\"",""));
             Name = _adatok[1].Replace("\"", "");
-            string _tempDatum = _adatok[3].Replace("\"", "");
+            string _tempDatum = _adatok[2].Replace("\"", "");
             Birthday = DateTime.Parse(_tempDatum);
-            EmailAddress = _adatok[2];
+            EmailAddress = _adatok[3];
         }
         override public string ToString()
         {
