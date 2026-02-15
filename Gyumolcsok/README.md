@@ -4,26 +4,6 @@
 
 Ez a projekt gyümölcs érkezzését nyilvántartó alkalmazás, amely adatbázisban tárolja a gyümölcsök nevét, mennyiségét és egységárát. Az alkalmazás lehetővé teszi a gyümölcsök listázását, új gyümölcs hozzáadását, meglévő gyümölcs adatainak módosítását és gyümölcs törlését. A backend REST API végpontokat biztosít a frontend számára, amely egy felhasználóbarát felületen keresztül jeleníti meg az adatokat és kezeli a műveleteket.
 
-## Adatbázis szerkezet
-
-    ````sql
-    CREATE TABLE `gyumolcs` (
-      `gyumolcsid` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-      `nev` varchar(200) UNIQUE NOT NULL,
-      `megjegyzes` varchar(500) DEFAULT NULL,
-      `nev_eng` varchar(200) DEFAULT NULL,
-      `alt_szoveg` varchar(200) NOT NULL,
-      `src` varchar(200) NOT NULL
-    );
-
-    CREATE TABLE `erkezes` (
-      `gyumolcsid` bigint(20) UNSIGNED NOT NULL,
-      `mennyiseg` int(11) NOT NULL,
-      `egysegar` decimal(10,2) NOT NULL,
-      `erkezett` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-    );
-    ````
-
 ## Asztali konzolos alkalmazás
 
 Az asztali konzolos alkalmazás lehetővé teszi a gyümölcsök érkezési adatai alapján egyszerű mutatószámok megjelenítését. Az alábbi mutatószámokat kell megjeleníteni:

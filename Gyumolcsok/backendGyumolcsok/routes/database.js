@@ -10,5 +10,5 @@ const connection = mysql.createPool({
     queueLimit: 0 // Várakozási sor korlátlan
 
 });
-console.log('Dadatbázis-kapcsolat létrejött!');
+console.log('Az adatbázis-kapcsolat létrejött!');
 export default connection;

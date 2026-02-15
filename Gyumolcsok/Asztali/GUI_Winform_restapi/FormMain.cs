@@ -32,12 +32,14 @@ namespace WindowsFormsApp1
                     "Kapcsolati hiba",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+                Environment.Exit(0 );
             }
             else
             {
 
                 await GyumolcsoketBetoltAsync();
-                dataGridView_gyumolcsok.DataSource = gyumolcsok;
+                listBox_gyumolcsok.DataSource = gyumolcsok;
+                listBox_gyumolcsok.DisplayMember = "Nev";
             }
 
         }
