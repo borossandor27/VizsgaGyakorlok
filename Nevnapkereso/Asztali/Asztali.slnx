@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="ConsoleApp/ConsoleApp.csproj" />
-  <Project Path="Fuggohidak/Fuggohidak.csproj" />
+  <Project Path="ConsoleApp/ConsoleApp.csproj" Id="044f8a1f-e080-413b-8f14-5ecb17cbe45c" />
+  <Project Path="Fuggohidak/Fuggohidak.csproj" Id="637a1246-411c-412f-b89e-1a56daef0df0" />
 </Solution>

@@ -12,6 +12,7 @@ namespace Fuggohidak
 {
     public partial class FormMain : Form
     {
+        BindingList<Fuggohid> _fuggohidak = new BindingList<Fuggohid>();
         public FormMain()
         {
             InitializeComponent();
@@ -19,7 +20,13 @@ namespace Fuggohidak
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            
+            CsvOlvaso csvOlvaso = new CsvOlvaso();
+foreach (Fuggohid fuggohid in csvOlvaso.readFromCSV("fuggohidak.csv"))
+            {
+                _fuggohidak.Add(fuggohid);
+            }
+            listBox_hidak.DataSource = _fuggohidak;
+            listBox_hidak.DisplayMember = "Hid";
         }
 
         private void megnyitásToolStripMenuItem_Click(object sender, EventArgs e)
