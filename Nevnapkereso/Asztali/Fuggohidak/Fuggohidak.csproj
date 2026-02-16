@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="CsvManager.cs" />
     <Compile Include="CsvOlvaso.cs" />
+    <Compile Include="FormKereses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKereses.Designer.cs">
+      <DependentUpon>FormKereses.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,9 @@
     <Compile Include="Fuggohid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormKereses.resx">
+      <DependentUpon>FormKereses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>

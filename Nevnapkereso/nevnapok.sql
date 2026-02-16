@@ -8,7 +8,7 @@
 
 --   * * * * * * * * * * * * * * * * * * * * * * *
 --   *                                           *
---   *   A fájl karakterkészlete: latin2  !!!    *
+--   *   A fájl karakterkészlete: utf-8  !!!    *
 --   *                                           *
 --   * * * * * * * * * * * * * * * * * * * * * * *
 

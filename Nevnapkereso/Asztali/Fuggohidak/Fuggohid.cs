@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fuggohidak
 {
-    internal class Fuggohid
+    public class Fuggohid
     {
         public int Helyezes;
         public string Hid;
