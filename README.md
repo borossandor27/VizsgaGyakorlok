@@ -20,6 +20,8 @@ Egyszerű gyümölcs nyilvántartó alkalmazás.
 
 ## [5. Névnap kereső](./Nevnapkereso/)
 
+2022-ben központilag Fodor Péter és Kovács László Bálint által készített és az [infojegyzeten](https://infojegyzet.hu/vizsgafeladatok/szoftverfejleszto-projektfeladat/) is közzétett gyakorlati feladatsor minta.
+
 ## [6. Ingatlan hirdetések](./Ingatlanhirdetesek/)
 
 ## [7. Éttermi rendelések](./EttermiRendeles/)
