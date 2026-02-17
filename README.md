@@ -24,6 +24,8 @@ Egyszerű gyümölcs nyilvántartó alkalmazás.
 
 ## [6. Ingatlan hirdetések](./Ingatlanhirdetesek/)
 
+Infotanár Mentor Program Club által 2022-ben készített gyakorlati vizsga feladatsor minta.
+
 ## [7. Éttermi rendelések](./EttermiRendeles/)
 
 Egyszerű éttermi rendelés kezelő alkalmazás.
