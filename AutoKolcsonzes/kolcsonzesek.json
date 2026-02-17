@@ -1,0 +1,272 @@
+[
+ {
+   "kolcsonzes_szama": 1,
+   "ugyfel": "Kovács János",
+   "automarka": "Volkswagen",
+   "automodell": "Golf 8",
+   "napi_dij": 18000,
+   "mettol": "2025-01-10",
+   "meddig": "2025-01-15"
+ },
+ {
+   "kolcsonzes_szama": 15,
+   "ugyfel": "Kovács János",
+   "automarka": "Volkswagen",
+   "automodell": "Golf 8",
+   "napi_dij": 18000,
+   "mettol": "2025-08-10",
+   "meddig": "2025-08-15"
+ },
+ {
+   "kolcsonzes_szama": 30,
+   "ugyfel": "Kovács János",
+   "automarka": "Toyota",
+   "automodell": "Corolla",
+   "napi_dij": 22000,
+   "mettol": "2026-02-16",
+   "meddig": "2026-02-20"
+ },
+ {
+   "kolcsonzes_szama": 10,
+   "ugyfel": "Kovács János",
+   "automarka": "Tesla",
+   "automodell": "Model 3",
+   "napi_dij": 45000,
+   "mettol": "2025-06-01",
+   "meddig": "2025-06-10"
+ },
+ {
+   "kolcsonzes_szama": 25,
+   "ugyfel": "Kovács János",
+   "automarka": "Ford",
+   "automodell": "Transit",
+   "napi_dij": 25000,
+   "mettol": "2026-01-15",
+   "meddig": "2026-01-20"
+ },
+ {
+   "kolcsonzes_szama": 20,
+   "ugyfel": "Kovács János",
+   "automarka": "Fiat",
+   "automodell": "500e",
+   "napi_dij": 15000,
+   "mettol": "2025-11-01",
+   "meddig": "2025-11-05"
+ },
+ {
+   "kolcsonzes_szama": 2,
+   "ugyfel": "Nagy Andrea",
+   "automarka": "Toyota",
+   "automodell": "Corolla",
+   "napi_dij": 22000,
+   "mettol": "2025-01-12",
+   "meddig": "2025-01-20"
+ },
+ {
+   "kolcsonzes_szama": 16,
+   "ugyfel": "Nagy Andrea",
+   "automarka": "Toyota",
+   "automodell": "Corolla",
+   "napi_dij": 22000,
+   "mettol": "2025-09-01",
+   "meddig": "2025-09-10"
+ },
+ {
+   "kolcsonzes_szama": 11,
+   "ugyfel": "Nagy Andrea",
+   "automarka": "Ford",
+   "automodell": "Transit",
+   "napi_dij": 25000,
+   "mettol": "2025-06-12",
+   "meddig": "2025-06-15"
+ },
+ {
+   "kolcsonzes_szama": 26,
+   "ugyfel": "Nagy Andrea",
+   "automarka": "BMW",
+   "automodell": "X5",
+   "napi_dij": 55000,
+   "mettol": "2026-01-25",
+   "meddig": "2026-01-30"
+ },
+ {
+   "kolcsonzes_szama": 6,
+   "ugyfel": "Nagy Andrea",
+   "automarka": "Fiat",
+   "automodell": "500e",
+   "napi_dij": 15000,
+   "mettol": "2025-03-15",
+   "meddig": "2025-03-18"
+ },
+ {
+   "kolcsonzes_szama": 21,
+   "ugyfel": "Nagy Andrea",
+   "automarka": "Skoda",
+   "automodell": "Octavia",
+   "napi_dij": 19500,
+   "mettol": "2025-11-10",
+   "meddig": "2025-11-15"
+ },
+ {
+   "kolcsonzes_szama": 22,
+   "ugyfel": "Tóth Péter",
+   "automarka": "Volkswagen",
+   "automodell": "Golf 8",
+   "napi_dij": 18000,
+   "mettol": "2025-12-01",
+   "meddig": "2025-12-08"
+ },
+ {
+   "kolcsonzes_szama": 3,
+   "ugyfel": "Tóth Péter",
+   "automarka": "Tesla",
+   "automodell": "Model 3",
+   "napi_dij": 45000,
+   "mettol": "2025-02-01",
+   "meddig": "2025-02-05"
+ },
+ {
+   "kolcsonzes_szama": 17,
+   "ugyfel": "Tóth Péter",
+   "automarka": "Tesla",
+   "automodell": "Model 3",
+   "napi_dij": 45000,
+   "mettol": "2025-09-15",
+   "meddig": "2025-09-20"
+ },
+ {
+   "kolcsonzes_szama": 12,
+   "ugyfel": "Tóth Péter",
+   "automarka": "BMW",
+   "automodell": "X5",
+   "napi_dij": 55000,
+   "mettol": "2025-07-05",
+   "meddig": "2025-07-12"
+ },
+ {
+   "kolcsonzes_szama": 27,
+   "ugyfel": "Tóth Péter",
+   "automarka": "Fiat",
+   "automodell": "500e",
+   "napi_dij": 15000,
+   "mettol": "2026-02-01",
+   "meddig": "2026-02-05"
+ },
+ {
+   "kolcsonzes_szama": 7,
+   "ugyfel": "Tóth Péter",
+   "automarka": "Skoda",
+   "automodell": "Octavia",
+   "napi_dij": 19500,
+   "mettol": "2025-04-01",
+   "meddig": "2025-04-07"
+ },
+ {
+   "kolcsonzes_szama": 8,
+   "ugyfel": "Szabó Zoltán",
+   "automarka": "Volkswagen",
+   "automodell": "Golf 8",
+   "napi_dij": 18000,
+   "mettol": "2025-04-10",
+   "meddig": "2025-04-15"
+ },
+ {
+   "kolcsonzes_szama": 23,
+   "ugyfel": "Szabó Zoltán",
+   "automarka": "Toyota",
+   "automodell": "Corolla",
+   "napi_dij": 22000,
+   "mettol": "2025-12-15",
+   "meddig": "2025-12-22"
+ },
+ {
+   "kolcsonzes_szama": 4,
+   "ugyfel": "Szabó Zoltán",
+   "automarka": "Ford",
+   "automodell": "Transit",
+   "napi_dij": 25000,
+   "mettol": "2025-02-10",
+   "meddig": "2025-02-12"
+ },
+ {
+   "kolcsonzes_szama": 18,
+   "ugyfel": "Szabó Zoltán",
+   "automarka": "Ford",
+   "automodell": "Transit",
+   "napi_dij": 25000,
+   "mettol": "2025-10-05",
+   "meddig": "2025-10-08"
+ },
+ {
+   "kolcsonzes_szama": 13,
+   "ugyfel": "Szabó Zoltán",
+   "automarka": "Fiat",
+   "automodell": "500e",
+   "napi_dij": 15000,
+   "mettol": "2025-07-20",
+   "meddig": "2025-07-22"
+ },
+ {
+   "kolcsonzes_szama": 28,
+   "ugyfel": "Szabó Zoltán",
+   "automarka": "Skoda",
+   "automodell": "Octavia",
+   "napi_dij": 19500,
+   "mettol": "2026-02-10",
+   "meddig": "2026-02-14"
+ },
+ {
+   "kolcsonzes_szama": 29,
+   "ugyfel": "Kiss Mária",
+   "automarka": "Volkswagen",
+   "automodell": "Golf 8",
+   "napi_dij": 18000,
+   "mettol": "2026-02-15",
+   "meddig": "2026-02-18"
+ },
+ {
+   "kolcsonzes_szama": 9,
+   "ugyfel": "Kiss Mária",
+   "automarka": "Toyota",
+   "automodell": "Corolla",
+   "napi_dij": 22000,
+   "mettol": "2025-05-20",
+   "meddig": "2025-05-25"
+ },
+ {
+   "kolcsonzes_szama": 24,
+   "ugyfel": "Kiss Mária",
+   "automarka": "Tesla",
+   "automodell": "Model 3",
+   "napi_dij": 45000,
+   "mettol": "2026-01-05",
+   "meddig": "2026-01-10"
+ },
+ {
+   "kolcsonzes_szama": 5,
+   "ugyfel": "Kiss Mária",
+   "automarka": "BMW",
+   "automodell": "X5",
+   "napi_dij": 55000,
+   "mettol": "2025-03-05",
+   "meddig": "2025-03-10"
+ },
+ {
+   "kolcsonzes_szama": 19,
+   "ugyfel": "Kiss Mária",
+   "automarka": "BMW",
+   "automodell": "X5",
+   "napi_dij": 55000,
+   "mettol": "2025-10-15",
+   "meddig": "2025-10-22"
+ },
+ {
+   "kolcsonzes_szama": 14,
+   "ugyfel": "Kiss Mária",
+   "automarka": "Skoda",
+   "automodell": "Octavia",
+   "napi_dij": 19500,
+   "mettol": "2025-08-01",
+   "meddig": "2025-08-05"
+ }
+]

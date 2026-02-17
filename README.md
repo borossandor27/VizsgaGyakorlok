@@ -1,6 +1,6 @@
 # Gyakorló feladatok
 
-A szakmai vizsga `projekt vizsga-tevékenység ` `adatbázis - backend - frontend` 240&nbsp;perces gyakorlati vizsgafeladatára felkészülést segítő feladatok
+A szakmai vizsga `projekt vizsga-tevékenység` `adatbázis - backend - frontend` 240&nbsp;perces gyakorlati vizsgafeladatára felkészülést segítő feladatok
 
 ## [1. Könyv áruház](./KonyvAruhaz/)
 
@@ -24,7 +24,7 @@ Egyszerű gyümölcs nyilvántartó alkalmazás.
 
 ## [6. Ingatlan hirdetések](./Ingatlanhirdetesek/)
 
-Infotanár Mentor Program Club által 2022-ben készített gyakorlati vizsga feladatsor minta.
+[Infotanár Mentor Program Club](https://www.itmp.hu/) által 2022-ben készített gyakorlati vizsga feladat minta.
 
 ## [7. Éttermi rendelések](./EttermiRendeles/)
 
