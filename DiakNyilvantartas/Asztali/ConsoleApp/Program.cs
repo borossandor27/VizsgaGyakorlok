@@ -8,8 +8,13 @@ namespace ConsoleApp
 {
     internal class Program
     {
+        static List<JegyRecord> jegyek = new List<JegyRecord>();
         static void Main(string[] args)
         {
+            Console.WriteLine("Program indul...");
+
+            Console.WriteLine("\nProgram vége!");
+            Console.ReadKey();
         }
     }
 }

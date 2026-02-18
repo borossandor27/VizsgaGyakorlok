@@ -54,3 +54,24 @@ Készíts egy Windows Forms vagy WPF alkalmazást, amely egy diáknyilvántartá
 - Felhasználói élmény: Az alkalmazás legyen felhasználóbarát, könnyen navigálható és esztétikus megjelenésű.
 
 Az alkalmazás fejlesztése során használj objektumorientált programozási elveket, és törekedj a kód tisztaságára és karbantarthatóságára. Az adatok kezelésére használj megfelelő adatstruktúrákat (pl. listák, osztályok), és implementálj hatékony algoritmusokat a statisztikák és rangsorok kiszámításához. Az alkalmazás tesztelése során győződj meg arról, hogy minden funkció megfelelően működik, és az adatok helyesen jelennek meg a felhasználói felületen.
+
+## Back-end fejlesztés
+
+Készíts egy RESTful API-t ASP.NET Core-ban, amely egy diáknyilvántartást valósít meg. Az API-nak a következő végpontokat kell tartalmaznia:
+
+- **GET /students**: Visszaadja az összes diák listáját.
+- **GET /students/{id}**: Visszaadja egy adott diák adatait azonosító alapján.
+- **POST /students**: Új diák hozzáadása az adatbázishoz.
+- **PUT /students/{id}**: Egy adott diák adatainak frissítése azonosító alapján.
+- **DELETE /students/{id}**: Egy adott diák törlése az adatbázisból.
+
+[Adatbázist létrehozó SQL szkript](./forrasok/diaknyilvatartas.sql)
+
+## Front-end fejlesztés
+
+Készíts egy egyszerű webalkalmazást React-ben, amely a fenti RESTful API-t használja a diáknyilvántartás kezelésére. Az alkalmazásnak a következő funkciókat kell tartalmaznia:
+
+- Diákok listázása: Megjeleníti az összes diák nevét és adatait egy táblázatban.
+- Diák hozzáadása: Lehetővé teszi új diákok hozzáadását egy űrlapon keresztül.
+- Diák szerkesztése: Lehetővé teszi egy adott diák adatainak frissítését egy szerkesztő űrlapon keresztül.
+- Diák törlése: Lehetővé teszi egy adott diák törlését egy gomb megnyomásával.
