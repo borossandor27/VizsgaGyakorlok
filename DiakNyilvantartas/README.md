@@ -42,3 +42,15 @@ Készíts egy konzolos alkalmazást, amely egy diáknyilvántartást valósít m
 22. **Diák rangsor**: Rangsorold a diákokat a tanulmányi átlaguk alapján, és írd ki a top 5 diákot!
 23. **Tantárgyi rangsor**: Rangsorold a tantárgyakat a kiosztott jegyek átlaga alapján, és írd ki a top 3 tantárgyat!
 
+## C# GUI-s feladat
+
+Készíts egy Windows Forms vagy WPF alkalmazást, amely egy diáknyilvántartást valósít meg. Az alkalmazásnak a következő funkciókat kell tartalmaznia:
+
+- Adatbevitel: Lehetővé teszi új diákok és jegyek hozzáadását egy űrlapon keresztül.
+- Adatmegjelenítés: Egy DataGridView-ben vagy ListView-ben jeleníti meg a rögzített adatokat.
+- Statisztikák: Egy külön panelen vagy ablakban jeleníti meg a fent említett statisztikákat és rangsorokat.
+- Szűrés és keresés: Lehetővé teszi a diákok és jegyek szűrését és keresését különböző kritériumok alapján (pl. név, tantárgy, jegy).
+- Adatmentés és betöltés: Lehetővé teszi az adatok mentését egy fájlba (pl. CSV, JSON) és betöltését onnan.
+- Felhasználói élmény: Az alkalmazás legyen felhasználóbarát, könnyen navigálható és esztétikus megjelenésű.
+
+Az alkalmazás fejlesztése során használj objektumorientált programozási elveket, és törekedj a kód tisztaságára és karbantarthatóságára. Az adatok kezelésére használj megfelelő adatstruktúrákat (pl. listák, osztályok), és implementálj hatékony algoritmusokat a statisztikák és rangsorok kiszámításához. Az alkalmazás tesztelése során győződj meg arról, hogy minden funkció megfelelően működik, és az adatok helyesen jelennek meg a felhasználói felületen.
