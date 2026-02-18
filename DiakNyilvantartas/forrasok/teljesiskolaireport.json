@@ -1,0 +1,498 @@
+[
+  {
+    "Diak_Neve": "Balogh Ádám",
+    "Osztaly": "10.A",
+    "Tantargy": "Matematika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 5,
+    "Datum": "2024-02-01"
+  },
+  {
+    "Diak_Neve": "Balogh Ádám",
+    "Osztaly": "10.A",
+    "Tantargy": "Matematika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 4,
+    "Datum": "2024-02-15"
+  },
+  {
+    "Diak_Neve": "Nagy Kevin",
+    "Osztaly": "11.B",
+    "Tantargy": "Matematika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 3,
+    "Datum": "2024-02-01"
+  },
+  {
+    "Diak_Neve": "Sándor Olivér",
+    "Osztaly": "11.B",
+    "Tantargy": "Matematika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 5,
+    "Datum": "2024-04-26"
+  },
+  {
+    "Diak_Neve": "Mészáros Janka",
+    "Osztaly": "10.A",
+    "Tantargy": "Matematika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 5,
+    "Datum": "2024-03-03"
+  },
+  {
+    "Diak_Neve": "Juhász Gerg",
+    "Osztaly": "10.A",
+    "Tantargy": "Matematika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 3,
+    "Datum": "2024-05-10"
+  },
+  {
+    "Diak_Neve": "Lakatos Imre",
+    "Osztaly": "10.A",
+    "Tantargy": "Matematika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 5,
+    "Datum": "2024-03-11"
+  },
+  {
+    "Diak_Neve": "Barna Vivien",
+    "Osztaly": "11.B",
+    "Tantargy": "Matematika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 1,
+    "Datum": "2024-02-13"
+  },
+  {
+    "Diak_Neve": "Csonka Beáta",
+    "Osztaly": "10.A",
+    "Tantargy": "Fizika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 2,
+    "Datum": "2024-02-05"
+  },
+  {
+    "Diak_Neve": "Oláh Laura",
+    "Osztaly": "11.B",
+    "Tantargy": "Fizika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 1,
+    "Datum": "2024-04-23"
+  },
+  {
+    "Diak_Neve": "Sándor Olivér",
+    "Osztaly": "11.B",
+    "Tantargy": "Fizika",
+    "Tanar_Neve": "Horgas Csaba",
+    "Jegy": 3,
+    "Datum": "2024-04-20"
+  },
+  {
+    "Diak_Neve": "Balogh Ádám",
+    "Osztaly": "10.A",
+    "Tantargy": "Történelem",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 3,
+    "Datum": "2024-02-10"
+  },
+  {
+    "Diak_Neve": "Dudás Csilla",
+    "Osztaly": "10.A",
+    "Tantargy": "Magyar nyelv",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 4,
+    "Datum": "2024-02-11"
+  },
+  {
+    "Diak_Neve": "Fekete Dávid",
+    "Osztaly": "10.A",
+    "Tantargy": "Magyar nyelv",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 3,
+    "Datum": "2024-03-09"
+  },
+  {
+    "Diak_Neve": "Rácz Nóra",
+    "Osztaly": "11.B",
+    "Tantargy": "Magyar nyelv",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 1,
+    "Datum": "2024-02-09"
+  },
+  {
+    "Diak_Neve": "Sándor Olivér",
+    "Osztaly": "11.B",
+    "Tantargy": "Magyar nyelv",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 1,
+    "Datum": "2024-03-10"
+  },
+  {
+    "Diak_Neve": "Oláh Laura",
+    "Osztaly": "11.B",
+    "Tantargy": "Magyar nyelv",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 3,
+    "Datum": "2024-02-01"
+  },
+  {
+    "Diak_Neve": "Takács Petra",
+    "Osztaly": "11.B",
+    "Tantargy": "Magyar nyelv",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 3,
+    "Datum": "2024-05-01"
+  },
+  {
+    "Diak_Neve": "Pál Márk",
+    "Osztaly": "11.B",
+    "Tantargy": "Magyar nyelv",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 2,
+    "Datum": "2024-02-15"
+  },
+  {
+    "Diak_Neve": "Varga Roland",
+    "Osztaly": "11.B",
+    "Tantargy": "Magyar nyelv",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 3,
+    "Datum": "2024-03-08"
+  },
+  {
+    "Diak_Neve": "Nagy Kevin",
+    "Osztaly": "11.B",
+    "Tantargy": "Magyar nyelv",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 1,
+    "Datum": "2024-05-29"
+  },
+  {
+    "Diak_Neve": "Rácz Nóra",
+    "Osztaly": "11.B",
+    "Tantargy": "Magyar nyelv",
+    "Tanar_Neve": "Vass Edit",
+    "Jegy": 3,
+    "Datum": "2024-03-29"
+  },
+  {
+    "Diak_Neve": "Pál Márk",
+    "Osztaly": "11.B",
+    "Tantargy": "Testnevelés",
+    "Tanar_Neve": "Kovács Gábor",
+    "Jegy": 1,
+    "Datum": "2024-03-31"
+  },
+  {
+    "Diak_Neve": "Zsigmond Tibor",
+    "Osztaly": "11.B",
+    "Tantargy": "Testnevelés",
+    "Tanar_Neve": "Kovács Gábor",
+    "Jegy": 4,
+    "Datum": "2024-02-27"
+  },
+  {
+    "Diak_Neve": "Rácz Nóra",
+    "Osztaly": "11.B",
+    "Tantargy": "Testnevelés",
+    "Tanar_Neve": "Kovács Gábor",
+    "Jegy": 2,
+    "Datum": "2024-04-08"
+  },
+  {
+    "Diak_Neve": "Rácz Nóra",
+    "Osztaly": "11.B",
+    "Tantargy": "Testnevelés",
+    "Tanar_Neve": "Kovács Gábor",
+    "Jegy": 3,
+    "Datum": "2024-02-11"
+  },
+  {
+    "Diak_Neve": "Sándor Olivér",
+    "Osztaly": "11.B",
+    "Tantargy": "Testnevelés",
+    "Tanar_Neve": "Kovács Gábor",
+    "Jegy": 3,
+    "Datum": "2024-04-21"
+  },
+  {
+    "Diak_Neve": "Varga Roland",
+    "Osztaly": "11.B",
+    "Tantargy": "Testnevelés",
+    "Tanar_Neve": "Kovács Gábor",
+    "Jegy": 3,
+    "Datum": "2024-05-24"
+  },
+  {
+    "Diak_Neve": "Veres Szonja",
+    "Osztaly": "11.B",
+    "Tantargy": "Testnevelés",
+    "Tanar_Neve": "Kovács Gábor",
+    "Jegy": 2,
+    "Datum": "2024-04-26"
+  },
+  {
+    "Diak_Neve": "Varga Roland",
+    "Osztaly": "11.B",
+    "Tantargy": "Kémia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 2,
+    "Datum": "2024-02-21"
+  },
+  {
+    "Diak_Neve": "Veres Szonja",
+    "Osztaly": "11.B",
+    "Tantargy": "Kémia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 1,
+    "Datum": "2024-02-15"
+  },
+  {
+    "Diak_Neve": "Oláh Laura",
+    "Osztaly": "11.B",
+    "Tantargy": "Kémia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 1,
+    "Datum": "2024-04-24"
+  },
+  {
+    "Diak_Neve": "Pál Márk",
+    "Osztaly": "11.B",
+    "Tantargy": "Kémia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 1,
+    "Datum": "2024-03-08"
+  },
+  {
+    "Diak_Neve": "Rácz Nóra",
+    "Osztaly": "11.B",
+    "Tantargy": "Kémia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 1,
+    "Datum": "2024-03-10"
+  },
+  {
+    "Diak_Neve": "Balogh Ádám",
+    "Osztaly": "10.A",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 2,
+    "Datum": "2024-02-26"
+  },
+  {
+    "Diak_Neve": "Dudás Csilla",
+    "Osztaly": "10.A",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 4,
+    "Datum": "2024-04-10"
+  },
+  {
+    "Diak_Neve": "Takács Petra",
+    "Osztaly": "11.B",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 2,
+    "Datum": "2024-04-07"
+  },
+  {
+    "Diak_Neve": "Varga Roland",
+    "Osztaly": "11.B",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 1,
+    "Datum": "2024-05-09"
+  },
+  {
+    "Diak_Neve": "Oláh Laura",
+    "Osztaly": "11.B",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 1,
+    "Datum": "2024-04-29"
+  },
+  {
+    "Diak_Neve": "Varga Roland",
+    "Osztaly": "11.B",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 2,
+    "Datum": "2024-04-30"
+  },
+  {
+    "Diak_Neve": "Oláh Laura",
+    "Osztaly": "11.B",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 3,
+    "Datum": "2024-04-29"
+  },
+  {
+    "Diak_Neve": "Varga Roland",
+    "Osztaly": "11.B",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 1,
+    "Datum": "2024-05-03"
+  },
+  {
+    "Diak_Neve": "Sándor Olivér",
+    "Osztaly": "11.B",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 1,
+    "Datum": "2024-04-18"
+  },
+  {
+    "Diak_Neve": "Pál Márk",
+    "Osztaly": "11.B",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 3,
+    "Datum": "2024-03-31"
+  },
+  {
+    "Diak_Neve": "Nagy Kevin",
+    "Osztaly": "11.B",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 3,
+    "Datum": "2024-04-22"
+  },
+  {
+    "Diak_Neve": "Takács Petra",
+    "Osztaly": "11.B",
+    "Tantargy": "Biológia",
+    "Tanar_Neve": "Németh Ilona",
+    "Jegy": 2,
+    "Datum": "2024-03-06"
+  },
+  {
+    "Diak_Neve": "Csonka Beáta",
+    "Osztaly": "10.A",
+    "Tantargy": "Informatika",
+    "Tanar_Neve": "Szabó László",
+    "Jegy": 5,
+    "Datum": "2024-02-20"
+  },
+  {
+    "Diak_Neve": "Kelemen Hanna",
+    "Osztaly": "10.A",
+    "Tantargy": "Informatika",
+    "Tanar_Neve": "Szabó László",
+    "Jegy": 4,
+    "Datum": "2024-02-12"
+  },
+  {
+    "Diak_Neve": "Rácz Nóra",
+    "Osztaly": "11.B",
+    "Tantargy": "Informatika",
+    "Tanar_Neve": "Szabó László",
+    "Jegy": 3,
+    "Datum": "2024-05-07"
+  },
+  {
+    "Diak_Neve": "Nagy Kevin",
+    "Osztaly": "11.B",
+    "Tantargy": "Informatika",
+    "Tanar_Neve": "Szabó László",
+    "Jegy": 3,
+    "Datum": "2024-02-04"
+  },
+  {
+    "Diak_Neve": "Sándor Olivér",
+    "Osztaly": "11.B",
+    "Tantargy": "Informatika",
+    "Tanar_Neve": "Szabó László",
+    "Jegy": 3,
+    "Datum": "2024-04-07"
+  },
+  {
+    "Diak_Neve": "Veres Szonja",
+    "Osztaly": "11.B",
+    "Tantargy": "Informatika",
+    "Tanar_Neve": "Szabó László",
+    "Jegy": 1,
+    "Datum": "2024-05-03"
+  },
+  {
+    "Diak_Neve": "Oláh Laura",
+    "Osztaly": "11.B",
+    "Tantargy": "Informatika",
+    "Tanar_Neve": "Szabó László",
+    "Jegy": 2,
+    "Datum": "2024-04-29"
+  },
+  {
+    "Diak_Neve": "Nagy Kevin",
+    "Osztaly": "11.B",
+    "Tantargy": "Angol",
+    "Tanar_Neve": "Molnár Krisztina",
+    "Jegy": 5,
+    "Datum": "2024-02-08"
+  },
+  {
+    "Diak_Neve": "Veres Szonja",
+    "Osztaly": "11.B",
+    "Tantargy": "Angol",
+    "Tanar_Neve": "Molnár Krisztina",
+    "Jegy": 4,
+    "Datum": "2024-02-02"
+  },
+  {
+    "Diak_Neve": "Oláh Laura",
+    "Osztaly": "11.B",
+    "Tantargy": "Angol",
+    "Tanar_Neve": "Molnár Krisztina",
+    "Jegy": 1,
+    "Datum": "2024-04-27"
+  },
+  {
+    "Diak_Neve": "Oláh Laura",
+    "Osztaly": "11.B",
+    "Tantargy": "Angol",
+    "Tanar_Neve": "Molnár Krisztina",
+    "Jegy": 2,
+    "Datum": "2024-02-16"
+  },
+  {
+    "Diak_Neve": "Varga Roland",
+    "Osztaly": "11.B",
+    "Tantargy": "Angol",
+    "Tanar_Neve": "Molnár Krisztina",
+    "Jegy": 1,
+    "Datum": "2024-05-07"
+  },
+  {
+    "Diak_Neve": "Nagy Kevin",
+    "Osztaly": "11.B",
+    "Tantargy": "Angol",
+    "Tanar_Neve": "Molnár Krisztina",
+    "Jegy": 1,
+    "Datum": "2024-03-08"
+  },
+  {
+    "Diak_Neve": "Veres Szonja",
+    "Osztaly": "11.B",
+    "Tantargy": "Angol",
+    "Tanar_Neve": "Molnár Krisztina",
+    "Jegy": 2,
+    "Datum": "2024-03-10"
+  },
+  {
+    "Diak_Neve": "Barna Vivien",
+    "Osztaly": "11.B",
+    "Tantargy": "Földrajz",
+    "Tanar_Neve": "Papp Tamás",
+    "Jegy": 4,
+    "Datum": "2024-02-12"
+  },
+  {
+    "Diak_Neve": "Lakatos Imre",
+    "Osztaly": "10.A",
+    "Tantargy": "Földrajz",
+    "Tanar_Neve": "Papp Tamás",
+    "Jegy": 2,
+    "Datum": "2024-04-03"
+  }
+]
