@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheelWing Rentals - Dark Mode Header</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Rajdhani:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./minta.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="./images/wheelwing_logo_dark.png" alt="WheelWing Logo" class="logo-img">
+
+            <div class="brand-name">
+                <h1>WHEEL<span>WING</span></h1>
+                <p>Your Journey, Our Cars</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Flotta</a></li>
+                <li><a href="#">Helyszínek</a></li>
+                <li><a href="#">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Kölcsönzés</h1>
+        <form class="rental-form">
+            <label for="customer-name">Ügyfél neve:</label>
+            <input type="text" id="customer-name" name="customer-name" required>
+
+            <label for="car-brand">Autó márkája:</label>
+            <input type="text" id="car-brand" name="car-brand" required>
+
+            <label for="car-model">Autó modellje:</label>
+            <input type="text" id="car-model" name="car-model" required>
+
+            <label for="daily-rate">Napi díj (Ft):</label>
+            <input type="number" id="daily-rate" name="daily-rate" required>
+
+            <label for="rental-start">Kölcsönzés kezdete:</label>
+            <input type="date" id="rental-start" name="rental-start" required>
+
+            <label for="rental-end">Kölcsönzés vége:</label>
+            <input type="date" id="rental-end" name="rental-end" required>
+
+            <button type="submit">Kölcsönzés hozzáadása</button>
+        </form>
+    </main>
+
+</body>
+
+</html>

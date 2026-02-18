@@ -1,0 +1,276 @@
+:root {
+    --primary-blue: #00d2ff;
+    --dark-bg: #121212;
+    /* Sötét módhoz mélyebb fekete */
+    --text-light: #dad6d6;
+    --text-dim: #a0a0a0;
+}
+
+.allura-regular {
+    font-family: "Allura", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    background-color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-light);
+}
+
+header {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 0.8rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #282828;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* A logó kép helye - itt használd a letöltött PNG-t */
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand-name h1 {
+    margin: 0;
+    font-family: 'Rajdhani', sans-serif;
+    /* Sportosabb, technikaibb betűtípus */
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.brand-name h1 span {
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+
+.brand-name p {
+    margin: 2px 0 0 0;
+    font-family: "Allura", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.0rem;
+    /* Kicsit kisebb, hogy ne nyomja el a főnevet */
+    color: #bdc3c7;
+    /* Halványabb szürke, mint a logón */
+    text-transform: none;
+    /* A logón nem csupa nagybetű, hanem csak a szavak eleje */
+    letter-spacing: 1.5px;
+    /* Ez adja meg a prémium érzetet */
+    font-weight: 400;
+    opacity: 0.9;
+    /* Egy kis áttetszőség a finomabb megjelenésért */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--primary-blue);
+}
+
+/* Aláhúzás effekt hoverre */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-blue);
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.btn-rent {
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-rent:hover {
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Kártya rács elrendezés */
+.fleet-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Egyedi kártya stílusa */
+.car-card {
+    background-color: var(--dark-card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    border: 1px solid #333;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-blue);
+}
+
+.car-image {
+    width: 100%;
+    height: 180px;
+    background-color: #333;
+    object-fit: cover;
+}
+
+.car-info {
+    padding: 20px;
+    color: var(--text-light);
+}
+
+.car-brand {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.car-model {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 5px 0 15px 0;
+}
+
+.car-price {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.car-price span {
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.btn-details {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background: transparent;
+    color: var(--text-white);
+    border: 1px solid var(--primary-blue);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn-details:hover {
+    background-color: var(--primary-blue);
+    color: #000;
+}
+
+/* Modal (Részletek ablak) stílusa */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    border: 1px solid var(--primary-blue);
+}
+
+.modal-content h2 {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--primary-blue);
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-content li {
+    margin: 10px 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.close-modal {
+    float: right;
+    cursor: pointer;
+    color: var(--text-gray);
+    font-size: 1.5rem;
+}
+
+footer {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    border-top: 2px solid #282828;
+}
