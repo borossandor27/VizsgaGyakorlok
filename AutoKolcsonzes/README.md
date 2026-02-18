@@ -181,3 +181,17 @@ Hozzon létre egy RESTful API-t, amely lehetővé teszi a kölcsönzési adatok 
 
 Az API-nak megfelelő hibakezelést kell biztosítania, például ha egy adott autó vagy ügyfél nem található, akkor egy 404-es hibakódot kell visszaadnia. Emellett a POST végpontnak validálnia kell a bemeneti adatokat, és ha azok érvénytelenek, akkor egy 400-as hibakódot kell visszaadnia.
 
+[Az adatbázist létrehozó SQL fájl itt található.](./forrasok/autokocsonzes.sql)
+
+## Front-end feladat
+
+Hozzon létre egy webes alkalmazást, amely a fenti API-t használja az autókölcsönzési adatok megjelenítésére és kezelésére. Az alkalmazásnak a következő funkciókat kell tartalmaznia:
+
+1. **Autók megjelenítése**: Hozzon létre egy oldalt, ahol megjelenítheti az összes autó adatait. Az autók külön-külön kártyán jelenjenek meg. Minden autóhoz jelenítse meg a márkát, modellt, napi díjat és egy "Részletek" gombot, amely megjeleníti az adott autó részletes adatait.
+2. **Új kölcsönzés hozzáadása**: Hozzon létre egy űrlapot, ahol az ügyfelek megadhatják a kölcsönzés adatait (pl. ügyfél neve, autó márkája, modellje, napi díj, kölcsönzés kezdete és vége), majd küldje el ezeket az adatokat a `POST /kolcsonzesek` végpontra.
+3. **Kölcsönzések megjelenítése**: Hozzon létre egy oldalt, ahol megjelenítheti az összes kölcsönzés adatait. Minden kölcsönzéshez jelenítse meg az ügyfél nevét, autó márkáját, modelljét, a kölcsönzés időtartamát és a fizetendő díjat.
+4. **Kölcsönzések szűrése**: Hozzon létre egy szűrő funkciót, amely lehetővé teszi a kölcsönzések szűrését az ügyfél neve alapján.
+5. **Az oldalak közötti navigáció**: Hozzon létre egy navigációs menüt, amely lehetővé teszi a különböző oldalak közötti könnyű navigációt (pl. autók megjelenítése, új kölcsönzés hozzáadása, kölcsönzések megjelenítése stb.).
+6. **Fejléc és lábléc**: Hozzon létre egy fejléces és lábléces részt az oldalon, ahol megjelenítheti a cég nevét, logóját és egyéb információkat.
+
+Az alkalmazásnak reszponzívnak kell lennie, hogy különböző eszközökön is jól használható legyen. Emellett biztosítani kell a megfelelő hibakezelést, például ha egy adott autó vagy ügyfél nem található, akkor egy értesítést kell megjeleníteni a felhasználónak.
