@@ -188,7 +188,7 @@ Az API-nak megfelelő hibakezelést kell biztosítania, például ha egy adott a
 Hozzon létre egy webes alkalmazást, amely a fenti API-t használja az autókölcsönzési adatok megjelenítésére és kezelésére. Az alkalmazásnak a következő funkciókat kell tartalmaznia:
 
 1. **Autók megjelenítése**: Hozzon létre egy oldalt, ahol megjelenítheti az összes autó adatait. Az autók külön-külön kártyán jelenjenek meg. Minden autóhoz jelenítse meg a márkát, modellt, napi díjat és egy "Kölcsönzés" gombot, amely átvisz a kölcsönzés űrlapra.
-2. **Új kölcsönzés hozzáadása**: Hozzon létre egy űrlapot, ahol az ügyfelek megadhatják a kölcsönzés adatait (pl. ügyfél neve, autó márkája, modellje, napi díj, kölcsönzés kezdete és vége), majd küldje el ezeket az adatokat a `POST /kolcsonzesek` végpontra.
+2. **Új kölcsönzés hozzáadása**: Hozzon létre egy űrlapot, ahol az ügyfelek megadhatják a kölcsönzés adatait *(pl. ügyfél neve, autó márkája, modellje, napi díj, kölcsönzés kezdete és vége)*, majd küldje el ezeket az adatokat a `POST /kolcsonzesek` végpontra.
 3. **Kölcsönzések megjelenítése**: Hozzon létre egy oldalt, ahol megjelenítheti az összes kölcsönzés adatait. Minden kölcsönzéshez jelenítse meg az ügyfél nevét, autó márkáját, modelljét, a kölcsönzés időtartamát és a fizetendő díjat.
 4. **Kölcsönzések szűrése**: Hozzon létre egy szűrő funkciót, amely lehetővé teszi a kölcsönzések szűrését az ügyfél neve alapján.
 5. **Az oldalak közötti navigáció**: Hozzon létre egy navigációs menüt, amely lehetővé teszi a különböző oldalak közötti könnyű navigációt (pl. autók megjelenítése, új kölcsönzés hozzáadása, kölcsönzések megjelenítése stb.).
