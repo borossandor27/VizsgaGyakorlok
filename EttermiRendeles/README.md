@@ -99,20 +99,34 @@ Tárolja a fizetési adatokat.
 - **Egy rendelést egy felhasználó *(pincér személyesen vagy vendég online)* rögzíthet** → `Orders` és `Users` kapcsolat.
 - **Egy fizetés egy rendeléshez kapcsolódik** → `Payments` és `Orders` kapcsolat.
 
-[SQL kód az adatbázis létrehozásához](./adatbazis/)
+[SQL kód az adatbázis létrehozásához](./forrasok/etterem_adatokkal.sql)
 
 ## **1. Konzolos asztali alkalmazás (15 pont)**  
-Készíts egy konzolos C# alkalmazást, amely az adminisztrátor számára biztosítja az alábbi funkciókat:  
-- Alapvető statisztikák 
-    - ételek eladott mennyiség szerint csökkenő sorrendben  
-    - 
 
-A konzolos alkalmazás a forrás adatokat megkaphatja a
-- a REST API-n keresztül 
-- közvetlen adatbázis kapcsolattal
-- a források között lévő `etterem.csv` fájlból
+A forrasadatokat a [`forrasok/etteremall.csv`](/EttermiRendeles/forrasok/etteremall.csv) fájl tartalmazza:
+
+- kategória *(pl. „Desszertek”, „Italok”)*
+- étel neve *(pl. „Somlói galuska”)*
+- mennyiség
+- egységár
+- állapot (`folyamatban` vagy `elkészült` vagy `fizetve`)
+- fizetési mód (`készpénz` vagy `bankkártya` vagy `online`)
+- asztalszám
+- személy neve
+- szerepkör (`admin` vagy `pincer` vagy `vendeg`)
+ 
+A konzolos alkalmazásnak képesnek kell lennie arra, hogy ezeket az adatokat beolvassa és biztosítja az alábbi funkciókat:  
+1. Számolja meg, hány rendelési sor szerepel az állományban.
+1. Listázza ki az összes „fizetve” állapotú rendelést.
+1. Írja ki az összes különböző kategóriát.
+1. Kérjen be egy asztalszámot, és jelenítse meg az adott asztalhoz tartozó rendeléseket.
+1. Keresse meg a legdrágább ételt (egységár alapján).
+1. Számolja ki a teljes bevételt (csak „fizetve” állapot esetén)
+1. Számolja ki, hogy melyik kategóriában van a legtöbb rendelés.
+1. Kérjen be egy kategória nevet, és jelenítse meg az adott kategóriába tartozó ételeket és azok árát.
 
 ## **2. Grafikus asztali alkalmazás (10 pont)**  
+
 Készíts egy **C#-ban írt asztali alkalmazást *(WinForms vagy WPF)***, amelyet a pincérek használnak a rendelések kezelésére:  
 - Asztalok azonosítóinak megjelenítése a felületen.  
 - Új rendelés rögzítése az asztalokhoz.  
@@ -122,7 +136,7 @@ Készíts egy **C#-ban írt asztali alkalmazást *(WinForms vagy WPF)***, amelye
 Az adatok betöltése és mentése történhet:
 - a REST API-n keresztül 
 - közvetlen adatbázis kapcsolattal
-- a források között lévő `etterem.csv` fájlból
+- a források között lévő `etteremall.csv` fájlból
 
 
 ## **3. Reszponzív weboldal (10 pont)**  

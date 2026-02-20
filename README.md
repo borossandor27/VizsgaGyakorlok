@@ -14,67 +14,67 @@ Egyszerű felhasználó nyilvántartó alkalmazás.
 
 Egy egyszerű feladat ütemező alkalmazás, amely lehetővé teszi a felhasználók számára, hogy eseményeket hozzanak létre, megtekintsék, frissítsék és töröljék őket egy webes felületen keresztül.
 
-## [4. Gyümölcsök](./Gyumolcsok/)
+## [1. Gyümölcsök](./Gyumolcsok/)
 
 Egyszerű gyümölcs nyilvántartó alkalmazás.
 
-## [5. Névnap kereső](./Nevnapkereso/)
+## [1. Névnap kereső](./Nevnapkereso/)
 
 2022-ben központilag Fodor Péter és Kovács László Bálint által készített és az [infojegyzeten](https://infojegyzet.hu/vizsgafeladatok/szoftverfejleszto-projektfeladat/) is közzétett gyakorlati feladatsor minta.
 
-## [6. Ingatlan hirdetések](./Ingatlanhirdetesek/)
+## [1. Ingatlan hirdetések](./Ingatlanhirdetesek/)
 
 [Infotanár Mentor Program Club](https://www.itmp.hu/) által 2022-ben készített gyakorlati vizsga feladat minta.
 
-## [7. Éttermi rendelések](./EttermiRendeles/)
+## [1. Éttermi rendelések](./EttermiRendeles/)
 
 Egyszerű éttermi rendelés kezelő alkalmazás.
 
-## [8. Autó kölcsönzés](./AutoKolcsonzes/)
+## [1. Autó kölcsönzés](./AutoKolcsonzes/)
 
-## [9. Diák nyilvántartás](./DiakNyilvantartas/)
+## [1. Diák nyilvántartás](./DiakNyilvantartas/)
 
-## [10. Mozijegyek](./Mozijegyek/)
+## [1. Mozijegyek](./Mozijegyek/)
 
-## [11. Zenelejátszó](./Zenelejatszo/)
+## [1. Zenelejátszó](./Zenelejatszo/)
 
-## [12. Sportesemények](./Sportesemenyek/)
+## [1. Sportesemények](./Sportesemenyek/)
 
-## [13. Utazási ajánlatok](./UtazasiAjanlatok/)
+## [1. Utazási ajánlatok](./UtazasiAjanlatok/)
 
-## [14. Kép galéria](./KepGaleria/)
+## [1. Kép galéria](./KepGaleria/)
+  
+## [1. Állatmenhely](./Allatmenhely/)
 
-## [15. Állatmenhely](./Allatmenhely/)
+## [1. Online tanfolyamok](./OnlineTanfolyamok/)
 
-## [16. Online tanfolyamok](./OnlineTanfolyamok/)
+## [1. Hírek olvasó](./HirOlvaso/)
 
-## [17. Hírek olvasó](./HirOlvaso/)
+## [1. Időjárás alkalmazás](./IdojarasAlkalmazas/)
 
-## [18. Időjárás alkalmazás](./IdojarasAlkalmazas/)
+## [1. Közösségi hálózat](./KozossegiHalozat/)
 
-## [19. Közösségi hálózat](./KozossegiHalozat/)
+## [1. Egészségügyi napló](./EgeszsegugyiNaplo/)
 
-## [20. Egészségügyi napló](./EgeszsegugyiNaplo/)
+## [1. Kertészeti napló](./KerteszetiNaplo/)
 
-## [21. Kertészeti napló](./KerteszetiNaplo/)
+## [1. Film adatbázis](./FilmAdatbazis/)
 
-## [22. Film adatbázis](./FilmAdatbazis/)
+## [1. Receptek gyűjteménye](./ReceptekGyujtemenye/)
 
-## [23. Receptek gyűjteménye](./ReceptekGyujtemenye/)
+## [1. Közlekedési menetrend](./KozlekedesiMenetrend/)
 
-## [24. Közlekedési menetrend](./KozlekedesiMenetrend/)
+## [1. Könyvjelző kezelő](./KonyvjelzoKezele/)
 
-## [25. Könyvjelző kezelő](./KonyvjelzoKezele/)
+## [1. Nyelvtanuló alkalmazás](./NyelvtanuloAlkalmazas/)
 
-## [26. Nyelvtanuló alkalmazás](./NyelvtanuloAlkalmazas/)
+## [1. Pénzügyi nyilvántartás](./PenzugyiNyilvantartas/)
 
-## [27. Pénzügyi nyilvántartás](./PenzugyiNyilvantartas/)
+## [1. Művészeti galéria](./MuveszetiGaleria/)
 
-## [28. Művészeti galéria](./MuveszetiGaleria/)
+## [1. Virtuális könyvtár](./VirtualisKonyvtar/)
 
-## [29. Virtuális könyvtár](./VirtualisKonyvtar/)
-
-## [30. Autóalkatrész bolt](./AutoalkatreszBolt/)
+## [1. Autóalkatrész bolt](./AutoalkatreszBolt/)
 
 ## A gyakorlati vizsga
 

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Konzolos")]
+[assembly: AssemblyTitle("ConsoleApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Konzolos")]
-[assembly: AssemblyCopyright("Copyright ©  2025")]
+[assembly: AssemblyProduct("ConsoleApp")]
+[assembly: AssemblyCopyright("Copyright ©  2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("310fb851-489f-4d2e-a6c7-e85294c7a240")]
+[assembly: Guid("a550d021-01f4-4d95-a57b-918631399940")]
 
 // Version information for an assembly consists of the following four values:
 //
