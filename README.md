@@ -6,11 +6,11 @@ A szakmai vizsga `projekt vizsga-tevékenység` `adatbázis - backend - frontend
 
 Erős feladat authentikációval, jogosultság kezeléssel.
 
-## [2. Felhasználó nyilvántartás](./UserRegister/)
+## [1. Felhasználó nyilvántartás](./UserRegister/)
 
 Egyszerű felhasználó nyilvántartó alkalmazás.
 
-## [3. Feladat ütemezés](./TodoAlkalmazas/)
+## [1. Feladat ütemezés](./TodoAlkalmazas/)
 
 Egy egyszerű feladat ütemező alkalmazás, amely lehetővé teszi a felhasználók számára, hogy eseményeket hozzanak létre, megtekintsék, frissítsék és töröljék őket egy webes felületen keresztül.
 

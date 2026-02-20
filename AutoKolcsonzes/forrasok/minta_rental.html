@@ -37,20 +37,44 @@
     <main>
         <h1>Kölcsönzés</h1>
         <form class="rental-form">
-            <label for="customer-name">Ügyfél neve:</label>
-            <input type="text" id="customer-name" name="customer-name" required>
-
-            <label for="car-brand">Autó márkája:</label>
-            <input type="text" id="car-brand" name="car-brand" required>
-
-            <label for="car-model">Autó modellje:</label>
-            <input type="text" id="car-model" name="car-model" required>
-            
+            <label for="ugyfel">Ügyfél neve:</label>
+            <select name="ugyfel" id="ugyfel" required>
+                <option value="1">Kovács János</option>
+                <option value="2">Nagy Andrea</option>
+                <option value="3">Tóth Péter</option>
+                <option value="4">Szabó Zoltán</option>
+                <option value="5">Kiss Mária</option>
+            </select>
+            <label for="automarka">Autó márkája:</label>
+            <select name="automarka" id="automarka" required>
+                <option value="1">Volkswagen</option>
+                <option value="2">Toyota</option>
+                <option value="3">Tesla</option>
+                <option value="4">Ford</option>
+                <option value="5">BMW</option>
+                <option value="6">Fiat</option>
+                <option value="7">Skoda</option>
+            </select>
+            <label for="automodell">Autó modellje:</label>
+            <select name="automodell" id="automodell" required>
+                <option value="1">Golf 8</option>
+                <option value="2">Corolla</option>
+                <option value="3">Model 3</option>
+                <option value="4">Transit</option>
+                <option value="5">X5</option>
+                <option value="6">500e</option>
+                <option value="7">Octavia</option>
+            </select>
             <label for="kolcsonzohely">Kölcsönző hely:</label>
-            <input type="text" id="kolcsonzohely" name="kolcsonzohely" required>
-
-            <label for="daily-rate">Napi díj (Ft):</label>
-            <input type="number" id="daily-rate" name="daily-rate" required>
+            <select name="kolcsonzohely" id="kolcsonzohely" required>
+                <option value="1">Repülőtér Rent-A-Car - Budapest, Ferihegy 2. terminál</option>
+                <option value="2">Belvárosi Autópont - Budapest, Váci út 12.</option>
+                <option value="3">Tisza-parti Autók - Szeged, Stefánia 4.</option>
+                <option value="4">Mecsek Drive - Pécs, Király utca 45.</option>
+                <option value="5">Nyugati Kapu Kölcsönző - Győr, Baross Gábor út 2.</option>
+            </select>
+            <label for="napi_dij">Napi díj (Ft):</label>
+            <input type="number" id="napi_dij" name="napi_dij" required>
 
             <label for="rental-start">Kölcsönzés kezdete:</label>
             <input type="date" id="rental-start" name="rental-start" required>
