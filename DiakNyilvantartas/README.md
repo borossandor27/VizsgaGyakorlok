@@ -42,6 +42,14 @@ Készíts egy konzolos alkalmazást, amely egy diáknyilvántartást valósít m
 22. **Diák rangsor**: Rangsorold a diákokat a tanulmányi átlaguk alapján, és írd ki a top 5 diákot!
 23. **Tantárgyi rangsor**: Rangsorold a tantárgyakat a kiosztott jegyek átlaga alapján, és írd ki a top 3 tantárgyat!
 
+Megvalósítási javaslatok:
+
+- Hozz létre C# .NETFramework vagy .NET Core konzolos alkalmazást `DiakNyilvantartas` néven.
+- Hozz létre egy `Jegy` osztályt, amely tartalmazza a diák nevét, osztályát, tantárgyát, jegyét, tanár nevét és a dátumot.
+- Használj egy listát a diákok tárolására, és implementáld a fenti funkciókat különböző metódusokban.
+- Másold a kapott `teljesiskolairiport.csv` fájlt a projekt gyökerébe, és olvasd be a fájl tartalmát a program indításakor, hogy feltöltsd a diákok listáját.
+- Implementáld a statisztikák és rangsorok kiszámításához szükséges algoritmusokat, és jelenítsd meg az eredményeket a konzolon.
+
 ## C# GUI-s feladat
 
 Készíts egy Windows Forms vagy WPF alkalmazást, amely egy diáknyilvántartást valósít meg. Az alkalmazásnak a következő funkciókat kell tartalmaznia:
