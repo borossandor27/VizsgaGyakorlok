@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="ConsoleApp/ConsoleApp.csproj" Id="4d2dd931-4668-4be0-9ef8-88d251445ab1" />
   <Project Path="FormazottAdatKiiratas/FormazottAdatKiiratas.csproj" Id="45e6e04d-ee12-4822-9c31-ecf8b5245d83" />
+  <Project Path="GUI_WinForms/GUI_WinForms.csproj" Id="5c1772a0-fa01-4983-86e3-e73664ff29fa" />
 </Solution>

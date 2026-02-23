@@ -20,10 +20,13 @@ namespace ConsoleApp
             f01(); // Összegzés
             f02(); // Átlag
             f03(); // Megszámlálás
+            f04(); // Szűrt átlag
+            f05(); // Szűrt megszámlálás
             /*
              * ### Szélsőérték keresés (Minimum, Maximum)
              */
-
+            f06(); // Maximum
+            f07(); // Minimum
             /* 
              * ### Eldöntés és Keresés
              */
@@ -39,6 +42,36 @@ namespace ConsoleApp
 
             Console.WriteLine("\nProgram vége!");
             Console.ReadKey();
+        }
+
+        private static void f07()
+        {
+            Console.WriteLine("\n7. feladat:");
+        }
+
+        private static void f06()
+        {
+            Console.WriteLine("\n6. feladat:");
+            DateTime maxDatum = jegyek.Max(j => j.Datum);
+            Console.WriteLine("\tA legutolsó rögzített érdemjegy(ek):");
+            foreach (var jegy in jegyek.Where(j => j.Datum == maxDatum))
+            {
+                Console.WriteLine($"\t\t { jegy.ErdemJegy} - { jegy.Diak_Neve} - { jegy.Tantargy} - { jegy.Tanar_Neve} - { jegy.Osztaly} - { jegy.Datum.ToString("yyyy-MM-dd")})");
+            }
+        }
+
+        private static void f05()
+        {
+            Console.WriteLine("\n5. feladat:");
+            int db = jegyek.Where(j => j.Tanar_Neve.Equals("Vass Edit")).Count();
+            Console.WriteLine($"\tVass Edit ennyi darab jegyet adott: {db}");
+        }
+
+        private static void f04()
+        {
+            Console.WriteLine("\n4. feladat:");
+            double atlag = jegyek.Where(j => j.Tantargy.Equals("Matematika")).Average(j => j.ErdemJegy);
+            Console.WriteLine($"\tA \"Matematika\" tantárgyból szerzett jegyek átlaga {atlag}");
         }
 
         private static void f03()
