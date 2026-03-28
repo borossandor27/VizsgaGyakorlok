@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container py-4">
+
+        <h2>Érkezések listája</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Név</th>
+                    <th>Mennyiség</th>
+                    <th>Egységár</th>
+                    <th>Dátum</th>
+                </tr>
+            </thead>
+            <tbody id="tabla"></tbody>
+        </table>
+
+        <a href="index.html" class="btn btn-secondary">Vissza</a>
+
+    </div>
+
+    <script>
+        const adatok = [
+            { id: 1, nev: "Alma", menny: 120, ar: 199, datum: "2026-01-10" },
+            { id: 1, nev: "Alma", menny: 80, ar: 189, datum: "2026-02-15" },
+            { id: 1, nev: "Alma", menny: 150, ar: 209, datum: "2026-03-05" },
+            { id: 2, nev: "Avokádó", menny: 45, ar: 799, datum: "2026-01-12" },
+            { id: 2, nev: "Avokádó", menny: 30, ar: 829, datum: "2026-02-18" },
+            { id: 7, nev: "Mangó", menny: 80, ar: 499, datum: "2026-01-25" }
+        ];
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        const tabla = document.getElementById("tabla");
+
+        adatok
+            .filter(x => x.id == id)
+            .forEach(x => {
+                tabla.innerHTML += `
+        <tr>
+            <td>${x.nev}</td>
+            <td>${x.menny}</td>
+            <td>${x.ar} Ft</td>
+            <td>${x.datum}</td>
+        </tr>`;
+            });
+    </script>
+
+</body>
+
+</html>

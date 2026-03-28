@@ -1,0 +1,18 @@
+header
+{
+    background-image: url('./images/zoldseg_gyumolcs_Getty.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: max(300px, 30vh);
+}
+#overlay
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+.card-img-top
+{
+    height: 200px;
+    object-fit: contain;
+}

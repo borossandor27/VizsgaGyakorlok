@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Új érkezés</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container py-4">
+
+        <h2>Új érkezés rögzítése</h2>
+
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Gyümölcs neve</label>
+                <input type="text" id="nev" class="form-control" readonly>
+            </div>
+
+            <div class="mb-3">
+                <label>Mennyiség</label>
+                <input type="number" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label>Egységár</label>
+                <input type="number" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label>Dátum</label>
+                <input type="datetime-local" class="form-control">
+            </div>
+
+            <button class="btn btn-success">Mentés</button>
+            <a href="index.html" class="btn btn-secondary">Vissza</a>
+        </form>
+
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("nev").value = params.get("nev");
+    </script>
+
+</body>
+
+</html>
