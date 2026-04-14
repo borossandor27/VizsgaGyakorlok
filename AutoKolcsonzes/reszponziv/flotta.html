@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+        integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
+        integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark nav-dark-custom">
+            <div class="container">
+                <a class="navbar-brand" href="#">Drive-IT</a>
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="index.html">Kezdőlap</a>
+                    <a class="nav-link" href="flotta.html">Flotta</a>
+                    <a class="nav-link" href="uj_auto.html">Új autó</a>
+                    <a class="nav-link" href="./kolcsonzes.html">Kölcsönzés</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container mt-5">
+            <h2>Elérhető gépjárművek listája</h2>
+            <p class="text-muted">1. feladatban minta adat (a működés későbbi feladat).</p>
+
+            <table class="table table-hover mt-4">
+                <thead class="table-light">
+                    <tr>
+                        <th>Rendszám</th>
+                        <th>Típus</th>
+                        <th>Kategória</th>
+                        <th>Napi díj</th>
+                        <th>Állapot</th>
+                        <th>Művelet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AA-BC-123</td>
+                        <td>Toyota Corolla</td>
+                        <td>Sedan</td>
+                        <td>12.500 Ft</td>
+                        <td><span class="badge bg-success">Szabad</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>RB-789-XY</td>
+                        <td>Ford Kuga</td>
+                        <td>SUV</td>
+                        <td>18.900 Ft</td>
+                        <td><span class="badge bg-warning text-dark">Kölcsönözve</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="demo-alert">
+                <strong>Megjegyzés:</strong> Ebben a feladatban a törlés gomb csak a felület része (nem végez
+                adatbázis-műveletet).
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+/* Egyedi stílusok a Bootstrap mellé */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1000') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
+    margin-bottom: 30px;
+}
+
+.nav-dark-custom {
+    background-color: #343a40 !important;
+}
+
+.demo-alert {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.btn-outline-danger-custom {
+    border-color: #f5c6cb;
+    color: #721c24;
+}
