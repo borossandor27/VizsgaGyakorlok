@@ -1,0 +1,163 @@
+/* Diáknyilvántartó rendszer – saját stílusok
+   Színpaletta a fejlécképhez igazítva:
+     Oldal háttér (meleg bézs):              #f5f0e8
+     Navbar / sötét felületek (mély barna):  #3b2a1a
+     Elsődleges szín (kék ébresztőóra):      #2e86c1
+     Gombok hover:                           #1a5276
+     Kártyakeret (meleg homok):              #e8ddd0
+     Fejléc overlay (meleg kékbarna):        rgba(46,80,100, 0.62)
+     Megjegyzés doboz:                       #d6eaf8 / #1a5276
+     Táblázat hover sor:                     #fdf6ed
+*/
+
+/* --- Oldal háttérszín --- */
+body {
+    background-color: #f5f0e8;
+}
+
+/* --- Bootstrap btn-primary felülírása (kék ébresztőóra tónus) --- */
+.btn-primary {
+    background-color: #2e86c1;
+    border-color: #2577aa;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #1a5276;
+    border-color: #154360;
+}
+.btn-primary:active {
+    background-color: #154360 !important;
+    border-color: #0f3550 !important;
+}
+
+/* --- Bootstrap btn-light felülírása (banner gomb) --- */
+.btn-light {
+    background-color: #f5f0e8;
+    border-color: #d6c9b8;
+    color: #3b2a1a;
+}
+.btn-light:hover {
+    background-color: #e8ddd0;
+    border-color: #c4b5a0;
+    color: #3b2a1a;
+}
+
+/* --- Navbar (meleg sötétbarna) --- */
+.navbar.bg-dark {
+    background-color: #3b2a1a !important;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #aad4f0 !important;
+}
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #aad4f0 !important;
+    font-weight: 500;
+}
+
+/* --- Banner (főoldal) --- */
+header {
+    position: relative;
+    background-image: url('./images/fejlec_vagott.png');
+    background-size: cover;
+    background-position: bottom;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+}
+.hero{
+    position: relative;
+    z-index: 0;
+   
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: #fff;
+    background: rgba(30, 30, 30, 0.5);
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.hero-content p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 1.25rem;
+}
+
+/* --- Navigációs kártyák (főoldal) --- */
+.nav-card {
+    background-color: #f5e6db;
+    border: 1px solid rgb(153, 111, 81);
+    border-radius: 8px;
+    padding: 1.25rem;
+    height: 100%;
+}
+
+.nav-card h5 {
+    font-weight: 600;
+    color: #0d6efd;
+    margin-bottom: 0.5rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* --- Táblázat (lista oldal) --- */
+.table thead th {
+    font-weight: 600;
+    color: #343a40;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* --- Megjegyzés doboz --- */
+.megjegyzes-doboz {
+    background-color: #cff4fc;
+    border: 1px solid #9eeaf9;
+    border-radius: 6px;
+    padding: 0.85rem 1.1rem;
+    font-size: 0.9rem;
+    color: #055160;
+    margin-top: 1.5rem;
+}
+
+/* --- Oldalcím + alcím --- */
+.oldal-cim {
+    margin-top: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.oldal-alcim {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Űrlap (uj.html, modositas.html) --- */
+.urlap-keret {
+    max-width: 680px;
+}
+
+.urlap-keret label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+th, td {
+    vertical-align: middle !important;
+}
+.table-sajat th {
+    font-weight: 500;
+    color: #aad4f0 !important;
+    background-color: #3b2a1b !important;
+    text-align: center;
+}

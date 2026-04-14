@@ -1,7 +1,9 @@
 # Éttermi Rendeléskezelő Rendszer
 
 ## Feladatleírás
+
 Készíts egy többkomponensű rendeléskezelő rendszert egy étterem számára. A rendszer három fő részből áll:  
+
 - Egy **konzolos C# alkalmazás**, amely lehetővé teszi az adminisztrátor számára az ételek és kategóriák kezelését.
 - Egy **grafikus asztali alkalmazás C#-ban (WinForms vagy WPF)**, amely a pincérek számára biztosít felületet az asztalokhoz tartozó rendelések kezelésére.
 - Egy **reszponzív weboldal**, amelyen keresztül a vendégek megtekinthetik a menüt és rendelhetnek.
@@ -9,9 +11,11 @@ Készíts egy többkomponensű rendeléskezelő rendszert egy étterem számára
 A rendszer egy **REST API-t** használ a rendelési adatok tárolására és lekérdezésére, amely egy **MySQL *(vagy a tanult)* adatbázissal** működik. A weboldal **frontend része HTML, CSS és JavaScript segítségével épül fel**, és a REST API-val kommunikál.
 
 ## Az adatbázis felépítése
+
 Az éttermi rendeléskezelő rendszer az alábbi táblákat tartalmazza:
 
 ### **1. `Users` – Felhasználók táblája (adminok, pincérek, vendégek)**
+
 Tárolja az adminok és pincérek adatait, valamint az esetleges regisztrált vendégeket.
 
 | oszlopnév | típusa | megjegyzés |
@@ -24,6 +28,7 @@ Tárolja az adminok és pincérek adatait, valamint az esetleges regisztrált ve
 
 
 ### **2. `Categories` – Ételkategóriák (pl. előételek, főételek, desszertek)**
+
 Az ételek kategorizálására szolgál.
 
 | oszlopnév | típusa | megjegyzés |
@@ -33,6 +38,7 @@ Az ételek kategorizálására szolgál.
 
 
 ### **3. `MenuItems` – Étlap (ételek, italok)**
+
 Ez a tábla tartalmazza az összes rendelhető ételt.
 
 | oszlopnév | típusa | megjegyzés |
@@ -47,6 +53,7 @@ Ez a tábla tartalmazza az összes rendelhető ételt.
 
 
 ### **4. `Tables` – Asztalok táblája**
+
 Az étterem asztalait tárolja, amelyhez rendeléseket lehet kapcsolni.
 
 | oszlopnév | típusa | megjegyzés |
@@ -56,6 +63,7 @@ Az étterem asztalait tárolja, amelyhez rendeléseket lehet kapcsolni.
 
 
 ### **5. `Orders` – Rendelések táblája**
+
 Minden rendelés egy bejegyzés ebben a táblában.
 
 | oszlopnév | típusa | megjegyzés |
@@ -69,6 +77,7 @@ Minden rendelés egy bejegyzés ebben a táblában.
 
 
 ### **6. `OrderItems` – Rendelési tételek (étlap + rendelés kapcsolat)**
+
 Ebben tároljuk, hogy egy adott rendelés milyen ételekből áll.
 
 | oszlopnév | típusa | megjegyzés |
@@ -81,6 +90,7 @@ Ebben tároljuk, hogy egy adott rendelés milyen ételekből áll.
 
 
 ### **7. `Payments` – Fizetések táblája**
+
 Tárolja a fizetési adatokat.
 
 | oszlopnév | típusa | megjegyzés |
@@ -93,6 +103,7 @@ Tárolja a fizetési adatokat.
 
 
 ## **Kapcsolatok az adatbázisban**
+
 - **Egy rendelés több tételből állhat** → `Orders` és `OrderItems` kapcsolat.
 - **Minden rendelési tétel egy adott étlap elemhez tartozik** → `OrderItems` és `MenuItems` kapcsolat.
 - **Minden rendelés egy adott asztalhoz tartozik** → `Orders` és `Tables` kapcsolat.

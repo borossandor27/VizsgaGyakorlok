@@ -1,31 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diákok nyilvántartása</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="./diaknyilvantartas.css">
+    <title>Diáknyilvántartó rendszer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css"
+        integrity="sha512-72OVeAaPeV8n3BdZj7hOkaPSEk/uwpDkaGyP4W2jSzAC8tfiO4LMEDWoL3uFp5mcZu+8Eehb4GhZWFwvrss69Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <header class="container-fluid">
-        <div class="conntainer p-2">
-            <div id="overlay w-70" class="container p-2">
-                <div class="col-7 offset-3">
-                    <h1>Diákok nyilvántartása</h1>
-                    <div id="buttons">
-                        <button class="btn btn-outline-secondary">Új diák felvitele</button>
-                        <button class="btn btn-outline-success">Diákok listázása</button>
-                    </div>
+    <!-- Banner -->
+    <header>
+        <div class="hero container row justify-content-center align-items-center">
+            <div class="hero-content rounded-3 p-4 w-75 text-center">
+                <h1>Diáknyilvántartó rendszer</h1>
+                <p>Reszponzív weboldal <i>(offline Bootstrap, saját CSS)</i></p>
+                <a href="./lista.html" class="btn btn-light me-2">Diákok listája</a>
+                <a href="./uj.html" class="btn btn-outline-light">Új diák felvétele</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigációs kártyák -->
+    <div class="container mt-4">
+        <div class="row g-3">
+
+            <div class="col-12 col-md-4">
+                <div class="nav-card">
+                    <h5>Lista</h5>
+                    <p>A diákok listájának táblázatos megjelenítése.</p>
+                    <a href="./lista.html" class="btn btn-primary btn-sm">Megnyitás</a>
                 </div>
             </div>
-   
-    </header>
-    <main>
 
-    </main>
-    <footer>
-        <p>&copy; 2024 Diákok nyilvántartása</p>
-    </footer>
+            <div class="col-12 col-md-4">
+                <div class="nav-card">
+                    <h5>Új diák</h5>
+                    <p>Reszponzív űrlap (DEMO mentés).</p>
+                    <a href="./uj.html" class="btn btn-primary btn-sm">Megnyitás</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="nav-card">
+                    <h5>Módosítás</h5>
+                    <p>Reszponzív osztály-módosítás felület (DEMO).</p>
+                    <a href="modositas.html" class="btn btn-primary btn-sm">Megnyitás</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"
+        integrity="sha512-Sct/LCTfkoqr7upmX9VZKEzXuRk5YulFoDTunGapYJdlCwA+Rl4RhgcPCLf7awTNLmIVrszTPNUFu4MSesep5Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
+</html>

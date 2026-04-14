@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Új diák felvétele – Diáknyilvántartó</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css"
+        integrity="sha512-72OVeAaPeV8n3BdZj7hOkaPSEk/uwpDkaGyP4W2jSzAC8tfiO4LMEDWoL3uFp5mcZu+8Eehb4GhZWFwvrss69Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Diáknyilvántartó</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#foMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="foMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lista.html">Diákok listája</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="uj.html">Új diák</a></li>
+                    <li class="nav-item"><a class="nav-link" href="modositas.html">Módosítás</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tartalom -->
+    <div class="container">
+        <h1 class="oldal-cim">Új diák felvétele</h1>
+        <p class="oldal-alcim">1. feladat: reszponzív űrlap + DEMO mentés (adatbázis nélkül)</p>
+
+        <div class="urlap-keret">
+
+            <!-- Név -->
+            <div class="mb-3">
+                <label for="nev" class="form-label">Név</label>
+                <input type="text" class="form-control" id="nev" placeholder="Pl. Kovács Anna">
+            </div>
+
+            <!-- Születési év + Osztály egymás mellett -->
+            <div class="row mb-3">
+                <div class="col-12 col-sm-6">
+                    <label for="szuletesi_ev" class="form-label">Születési év</label>
+                    <input type="number" class="form-control" id="szuletesi_ev"
+                           placeholder="Pl. 2007" min="1990" max="2015">
+                </div>
+                <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                    <label for="osztaly" class="form-label">Osztály</label>
+                    <select class="form-select" id="osztaly">
+                        <option value="">Válasszon osztályt…</option>
+                        <option>9A</option>
+                        <option>9B</option>
+                        <option>10A</option>
+                        <option>10B</option>
+                        <option>11A</option>
+                        <option>11B</option>
+                        <option>12A</option>
+                        <option>12B</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Település -->
+            <div class="mb-3">
+                <label for="telepules" class="form-label">Település</label>
+                <select class="form-select" id="telepules">
+                    <option value="">Válasszon települést…</option>
+                    <option>Budapest</option>
+                    <option>Debrecen</option>
+                    <option>Pécs</option>
+                    <option>Győr</option>
+                    <option>Miskolc</option>
+                </select>
+            </div>
+
+            <!-- Képlink -->
+            <div class="mb-3">
+                <label for="kep" class="form-label">Fénykép linkje</label>
+                <input type="text" class="form-control" id="kep"
+                       placeholder="kepek/1.jpg vagy https://…">
+            </div>
+
+            <!-- Mentés gomb -->
+            <div class="d-grid mb-3">
+                <button type="button" class="btn btn-primary">Mentés</button>
+            </div>
+
+        </div>
+
+        <div class="megjegyzes-doboz">
+            <strong>Megjegyzés:</strong> A mentés itt DEMO jellegű (1. feladat), adatbázis-művelet nincs.
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

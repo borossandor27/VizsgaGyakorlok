@@ -2,79 +2,79 @@
 
 A szakmai vizsga `projekt vizsga-tevékenység` `adatbázis - backend - frontend` 240&nbsp;perces gyakorlati vizsgafeladatára felkészülést segítő feladatok
 
-## [1. Könyv áruház](./KonyvAruhaz/)
+## 1. [Könyv áruház](./KonyvAruhaz/)
 
 Erős feladat authentikációval, jogosultság kezeléssel.
 
-## [1. Felhasználó nyilvántartás](./UserRegister/)
+## 1. [Felhasználó nyilvántartás](./UserRegister/)
 
 Egyszerű felhasználó nyilvántartó alkalmazás.
 
-## [1. Feladat ütemezés](./TodoAlkalmazas/)
+## 1. [Feladat ütemezés](./TodoAlkalmazas/)
 
 Egy egyszerű feladat ütemező alkalmazás, amely lehetővé teszi a felhasználók számára, hogy eseményeket hozzanak létre, megtekintsék, frissítsék és töröljék őket egy webes felületen keresztül.
 
-## [1. Gyümölcsök](./Gyumolcsok/)
+## 1. [Gyümölcsök](./Gyumolcsok/)
 
 Egyszerű gyümölcs nyilvántartó alkalmazás.
 
-## [1. Névnap kereső](./Nevnapkereso/)
+## 1. [Névnap kereső](./Nevnapkereso/)
 
 2022-ben központilag Fodor Péter és Kovács László Bálint által készített és az [infojegyzeten](https://infojegyzet.hu/vizsgafeladatok/szoftverfejleszto-projektfeladat/) is közzétett gyakorlati feladatsor minta.
 
-## [1. Ingatlan hirdetések](./Ingatlanhirdetesek/)
+## 1. [Ingatlan hirdetések](./Ingatlanhirdetesek/)
 
 [Infotanár Mentor Program Club](https://www.itmp.hu/) által 2022-ben készített gyakorlati vizsga feladat minta.
 
-## [1. Éttermi rendelések](./EttermiRendeles/)
+## 1. [Éttermi rendelések](./EttermiRendeles/)
 
 Egyszerű éttermi rendelés kezelő alkalmazás.
 
-## [1. Autó kölcsönzés](./AutoKolcsonzes/)
+## 1. [Autó kölcsönzés](./AutoKolcsonzes/)
 
-## [1. Diák nyilvántartás](./DiakNyilvantartas/)
+## 1. [Diák nyilvántartás](./DiakNyilvantartas/)
 
-## [1. Mozijegyek](./Mozijegyek/)
+## 1. [Mozijegyek](./Mozijegyek/)
 
-## [1. Zenelejátszó](./Zenelejatszo/)
+## 1. [Zenelejátszó](./Zenelejatszo/)
 
-## [1. Sportesemények](./Sportesemenyek/)
+## 1. [Sportesemények](./Sportesemenyek/)
 
-## [1. Utazási ajánlatok](./UtazasiAjanlatok/)
+## 1. [Utazási ajánlatok](./UtazasiAjanlatok/)
 
-## [1. Kép galéria](./KepGaleria/)
+## 1. [Kép galéria](./KepGaleria/)
   
-## [1. Állatmenhely](./Allatmenhely/)
+## 1. [Állatmenhely](./Allatmenhely/)
 
-## [1. Online tanfolyamok](./OnlineTanfolyamok/)
+## 1. [Online tanfolyamok](./OnlineTanfolyamok/)
 
-## [1. Hírek olvasó](./HirOlvaso/)
+## 1. [Hírek olvasó](./HirOlvaso/)
 
-## [1. Időjárás alkalmazás](./IdojarasAlkalmazas/)
+## 1. [Időjárás alkalmazás](./IdojarasAlkalmazas/)
 
-## [1. Közösségi hálózat](./KozossegiHalozat/)
+## 1. [Közösségi hálózat](./KozossegiHalozat/)
 
-## [1. Egészségügyi napló](./EgeszsegugyiNaplo/)
+## 1. [Egészségügyi napló](./EgeszsegugyiNaplo/)
 
-## [1. Kertészeti napló](./KerteszetiNaplo/)
+## 1. [Kertészeti napló](./KerteszetiNaplo/)
 
-## [1. Film adatbázis](./FilmAdatbazis/)
+## 1. [Film adatbázis](./FilmAdatbazis/)
 
-## [1. Receptek gyűjteménye](./ReceptekGyujtemenye/)
+## 1. [Receptek gyűjteménye](./ReceptekGyujtemenye/)
 
-## [1. Közlekedési menetrend](./KozlekedesiMenetrend/)
+## 1. [Közlekedési menetrend](./KozlekedesiMenetrend/)
 
-## [1. Könyvjelző kezelő](./KonyvjelzoKezele/)
+## 1. [Könyvjelző kezelő](./KonyvjelzoKezele/)
 
-## [1. Nyelvtanuló alkalmazás](./NyelvtanuloAlkalmazas/)
+## 1. [Nyelvtanuló alkalmazás](./NyelvtanuloAlkalmazas/)
 
-## [1. Pénzügyi nyilvántartás](./PenzugyiNyilvantartas/)
+## 1. [Pénzügyi nyilvántartás](./PenzugyiNyilvantartas/)
 
-## [1. Művészeti galéria](./MuveszetiGaleria/)
+## 1. [Művészeti galéria](./MuveszetiGaleria/)
 
-## [1. Virtuális könyvtár](./VirtualisKonyvtar/)
+## 1. [Virtuális könyvtár](./VirtualisKonyvtar/)
 
-## [1. Autóalkatrész bolt](./AutoalkatreszBolt/)
+## 1. [Autóalkatrész bolt](./AutoalkatreszBolt/)
 
 ## A gyakorlati vizsga
 

@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@openrouter/sdk": "^0.12.2",
+    "dotenv": "^17.4.2",
+    "openai": "^6.34.0"
+  }
+}

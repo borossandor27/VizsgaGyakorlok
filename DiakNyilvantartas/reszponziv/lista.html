@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diákok listája – Diáknyilvántartó</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css"
+        integrity="sha512-72OVeAaPeV8n3BdZj7hOkaPSEk/uwpDkaGyP4W2jSzAC8tfiO4LMEDWoL3uFp5mcZu+8Eehb4GhZWFwvrss69Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Diáknyilvántartó</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#foMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="foMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="lista.html">Diákok listája</a></li>
+                    <li class="nav-item"><a class="nav-link" href="uj.html">Új diák</a></li>
+                    <li class="nav-item"><a class="nav-link" href="modositas.html">Módosítás</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tartalom -->
+    <div class="container">
+        <h1 class="oldal-cim">Diákok listája</h1>
+        <p class="oldal-alcim">1. feladatban minta adat (a működés később feladat).</p>
+
+        <div class="table-sajat">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Azon</th>
+                        <th>Név</th>
+                        <th>Születési év</th>
+                        <th>Osztály</th>
+                        <th>Település</th>
+                        <th>Kép</th>
+                        <th>Művelet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Kovács Anna</td>
+                        <td>2007</td>
+                        <td>10A</td>
+                        <td>Budapest</td>
+                        <td>kepek/1.jpg</td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Nagy Péter</td>
+                        <td>2006</td>
+                        <td>11B</td>
+                        <td>Debrecen</td>
+                        <td class="text-muted fst-italic">Nincs kép</td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Tóth Eszter</td>
+                        <td>2008</td>
+                        <td>9A</td>
+                        <td>Pécs</td>
+                        <td>kepek/3.jpg</td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Szabó Bence</td>
+                        <td>2005</td>
+                        <td>12A</td>
+                        <td>Győr</td>
+                        <td class="text-muted fst-italic">Nincs kép</td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Varga Réka</td>
+                        <td>2007</td>
+                        <td>10B</td>
+                        <td>Miskolc</td>
+                        <td>kepek/5.jpg</td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="megjegyzes-doboz">
+            <strong>Megjegyzés:</strong> ebben a külön feladatban a törlés gomb csak a felület része (nem végez adatbázis-műveletet).
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
