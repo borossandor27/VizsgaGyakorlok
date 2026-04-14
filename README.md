@@ -22,59 +22,59 @@ Egyszerű gyümölcs nyilvántartó alkalmazás.
 
 2022-ben központilag Fodor Péter és Kovács László Bálint által készített és az [infojegyzeten](https://infojegyzet.hu/vizsgafeladatok/szoftverfejleszto-projektfeladat/) is közzétett gyakorlati feladatsor minta.
 
-## 1. [Ingatlan hirdetések](./Ingatlanhirdetesek/)
+## 2. [Ingatlan hirdetések](./Ingatlanhirdetesek/)
 
 [Infotanár Mentor Program Club](https://www.itmp.hu/) által 2022-ben készített gyakorlati vizsga feladat minta.
 
-## 1. [Éttermi rendelések](./EttermiRendeles/)
+## 3. [Éttermi rendelések](./EttermiRendeles/)
 
 Egyszerű éttermi rendelés kezelő alkalmazás.
 
-## 1. [Autó kölcsönzés](./AutoKolcsonzes/)
+## 4. [Autó kölcsönzés](./AutoKolcsonzes/)
 
-## 1. [Diák nyilvántartás](./DiakNyilvantartas/)
+## 5. [Diák nyilvántartás](./DiakNyilvantartas/)
 
-## 1. [Mozijegyek](./Mozijegyek/)
+## 6. [Mozijegyek](./Mozijegyek/)
 
-## 1. [Zenelejátszó](./Zenelejatszo/)
+## 7. [Zenelejátszó](./Zenelejatszo/)
 
-## 1. [Sportesemények](./Sportesemenyek/)
+## 8. [Sportesemények](./Sportesemenyek/)
 
-## 1. [Utazási ajánlatok](./UtazasiAjanlatok/)
+## 10. [Utazási ajánlatok](./UtazasiAjanlatok/)
 
-## 1. [Kép galéria](./KepGaleria/)
+## 11. [Kép galéria](./KepGaleria/)
   
-## 1. [Állatmenhely](./Allatmenhely/)
+## 12. [Állatmenhely](./Allatmenhely/)
 
-## 1. [Online tanfolyamok](./OnlineTanfolyamok/)
+## 13. [Online tanfolyamok](./OnlineTanfolyamok/)
 
-## 1. [Hírek olvasó](./HirOlvaso/)
+## 14. [Hírek olvasó](./HirOlvaso/)
 
-## 1. [Időjárás alkalmazás](./IdojarasAlkalmazas/)
+## 15. [Időjárás alkalmazás](./IdojarasAlkalmazas/)
 
-## 1. [Közösségi hálózat](./KozossegiHalozat/)
+## 16. [Közösségi hálózat](./KozossegiHalozat/)
 
-## 1. [Egészségügyi napló](./EgeszsegugyiNaplo/)
+## 17. [Egészségügyi napló](./EgeszsegugyiNaplo/)
 
-## 1. [Kertészeti napló](./KerteszetiNaplo/)
+## 18. [Kertészeti napló](./KerteszetiNaplo/)
 
-## 1. [Film adatbázis](./FilmAdatbazis/)
+## 19. [Film adatbázis](./FilmAdatbazis/)
 
-## 1. [Receptek gyűjteménye](./ReceptekGyujtemenye/)
+## 20. [Receptek gyűjteménye](./ReceptekGyujtemenye/)
 
-## 1. [Közlekedési menetrend](./KozlekedesiMenetrend/)
+## 21. [Közlekedési menetrend](./KozlekedesiMenetrend/)
 
-## 1. [Könyvjelző kezelő](./KonyvjelzoKezele/)
+## 22. [Könyvjelző kezelő](./KonyvjelzoKezele/)
 
-## 1. [Nyelvtanuló alkalmazás](./NyelvtanuloAlkalmazas/)
+## 23. [Nyelvtanuló alkalmazás](./NyelvtanuloAlkalmazas/)
 
-## 1. [Pénzügyi nyilvántartás](./PenzugyiNyilvantartas/)
+## 24. [Pénzügyi nyilvántartás](./PenzugyiNyilvantartas/)
 
-## 1. [Művészeti galéria](./MuveszetiGaleria/)
+## 25. [Művészeti galéria](./MuveszetiGaleria/)
 
-## 1. [Virtuális könyvtár](./VirtualisKonyvtar/)
+## 26. [Virtuális könyvtár](./VirtualisKonyvtar/)
 
-## 1. [Autóalkatrész bolt](./AutoalkatreszBolt/)
+## 27. [Autóalkatrész bolt](./AutoalkatreszBolt/)
 
 ## A gyakorlati vizsga
 
