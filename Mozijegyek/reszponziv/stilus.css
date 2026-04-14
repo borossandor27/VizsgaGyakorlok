@@ -1,0 +1,225 @@
+/* Mozijegy-nyilvántartó rendszer – saját stílusok
+   Színpaletta (mozi téma):
+     Sötétvörös (filmszékek / függöny): #8b1a1a
+     Arany (jegyek / feliratok):        #c9a84c
+     Sötét navbar (fekete):             #1a1a1a
+     Oldal háttér (sötétszürke-fehér):  #f8f5f0
+     Kártyakeret:                       #e8e0d5
+     Megjegyzés doboz:                  #fdf3dc / #7a5c10
+*/
+
+/* --- Oldal háttérszín --- */
+body {
+    background-color: #f8f5f0;
+}
+
+/* --- Bootstrap btn-primary felülírása (sötétvörös) --- */
+.btn-primary {
+    background-color: #8b1a1a;
+    border-color: #7a1616;
+    color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #6e1414;
+    border-color: #5c1010;
+    color: #fff;
+}
+.btn-primary:active {
+    background-color: #5c1010 !important;
+    border-color: #4a0c0c !important;
+}
+
+/* --- Bootstrap btn-light felülírása (bannergomb) --- */
+.btn-light {
+    background-color: #f8f5f0;
+    border-color: #d4c9b8;
+    color: #1a1a1a;
+}
+.btn-light:hover {
+    background-color: #ede5d8;
+    border-color: #c4b5a0;
+    color: #1a1a1a;
+}
+
+/* --- Navbar (mélyfekete) --- */
+.navbar.bg-dark {
+    background-color: #1a1a1a !important;
+    border-bottom: 2px solid #c9a84c;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #c9a84c !important;
+}
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #c9a84c !important;
+    font-weight: 500;
+}
+.navbar-brand {
+    color: #c9a84c !important;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+/* --- Banner (főoldal) --- */
+.hero-banner {
+    position: relative;
+    background-image: url('kepek/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    /* Fallback ha nincs kép: mozi-vörös gradiens */
+    background-color: #2a0a0a;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: #fff;
+    height: 200px;
+    background: rgba(20, 5, 5, 0.70);
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #f5e6c0;
+}
+
+.hero-content p {
+    font-size: 0.95rem;
+    opacity: 0.80;
+    margin-bottom: 1.25rem;
+    color: #e8d8b0;
+}
+
+/* --- Navigációs kártyák (főoldal) --- */
+.nav-card {
+    background-color: #fffdf8;
+    border: 1px solid #e8e0d5;
+    border-top: 3px solid #8b1a1a;
+    border-radius: 8px;
+    padding: 1.25rem;
+    height: 100%;
+}
+
+.nav-card h5 {
+    font-weight: 600;
+    color: #8b1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: #7a6a58;
+}
+
+/* --- Táblázat (műsorlista oldal) --- */
+.table thead th {
+    font-weight: 600;
+    color: #1a1a1a;
+    border-bottom: 2px solid #8b1a1a;
+    background-color: #f0e8e0;
+}
+
+.table tbody tr:hover {
+    background-color: #fdf5ec;
+}
+
+.table-bordered {
+    border-color: #e8ddd0;
+}
+.table-bordered td,
+.table-bordered th {
+    border-color: #e8ddd0;
+}
+
+/* --- Státusz badge --- */
+.badge-szabad {
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.badge-foglalt {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* --- Megjegyzés doboz --- */
+.megjegyzes-doboz {
+    background-color: #fdf3dc;
+    border: 1px solid #e8cfa0;
+    border-radius: 6px;
+    padding: 0.85rem 1.1rem;
+    font-size: 0.9rem;
+    color: #7a5c10;
+    margin-top: 1.5rem;
+}
+
+/* --- Oldalcím + alcím --- */
+.oldal-cim {
+    margin-top: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: #1a1a1a;
+}
+
+.oldal-alcim {
+    font-size: 0.875rem;
+    color: #7a6a58;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Űrlap --- */
+.urlap-keret {
+    max-width: 680px;
+}
+
+.urlap-keret label {
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+}
+
+.form-control,
+.form-select {
+    background-color: #fffdf8;
+    border-color: #d4c9b8;
+    color: #1a1a1a;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #8b1a1a;
+    box-shadow: 0 0 0 0.2rem rgba(139, 26, 26, 0.20);
+    background-color: #ffffff;
+}
+
+.form-control::placeholder {
+    color: #b0a090;
+}
+
+/* --- Törlés / Lemondás gomb --- */
+.btn-outline-danger {
+    color: #8b1a1a;
+    border-color: #8b1a1a;
+}
+.btn-outline-danger:hover {
+    background-color: #8b1a1a;
+    border-color: #8b1a1a;
+    color: #fff;
+}

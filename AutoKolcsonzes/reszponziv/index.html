@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Drive-IT főoldal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
         integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,14 +15,16 @@
 </head>
 
 <body>
-   
-
-    <div class="hero-section text-center">
+    <header class="hero-section text-center">
         <div class="container">
-            <h1>Drive-IT Nyilvántartó rendszer</h1>
-            <p>1. feladat: Reszponzív weboldal (Bootstrap és egyedi CSS)</p>
+            <div class="overlay">
+                <h1>Drive-IT Nyilvántartó rendszer</h1>
+                <p>1. feladat: Reszponzív weboldal (Bootstrap és egyedi CSS)</p>
+                <button class="btn btn-outline-light mx-2">Flotta</button>
+                <button class="btn btn-outline-light mx-2">Kölcsönzés</button>
+            </div>
         </div>
-    </div>
+    </header>
 
     <main class="container">
         <div class="row">
@@ -34,20 +36,22 @@
                         <a href="flotta.html" class="btn btn-primary w-100">Megnyitás</a>
                     </div>
                 </div>
-            </div><div class="col-md-4 mb-4">
+            </div>
+            <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h5 class="card-title">Flotta</h5>
+                        <h5 class="card-title">Kölcsönzés</h5>
                         <p class="card-text">Reszponzív táblázat a gépjárművek adataival.</p>
-                        <a href="flotta.html" class="btn btn-primary w-100">Megnyitás</a>
+                        <a href="kolcsonzes.html" class="btn btn-primary w-100">Megnyitás</a>
                     </div>
                 </div>
-            </div><div class="col-md-4 mb-4">
+            </div>
+            <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h5 class="card-title">Flotta</h5>
+                        <h5 class="card-title">Új autó</h5>
                         <p class="card-text">Reszponzív táblázat a gépjárművek adataival.</p>
-                        <a href="flotta.html" class="btn btn-primary w-100">Megnyitás</a>
+                        <a href="uj_auto.html" class="btn btn-primary w-100">Megnyitás</a>
                     </div>
                 </div>
             </div>

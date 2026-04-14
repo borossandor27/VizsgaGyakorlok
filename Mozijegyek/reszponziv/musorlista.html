@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Műsorlista – Mozijegy-nyilvántartó</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+        integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
+        integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="stilus.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🎬 CinemaApp</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#foMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="foMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="musorlista.html">Műsorlista</a></li>
+                    <li class="nav-item"><a class="nav-link" href="jegyvesarlas.html">Jegy vásárlása</a></li>
+                    <li class="nav-item"><a class="nav-link" href="foglalas.html">Foglalás kezelése</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tartalom -->
+    <div class="container">
+        <h1 class="oldal-cim">Műsorlista</h1>
+        <p class="oldal-alcim">1. feladatban minta adat (a működés később feladat).</p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Azon</th>
+                        <th>Film címe</th>
+                        <th>Műfaj</th>
+                        <th>Vetítés időpontja</th>
+                        <th>Terem</th>
+                        <th>Jegyár (Ft)</th>
+                        <th>Státusz</th>
+                        <th>Művelet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Dűne 2</td>
+                        <td>Sci-fi</td>
+                        <td>2025-06-10 18:00</td>
+                        <td>1. terem</td>
+                        <td>2 800</td>
+                        <td><span class="badge-szabad">Szabad</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Fekete Párduc 3</td>
+                        <td>Akció</td>
+                        <td>2025-06-10 20:30</td>
+                        <td>2. terem</td>
+                        <td>2 600</td>
+                        <td><span class="badge-foglalt">Foglalt</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Kung Fu Panda 5</td>
+                        <td>Animáció</td>
+                        <td>2025-06-11 15:00</td>
+                        <td>3. terem</td>
+                        <td>2 200</td>
+                        <td><span class="badge-szabad">Szabad</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Oppenheimer</td>
+                        <td>Dráma</td>
+                        <td>2025-06-11 17:30</td>
+                        <td>1. terem</td>
+                        <td>3 000</td>
+                        <td><span class="badge-foglalt">Foglalt</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>A kis hableány</td>
+                        <td>Mese</td>
+                        <td>2025-06-12 14:00</td>
+                        <td>2. terem</td>
+                        <td>1 900</td>
+                        <td><span class="badge-szabad">Szabad</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="megjegyzes-doboz">
+            <strong>Megjegyzés:</strong> ebben a külön feladatban a törlés gomb csak a felület része (nem végez adatbázis-műveletet).
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

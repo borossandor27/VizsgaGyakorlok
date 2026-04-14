@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jegy vásárlása – Mozijegy-nyilvántartó</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+        integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
+        integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="stilus.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🎬 CinemaApp</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#foMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="foMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="musorlista.html">Műsorlista</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="jegyvesarlas.html">Jegy vásárlása</a></li>
+                    <li class="nav-item"><a class="nav-link" href="foglalas.html">Foglalás kezelése</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tartalom -->
+    <div class="container">
+        <h1 class="oldal-cim">Jegy vásárlása</h1>
+        <p class="oldal-alcim">1. feladat: reszponzív űrlap + DEMO mentés (adatbázis nélkül)</p>
+
+        <div class="urlap-keret mx-auto">
+
+            <!-- Vásárló neve -->
+            <div class="mb-3">
+                <label for="nev" class="form-label">Vásárló neve</label>
+                <input type="text" class="form-control" id="nev"
+                       placeholder="Pl. Kovács Anna">
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail cím</label>
+                <input type="email" class="form-control" id="email"
+                       placeholder="pl. kovacsanna@email.hu">
+            </div>
+
+            <!-- Film + Időpont egymás mellett -->
+            <div class="row mb-3">
+                <div class="col-12 col-sm-7">
+                    <label for="film" class="form-label">Film kiválasztása</label>
+                    <select class="form-select" id="film">
+                        <option value="">Válasszon filmet…</option>
+                        <option>Dűne 2 – 2025-06-10 18:00</option>
+                        <option>Fekete Párduc 3 – 2025-06-10 20:30</option>
+                        <option>Kung Fu Panda 5 – 2025-06-11 15:00</option>
+                        <option>Oppenheimer – 2025-06-11 17:30</option>
+                        <option>A kis hableány – 2025-06-12 14:00</option>
+                    </select>
+                </div>
+                <div class="col-12 col-sm-5 mt-3 mt-sm-0">
+                    <label for="jegyek_szama" class="form-label">Jegyek száma</label>
+                    <input type="number" class="form-control" id="jegyek_szama"
+                           placeholder="Pl. 2" min="1" max="10" value="1">
+                </div>
+            </div>
+
+            <!-- Jegytípus -->
+            <div class="mb-3">
+                <label for="jegytipus" class="form-label">Jegytípus</label>
+                <select class="form-select" id="jegytipus">
+                    <option value="">Válasszon típust…</option>
+                    <option>Teljes árú</option>
+                    <option>Diákjegy</option>
+                    <option>Nyugdíjas</option>
+                    <option>Gyermekjegy (14 év alatt)</option>
+                </select>
+            </div>
+
+            <!-- Ülőhely -->
+            <div class="mb-3">
+                <label for="ulohelyek" class="form-label">Kívánt ülőhelyek</label>
+                <input type="text" class="form-control" id="ulohelyek"
+                       placeholder="Pl. A5, A6">
+            </div>
+
+            <!-- Mentés gomb -->
+            <div class="d-grid mb-3">
+                <button type="button" class="btn btn-primary">Foglalás rögzítése</button>
+            </div>
+
+        </div>
+
+        <div class="megjegyzes-doboz">
+            <strong>Megjegyzés:</strong> A foglalás itt DEMO jellegű (1. feladat), adatbázis-művelet nincs.
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

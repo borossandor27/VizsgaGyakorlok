@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foglalás kezelése – Mozijegy-nyilvántartó</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+        integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
+        integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="stilus.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🎬 CinemaApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#foMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="foMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="musorlista.html">Műsorlista</a></li>
+                    <li class="nav-item"><a class="nav-link" href="jegyvesarlas.html">Jegy vásárlása</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="foglalas.html">Foglalás kezelése</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tartalom -->
+    <div class="container">
+        <h1 class="oldal-cim">Foglalás kezelése</h1>
+        <p class="oldal-alcim">1. feladat: reszponzív felület + DEMO mentés (adatbázis nélkül)</p>
+
+        <div class="urlap-keret mx-auto">
+
+            <!-- Foglalás kiválasztása -->
+            <div class="mb-3">
+                <label for="foglalas" class="form-label">Foglalás kiválasztása</label>
+                <select class="form-select" id="foglalas">
+                    <option value="">Válasszon foglalást…</option>
+                    <option value="1">FOG-001 – Kovács Anna – Dűne 2 (2025-06-10 18:00)</option>
+                    <option value="2">FOG-002 – Nagy Péter – Fekete Párduc 3 (2025-06-10 20:30)</option>
+                    <option value="3">FOG-003 – Tóth Eszter – Kung Fu Panda 5 (2025-06-11 15:00)</option>
+                    <option value="4">FOG-004 – Szabó Bence – Oppenheimer (2025-06-11 17:30)</option>
+                    <option value="5">FOG-005 – Varga Réka – A kis hableány (2025-06-12 14:00)</option>
+                </select>
+            </div>
+
+            <!-- Módosítandó adat -->
+            <div class="mb-3">
+                <label for="uj_ulohelyek" class="form-label">Új ülőhelyek</label>
+                <input type="text" class="form-control" id="uj_ulohelyek" placeholder="Pl. B3, B4">
+            </div>
+
+            <!-- Jegytípus módosítása -->
+            <div class="mb-3">
+                <label for="uj_jegytipus" class="form-label">Jegytípus módosítása</label>
+                <select class="form-select" id="uj_jegytipus">
+                    <option value="">Válasszon típust…</option>
+                    <option>Teljes árú</option>
+                    <option>Diákjegy</option>
+                    <option>Nyugdíjas</option>
+                    <option>Gyermekjegy (14 év alatt)</option>
+                </select>
+            </div>
+
+            <!-- Gombok -->
+            <div class="d-grid gap-2 mb-3">
+                <button type="button" class="btn btn-primary">Módosítás mentése</button>
+                <button type="button" class="btn btn-outline-danger">Foglalás lemondása</button>
+            </div>
+
+        </div>
+
+        <div class="megjegyzes-doboz">
+            <strong>Megjegyzés:</strong> Ebben a külön feladatban a módosítás és a lemondás DEMO (nem kerül
+            adatbázisba).
+        </div>
+    </div>
+
+</body>
+
+</html>
