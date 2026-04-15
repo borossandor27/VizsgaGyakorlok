@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheelWing Rentals - Dark Mode Header</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Rajdhani:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./minta.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="./images/wheelwing_logo_dark.png" alt="WheelWing Logo" class="logo-img">
+
+            <div class="brand-name">
+                <h1>WHEEL<span>WING</span></h1>
+                <p>Your Journey, Our Cars</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Flotta</a></li>
+                <li><a href="#">Helyszínek</a></li>
+                <li><a href="#">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Kölcsönzés</h1>
+        <form class="rental-form">
+            <label for="ugyfel">Ügyfél neve:</label>
+            <select name="ugyfel" id="ugyfel" required>
+                <option value="1">Kovács János</option>
+                <option value="2">Nagy Andrea</option>
+                <option value="3">Tóth Péter</option>
+                <option value="4">Szabó Zoltán</option>
+                <option value="5">Kiss Mária</option>
+            </select>
+            <label for="automarka">Autó márkája:</label>
+            <select name="automarka" id="automarka" required>
+                <option value="1">Volkswagen</option>
+                <option value="2">Toyota</option>
+                <option value="3">Tesla</option>
+                <option value="4">Ford</option>
+                <option value="5">BMW</option>
+                <option value="6">Fiat</option>
+                <option value="7">Skoda</option>
+            </select>
+            <label for="automodell">Autó modellje:</label>
+            <select name="automodell" id="automodell" required>
+                <option value="1">Golf 8</option>
+                <option value="2">Corolla</option>
+                <option value="3">Model 3</option>
+                <option value="4">Transit</option>
+                <option value="5">X5</option>
+                <option value="6">500e</option>
+                <option value="7">Octavia</option>
+            </select>
+            <label for="kolcsonzohely">Kölcsönző hely:</label>
+            <select name="kolcsonzohely" id="kolcsonzohely" required>
+                <option value="1">Repülőtér Rent-A-Car - Budapest, Ferihegy 2. terminál</option>
+                <option value="2">Belvárosi Autópont - Budapest, Váci út 12.</option>
+                <option value="3">Tisza-parti Autók - Szeged, Stefánia 4.</option>
+                <option value="4">Mecsek Drive - Pécs, Király utca 45.</option>
+                <option value="5">Nyugati Kapu Kölcsönző - Győr, Baross Gábor út 2.</option>
+            </select>
+            <label for="napi_dij">Napi díj (Ft):</label>
+            <input type="number" id="napi_dij" name="napi_dij" required>
+
+            <label for="rental-start">Kölcsönzés kezdete:</label>
+            <input type="date" id="rental-start" name="rental-start" required>
+
+            <label for="rental-end">Kölcsönzés vége:</label>
+            <input type="date" id="rental-end" name="rental-end" required>
+
+            <button type="submit">Kölcsönzés hozzáadása</button>
+        </form>
+    </main>
+
+</body>
+
+</html>

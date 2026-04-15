@@ -1,0 +1,73 @@
+/* Mozijegy-nyilvántartó rendszer – saját stílusok
+   Színpaletta (mozi téma):
+     Sötétvörös (filmszékek / függöny): #8b1a1a
+     Arany (jegyek / feliratok):        #c9a84c
+     Sötét navbar (fekete):             #1a1a1a
+     Oldal háttér (sötétszürke-fehér):  #f8f5f0
+     Kártyakeret:                       #e8e0d5
+     Megjegyzés doboz:                  #fdf3dc / #7a5c10
+*/
+
+/* --- Oldal háttérszín --- */
+body {
+    background-color: #f8f5f0;
+}
+
+/* --- Bootstrap btn-primary felülírása (sötétvörös) --- */
+.btn-primary {
+    background-color: #8b1a1a;
+    border-color: #7a1616;
+    color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #6e1414;
+    border-color: #5c1010;
+    color: #fff;
+}
+.btn-primary:active {
+    background-color: #5c1010 !important;
+    border-color: #4a0c0c !important;
+}
+
+/* --- Bootstrap btn-light felülírása (bannergomb) --- */
+.btn-light {
+    background-color: #f8f5f0;
+    border-color: #d4c9b8;
+    color: #1a1a1a;
+}
+.btn-light:hover {
+    background-color: #ede5d8;
+    border-color: #c4b5a0;
+    color: #1a1a1a;
+}
+
+/* --- Navbar (mélyfekete) --- */
+.navbar.bg-dark {
+    background-color: #1a1a1a !important;
+    border-bottom: 2px solid #c9a84c;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #c9a84c !important;
+}
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #c9a84c !important;
+    font-weight: 500;
+}
+.navbar-brand {
+    color: #c9a84c !important;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+
+.nav-card h5 {
+    font-weight: 600;
+    color: #8b1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: #7a6a58;
+}
