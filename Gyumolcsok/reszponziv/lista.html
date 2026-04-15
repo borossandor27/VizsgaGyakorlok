@@ -13,19 +13,11 @@
 
     <div class="container py-4">
 
-        <h2>Érkezések listája</h2>
+        <h2>Gyümölcsök listája</h2>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Név</th>
-                    <th>Mennyiség</th>
-                    <th>Egységár</th>
-                    <th>Dátum</th>
-                </tr>
-            </thead>
-            <tbody id="tabla"></tbody>
-        </table>
+        <div id="gyumolcsok" class="row">
+
+        </div>
 
         <a href="index.html" class="btn btn-secondary">Vissza</a>
 
@@ -33,30 +25,153 @@
 
     <script>
         const adatok = [
-            { id: 1, nev: "Alma", menny: 120, ar: 199, datum: "2026-01-10" },
-            { id: 1, nev: "Alma", menny: 80, ar: 189, datum: "2026-02-15" },
-            { id: 1, nev: "Alma", menny: 150, ar: 209, datum: "2026-03-05" },
-            { id: 2, nev: "Avokádó", menny: 45, ar: 799, datum: "2026-01-12" },
-            { id: 2, nev: "Avokádó", menny: 30, ar: 829, datum: "2026-02-18" },
-            { id: 7, nev: "Mangó", menny: 80, ar: 499, datum: "2026-01-25" }
+            {
+                "gyumolcsid": "1",
+                "nev": "Alma",
+                "megjegyzes": "Az alma vagy almafa a rózsafélék családjába tartozó növénynemzetség. Körülbelül 55 faj tartozik ide, melyek többsége Ázsiában, kisebb része Európában és Észak-Amerikában honos. A nemzetségbe tartozó egyedek, vagyis az almafák termésének a neve is alma.",
+                "nev_eng": "apple",
+                "alt_szoveg": "apple",
+                "src": "apple.png"
+            },
+            {
+                "gyumolcsid": "2",
+                "nev": "Avokádó",
+                "megjegyzes": "Az avokádó a babérfélék családjába tartozó, örökzöld, alacsonyan elágazó, terebélyes ágrendszerű, 10–20 m magas fa. A mexikói fajának a neve Persea gratissima.",
+                "nev_eng": "avocado",
+                "alt_szoveg": "avocado",
+                "src": "avocado.png"
+            },
+            {
+                "gyumolcsid": "3",
+                "nev": "Kókuszdió",
+                "megjegyzes": "A kókuszpálma az egyszikűek osztályába, a pálmavirágúak rendjébe és a pálmafélék családjába tartozó faj.",
+                "nev_eng": "coconut",
+                "alt_szoveg": "coconut",
+                "src": "coconut.png"
+            },
+            {
+                "gyumolcsid": "4",
+                "nev": "Guava",
+                "megjegyzes": "A guava egy gyakori trópusi gyümölcs, amelyet számos trópusi és szubtrópusi régióban termesztenek. A közönséges guajava Psidium guajava a mirtuszfélék családjába tartozó kis fa, Mexikóban, Közép-Amerikában, a Karib-térségben és Dél-Amerika északi részén őshonos.",
+                "nev_eng": "guava",
+                "alt_szoveg": "guava",
+                "src": "guava.png"
+            },
+            {
+                "gyumolcsid": "5",
+                "nev": "Mézbogyó",
+                "megjegyzes": "A mézbogyó a szappanfavirágúak rendjébe, a szappanfafélék családjába tartozó trópusi növényfaj.",
+                "nev_eng": "mamoncillo",
+                "alt_szoveg": "limoncillo",
+                "src": "limoncillo.png"
+            },
+            {
+                "gyumolcsid": "6",
+                "nev": "Nagy szapota",
+                "megjegyzes": "A Pouteria sapota, a mamey sapote egy Mexikóban és Közép-Amerikában őshonos fafaj. A fát a Karib-térségben is termesztik. Gyümölcsét sok latin-amerikai országban fogyasztják. A gyümölcsből olyan ételeket készítenek, mint a turmix és a fagylalt.",
+                "nev_eng": "mamey_sapote",
+                "alt_szoveg": "mamey_sapote",
+                "src": "mamey_sapote.png"
+            },
+            {
+                "gyumolcsid": "7",
+                "nev": "Mangó",
+                "megjegyzes": "A mangó (Mangifera indica) a szappanfavirágúak (Sapindales) rendjébe sorolt szömörcefélék (Anacardiaceae) családjában a Mangifera nemzetség típusfaja — édes ízű, egzotikus gyümölcsöt termő fa. Mai neve az indiai man-gay portugál formájából (manga) származik. Az indiaiak szent fája.",
+                "nev_eng": "mango",
+                "alt_szoveg": "mango",
+                "src": "mango.png"
+            },
+            {
+                "gyumolcsid": "8",
+                "nev": "Arany alma",
+                "megjegyzes": "Az aranyalma  különböző legendákban szerepel, amelyek egy hőst (például Herkulest vagy Făt-Frumost ) ábrázolnak, amint visszahozza az ellenfél által elrejtett vagy ellopott aranyalmákat . Az aranyalma az ír mitológiában a túlvilág ezüstágán is megjelenik ",
+                "nev_eng": "manzana_de_oro",
+                "alt_szoveg": "manzana_de_aro",
+                "src": "manzana_de_aro.png"
+            },
+            {
+                "gyumolcsid": "9",
+                "nev": "Papaya",
+                "megjegyzes": "A papaja vagy dinnyefa a keresztesvirágúak rendjébe és a dinnyefafélék családjába tartozó faj. Gyümölcse szintén papaja néven ismert.",
+                "nev_eng": "papaya",
+                "alt_szoveg": "papaya",
+                "src": "papaya.png"
+            },
+            {
+                "gyumolcsid": "10",
+                "nev": "Passiógyümölcs",
+                "megjegyzes": "A passiógyümölcs és a granadilla a Passiflora nemzetség számos növényének gyümölcse. Dél-Amerika szubtrópusi vidékein őshonos Brazília déli részétől Paraguayon át Észak-Argentínáig. A gyümölcsöt héja és magja miatt, valamint gyümölcsléként fogyasztják.",
+                "nev_eng": "passion_fruit",
+                "alt_szoveg": "passion_fruit",
+                "src": "passion_fruit.png"
+            },
+            {
+                "gyumolcsid": "11",
+                "nev": "Ananász",
+                "megjegyzes": "Az ananász az egyszikűek osztályába, a perjevirágúak rendjébe és a broméliafélék családjába tartozó nemzetség.",
+                "nev_eng": "pineapple",
+                "alt_szoveg": "pineapple",
+                "src": "pineapple.png"
+            },
+            {
+                "gyumolcsid": "12",
+                "nev": "Sárkánygyümölcs",
+                "megjegyzes": "A pitaja nagyobb és gyakran finomabb is, mint a kaktuszfüge. Húsa fehér, vörös vagy lila; magja kisebb, kevésbé zavarja a gyümölcsevés élvezetét. Héja élvezhetetlen. Illata semleges, íze frissítő és finoman savanykás, egy kicsit az egresére emlékeztet.",
+                "nev_eng": "pitaya",
+                "alt_szoveg": "pitaya",
+                "src": "pitaya.png"
+            },
+            {
+                "gyumolcsid": "13",
+                "nev": "Főzőbanán",
+                "megjegyzes": "A főzőbanán a Musa nemzetségbe tartozó banánfajták csoportja, amelynek gyümölcseit általában főzéshez használják. Nem fogyasztják nyersen, és általában keményítőtartalmúak. Sok főzési banánt útifűnek vagy „zöld banánnak” neveznek.",
+                "nev_eng": "plantain",
+                "alt_szoveg": "plantain",
+                "src": "plantain.png"
+            },
+            {
+                "gyumolcsid": "14",
+                "nev": "Tüskés annóna",
+                "megjegyzes": "A szúrszop vagy tüskés annóna a liliomfa-virágúak rendjébe, ezen belül az annónafélék családjába tartozó faj. Nemzetségének a típusfaja.",
+                "nev_eng": "soursop",
+                "alt_szoveg": "soursop",
+                "src": "soursop.png"
+            },
+            {
+                "gyumolcsid": "15",
+                "nev": "Csillaggyümölcs",
+                "megjegyzes": "A karambola, más néven csillaggyümölcs, az Averrhoa carambola gyümölcse, amely a trópusi Délkelet-Ázsiában őshonos fafaj. Az ehető gyümölcs oldalain jellegzetes gerincek futnak le. Keresztmetszetben vágva csillaghoz hasonlít, így a csillaggyümölcs elnevezést kapja.",
+                "nev_eng": "starfruit",
+                "alt_szoveg": "starfruit",
+                "src": "starfruit.png"
+            },
+            {
+                "gyumolcsid": "16",
+                "nev": "Tamarind",
+                "megjegyzes": "A tamarindusz a kétszikűek osztályában a hüvelyesek rendjébe sorolt pillangósvirágúak családjának egyik monotipikus nemzetsége; egyetlen faja a többnyire egyszerűen csak tamarindnak nevezett indiai tamarindusz. Neve az arab-indiai tamar és hindi szavakból ered.",
+                "nev_eng": "tamarind",
+                "alt_szoveg": "tamarind",
+                "src": "tamarind.png"
+            }
         ];
 
         const params = new URLSearchParams(window.location.search);
         const id = params.get("id");
 
-        const tabla = document.getElementById("tabla");
+        const cards = document.getElementById("gyumolcsok");
 
-        adatok
-            .filter(x => x.id == id)
-            .forEach(x => {
-                tabla.innerHTML += `
-        <tr>
-            <td>${x.nev}</td>
-            <td>${x.menny}</td>
-            <td>${x.ar} Ft</td>
-            <td>${x.datum}</td>
-        </tr>`;
-            });
+        adatok.forEach(x => {
+                cards.innerHTML += `
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="./images/${x.src}" class="card-img-top" alt="${x.alt_szoveg}">
+                <div class="card-body">
+                    <h5 class="card-title">${x.nev}</h5>
+                    <p class="card-text">${x.megjegyzes}</p>
+                </div>
+            </div>
+        </div>`;
+        });
     </script>
 
 </body>

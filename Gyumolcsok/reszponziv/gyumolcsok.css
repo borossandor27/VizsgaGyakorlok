@@ -6,13 +6,26 @@ header
     position: relative;
     height: max(300px, 30vh);
 }
-#overlay
+.overlay
 {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
+}
+header.overlay h1
+{
+    font-size: 3rem;
 }
 .card-img-top
 {
     height: 200px;
     object-fit: contain;
+}
+#gyumolcsok .card{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+div#gyumolcsok .card:hover
+{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
