@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Öregfák nyilvántartó rendszer</title>
+    <link rel="icon" href="./tree-1578.svg" sizes="any" type="image/svg+xml">
+
+    <!-- Bootstrap CSS (offline) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Saját CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container pt-2">
+            <div class="overlay d-flex flex-column justify-content-start align-items-start rounded-4 p-3">
+                <h1 class="display-4 fw-bold text-white">Öregfák nyilvántartó rendszer</h1>
+                <p class="lead text-white-50">Reszponzív weboldal bemutató (Bootstrap 5, saját CSS)</p>
+                <div class="gombok my-2 d-flex justify-content-center">
+                    <a href="fak.html" class="btn btn-light btn-lg mx-2">Fák listája</a>
+                    <a href="hozzaadas.html" class="btn btn-outline-light btn-lg mx-2">Új fa felvétele</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fő tartalom -->
+    <main class="container my-5">
+        <!-- Kártyák a három funkcióhoz -->
+        <div class="row g-4">
+
+            <!-- Fák listája kártya -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Lista</h3>
+                        <p class="card-text text-muted mt-3">
+                            Reszponzív táblázat elrendezés.
+                        </p>
+                    </div>
+                    <a href="fak.html" class="btn btn-primary">Megnyitás →</a>
+                </div>
+            </div>
+
+            <!-- Új fa felvétele kártya -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Új fa</h3>
+                        <p class="card-text text-muted mt-3">
+                            Reszponzív űrlap (DEMO mentés).
+                        </p>
+                    </div>
+                    <a href="hozzaadas.html" class="btn btn-primary">Megnyitás →</a>
+                </div>
+            </div>
+
+            <!-- Képek kezelése kártya -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Képek</h3>
+                        <p class="card-text text-muted mt-3">
+                            Reszponzív képlink-módosítás felület (DEMO).
+                        </p>
+                    </div>
+                    <a href="./kepek.html" class="btn btn-primary px-4">Megnyitás →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lábjegyzet / info rész -->
+        <footer class="row mt-5 pt-4">
+            <div class="col-12 text-center text-muted">
+                <small>© 2026 - Öregfák Nyilvántartó Rendszer | Bootstrap 5 | Reszponzív kialakítás</small>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Bootstrap JS Bundle (offline) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Saját JS (ha szükséges) -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

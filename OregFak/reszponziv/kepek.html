@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Öregfák - Képlink módosítása</title>
+    <link rel="icon" href="./tree-1578.svg" sizes="any" type="image/svg+xml">
+
+    <!-- Bootstrap CSS (offline) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Saját CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigációs sáv -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🌳 Öregfák</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Kezdőlap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fak.html">Fák listája</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hozzaadas.html">Új fa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="kepek.html">Képek</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fő tartalom -->
+    <main class="container my-5">
+        <!-- Címsor -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="display-6 fw-bold">Képlink módosítása</h1>
+                <p class="text-muted">1. feladat: reszponzív felület + DEMO mentés (adatbázis nélkül)</p>
+                <hr>
+            </div>
+        </div>
+
+        <!-- Űrlap kártya -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-12">
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5">
+                        <form id="kepModositasForm">
+                            <!-- Fa kiválasztása -->
+                            <div class="mb-4">
+                                <label for="faSelect" class="form-label fw-semibold">🌲 Fa kiválasztása</label>
+                                <select class="form-select form-select-lg" id="faSelect" required>
+                                    <option selected disabled value="">Válasszon...</option>
+                                    <option value="10">10 - Platán (Budapest)</option>
+                                    <option value="11">11 - Hárs (Szeged)</option>
+                                    <option value="12">12 - Tölgy (Pécs)</option>
+                                    <option value="13">13 - Bükk (Miskolc)</option>
+                                    <option value="14">14 - Fenyő (Sopron)</option>
+                                </select>
+                                <div class="form-text">Válassza ki a módosítani kívánt fát.</div>
+                            </div>
+
+                            <!-- Új képlink mező -->
+                            <div class="mb-4">
+                                <label for="kepLink" class="form-label fw-semibold">🔗 Új képlink</label>
+                                <input type="url" class="form-control form-control-lg" id="kepLink"
+                                    placeholder="kepek/3.jpg vagy https://...">
+                                <div class="form-text">Megadhat relatív elérési utat (pl. kepek/1.jpg) vagy teljes
+                                    URL-t.</div>
+                            </div>
+
+                            <!-- Előnézet (plusz funkció) -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">👁️ Előnézet</label>
+                                <div id="kepElonezet" class="border rounded-3 p-3 text-center bg-light"
+                                    style="min-height: 150px;">
+                                    <span class="text-muted">Kép előnézete itt jelenik meg...</span>
+                                </div>
+                            </div>
+
+                            <!-- Gombok -->
+                            <div class="d-flex flex-wrap gap-3 mt-4">
+                                <button type="button" id="mentesBtn" class="btn btn-primary btn-lg px-5">
+                                    💾 Mentés
+                                </button>
+                                <button type="reset" class="btn btn-outline-secondary btn-lg px-4">
+                                    🗑️ Űrlap törlése
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Megjegyzés -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>📌 Megjegyzés:</strong> Ebben a külön feladatban a módosítás DEMO (nem kerül adatbázisba).
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vissza gomb -->
+        <div class="row mt-3">
+            <div class="col-12">
+                <a href="index.html" class="btn btn-outline-secondary">← Vissza a főoldalra</a>
+            </div>
+        </div>
+
+        <!-- Lábjegyzet -->
+        <footer class="row mt-5 pt-4">
+            <div class="col-12 text-center text-muted">
+                <small>© 2026 - Öregfák Nyilvántartó Rendszer | Bootstrap 5 | Reszponzív felület</small>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Bootstrap JS Bundle (offline) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Saját JS -->
+    <script src="js/script.js"></script>
+
+    <script>
+        // DEMO mentés funkció - adatbázis művelet nélkül
+        document.getElementById('mentesBtn').addEventListener('click', function () {
+            const faSelect = document.getElementById('faSelect');
+            const kepLink = document.getElementById('kepLink');
+
+            const selectedFa = faSelect.options[faSelect.selectedIndex]?.text || 'ismeretlen fa';
+            const linkValue = kepLink.value.trim();
+
+            if (!faSelect.value) {
+                alert('❌ Kérem, válasszon ki egy fát!');
+                return;
+            }
+
+            if (!linkValue) {
+                alert('⚠️ Kérem, adja meg az új képlinket!');
+                return;
+            }
+
+            // DEMO üzenet - valós adatbázis művelet nélkül
+            alert(`[DEMO] A következő módosítások kerültek mentésre (adatbázis művelet nélkül):\n\n🌲 Fa: ${selectedFa}\n🔗 Új képlink: ${linkValue}\n\nA valóságban ez az adatbázisban frissítené a fa URL mezőjét.`);
+
+            // Opcionális: mezők visszaállítása a mentés után
+            // kepLink.value = '';
+            // faSelect.value = '';
+        });
+
+        // Kép előnézet frissítése URL megadásakor
+        document.getElementById('kepLink').addEventListener('input', function () {
+            const link = this.value.trim();
+            const elonezetDiv = document.getElementById('kepElonezet');
+
+            if (link) {
+                // Ellenőrizzük, hogy kép URL-ről van-e szó
+                const imageExtensions = /\.(jpg|jpeg|png|gif|webp|svg)(\?.*)?$/i;
+                const isImage = imageExtensions.test(link) || link.includes('kepek/');
+
+                if (isImage) {
+                    elonezetDiv.innerHTML = `<img src="${link}" alt="Előnézet" class="img-fluid rounded" style="max-height: 200px;" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-danger\'>❌ A kép nem tölthető be. Ellenőrizze a linket!</span>'">`;
+                } else {
+                    elonezetDiv.innerHTML = `<div class="text-muted">🔗 Link: ${link}<br><small>(nem kép URL, előnézet nem elérhető)</small></div>`;
+                }
+            } else {
+                elonezetDiv.innerHTML = '<span class="text-muted">Kép előnézete itt jelenik meg...</span>';
+            }
+        });
+
+        // Űrlap törlése gomb - alaphelyzet visszaállítása
+        document.querySelector('button[type="reset"]').addEventListener('click', function () {
+            document.getElementById('kepElonezet').innerHTML = '<span class="text-muted">Kép előnézete itt jelenik meg...</span>';
+        });
+    </script>
+</body>
+
+</html>

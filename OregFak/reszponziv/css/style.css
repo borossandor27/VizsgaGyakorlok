@@ -1,0 +1,88 @@
+header{
+    background-image: url("../kepek/10.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Aktív menüpont stílusa (RGB(100, 100, 160) - félkövér) */
+.navbar-nav .nav-link.active {
+    color: rgb(100, 100, 160) !important;
+    font-weight: bold;
+}
+
+/* További reszponzív beállítások */
+.table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.img-thumbnail {
+    border-radius: 8px;
+}
+
+/* Aktív menüpont stílusa (RGB(100, 100, 160) - félkövér) */
+.navbar-nav .nav-link.active {
+    color: rgb(100, 100, 160) !important;
+    font-weight: bold;
+}
+
+/* Kártya animáció */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Aktív menüpont stílusa (RGB(100, 100, 160) - félkövér) */
+.navbar-nav .nav-link.active {
+    color: rgb(100, 100, 160) !important;
+    font-weight: bold;
+}
+
+/* Kártya animáció */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Aktív menüpont stílusa (RGB(100, 100, 160) - félkövér) */
+.navbar-nav .nav-link.active {
+    color: rgb(100, 100, 160) !important;
+    font-weight: bold;
+}
+
+/* Kártya animáció */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 768px) {
+    .btn-lg {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .form-control-lg, .form-select-lg {
+        font-size: 1rem;
+    }
+}

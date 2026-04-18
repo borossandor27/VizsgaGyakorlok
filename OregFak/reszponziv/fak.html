@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Öregfák - Fák listája</title>
+    <link rel="icon" href="./tree-1578.svg" sizes="any" type="image/svg+xml">
+
+    <!-- Bootstrap CSS (offline) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Saját CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigációs sáv -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🌳 Öregfák</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Kezdőlap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="fak.html">Fák listája</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hozzaadas.html">Új fa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kepek.html">Képek</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fő tartalom -->
+    <main class="container my-5">
+        <!-- Címsor -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="display-6 fw-bold">Fák listája</h1>
+                <p class="text-muted">1. feladatban minta adat (a működés későbbi feladat)</p>
+                <hr>
+            </div>
+        </div>
+
+        <!-- Reszponzív táblázat -->
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Azon</th>
+                                <th>Faj</th>
+                                <th>Körméret</th>
+                                <th>Mérés éve</th>
+                                <th>Település</th>
+                                <th>Kép</th>
+                                <th>Művelet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>Platán</td>
+                                <td>610</td>
+                                <td>2023</td>
+                                <td>Budapest</td>
+                                <td>
+                                    <img src="kepek/10.jpg" alt="Budapest fa" class="img-thumbnail"
+                                        style="width: 60px; height: 60px; object-fit: cover;">
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm delete-btn" data-id="10">🗑️ Törlés</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Hárs</td>
+                                <td>380</td>
+                                <td>2021</td>
+                                <td>Szeged</td>
+                                <td>
+                                    <span class="badge bg-secondary">Nincs kép</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm delete-btn" data-id="11">🗑️ Törlés</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Megjegyzés -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>📌 Megjegyzés:</strong> ebben a külön feladatban a törlés gomb csak a felület része (nem
+                    végez adatbázis-műveletet).
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vissza gomb -->
+        <div class="row mt-3">
+            <div class="col-12">
+                <a href="index.html" class="btn btn-outline-secondary">← Vissza a főoldalra</a>
+            </div>
+        </div>
+
+        <!-- Lábjegyzet -->
+        <footer class="row mt-5 pt-4">
+            <div class="col-12 text-center text-muted">
+                <small>© 2026 - Öregfák Nyilvántartó Rendszer | Bootstrap 5 | Reszponzív táblázat</small>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Bootstrap JS Bundle (offline) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Saját JS -->
+    <script src="js/script.js"></script>
+
+    <script>
+        // Törlés gombokhoz figyelmeztető üzenet (DEMO)
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const faId = this.getAttribute('data-id');
+                alert(`[DEMO] A(z) ${faId} azonosítójú fa törlése (adatbázis-művelet nélkül).`);
+            });
+        });
+    </script>
+</body>
+
+</html>

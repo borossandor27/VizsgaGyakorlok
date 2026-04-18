@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Öregfák - Új fa felvétele</title>
+    <link rel="icon" href="./tree-1578.svg" sizes="any" type="image/svg+xml">
+
+    <!-- Bootstrap CSS (offline) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Saját CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigációs sáv -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🌳 Öregfák</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Kezdőlap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fak.html">Fák listája</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="hozzaadas.html">Új fa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kepek.html">Képek</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fő tartalom -->
+    <main class="container my-5">
+        <!-- Címsor -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="display-6 fw-bold">Új fa felvétele</h1>
+                <p class="text-muted">1. feladat: reszponzív űrlap - DEMO mentés (adatbázis nélkül)</p>
+                <hr>
+            </div>
+        </div>
+
+        <!-- Űrlap kártya -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-12">
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5">
+                        <form id="ujFaForm">
+                            <!-- Faj mező -->
+                            <div class="mb-4">
+                                <label for="faj" class="form-label fw-semibold">🌿 Faj</label>
+                                <input type="text" class="form-control form-control-lg" id="faj"
+                                    placeholder="Pl. közönséges bükk, kocsányos tölgy, szelídgesztenye" required>
+                                <div class="form-text">Adja meg a fa fajtáját.</div>
+                            </div>
+
+                            <!-- Körméret és Mérés éve - két oszlopban -->
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label for="kormeret" class="form-label fw-semibold">📏 Körméret (cm)</label>
+                                    <input type="number" class="form-control form-control-lg" id="kormeret"
+                                        placeholder="Pl. 450" min="1" required>
+                                    <div class="form-text">A fa törzsének körmérete centiméterben.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="meresEve" class="form-label fw-semibold">📅 Mérés éve</label>
+                                    <input type="number" class="form-control form-control-lg" id="meresEve"
+                                        placeholder="Pl. 2024" min="1900" max="2026" required>
+                                    <div class="form-text">A mérés évszáma.</div>
+                                </div>
+                            </div>
+
+                            <!-- Település lenyíló lista -->
+                            <div class="mb-4">
+                                <label for="telepules" class="form-label fw-semibold">🏙️ Település</label>
+                                <select class="form-select form-select-lg" id="telepules" required>
+                                    <option selected disabled value="">Válasszon települést...</option>
+                                    <option value="1">Budapest</option>
+                                    <option value="2">Szeged</option>
+                                    <option value="3">Pécs</option>
+                                    <option value="4">Miskolc</option>
+                                    <option value="5">Debrecen</option>
+                                    <option value="6">Győr</option>
+                                    <option value="7">Sopron</option>
+                                    <option value="8">Veszprém</option>
+                                    <option value="9">Kecskemét</option>
+                                    <option value="10">Székesfehérvár</option>
+                                    <option value="11">Nyíregyháza</option>
+                                    <option value="12">Szombathely</option>
+                                </select>
+                                <div class="form-text">Válassza ki a fa helyszínéül szolgáló települést.</div>
+                            </div>
+
+                            <!-- Fa fényképének linkje -->
+                            <div class="mb-4">
+                                <label for="kepLink" class="form-label fw-semibold">🖼️ Fa fényképének linkje</label>
+                                <input type="url" class="form-control form-control-lg" id="kepLink"
+                                    placeholder="kepek/1.jpg vagy https://...">
+                                <div class="form-text">Opcionális. Megadhat relatív elérési utat (pl. kepek/1.jpg) vagy
+                                    teljes URL-t.</div>
+                            </div>
+
+                            <!-- Kép előnézet (plusz funkció) -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">👁️ Előnézet</label>
+                                <div id="kepElonezet" class="border rounded-3 p-3 text-center bg-light"
+                                    style="min-height: 120px;">
+                                    <span class="text-muted">Kép előnézete itt jelenik meg...</span>
+                                </div>
+                            </div>
+
+                            <!-- Gombok -->
+                            <div class="d-flex flex-wrap gap-3 mt-4">
+                                <button type="button" id="mentesBtn" class="btn btn-success btn-lg px-5">
+                                    💾 Mentés
+                                </button>
+                                <button type="reset" class="btn btn-outline-secondary btn-lg px-4">
+                                    🗑️ Űrlap törlése
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Megjegyzés -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>📌 Megjegyzés:</strong> A mentés itt DEMO jellegű (1. feladat), adatbázis művelet nincs.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lábjegyzet -->
+        <footer class="row mt-5 pt-4">
+            <div class="col-12 text-center text-muted">
+                <small>© 2026 - Öregfák Nyilvántartó Rendszer | Bootstrap 5 | Reszponzív űrlap</small>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Bootstrap JS Bundle (offline) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Saját JS -->
+    <script src="js/script.js"></script>
+
+    <script>
+        // Kép előnézet frissítése URL megadásakor
+        document.getElementById('kepLink').addEventListener('input', function () {
+            const link = this.value.trim();
+            const elonezetDiv = document.getElementById('kepElonezet');
+
+            if (link) {
+                // Ellenőrizzük, hogy kép URL-ről van-e szó
+                const imageExtensions = /\.(jpg|jpeg|png|gif|webp|svg)(\?.*)?$/i;
+                const isImage = imageExtensions.test(link) || link.includes('kepek/');
+
+                if (isImage) {
+                    elonezetDiv.innerHTML = `<img src="${link}" alt="Előnézet" class="img-fluid rounded" style="max-height: 150px;" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-danger\'>❌ A kép nem tölthető be. Ellenőrizze a linket!</span>'">`;
+                } else {
+                    elonezetDiv.innerHTML = `<div class="text-muted">🔗 Link: ${link}<br><small>(nem kép URL, előnézet nem elérhető)</small></div>`;
+                }
+            } else {
+                elonezetDiv.innerHTML = '<span class="text-muted">Kép előnézete itt jelenik meg...</span>';
+            }
+        });
+
+        // DEMO mentés funkció - adatbázis művelet nélkül
+        document.getElementById('mentesBtn').addEventListener('click', function () {
+            const faj = document.getElementById('faj').value.trim();
+            const kormeret = document.getElementById('kormeret').value;
+            const meresEve = document.getElementById('meresEve').value;
+            const telepulesSelect = document.getElementById('telepules');
+            const telepulesNeve = telepulesSelect.options[telepulesSelect.selectedIndex]?.text || '';
+            const kepLink = document.getElementById('kepLink').value.trim();
+
+            // Validáció
+            if (!faj) {
+                alert('❌ Kérem, adja meg a fa fajtáját!');
+                return;
+            }
+
+            if (!kormeret) {
+                alert('❌ Kérem, adja meg a fa körméretét!');
+                return;
+            }
+
+            if (!meresEve) {
+                alert('❌ Kérem, adja meg a mérés évét!');
+                return;
+            }
+
+            if (!telepulesSelect.value) {
+                alert('❌ Kérem, válasszon ki egy települést!');
+                return;
+            }
+
+            // DEMO üzenet - valós adatbázis művelet nélkül
+            let uzenet = `[DEMO] Új fa rögzítése (adatbázis művelet nélkül):\n\n`;
+            uzenet += `🌿 Faj: ${faj}\n`;
+            uzenet += `📏 Körméret: ${kormeret} cm\n`;
+            uzenet += `📅 Mérés éve: ${meresEve}\n`;
+            uzenet += `🏙️ Település: ${telepulesNeve}\n`;
+            uzenet += `🖼️ Képlink: ${kepLink || '(nincs megadva)'}\n\n`;
+            uzenet += `A valóságban ez beszúrásra kerülne az adatbázisba.`;
+
+            alert(uzenet);
+
+            // Opcionális: űrlap reset a mentés után (ha akarjuk)
+            // document.getElementById('ujFaForm').reset();
+            // document.getElementById('kepElonezet').innerHTML = '<span class="text-muted">Kép előnézete itt jelenik meg...</span>';
+        });
+
+        // Űrlap törlése gomb - alaphelyzet visszaállítása
+        document.querySelector('button[type="reset"]').addEventListener('click', function () {
+            // Reset után az előnézet is törlődik
+            setTimeout(() => {
+                document.getElementById('kepElonezet').innerHTML = '<span class="text-muted">Kép előnézete itt jelenik meg...</span>';
+            }, 10);
+        });
+    </script>
+</body>
+
+</html>
