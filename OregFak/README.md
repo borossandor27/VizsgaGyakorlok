@@ -2,7 +2,7 @@
 
 **Megnevezés:** B) Asztali- és webes szoftverfejlesztés, adatbázis-kezelés  
 **Időtartam:** 240 perc  
-**Segédeszköz:** kijelölt számítógép, papír, toll, ceruza, lepecsételt pótlap, általános keresésre internet [cite: 1]
+**Segédeszköz:** kijelölt számítógép, papír, toll, ceruza, lepecsételt pótlap, általános keresésre internet  [cite: 1]
 
 ---
 
@@ -19,22 +19,22 @@
 - 60-79% : 4
 - 50-59% : 3
 - 40-49% : 2
-- 0-39% : 1 [cite: 1, 2]
+- 0-39% : 1  [cite: 1, 2]
 
 ---
 
 ## Fontos tudnivalók
 
-- Az internetkapcsolatot kizárólag általános keresésre használhatja[cite: 5].
-- Mentse munkáját rendszeresen a megadott vizsgakönyvtárba[cite: 8].
-- Csak a forráskódot tartalmazó állományok értékelhetők[cite: 11].
-- Az adatbázis-fejlesztés értékelése az asztali és a webes részekben történik[cite: 12].
+- Az internetkapcsolatot kizárólag általános keresésre használhatja [cite: 5].
+- Mentse munkáját rendszeresen a megadott vizsgakönyvtárba [cite: 8].
+- Csak a forráskódot tartalmazó állományok értékelhetők [cite: 11].
+- Az adatbázis-fejlesztés értékelése az asztali és a webes részekben történik [cite: 12].
 
 ---
 
 ## 1. Projekt feladat: Asztali alkalmazás fejlesztése
 
-Magyarország nevezetes fáinak adatait tartalmazó szöveges állományok (CSV) feldolgozása[cite: 17].
+Magyarország nevezetes fáinak adatait tartalmazó szöveges állományok (CSV) feldolgozása [cite: 17].
 
 ### Adatforrások
 
@@ -44,55 +44,55 @@ Magyarország nevezetes fáinak adatait tartalmazó szöveges állományok (CSV)
 - `faj`: fajta (szöveg)
 - `kormeret`: törzs körmérete
 - `telepules_id`: település azonosítója
-- `meres`: mérés éve [cite: 25]
+- `meres`: mérés éve  [cite: 25]
 
 **telepules.csv:**
 
 - `id`: azonosító
 - `nev`: település neve
-- `megyeid`: vármegye azonosítója [cite: 25]
+- `megyeid`: vármegye azonosítója  [cite: 25]
 
 ### Feladatok (Konzol - NagyFak)
 
-1. Hozzon létre egy `Fa` osztályt a megadott mezőkkel *(Azon, Faj, Kormeret, Telepulesid, MeresEve, TelepulesNev)*[cite: 28].
-2. Készítsen statikus `Beolvas` metódust a fájlok betöltéséhez[cite: 29].
-3. Határozza meg a legnagyobb körméretű fát és települését[cite: 36].
-4. Listázza ki azt a négy települést, ahol a legtöbb nagy körméretű fa található[cite: 37].
-5. Kérjen be egy fafajtát a felhasználótól, és mentse az adatait egy `.txt` fájlba (pl. `Hars.csv`)[cite: 38, 39, 42].
+1. Hozzon létre egy `Fa` osztályt a megadott mezőkkel *(Azon, Faj, Kormeret, Telepulesid, MeresEve, TelepulesNev)* [cite: 28].
+2. Készítsen statikus `Beolvas` metódust a fájlok betöltéséhez [cite: 29].
+3. Határozza meg a legnagyobb körméretű fát és települését [cite: 36].
+4. Listázza ki azt a négy települést, ahol a legtöbb nagy körméretű fa található [cite: 37].
+5. Kérjen be egy fafajtát a felhasználótól, és mentse az adatait egy `.txt` fájlba (pl. `Hars.csv`) [cite: 38, 39, 42].
 
 ### Feladatok (GUI - NagyFakGUI)
 
-1. Készítsen reszponzív grafikus felületet `NagyFakGUI` néven[cite: 49, 50].
-2. A háttérkép a `farajz.jpg` legyen[cite: 52].
-3. Csatlakozzon a `fak_db` adatbázishoz[cite: 54].
-4. Az "Adatok betöltése" gombra kattintva töltse be a fák listáját egy ListBox-ba[cite: 55].
-5. A lista elemére kattintva jelenjen meg a település neve és a hozzá tartozó kép az `img` mappából[cite: 55].
+1. Készítsen reszponzív grafikus felületet `NagyFakGUI` néven [cite: 49, 50].
+2. A háttérkép a `farajz.jpg` legyen [cite: 52].
+3. Csatlakozzon a `fak_db` adatbázishoz [cite: 54].
+4. Az "Adatok betöltése" gombra kattintva töltse be a fák listáját egy ListBox-ba [cite: 55].
+5. A lista elemére kattintva jelenjen meg a település neve és a hozzá tartozó kép az `img` mappából [cite: 55].
 
 ---
 
 ## 2. Projekt feladat: Webalkalmazás fejlesztése
 
-**Öregfák Nyilvántartó Rendszer**[cite: 56].
+**Öregfák Nyilvántartó Rendszer** [cite: 56].
 
-### Részek:
+### Részei
 
-1. **Reszponzív weboldal:** Bootstrap és saját CSS használatával[cite: 57].
-2. **Backend:** Node.js + Express + MySQL REST API[cite: 57].
-3. **Frontend:** Listázás, felvitel, törlés és képlink-módosítás[cite: 57].
+1. **Reszponzív weboldal:** Bootstrap és saját CSS használatával [cite: 57].
+2. **Backend:** Node.js + Express + MySQL REST API [cite: 57].
+3. **Frontend:** Listázás, felvitel, törlés és képlink-módosítás [cite: 57].
 
 ### Adatbázis struktúra (fak_db)
 
-- **fa tábla:** `azon`, `faj`, `kormeret`, `telepules_id`, `meres`, `URL` [cite: 63]
-- **telepules tábla:** `id`, `nev`, `megyeid` [cite: 63]
-- **megye tábla:** `id`, `nev` [cite: 63]
+- **fa tábla:** `azon`, `faj`, `kormeret`, `telepules_id`, `meres`, `URL`  [cite: 63]
+- **telepules tábla:** `id`, `nev`, `megyeid`  [cite: 63]
+- **megye tábla:** `id`, `nev`  [cite: 63]
 
 ### Weboldal követelmények:
 
 - `index.html` (kezdőlap látványos fejléccel)
 - `fak.html` (fák listája)
 - `hozzaadas.html` (új fa felvétele)
-- `kepek.html` (képlink módosítása) [cite: 8]
-- Aktuális menüpont kiemelése: `RGB(100, 100, 160)`, félkövér[cite: 8].
+- `kepek.html` (képlink módosítása)  [cite: 8]
+- Aktuális menüpont kiemelése: `RGB(100, 100, 160)`, félkövér [cite: 8].
 
 ---
 
@@ -140,7 +140,7 @@ Készítse el a backend alkalmazást `server.js` néven a `backend` mappában!
 
 ---
 
-### Frontend feladat (Kliensoldali logika)
+### Frontend feladat *(Kliensoldali logika)*
 
 A `frontend` mappában található HTML fájlokat egészítse ki a szükséges JavaScript (fetch API) hívásokkal:
 
