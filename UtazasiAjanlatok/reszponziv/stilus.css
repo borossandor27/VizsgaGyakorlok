@@ -62,9 +62,9 @@ body {
 }
 
 /* --- Banner (főoldal) --- */
-.hero-banner {
+header {
     position: relative;
-    background-image: url('kepek/banner.jpg');
+    background-image: url('./kepek/banner.png');
     background-size: cover;
     background-position: center 55%;
     min-height: 260px;
@@ -77,7 +77,6 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(10, 35, 50, 0.62);
 }
 
 .hero-content {
@@ -85,10 +84,12 @@ body {
     z-index: 1;
     padding: 2rem;
     color: #fff;
+    background: rgba(10, 35, 50, 0.62);
 }
 
 .hero-content h1 {
-    font-size: 2rem;
+    font-size: 4rem;
+    font-family: "Brush Script MT", cursive, sans-serif;
     font-weight: 700;
     margin-bottom: 0.25rem;
     color: #e8f6f8;
