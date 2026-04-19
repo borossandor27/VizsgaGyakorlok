@@ -1,0 +1,233 @@
+/* Képgaléria nyilvántartó rendszer – saját stílusok
+   Színpaletta (klasszikus múzeum / arany keret téma):
+     Elsődleges arany (képkeret):       #8a6a1a
+     Sötét navbar (múzeumfal):          #1e1a14
+     Krém akcentus (vászon):            #f5f0e6
+     Oldal háttér (antik fehér):        #f8f5ef
+     Kártyakeret (meleg barna):         #d4c8b0
+     Megjegyzés doboz:                  #fdf6e3 / #5a4a10
+     Táblázat hover:                    #fdf8f0
+*/
+
+/* --- Oldal háttérszín --- */
+body {
+    background-color: #f8f5ef;
+}
+
+/* --- Bootstrap btn-primary felülírása (arany) --- */
+.btn-primary {
+    background-color: #8a6a1a;
+    border-color: #785c16;
+    color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #6a5010;
+    border-color: #5a420d;
+    color: #fff;
+}
+.btn-primary:active {
+    background-color: #5a420d !important;
+    border-color: #48340a !important;
+}
+
+/* --- Bootstrap btn-light felülírása (bannergomb) --- */
+.btn-light {
+    background-color: #f8f5ef;
+    border-color: #d4c8b0;
+    color: #1e1a14;
+}
+.btn-light:hover {
+    background-color: #ede5d4;
+    border-color: #c4b89a;
+    color: #1e1a14;
+}
+
+/* --- Navbar (sötét múzeumfal) --- */
+.navbar.bg-dark {
+    background-color: #1e1a14 !important;
+    border-bottom: 2px solid #8a6a1a;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #d4aa50 !important;
+}
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #d4aa50 !important;
+    font-weight: 500;
+}
+.navbar-brand {
+    color: #d4aa50 !important;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* --- Banner (főoldal) --- */
+.hero-banner {
+    position: relative;
+    background-image: url('../kepek/banner.jpg');
+    background-size: cover;
+    background-position: bottom 40%;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    /* Fallback gradiens ha nincs kép */
+    background-color: #1e1a14;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-content {
+    background: rgba(20, 15, 8, 0.68);
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #f5edd8;
+}
+
+.hero-content p {
+    font-size: 0.95rem;
+    opacity: 0.82;
+    margin-bottom: 1.25rem;
+    color: #ddd0b0;
+}
+
+/* --- Navigációs kártyák (főoldal) --- */
+.nav-card {
+    background-color: #fdfaf4;
+    border: 1px solid #d4c8b0;
+    border-top: 3px solid #8a6a1a;
+    border-radius: 8px;
+    padding: 1.25rem;
+    height: 100%;
+}
+
+.nav-card h5 {
+    font-weight: 600;
+    color: #8a6a1a;
+    margin-bottom: 0.5rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: #7a6a50;
+}
+
+/* --- Táblázat --- */
+.table thead th {
+    font-weight: 600;
+    color: #1e1a14;
+    border-bottom: 2px solid #8a6a1a;
+    background-color: #ede5d4;
+}
+
+.table tbody tr:hover {
+    background-color: #fdf8f0;
+}
+
+.table-bordered {
+    border-color: #d4c8b0;
+}
+.table-bordered td,
+.table-bordered th {
+    border-color: #d4c8b0;
+}
+
+/* --- Státusz badge-ek --- */
+.badge-kiallitva {
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.badge-tarolt {
+    background-color: #fff3cd;
+    color: #856404;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.badge-kolcsonzott {
+    background-color: #cfe2ff;
+    color: #084298;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* --- Megjegyzés doboz --- */
+.megjegyzes-doboz {
+    background-color: #fdf6e3;
+    border: 1px solid #e0cc90;
+    border-radius: 6px;
+    padding: 0.85rem 1.1rem;
+    font-size: 0.9rem;
+    color: #5a4a10;
+    margin-top: 1.5rem;
+}
+
+/* --- Oldalcím + alcím --- */
+.oldal-cim {
+    margin-top: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: #1e1a14;
+}
+
+.oldal-alcim {
+    font-size: 0.875rem;
+    color: #7a6a50;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Űrlap --- */
+.urlap-keret {
+    max-width: 680px;
+}
+
+.urlap-keret label {
+    font-weight: 500;
+    color: #1e1a14;
+    margin-bottom: 0.25rem;
+}
+
+.form-control,
+.form-select {
+    background-color: #fdfaf4;
+    border-color: #c8bca0;
+    color: #1e1a14;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #8a6a1a;
+    box-shadow: 0 0 0 0.2rem rgba(138, 106, 26, 0.20);
+    background-color: #ffffff;
+}
+
+.form-control::placeholder {
+    color: #b0a080;
+}
+
+/* --- Törlés gomb --- */
+.btn-outline-danger {
+    color: #a02020;
+    border-color: #a02020;
+}
+.btn-outline-danger:hover {
+    background-color: #a02020;
+    border-color: #a02020;
+    color: #fff;
+}

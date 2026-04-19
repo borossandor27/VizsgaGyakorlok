@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Új festmény – Képgaléria</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="stilus.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🖼️ GalleryApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#foMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="foMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="festmenyek.html">Festmények listája</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="uj.html">Új festmény</a></li>
+                    <li class="nav-item"><a class="nav-link" href="modositas.html">Módosítás</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tartalom -->
+    <div class="container">
+        <h1 class="oldal-cim">Új festmény felvétele</h1>
+        <p class="oldal-alcim">1. feladat: reszponzív űrlap + DEMO mentés (adatbázis nélkül)</p>
+
+        <div class="urlap-keret mx-auto col-8">
+
+            <!-- Cím -->
+            <div class="mb-3">
+                <label for="cim" class="form-label">Festmény címe</label>
+                <input type="text" class="form-control" id="cim" placeholder="Pl. Mona Lisa">
+            </div>
+
+            <!-- Festő -->
+            <div class="mb-3">
+                <label for="festo" class="form-label">Festő neve</label>
+                <input type="text" class="form-control" id="festo" placeholder="Pl. Leonardo da Vinci">
+            </div>
+
+            <!-- Korszak + Technika egymás mellett -->
+            <div class="row mb-3">
+                <div class="col-12 col-sm-6">
+                    <label for="korszak" class="form-label">Korszak / stílusirányzat</label>
+                    <select class="form-select" id="korszak">
+                        <option value="">Válasszon korszakot…</option>
+                        <option>Reneszánsz</option>
+                        <option>Barokk</option>
+                        <option>Klasszicizmus</option>
+                        <option>Romantika</option>
+                        <option>Impresszionizmus</option>
+                        <option>Posztimpresszionizmus</option>
+                        <option>Expresszionizmus</option>
+                        <option>Kubizmus</option>
+                        <option>Szürrealizmus</option>
+                        <option>Absztrakt</option>
+                        <option>Egyéb</option>
+                    </select>
+                </div>
+                <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                    <label for="technika" class="form-label">Technika / alapanyag</label>
+                    <input type="text" class="form-control" id="technika" placeholder="Pl. Olaj, vászon">
+                </div>
+            </div>
+
+            <!-- Elkészítés éve + Méret egymás mellett -->
+            <div class="row mb-3">
+                <div class="col-12 col-sm-4">
+                    <label for="ev" class="form-label">Elkészítés éve</label>
+                    <input type="number" class="form-control" id="ev" placeholder="Pl. 1889" min="1000" max="2025">
+                </div>
+                <div class="col-12 col-sm-4 mt-3 mt-sm-0">
+                    <label for="szelesseg" class="form-label">Szélesség (cm)</label>
+                    <input type="number" class="form-control" id="szelesseg" placeholder="Pl. 92" min="1">
+                </div>
+                <div class="col-12 col-sm-4 mt-3 mt-sm-0">
+                    <label for="magassag" class="form-label">Magasság (cm)</label>
+                    <input type="number" class="form-control" id="magassag" placeholder="Pl. 74" min="1">
+                </div>
+            </div>
+
+            <!-- Elhelyezés -->
+            <div class="mb-3">
+                <label for="elhelyezes" class="form-label">Jelenlegi elhelyezés</label>
+                <input type="text" class="form-control" id="elhelyezés" placeholder="Pl. Louvre, Párizs">
+            </div>
+
+            <!-- Képlink -->
+            <div class="mb-3">
+                <label for="kep" class="form-label">Festmény képének linkje</label>
+                <input type="text" class="form-control" id="kep" placeholder="kepek/1.jpg vagy https://…">
+            </div>
+
+            <!-- Leírás -->
+            <div class="mb-3">
+                <label for="leiras" class="form-label">Rövid leírás (opcionális)</label>
+                <textarea class="form-control" id="leiras" rows="3"
+                    placeholder="A festmény rövid ismertetője, érdekességek…"></textarea>
+            </div>
+
+            <!-- Mentés gomb -->
+            <div class="d-grid mb-3">
+                <button type="button" class="btn btn-primary">Festmény mentése</button>
+            </div>
+
+        </div>
+
+        <div class="megjegyzes-doboz">
+            <strong>Megjegyzés:</strong> A mentés itt DEMO jellegű (1. feladat), adatbázis-művelet nincs.
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festmények listája – Képgaléria</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="stilus.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🖼️ GalleryApp</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#foMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="foMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="festmenyek.html">Festmények listája</a></li>
+                    <li class="nav-item"><a class="nav-link" href="uj.html">Új festmény</a></li>
+                    <li class="nav-item"><a class="nav-link" href="modositas.html">Módosítás</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tartalom -->
+    <div class="container">
+        <h1 class="oldal-cim">Festmények listája</h1>
+        <p class="oldal-alcim">1. feladatban minta adat (a működés később feladat).</p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Azon</th>
+                        <th>Cím</th>
+                        <th>Festő</th>
+                        <th>Korszak</th>
+                        <th>Technika</th>
+                        <th>Méret (cm)</th>
+                        <th>Elhelyezés</th>
+                        <th>Kép</th>
+                        <th>Státusz</th>
+                        <th>Művelet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mona Lisa</td>
+                        <td>Leonardo da Vinci</td>
+                        <td>Reneszánsz</td>
+                        <td>Olaj, nyárfa</td>
+                        <td>77 × 53</td>
+                        <td>Louvre, Párizs</td>
+                        <td>kepek/1.jpg</td>
+                        <td><span class="badge-kiallitva">Kiállítva</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Csillagos éj</td>
+                        <td>Vincent van Gogh</td>
+                        <td>Posztimpresszionizmus</td>
+                        <td>Olaj, vászon</td>
+                        <td>74 × 92</td>
+                        <td>MoMA, New York</td>
+                        <td>kepek/2.jpg</td>
+                        <td><span class="badge-kiallitva">Kiállítva</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>A sikoltozó</td>
+                        <td>Edvard Munch</td>
+                        <td>Expresszionizmus</td>
+                        <td>Olaj, tempera</td>
+                        <td>91 × 74</td>
+                        <td>Nemzeti Galéria, Oslo</td>
+                        <td>kepek/3.jpg</td>
+                        <td><span class="badge-kolcsonzott">Kölcsönzött</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Leány gyöngy fülbevalóval</td>
+                        <td>Johannes Vermeer</td>
+                        <td>Barokk</td>
+                        <td>Olaj, vászon</td>
+                        <td>44 × 39</td>
+                        <td>Mauritshuis, Hága</td>
+                        <td>kepek/4.jpg</td>
+                        <td><span class="badge-kiallitva">Kiállítva</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Az emlékezet maradandósága</td>
+                        <td>Salvador Dalí</td>
+                        <td>Szürrealizmus</td>
+                        <td>Olaj, vászon</td>
+                        <td>24 × 33</td>
+                        <td>MoMA, New York</td>
+                        <td class="text-muted fst-italic">Nincs kép</td>
+                        <td><span class="badge-tarolt">Tárolt</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Guernica</td>
+                        <td>Pablo Picasso</td>
+                        <td>Kubizmus</td>
+                        <td>Olaj, vászon</td>
+                        <td>349 × 776</td>
+                        <td>Museo Reina Sofía, Madrid</td>
+                        <td>kepek/6.jpg</td>
+                        <td><span class="badge-kiallitva">Kiállítva</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Vízililiomok</td>
+                        <td>Claude Monet</td>
+                        <td>Impresszionizmus</td>
+                        <td>Olaj, vászon</td>
+                        <td>200 × 180</td>
+                        <td>Orangerie Múzeum, Párizs</td>
+                        <td>kepek/7.jpg</td>
+                        <td><span class="badge-kolcsonzott">Kölcsönzött</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Az utolsó vacsora</td>
+                        <td>Leonardo da Vinci</td>
+                        <td>Reneszánsz</td>
+                        <td>Tempera, gipsz</td>
+                        <td>460 × 880</td>
+                        <td>Santa Maria delle Grazie, Milánó</td>
+                        <td class="text-muted fst-italic">Nincs kép</td>
+                        <td><span class="badge-tarolt">Tárolt</span></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Törlés</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="megjegyzes-doboz">
+            <strong>Megjegyzés:</strong> ebben a külön feladatban a törlés gomb csak a felület része (nem végez adatbázis-műveletet).
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

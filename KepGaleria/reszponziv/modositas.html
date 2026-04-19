@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festmény módosítása – Képgaléria</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="stilus.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🖼️ GalleryApp</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#foMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="foMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="festmenyek.html">Festmények listája</a></li>
+                    <li class="nav-item"><a class="nav-link" href="uj.html">Új festmény</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="modositas.html">Módosítás</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tartalom -->
+    <div class="container mt-4">
+        <h1 class="oldal-cim">Festmény módosítása</h1>
+        <p class="oldal-alcim">1. feladat: reszponzív felület + DEMO mentés (adatbázis nélkül)</p>
+
+        <div class="urlap-keret col-8 mx-auto">
+
+            <!-- Festmény kiválasztása -->
+            <div class="mb-3">
+                <label for="festmeny" class="form-label">Festmény kiválasztása</label>
+                <select class="form-select" id="festmeny">
+                    <option value="">Válasszon festményt…</option>
+                    <option value="1">Mona Lisa – Leonardo da Vinci</option>
+                    <option value="2">Csillagos éj – Vincent van Gogh</option>
+                    <option value="3">A sikoltozó – Edvard Munch</option>
+                    <option value="4">Leány gyöngy fülbevalóval – Johannes Vermeer</option>
+                    <option value="5">Az emlékezet maradandósága – Salvador Dalí</option>
+                    <option value="6">Guernica – Pablo Picasso</option>
+                    <option value="7">Vízililiomok – Claude Monet</option>
+                    <option value="8">Az utolsó vacsora – Leonardo da Vinci</option>
+                </select>
+            </div>
+
+            <!-- Új elhelyezés -->
+            <div class="mb-3">
+                <label for="uj_elhelyezes" class="form-label">Új elhelyezés</label>
+                <input type="text" class="form-control" id="uj_elhelyezes"
+                       placeholder="Pl. Uffizi Galéria, Firenze">
+            </div>
+
+            <!-- Új státusz -->
+            <div class="mb-3">
+                <label for="uj_statusz" class="form-label">Új státusz</label>
+                <select class="form-select" id="uj_statusz">
+                    <option value="">Válasszon státuszt…</option>
+                    <option value="kiallitva">Kiállítva</option>
+                    <option value="tarolt">Tárolt</option>
+                    <option value="kolcsonzott">Kölcsönzött</option>
+                </select>
+            </div>
+
+            <!-- Új képlink -->
+            <div class="mb-3">
+                <label for="uj_kep" class="form-label">Új képlink (opcionális)</label>
+                <input type="text" class="form-control" id="uj_kep"
+                       placeholder="kepek/1.jpg vagy https://…">
+            </div>
+
+            <!-- Mentés gomb -->
+            <div class="d-grid mb-3">
+                <button type="button" class="btn btn-primary">Módosítás mentése</button>
+            </div>
+
+        </div>
+
+        <div class="megjegyzes-doboz">
+            <strong>Megjegyzés:</strong> Ebben a külön feladatban a módosítás DEMO (nem kerül adatbázisba).
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
