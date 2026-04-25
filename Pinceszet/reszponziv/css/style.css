@@ -1,0 +1,446 @@
+/* =============================================
+   Pincészetek Nyilvántartó Rendszer - stílus
+   ============================================= */
+
+:root {
+  --bor: #6B1F1F;
+  --bor-sotet: #4A1515;
+  --bor-vilagos: #9B3535;
+  --arany: #C8963C;
+  --arany-vilagos: #E8B860;
+  --kremszin: #F5EFE6;
+  --szoveg: #2C1A0E;
+  --szurke: #6B5B4E;
+  --feher: #FFFFFF;
+  --arnyek: 0 4px 20px rgba(107, 31, 31, 0.15);
+}
+
+/* ── alap ─────────────────────────────────── */
+body {
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+  background-color: var(--kremszin);
+  color: var(--szoveg);
+  margin: 0;
+}
+
+/* ── navigáció ────────────────────────────── */
+.navbar {
+  background-color: var(--bor-sotet) !important;
+  border-bottom: 3px solid var(--arany);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand {
+  color: var(--arany) !important;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar-brand span {
+  color: var(--feher);
+  font-weight: normal;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+  color: var(--arany-vilagos) !important;
+}
+
+.nav-link.active {
+  color: var(--arany) !important;
+  font-weight: bold;
+  border-bottom: 2px solid var(--arany);
+}
+
+.navbar-toggler {
+  border-color: var(--arany) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(200, 150, 60, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ── hero (kezdőlap) ──────────────────────── */
+.start {
+  background-image: url('../kepek/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-items: flex-start;
+  padding-top: 2.5rem;
+}
+
+.start-tartalom {
+  position: relative;
+  z-index: 1;
+  color: var(--feher);
+  padding: 3rem 0;
+  background-color: rgba(74, 21, 21, 0.82);
+}
+
+.start-tartalom h1 {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: var(--arany-vilagos);
+  text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0.5rem;
+}
+
+.start-tartalom p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 1.5rem;
+}
+
+.start-tartalom .btn-arany {
+  background-color: var(--arany);
+  border: none;
+  color: var(--feher);
+  font-weight: bold;
+  padding: 0.6rem 1.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.start-tartalom .btn-arany:hover {
+  background-color: var(--arany-vilagos);
+  transform: translateY(-1px);
+}
+
+/* ── kártyák (kezdőlap gyors linkek) ────────── */
+.keszlap {
+  padding: 3.5rem 0;
+}
+
+.keszlap-kartya {
+  background: var(--feher);
+  border-radius: 8px;
+  box-shadow: var(--arnyek);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-top: 4px solid var(--bor);
+  transition: box-shadow 0.2s, transform 0.2s;
+  height: 100%;
+}
+
+.keszlap-kartya:hover {
+  box-shadow: 0 8px 30px rgba(107, 31, 31, 0.22);
+  transform: translateY(-3px);
+}
+
+.keszlap-kartya .ikon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.keszlap-kartya h3 {
+  font-size: 1.15rem;
+  color: var(--bor);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.keszlap-kartya p {
+  color: var(--szurke);
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+}
+
+.btn-megnyitas {
+  background-color: var(--bor);
+  color: var(--feher) !important;
+  border: none;
+  padding: 0.45rem 1.4rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+  display: inline-block;
+}
+
+.btn-megnyitas:hover {
+  background-color: var(--bor-vilagos);
+}
+
+/* ── lap fejléc ───────────────────────────── */
+.lap-fejlec {
+  background: linear-gradient(90deg, var(--bor-sotet), var(--bor));
+  color: var(--feher);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid var(--arany);
+}
+
+.lap-fejlec h1 {
+  font-size: 1.8rem;
+  color: var(--arany-vilagos);
+  margin: 0;
+}
+
+.lap-fejlec p {
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0.25rem 0 0;
+  font-size: 0.92rem;
+}
+
+/* ── táblázat ─────────────────────────────── */
+.pinceszet-tabla {
+  background: var(--feher);
+  border-radius: 8px;
+  box-shadow: var(--arnyek);
+  overflow: hidden;
+}
+
+.pinceszet-tabla .table {
+  margin: 0;
+}
+
+.pinceszet-tabla .table thead {
+  background-color: var(--bor-sotet);
+  color: var(--feher);
+}
+
+.pinceszet-tabla .table thead th {
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  padding: 0.85rem 1rem;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.pinceszet-tabla .table tbody tr {
+  transition: background-color 0.15s;
+}
+
+.pinceszet-tabla .table tbody tr:hover {
+  background-color: rgba(107, 31, 31, 0.05);
+}
+
+.pinceszet-tabla .table tbody td {
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+  font-size: 0.92rem;
+  border-color: rgba(107, 31, 31, 0.1);
+}
+
+.tipus-badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.tipus-csaladi {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.tipus-nagybirtok {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.tipus-kastelyp {
+  background: #EDE9FE;
+  color: #5B21B6;
+}
+
+.tipus-szovetk {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.kep-link {
+  color: var(--bor);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.kep-link:hover {
+  color: var(--bor-vilagos);
+  text-decoration: underline;
+}
+
+.nincs-kep {
+  color: #9CA3AF;
+  font-style: italic;
+  font-size: 0.88rem;
+}
+
+/* ── frissítés gomb ───────────────────────── */
+.btn-bor {
+  background-color: var(--bor);
+  color: var(--feher);
+  border: none;
+  padding: 0.5rem 1.4rem;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.btn-bor:hover {
+  background-color: var(--bor-vilagos);
+  color: var(--feher);
+}
+
+/* ── üzenet sáv ───────────────────────────── */
+.uzenet-sav {
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  display: none;
+}
+
+.uzenet-sav.siker {
+  background: #D1FAE5;
+  border: 1px solid #6EE7B7;
+  color: #065F46;
+  display: block;
+}
+
+.uzenet-sav.hiba {
+  background: #FEE2E2;
+  border: 1px solid #FCA5A5;
+  color: #991B1B;
+  display: block;
+}
+
+/* ── form ──────────────────────────────────── */
+.form-keret {
+  background: var(--feher);
+  border-radius: 8px;
+  box-shadow: var(--arnyek);
+  padding: 2rem 2.5rem;
+  max-width: 680px;
+}
+
+.form-keret .form-label {
+  font-weight: 600;
+  color: var(--bor-sotet);
+  font-size: 0.92rem;
+  margin-bottom: 0.3rem;
+}
+
+.form-keret .form-control,
+.form-keret .form-select {
+  border-color: #D9C5B5;
+  border-radius: 5px;
+  font-size: 0.92rem;
+}
+
+.form-keret .form-control:focus,
+.form-keret .form-select:focus {
+  border-color: var(--bor-vilagos);
+  box-shadow: 0 0 0 3px rgba(107, 31, 31, 0.12);
+}
+
+.form-keret .megjegyzes {
+  font-size: 0.82rem;
+  color: var(--szurke);
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+.btn-mentes {
+  background-color: var(--bor);
+  color: var(--feher);
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-mentes:hover {
+  background-color: var(--bor-vilagos);
+}
+
+.btn-vissza {
+  background: transparent;
+  color: var(--bor);
+  border: 1.5px solid var(--bor);
+  padding: 0.6rem 1.6rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.btn-vissza:hover {
+  background: var(--bor);
+  color: var(--feher);
+}
+
+/* ── kepek oldal ───────────────────────────── */
+.kepek-info {
+  background: #FEF3C7;
+  border-left: 4px solid var(--arany);
+  padding: 0.85rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  color: #78350F;
+}
+
+.auto-gomb {
+  background-color: var(--arany);
+  color: var(--feher);
+  border: none;
+  padding: 0.55rem 1.4rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auto-gomb:hover {
+  background-color: var(--arany-vilagos);
+}
+
+/* ── lábléc ────────────────────────────────── */
+footer {
+  background-color: var(--bor-sotet);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 1.25rem 0;
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 2px solid var(--arany);
+}
+
+/* ── reszponzív finomítások ─────────────────── */
+@media (max-width: 768px) {
+  .start-tartalom h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-keret {
+    padding: 1.5rem;
+  }
+
+  .pinceszet-tabla .table thead th,
+  .pinceszet-tabla .table tbody td {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.85rem;
+  }
+}
