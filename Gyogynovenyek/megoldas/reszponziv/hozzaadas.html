@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Új növény felvétele – Gyógynövény Nyilvántartó</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Gyógynövények</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+          <li class="nav-item"><a class="nav-link" href="lista.html">Növények listája</a></li>
+          <li class="nav-item"><a class="nav-link active" href="hozzaadas.html">Új növény</a></li>
+          <li class="nav-item"><a class="nav-link" href="kepek.html">Képek</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <h2>Új növény felvétele</h2>
+    <p class="text-muted">1. feladat: reszponzív űrlap + mentés adatbázisba</p>
+
+    <div id="uzenet" class="alert d-none" role="alert"></div>
+
+    <div class="row">
+      <div class="col-md-6">
+
+        <!-- Azonosító (automatikus) -->
+        <div class="mb-3">
+          <label class="form-label">Azonosító (azon)</label>
+          <input type="text" class="form-control" id="azon" disabled placeholder="Automatikusan a következő szabad érték (max+1).">
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Név *</label>
+            <input type="text" class="form-control" id="nev" placeholder="pl. orvosi kamilla">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Fajta (latin)</label>
+            <input type="text" class="form-control" id="fajta" placeholder="pl. Matricaria chamomilla">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Körméret / Tőátmérő (cm) *</label>
+            <!-- MEGJEGYZÉS: az eredeti feladatban 'kormeret', itt az analóg mező -->
+            <input type="number" class="form-control" id="kormeret" placeholder="pl. 12">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Gyűjtés éve *</label>
+            <input type="number" class="form-control" id="gyujtes_eve" placeholder="pl. 2023">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Hasznosítás *</label>
+          <select class="form-select" id="hasznositas">
+            <option value="">Válasszon kategóriát...</option>
+            <option value="gyógyászat">Gyógyászat</option>
+            <option value="élelmiszer">Élelmiszer</option>
+            <option value="kozmetika">Kozmetika</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Lelőhely *</label>
+          <select class="form-select" id="lelohely_id">
+            <option value="">Válasszon lelőhelyet...</option>
+            <!-- JS tölti fel: GET /api/leloehelyek -->
+          </select>
+          <div class="form-text">A lista API-n keresztül jön: GET /api/leloehelyek</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Növény fényképének linkje</label>
+          <input type="url" class="form-control" id="url" placeholder="kepek/1.jpg vagy https://...">
+        </div>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-primary" onclick="ment()">Mentés</button>
+          <a href="lista.html" class="btn btn-outline-secondary">Vissza a listához</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <small>Gyógynövény Nyilvántartó Rendszer &copy; 2026</small>
+  </footer>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    // Lelőhelyek betöltése dropdown-ba
+    async function leloehelyekBetolt() {
+      try {
+        const res = await fetch('/api/leloehelyek');
+        const adatok = await res.json();
+        const sel = document.getElementById('lelohely_id');
+        adatok.forEach(l => {
+          sel.innerHTML += `<option value="${l.id}">${l.nev}</option>`;
+        });
+      } catch (e) {
+        console.error('Lelőhelyek betöltése sikertelen.');
+      }
+    }
+
+    // POST /api/gyogynovenyek – új rekord mentése
+    async function ment() {
+      const nev = document.getElementById('nev').value.trim();
+      const fajta = document.getElementById('fajta').value.trim();
+      const gyujtes_eve = document.getElementById('gyujtes_eve').value;
+      const hasznositas = document.getElementById('hasznositas').value;
+      const lelohely_id = document.getElementById('lelohely_id').value;
+      const URL = document.getElementById('url').value.trim();
+
+      const uzenet = document.getElementById('uzenet');
+
+      const res = await fetch('/api/gyogynovenyek', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nev, fajta, lelohely_id, gyujtes_eve, hasznositas, URL })
+      });
+
+      if (res.status === 201) {
+        const adat = await res.json();
+        uzenet.className = 'alert alert-success';
+        uzenet.textContent = `Növény sikeresen mentve! Azonosító: ${adat.id}`;
+      } else {
+        const hiba = await res.json();
+        uzenet.className = 'alert alert-danger';
+        uzenet.textContent = hiba.uzenet || 'Mentési hiba.';
+      }
+    }
+
+    leloehelyekBetolt();
+  </script>
+</body>
+</html>

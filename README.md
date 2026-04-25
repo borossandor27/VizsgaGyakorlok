@@ -43,38 +43,12 @@ Egyszerű éttermi rendelés kezelő alkalmazás.
 ## 13. [Utazási ajánlatok](./UtazasiAjanlatok/)
 
 ## 14. [Kép galéria](./KepGaleria/)
-  
-## 15. [Állatmenhely](./Allatmenhely/)
 
-## 16. [Online tanfolyamok](./OnlineTanfolyamok/)
+## 15. [Borászat](./Boraszat/)
 
-## 17. [Hírek olvasó](./HirOlvaso/)
+## 16. [Furdőhelyek](./Furdo/)
 
-## 18. [Időjárás alkalmazás](./IdojarasAlkalmazas/)
-
-## 19. [Közösségi hálózat](./KozossegiHalozat/)
-
-## 20. [Egészségügyi napló](./EgeszsegugyiNaplo/)
-
-## 21. [Kertészeti napló](./KerteszetiNaplo/)
-
-## 22. [Film adatbázis](./FilmAdatbazis/)
-
-## 23. [Receptek gyűjteménye](./ReceptekGyujtemenye/)
-
-## 24. [Közlekedési menetrend](./KozlekedesiMenetrend/)
-
-## 25. [Könyvjelző kezelő](./KonyvjelzoKezele/)
-
-## 26. [Nyelvtanuló alkalmazás](./NyelvtanuloAlkalmazas/)
-
-## 27. [Pénzügyi nyilvántartás](./PenzugyiNyilvantartas/)
-
-## 28. [Művészeti galéria](./MuveszetiGaleria/)
-
-## 29. [Virtuális könyvtár](./VirtualisKonyvtar/)
-
-## 30. [Autóalkatrész bolt](./AutoalkatreszBolt/)
+## 17. [Mozijegyek](./Mozijegyek/)
 
 ## A gyakorlati vizsga
 

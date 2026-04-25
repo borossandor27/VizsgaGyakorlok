@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Képek kezelése – Gyógynövény Nyilvántartó</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Gyógynövények</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+          <li class="nav-item"><a class="nav-link" href="lista.html">Növények listája</a></li>
+          <li class="nav-item"><a class="nav-link" href="hozzaadas.html">Új növény</a></li>
+          <li class="nav-item"><a class="nav-link active" href="kepek.html">Képek</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <h2>Képek kezelése</h2>
+    <p class="text-muted">
+      Válasszon ki egy növényt, adjon meg egy URL-t, majd mentse
+      (PUT /api/gyogynovenyek/{azon}/kep).
+      Az <strong>Automatikus beállítás (1–10)</strong> gomb a feladat szerint 1–10
+      azonosítójú növényekhez állítja be a kepek/1.jpg ... kepek/10.jpg linkeket.
+    </p>
+
+    <div id="uzenet" class="alert d-none" role="alert"></div>
+
+    <div class="row">
+      <div class="col-md-5">
+        <div class="mb-3">
+          <label class="form-label">Növény kiválasztása</label>
+          <select class="form-select" id="valasztott">
+            <option value="">Válasszon növényt...</option>
+            <!-- JS tölti fel -->
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Képlink (URL)</label>
+          <input type="text" class="form-control" id="keplink" placeholder="kepek/3.jpg">
+        </div>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-primary" onclick="kepMent()">Mentés</button>
+          <button class="btn btn-secondary" onclick="autoBeallitas()">Automatikus beállítás (1–10)</button>
+          <a href="lista.html" class="btn btn-outline-secondary">Lista megnyitása</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <small>Gyógynövény Nyilvántartó Rendszer &copy; 2026</small>
+  </footer>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    // Növények betöltése a dropdownba
+    async function novenyek Betolt() {
+      const res = await fetch('/api/gyogynovenyek');
+      const adatok = await res.json();
+      const sel = document.getElementById('valasztott');
+      adatok.forEach(n => {
+        sel.innerHTML += `<option value="${n.azon}">${n.azon} – ${n.nev}</option>`;
+      });
+    }
+
+    // PUT /api/gyogynovenyek/:azon/kep
+    async function kepMent() {
+      const azon = document.getElementById('valasztott').value;
+      const URL = document.getElementById('keplink').value.trim();
+      const uzenet = document.getElementById('uzenet');
+
+      if (!azon) {
+        uzenet.className = 'alert alert-warning';
+        uzenet.textContent = 'Kérem válasszon növényt!';
+        return;
+      }
+
+      const res = await fetch(`/api/gyogynovenyek/${azon}/kep`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ URL })
+      });
+
+      if (res.ok) {
+        uzenet.className = 'alert alert-success';
+        uzenet.textContent = 'Képlink sikeresen frissítve!';
+      } else {
+        const hiba = await res.json();
+        uzenet.className = 'alert alert-danger';
+        uzenet.textContent = hiba.uzenet || 'Hiba a mentés során.';
+      }
+    }
+
+    // Automatikus beállítás: 1–10 azonosítóhoz kepek/1.jpg ... kepek/10.jpg
+    async function autoBeallitas() {
+      const uzenet = document.getElementById('uzenet');
+      let sikeres = 0;
+      for (let i = 1; i <= 10; i++) {
+        const res = await fetch(`/api/gyogynovenyek/${i}/kep`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ URL: `kepek/${i}.jpg` })
+        });
+        if (res.ok) sikeres++;
+      }
+      uzenet.className = 'alert alert-success';
+      uzenet.textContent = `Automatikus beállítás kész: ${sikeres}/10 képlink frissítve.`;
+    }
+
+    novenyek Betolt();
+  </script>
+</body>
+</html>

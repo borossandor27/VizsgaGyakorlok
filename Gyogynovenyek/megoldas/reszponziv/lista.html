@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Növények listája – Gyógynövény Nyilvántartó</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Gyógynövények</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+          <li class="nav-item"><a class="nav-link active" href="lista.html">Növények listája</a></li>
+          <li class="nav-item"><a class="nav-link" href="hozzaadas.html">Új növény</a></li>
+          <li class="nav-item"><a class="nav-link" href="kepek.html">Képek</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h2>Növények listája</h2>
+        <p class="text-muted mb-0">Rekordok száma: <span id="db">–</span></p>
+      </div>
+      <button class="btn btn-outline-secondary btn-sm" onclick="betolt()">Frissítés</button>
+    </div>
+
+    <!-- Visszajelzés -->
+    <div id="uzenet" class="alert alert-success alert-dismissible d-none" role="alert">
+      <span id="uzenetSzoveg"></span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <!-- Táblázat -->
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>Azonosító</th>
+            <th>Név</th>
+            <th>Fajta (latin)</th>
+            <th>Gyűjtés éve</th>
+            <th>Hasznosítás</th>
+            <th>Lelőhely</th>
+            <th>Kép</th>
+            <th>Művelet</th>
+          </tr>
+        </thead>
+        <tbody id="tablazat">
+          <!-- JS tölti fel -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <small>Gyógynövény Nyilvántartó Rendszer &copy; 2026</small>
+  </footer>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    // GET /api/gyogynovenyek – adatok lekérése és megjelenítése
+    async function betolt() {
+      try {
+        const res = await fetch('/api/gyogynovenyek');
+        const adatok = await res.json();
+
+        document.getElementById('db').textContent = adatok.length;
+        const tbody = document.getElementById('tablazat');
+        tbody.innerHTML = '';
+
+        adatok.forEach(n => {
+          const kepCella = n.URL
+            ? `<a href="${n.URL}" target="_blank">Megnyitás</a>`
+            : 'Nincs kép';
+
+          tbody.innerHTML += `
+            <tr>
+              <td>${n.azon}</td>
+              <td>${n.nev}</td>
+              <td><em>${n.fajta || '–'}</em></td>
+              <td>${n.gyujtes_eve}</td>
+              <td>${n.hasznositas}</td>
+              <td>${n.lelohely}</td>
+              <td>${kepCella}</td>
+              <td>
+                <button class="btn btn-danger btn-sm"
+                  onclick="torol(${n.azon})">Törlés</button>
+              </td>
+            </tr>`;
+        });
+
+        mutatUzenetet('Sikeres betöltés.');
+      } catch (e) {
+        mutatUzenetet('Hiba a betöltés során.', 'danger');
+      }
+    }
+
+    // DELETE /api/gyogynovenyek/:azon
+    async function torol(azon) {
+      if (!confirm(`Biztosan törli a(z) ${azon} azonosítójú növényt?`)) return;
+      const res = await fetch(`/api/gyogynovenyek/${azon}`, { method: 'DELETE' });
+      if (res.status === 204) {
+        mutatUzenetet('Növény sikeresen törölve.');
+        betolt();
+      } else {
+        const hiba = await res.json();
+        mutatUzenetet(hiba.uzenet, 'danger');
+      }
+    }
+
+    function mutatUzenetet(szoveg, tipus = 'success') {
+      const div = document.getElementById('uzenet');
+      div.className = `alert alert-${tipus} alert-dismissible`;
+      document.getElementById('uzenetSzoveg').textContent = szoveg;
+    }
+
+    // Oldalbetöltéskor automatikus lekérés
+    betolt();
+  </script>
+</body>
+</html>

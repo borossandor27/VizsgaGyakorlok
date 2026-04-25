@@ -1,0 +1,43 @@
+/* ============================================================
+   Gyógynövény Nyilvántartó – Saját stíluslap
+   ============================================================ */
+
+/* --- Hero / Start szekció (kezdőlap háttérkép) --- */
+.start {
+  background-image: url('../kepek/10.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.start h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/* --- Aktív navigációs elem kiemelése --- */
+.nav-link.active {
+  color: rgb(100, 100, 160) !important;
+  font-weight: bold;
+}
+
+/* --- Általános oldal padding --- */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* --- Táblázat --- */
+.table th {
+  white-space: nowrap;
+}

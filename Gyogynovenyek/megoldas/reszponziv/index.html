@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gyógynövény Nyilvántartó Rendszer</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigáció -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Gyógynövények</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Kezdőlap</a></li>
+          <li class="nav-item"><a class="nav-link" href="lista.html">Növények listája</a></li>
+          <li class="nav-item"><a class="nav-link" href="hozzaadas.html">Új növény</a></li>
+          <li class="nav-item"><a class="nav-link" href="kepek.html">Képek</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero szekció (háttérkép: kepek/10.jpg) -->
+  <div class="start">
+    <div class="container">
+      <h1>Gyógynövény nyilvántartó rendszer</h1>
+      <p>Frontend (REST API – lista, új növény, képlink kezelés)</p>
+      <a href="lista.html" class="btn btn-success me-2">Növények listája</a>
+      <a href="hozzaadas.html" class="btn btn-outline-light">Új növény felvétele</a>
+    </div>
+  </div>
+
+  <!-- Tartalom -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Lista</h5>
+            <p class="card-text">Reszponzív táblázat elrendezés.</p>
+            <a href="lista.html" class="btn btn-primary">Megnyitás</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Új növény</h5>
+            <p class="card-text">Reszponzív űrlap (mentés adatbázisba).</p>
+            <a href="hozzaadas.html" class="btn btn-primary">Megnyitás</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Képek</h5>
+            <p class="card-text">Reszponzív képlink-módosítás felület.</p>
+            <a href="kepek.html" class="btn btn-primary">Megnyitás</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <small>Gyógynövény Nyilvántartó Rendszer &copy; 2026</small>
+  </footer>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

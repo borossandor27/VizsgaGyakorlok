@@ -1,0 +1,14 @@
+csomag/
+├── server.js                        ← Backend mintamegoldás vázlat (Node.js + Express)
+├── package.json                     ← npm függőségek
+├── adatbazisok/
+│   ├── gyogynovenyek_db.sql         ← Adatbázis szkript (megye + lelohely + gyogynoven)
+│   ├── gyogynovenyek.csv            ← 40 rekordos adatforrás
+│   ├── telepulesek.csv              ← 15 lelőhely
+│   └── leiras.md                    ← Adatbázis dokumentáció
+└── public/
+    ├── index.html                   ← Kezdőlap (hero + kártyák)
+    ├── lista.html                   ← GET + DELETE + táblázat
+    ├── hozzaadas.html               ← POST + dropdown API-ból
+    ├── kepek.html                   ← PUT képlink + automatikus 1-10 beállítás
+    └── css/style.css                ← Saját stíluslap (aktív menü, hero, stb.)
