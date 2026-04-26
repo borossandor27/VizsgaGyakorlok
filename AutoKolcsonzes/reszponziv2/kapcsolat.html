@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityDrive Autókölcsönző – Kapcsolat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">CityDrive Autókölcsönző</div>
+      <nav>
+        <a href="index.html">Főoldal</a>
+        <a href="flotta.html">Flotta</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Kapcsolatfelvétel</h1>
+    <p style="margin: 0.75rem 0 1.5rem; color:#4b5563;">
+      Kérdésed van a foglalással kapcsolatban, vagy egyedi ajánlatot szeretnél? Írj nekünk!
+    </p>
+
+    <div class="form">
+      <div class="form-group">
+        <label for="name">Név</label>
+        <input type="text" id="name" placeholder="Teljes neved" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail cím</label>
+        <input type="email" id="email" placeholder="pelda@valami.hu" />
+      </div>
+
+      <div class="form-group">
+        <label for="car-type">Érdeklődés típusa</label>
+        <select id="car-type">
+          <option>Általános kérdés</option>
+          <option>Foglalás módosítása</option>
+          <option>Flottával kapcsolatos kérdés</option>
+          <option>Számlázás</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Üzenet</label>
+        <textarea id="message" placeholder="Írd le röviden, miben segíthetünk..."></textarea>
+      </div>
+
+      <button class="btn-secondary" type="button">Üzenet elküldése</button>
+      <p style="margin-top:0.75rem; font-size:0.8rem; color:#6b7280;">
+        (Ez most még csak statikus felület – a későbbiekben összeköthetjük valódi backenddel.)
+      </p>
+    </div>
+
+    <section style="margin-top:2rem;">
+      <h2>Elérhetőségeink</h2>
+      <p style="margin-top:0.5rem; color:#4b5563;">
+        📍 4024 Debrecen, Példa utca 12.<br />
+        📞 +36 30 123 4567<br />
+        ✉️ info@citydrive.hu
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 CityDrive Autókölcsönző – Minden jog fenntartva.
+  </footer>
+</body>
+</html>

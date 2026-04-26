@@ -1,0 +1,57 @@
+/* css/style.css – Fürdők Nyilvántartó Rendszer */
+
+/* ── Navigációs sáv ────────────────────────────────────────── */
+.furdo-navbar {
+  background-color: #1a3a5c;
+}
+
+.furdo-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.2s;
+}
+
+.furdo-navbar .nav-link:hover {
+  color: #ffffff;
+}
+
+/* Aktív menüpont: RGB(80, 120, 160) + félkövér */
+.furdo-navbar .nav-link.active {
+  color: rgb(80, 120, 160) !important;
+  font-weight: bold;
+}
+
+/* ── Kezdőlap hero – háttérkép ─────────────────────────────── */
+.start {
+  background-image: url('../kepek/banner.jpg');
+  background-size:    cover;
+  background-repeat:  no-repeat;
+  background-position: bottom center;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 8px;
+}
+/* ── Általános ─────────────────────────────────────────────── */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* ── Kártya hover ──────────────────────────────────────────── */
+.card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ── Táblázat ──────────────────────────────────────────────── */
+.table th {
+  white-space: nowrap;
+}

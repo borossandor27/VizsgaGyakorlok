@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fürdők Nyilvántartó Rendszer – Kezdőlap</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ── Hero szekcó – háttérkép: kepek/10.jpg ─────────────── -->
+  <header class="start">
+    <div class="container py-5">
+      <div class="overlay">
+        <h1 class="display-4 fw-bold text-white">
+          Fürdők Nyilvántartó Rendszer
+        </h1>
+        <p class="lead text-white-50">
+          1. feladat: Reszponzív weboldal (offline Bootstrap, saját CSS)
+        </p>
+        <div class="mt-4 d-flex gap-3 flex-wrap">
+          <a href="furdok.html" class="btn btn-primary btn-lg">Fürdők listája</a>
+          <a href="hozzaadas.html" class="btn btn-outline-light btn-lg">Új fürdő felvétele</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Tartalmi kártyák ───────────────────────────────────── -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Lista</h5>
+            <p class="card-text text-muted">Reszponzív táblázat elrendezés.</p>
+            <a href="furdok.html" class="btn btn-sm btn-primary">Megnyitás</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Új fürdő</h5>
+            <p class="card-text text-muted">
+              Reszponzív űrlap (DEMO mentés).
+            </p>
+            <a href="hozzaadas.html" class="btn btn-sm btn-primary">Megnyitás</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Képek</h5>
+            <p class="card-text text-muted">
+              Reszponzív képlink-módosítás felület (DEMO).
+            </p>
+            <a href="kepek.html" class="btn btn-sm btn-primary">Megnyitás</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fürdők listája</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark furdo-navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Öregfürdők</a>
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+          <li class="nav-item"><a class="nav-link active" href="furdok.html">Fürdők listája</a></li>
+          <li class="nav-item"><a class="nav-link" href="hozzaadas.html">Új fürdő</a></li>
+          <li class="nav-item"><a class="nav-link" href="kepek.html">Képek</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <h2 class="mb-3">Fák listája</h2>
+    <p class="text-muted">
+      1. feladat adatai (a működés a későbbi feladat).
+    </p>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Azonosító</th>
+            <th>Fürdő neve</th>
+            <th>Típus</th>
+            <th>Belépőjegy</th>
+            <th>Nyitás éve</th>
+            <th>Város</th>
+            <th>Kép</th>
+            <th>Művelet</th>
+          </tr>
+        </thead>
+        <tbody id="torzs">
+          <!-- JavaScript vagy backend tölti fel -->
+          <tr>
+            <td colspan="8" class="text-center text-muted fst-italic py-4">
+              Adatok betöltése folyamatban... (backend szükséges)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-muted small">
+      <strong>Megjegyzés:</strong> ebben a különálló feladatban a törlés gomb csak
+      a felület része (nem végez adatbázis-műveletet).
+    </p>
+  </div>
+
+  <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    const API = 'http://localhost:5000';
+
+    fetch(`${API}/api/furdok`)
+      .then(r => r.json())
+      .then(data => {
+        const tbody = document.getElementById('torzs');
+        tbody.innerHTML = '';
+        data.slice(0, 4).forEach(f => {
+          const kep = f.URL
+            ? `<a href="${f.URL}" target="_blank" class="btn btn-sm btn-outline-primary">Megnyitás</a>`
+            : `<span class="text-muted fst-italic">Nincs kép</span>`;
+          tbody.innerHTML += `
+            <tr>
+              <td>${f.azon}</td>
+              <td>${f.nev}</td>
+              <td><span class="badge bg-secondary">${f.tipus}</span></td>
+              <td>${f.belepodij.toLocaleString('hu-HU')} Ft</td>
+              <td>${f.nyitas_eve}</td>
+              <td>${f.varos}</td>
+              <td>${kep}</td>
+              <td>
+                <button class="btn btn-sm btn-danger"
+                  onclick="torles(${f.azon})">Törlés</button>
+              </td>
+            </tr>`;
+        });
+      })
+      .catch(() => {
+        document.getElementById('torzs').innerHTML =
+          '<tr><td colspan="8" class="text-center text-danger">Backend nem elérhető.</td></tr>';
+      });
+
+    function torles(azon) {
+      if (!confirm(`Biztosan törli a(z) ${azon}. azonosítójú fürdőt?`)) return;
+      fetch(`${API}/api/furdok/${azon}`, { method: 'DELETE' })
+        .then(r => {
+          if (r.status === 204) location.reload();
+          else alert('Törlés sikertelen.');
+        });
+    }
+  </script>
+</body>
+</html>
