@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace FurdoNyilvantarto
                 if (string.IsNullOrWhiteSpace(varosSorok[i])) continue;
                 var m = varosSorok[i].Split(',');
                 if (m.Length < 2) continue;
-                int id   = int.Parse(m[0].Trim('"'));
+                int id = int.Parse(m[0].Trim('"'));
                 string nv = m[1].Trim('"');
                 varosok[id] = nv;
             }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -11,14 +11,14 @@ namespace FurdoNyilvantarto
     public class Furdo
     {
         // ── Tulajdonságok ────────────────────────────────────────────
-        public int    Azon       { get; set; }
-        public string Nev        { get; set; }
-        public string Tipus      { get; set; }
-        public int    Medencek   { get; set; }
-        public int    BelepoDij  { get; set; }
-        public int    VarosId    { get; set; }
-        public int    NyitasEve  { get; set; }
-        public string VarosNev   { get; set; }   // varos.csv alapján töltjük ki
+        public int Azon { get; set; }
+        public string Nev { get; set; }
+        public string Tipus { get; set; }
+        public int Medencek { get; set; }
+        public int BelepoDij { get; set; }
+        public int VarosId { get; set; }
+        public int NyitasEve { get; set; }
+        public string VarosNev { get; set; }   // varos.csv alapján töltjük ki
 
         // ── Konstruktor ──────────────────────────────────────────────
         /// <summary>
@@ -29,14 +29,14 @@ namespace FurdoNyilvantarto
                      string medencek, string belepodij,
                      string varosId, string nyitasEve)
         {
-            Azon      = int.Parse(azon.Trim('"'));
-            Nev       = nev.Trim('"');
-            Tipus     = tipus.Trim('"');
-            Medencek  = int.Parse(medencek.Trim('"'));
+            Azon = int.Parse(azon.Trim('"'));
+            Nev = nev.Trim('"');
+            Tipus = tipus.Trim('"');
+            Medencek = int.Parse(medencek.Trim('"'));
             BelepoDij = int.Parse(belepodij.Trim('"'));
-            VarosId   = int.Parse(varosId.Trim('"'));
+            VarosId = int.Parse(varosId.Trim('"'));
             NyitasEve = int.Parse(nyitasEve.Trim('"'));
-            VarosNev  = "";
+            VarosNev = "";
         }
 
         // ── Statikus betöltő metódus ─────────────────────────────────
