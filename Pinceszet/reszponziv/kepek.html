@@ -36,7 +36,8 @@
     <div class="container">
       <h1>Képek kezelése</h1>
       <p>Válasszon ki egy pincészetet, adjon meg URL-t, majd mentse (PUT /api/pinceszetek/{azon}/kep). Az
-        <strong>Automatikus beállítás</strong> gomb a feladat szerint 1–10 szabályt állítja be.</p>
+        <strong>Automatikus beállítás</strong> gomb a feladat szerinti szabályt állítja be.
+      </p>
     </div>
   </div>
 
@@ -47,19 +48,13 @@
 
         <div id="uzenet" class="uzenet-sav"></div>
 
-        <div class="kepek-info">
-          📁 A <code>kepek/</code> mappában 10 kép van: <code>1.jpg … 10.jpg</code>.
-          Az <strong>azon = 1–10</strong> pincészetekhez rendeli automatikusan a megfelelő képet.
-          A többi pincészetnél az URL mező üres marad.
-        </div>
-
         <div class="form-keret">
 
           <!-- pincészet kiválasztása -->
           <div class="mb-3">
-            <label class="form-label" for="valasztott">Fa kiválasztása</label>
+            <label class="form-label" for="valasztott">Pincészet kiválasztása</label>
             <select class="form-select" id="valasztott" onchange="kivalasztasValtozas()">
-              <option value="">Válasszon fát...</option>
+              <option value="">Válasszon pincészetet...</option>
               <!-- demo adatok -->
               <option value="1" data-url="kepek/1.jpg">1 – Tiffán Ede és Fia Pincészet</option>
               <option value="2" data-url="kepek/2.jpg">2 – Vylyan Szőlőbirtok és Pincészet</option>
@@ -88,8 +83,7 @@
           <!-- gombok -->
           <div class="d-flex gap-3 flex-wrap align-items-center">
             <button class="btn-mentes" onclick="mentes()">Mentés</button>
-            <button class="auto-gomb" onclick="automatikusBeallitas()">Automatikus beállítás (1–10)</button>
-            <a href="pinceszetek.html" class="btn-vissza">Lista megnyitása</a>
+            <button class="auto-gomb" onclick="automatikusBeallitas()">Automatikus beállítás</button>
           </div>
 
           <p class="mt-3" style="font-size:0.82rem; color:#9CA3AF; font-style:italic;">
@@ -108,27 +102,7 @@
 
       </div>
 
-      <!-- jobb oldal: auto-beállítás szabályai -->
-      <div class="col-12 col-lg-5 mt-4 mt-lg-0">
-        <div
-          style="background:#fff; border-radius:8px; box-shadow:0 4px 20px rgba(107,31,31,0.1); padding:1.5rem; border-top:4px solid #C8963C;">
-          <h5 style="color:#4A1515; margin-bottom:1rem;">📋 Automatikus beállítás szabálya</h5>
-          <table class="table table-sm" style="font-size:0.88rem;">
-            <thead style="background:#4A1515; color:#fff;">
-              <tr>
-                <th>Azonosító</th>
-                <th>Rendelt kép</th>
-              </tr>
-            </thead>
-            <tbody id="szabaly-tabla">
-              <!-- JS tölti fel -->
-            </tbody>
-          </table>
-          <p style="font-size:0.8rem; color:#9CA3AF; font-style:italic; margin:0;">
-            Az azon = 11+ pincészetekhez nem állít be képet (URL üres marad).
-          </p>
-        </div>
-      </div>
+
 
     </div>
   </div>
