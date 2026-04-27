@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Új növény felvétele – Gyógynövény Nyilvántartó</title>
-  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -38,7 +40,8 @@
         <!-- Azonosító (automatikus) -->
         <div class="mb-3">
           <label class="form-label">Azonosító (azon)</label>
-          <input type="text" class="form-control" id="azon" disabled placeholder="Automatikusan a következő szabad érték (max+1).">
+          <input type="text" class="form-control" id="azon" disabled
+            placeholder="Automatikusan a következő szabad érték (max+1).">
         </div>
 
         <div class="row">
@@ -88,9 +91,8 @@
           <input type="url" class="form-control" id="url" placeholder="kepek/1.jpg vagy https://...">
         </div>
 
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 w-100">
           <button class="btn btn-primary" onclick="ment()">Mentés</button>
-          <a href="lista.html" class="btn btn-outline-secondary">Vissza a listához</a>
         </div>
 
       </div>
@@ -148,4 +150,5 @@
     leloehelyekBetolt();
   </script>
 </body>
+
 </html>

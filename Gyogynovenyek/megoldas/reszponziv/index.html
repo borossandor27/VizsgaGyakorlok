@@ -1,41 +1,26 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gyógynövény Nyilvántartó Rendszer</title>
-  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-  <!-- Navigáció -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body>
+  <!-- Hero szekció (háttérkép: kepek/10.jpg) -->
+  <header class="start">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Gyógynövények</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Kezdőlap</a></li>
-          <li class="nav-item"><a class="nav-link" href="lista.html">Növények listája</a></li>
-          <li class="nav-item"><a class="nav-link" href="hozzaadas.html">Új növény</a></li>
-          <li class="nav-item"><a class="nav-link" href="kepek.html">Képek</a></li>
-        </ul>
+      <div class="overlay">
+        <h1>Gyógynövény nyilvántartó rendszer</h1>
+        <p>Frontend <i>(REST API – lista, új növény, képlink kezelés)</i></p>
+        <a href="lista.html" class="btn btn-success me-2">Növények listája</a>
+        <a href="hozzaadas.html" class="btn btn-outline-light">Új növény felvétele</a>
       </div>
     </div>
-  </nav>
-
-  <!-- Hero szekció (háttérkép: kepek/10.jpg) -->
-  <div class="start">
-    <div class="container">
-      <h1>Gyógynövény nyilvántartó rendszer</h1>
-      <p>Frontend (REST API – lista, új növény, képlink kezelés)</p>
-      <a href="lista.html" class="btn btn-success me-2">Növények listája</a>
-      <a href="hozzaadas.html" class="btn btn-outline-light">Új növény felvétele</a>
-    </div>
-  </div>
+  </header>
 
   <!-- Tartalom -->
   <div class="container my-5">
@@ -74,6 +59,7 @@
     <small>Gyógynövény Nyilvántartó Rendszer &copy; 2026</small>
   </footer>
 
-  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

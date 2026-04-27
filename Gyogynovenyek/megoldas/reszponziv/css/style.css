@@ -4,7 +4,7 @@
 
 /* --- Hero / Start szekció (kezdőlap háttérkép) --- */
 .start {
-  background-image: url('../kepek/10.jpg');
+  background-image: url('../kepek/banner.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -13,6 +13,11 @@
   align-items: center;
   color: white;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .start h1 {
