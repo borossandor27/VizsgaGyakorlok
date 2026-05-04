@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "cim": "A Keresztapa",
+    "mufaj_id": 1,
+    "rendezo": "Francis Ford Coppola",
+    "gyartasi_ev": 1972,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Marlon Brando, Al Pacino, James Caan, Diane Keaton",
+    "legsikeresebb_dijak": "Oscar - legjobb film, legjobb férfi főszereplő",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg"
+  },
+  {
+    "id": 2,
+    "cim": "Schindler listája",
+    "mufaj_id": 2,
+    "rendezo": "Steven Spielberg",
+    "gyartasi_ev": 1993,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Liam Neeson, Ben Kingsley, Ralph Fiennes",
+    "legsikeresebb_dijak": "Oscar - legjobb film, legjobb rendező",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/3/38/Schindler%27s_List_movie.jpg"
+  },
+  {
+    "id": 3,
+    "cim": "Csillagok háborúja",
+    "mufaj_id": 3,
+    "rendezo": "George Lucas",
+    "gyartasi_ev": 1977,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Mark Hamill, Harrison Ford, Carrie Fisher",
+    "legsikeresebb_dijak": "Oscar - legjobb vizuális effektek, legjobb vágás",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg"
+  },
+  {
+    "id": 4,
+    "cim": "Forrest Gump",
+    "mufaj_id": 4,
+    "rendezo": "Robert Zemeckis",
+    "gyartasi_ev": 1994,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Tom Hanks, Robin Wright, Gary Sinise",
+    "legsikeresebb_dijak": "Oscar - legjobb film, legjobb férfi főszereplő",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/6/6c/Forrest_Gump_poster.jpg"
+  },
+  {
+    "id": 5,
+    "cim": "Mátrix",
+    "mufaj_id": 3,
+    "rendezo": "Lilly Wachowski",
+    "gyartasi_ev": 1999,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
+    "legsikeresebb_dijak": "Oscar - legjobb vizuális effektek, legjobb vágás",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg"
+  },
+  {
+    "id": 6,
+    "cim": "Titanic",
+    "mufaj_id": 5,
+    "rendezo": "James Cameron",
+    "gyartasi_ev": 1997,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Leonardo DiCaprio, Kate Winslet, Billy Zane",
+    "legsikeresebb_dijak": "Oscar - legjobb film, legjobb rendező",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/2/22/Titanic_poster.jpg"
+  },
+  {
+    "id": 7,
+    "cim": "A Gyűrűk Ura: A gyűrű szövetsége",
+    "mufaj_id": 2,
+    "rendezo": "Peter Jackson",
+    "gyartasi_ev": 2001,
+    "szarmazasi_orszag": "Új-Zéland",
+    "szereplok": "Elijah Wood, Ian McKellen, Viggo Mortensen",
+    "legsikeresebb_dijak": "Oscar - legjobb operatőr, legjobb vizuális effektek",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Lord_of_the_Rings_The_Fellowship_of_the_Ring_%282001%29.jpg"
+  },
+  {
+    "id": 8,
+    "cim": "Jurassic Park",
+    "mufaj_id": 3,
+    "rendezo": "Steven Spielberg",
+    "gyartasi_ev": 1993,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Sam Neill, Laura Dern, Jeff Goldblum",
+    "legsikeresebb_dijak": "Oscar - legjobb vizuális effektek, legjobb hang",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg"
+  },
+  {
+    "id": 9,
+    "cim": "Idegenek a vonaton",
+    "mufaj_id": 1,
+    "rendezo": "Alfred Hitchcock",
+    "gyartasi_ev": 1951,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Farley Granger, Robert Walker, Ruth Roman",
+    "legsikeresebb_dijak": "BAFTA-jelölés - legjobb brit film",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Strangers_on_a_Train_%281951_film_poster%29.jpg"
+  },
+  {
+    "id": 10,
+    "cim": "Psycho",
+    "mufaj_id": 6,
+    "rendezo": "Alfred Hitchcock",
+    "gyartasi_ev": 1960,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Anthony Perkins, Janet Leigh, Vera Miles",
+    "legsikeresebb_dijak": "Oscar-jelölés - legjobb rendező",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/a/a8/Psycho_%281960%29_trailer_shower_scene.jpg"
+  },
+  {
+    "id": 11,
+    "cim": "Kaktusz virág",
+    "mufaj_id": 4,
+    "rendezo": "Gene Saks",
+    "gyartasi_ev": 1969,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Walter Matthau, Ingrid Bergman, Goldie Hawn",
+    "legsikeresebb_dijak": "Oscar - legjobb női mellékszereplő",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/4/49/Cactus_Flower_%281969_film%29.jpg"
+  },
+  {
+    "id": 12,
+    "cim": "Halálos fegyver",
+    "mufaj_id": 1,
+    "rendezo": "Richard Donner",
+    "gyartasi_ev": 1987,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Mel Gibson, Danny Glover, Gary Busey",
+    "legsikeresebb_dijak": "Golden Globe-jelölés",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/7/71/Lethal_weapon_moviep.jpg"
+  },
+  {
+    "id": 13,
+    "cim": "Casablanca",
+    "mufaj_id": 5,
+    "rendezo": "Michael Curtiz",
+    "gyartasi_ev": 1942,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Humphrey Bogart, Ingrid Bergman, Paul Henreid",
+    "legsikeresebb_dijak": "Oscar - legjobb film, legjobb rendező, legjobb adaptált forgatókönyv",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Casablanca_poster.jpg/800px-Casablanca_poster.jpg"
+  },
+  {
+    "id": 14,
+    "cim": "Hová lettél, drága völgy?",
+    "mufaj_id": 5,
+    "rendezo": "John Ford",
+    "gyartasi_ev": 1941,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Walter Pidgeon, Maureen O'Hara, Donald Crisp",
+    "legsikeresebb_dijak": "Oscar - legjobb film, legjobb rendező",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/How_Green_Was_My_Valley.jpg/220px-How_Green_Was_My_Valley.jpg"
+  },
+  {
+    "id": 15,
+    "cim": "Alien",
+    "mufaj_id": 6,
+    "rendezo": "Ridley Scott",
+    "gyartasi_ev": 1979,
+    "szarmazasi_orszag": "UK/USA",
+    "szereplok": "Sigourney Weaver, Tom Skerritt, John Hurt",
+    "legsikeresebb_dijak": "Oscar - legjobb vizuális effektek",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/4/4d/Alien_-_1979_film_poster.jpg"
+  },
+  {
+    "id": 16,
+    "cim": "Két kezem a tied",
+    "mufaj_id": 4,
+    "rendezo": "Gregory La Cava",
+    "gyartasi_ev": 1936,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Irene Dunne, Cary Grant",
+    "legsikeresebb_dijak": "Oscar-jelölés - legjobb film",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/My_Man_Godfrey_%281936_film%29_poster.jpg"
+  },
+  {
+    "id": 17,
+    "cim": "Terminátor 2",
+    "mufaj_id": 3,
+    "rendezo": "James Cameron",
+    "gyartasi_ev": 1991,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Arnold Schwarzenegger, Linda Hamilton, Edward Furlong",
+    "legsikeresebb_dijak": "Oscar - legjobb vizuális effektek, legjobb smink",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/8/85/Terminator2poster.jpg"
+  },
+  {
+    "id": 18,
+    "cim": "Gyilkos vagyok",
+    "mufaj_id": 1,
+    "rendezo": "Billy Wilder",
+    "gyartasi_ev": 1944,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Fred MacMurray, Barbara Stanwyck, Edward G. Robinson",
+    "legsikeresebb_dijak": "Oscar-jelölés - legjobb film, legjobb rendező",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Double_Indemnity_film_poster.jpg/220px-Double_Indemnity_film_poster.jpg"
+  },
+  {
+    "id": 19,
+    "cim": "Indiana Jones és az elveszett frigyláda fosztogatói",
+    "mufaj_id": 2,
+    "rendezo": "Steven Spielberg",
+    "gyartasi_ev": 1981,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Harrison Ford, Karen Allen, Paul Freeman",
+    "legsikeresebb_dijak": "Oscar - legjobb vágás, legjobb hang",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/73/Raiders_of_the_Lost_Ark.jpg/220px-Raiders_of_the_Lost_Ark.jpg"
+  },
+  {
+    "id": 20,
+    "cim": "Singin' in the Rain",
+    "mufaj_id": 4,
+    "rendezo": "Gene Kelly",
+    "gyartasi_ev": 1952,
+    "szarmazasi_orszag": "USA",
+    "szereplok": "Gene Kelly, Donald O'Connor, Debbie Reynolds",
+    "legsikeresebb_dijak": "Golden Globe - legjobb musical film",
+    "kep_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Singin_in_the_Rain_poster.jpg/220px-Singin_in_the_Rain_poster.jpg"
+  }
+]

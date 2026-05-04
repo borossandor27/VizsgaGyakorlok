@@ -1,0 +1,41 @@
+/* ============================================================
+   Klasszikus Filmek – Mintamegoldás stíluslap
+   ============================================================ */
+
+/* --- Hero / start szekció --- */
+.start {
+  background-image: url('../img/filmszalag.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Kártyák --- */
+.card {
+  border: none;
+  border-radius: 12px;
+}
+
+/* 4a. feladat: Kártyák szövegszíne = aktív menüpont szövegszíne */
+.card-title {
+  color: rgb(236, 236, 236) !important;
+}
+
+/* --- Képek reszponzivitása --- */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   ÚJ SZELEKTOROK (a feladatleírás szerint az állomány végén)
+   ============================================================ */
+
+/* 3b. feladat: Aktív menüpont kiemelése – szín: RGB(236,236,236), félkövér */
+.navbar-nav .nav-link.active {
+  color: rgb(236, 236, 236) !important;
+  font-weight: bold;
+}

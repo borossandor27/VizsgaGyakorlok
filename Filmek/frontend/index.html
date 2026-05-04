@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Klasszikus Filmek – Kezdőoldal</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🎬 Klasszikus Filmek</a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Kezdőoldal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="filmek.html">A filmek adatai</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hozzaadasFilm.html">Film hozzáadása</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero szekció -->
+  <div class="start">
+    <div class="container text-center py-5">
+      <h1 class="display-4 fw-bold text-white">A klasszikus filmek nagyjai</h1>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row justify-content-center g-4">
+      <div class="col-md-5">
+        <div class="card h-100 shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title">Filmek adatai</h5>
+            <p class="card-text">Böngésszen a klasszikus filmek között.</p>
+            <a href="filmek.html" class="btn btn-dark">Filmek adatai</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="card h-100 shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title">Film hozzáadása</h5>
+            <p class="card-text">Rögzítsen új filmet az adatbázisba.</p>
+            <a href="hozzaadasFilm.html" class="btn btn-dark">Film hozzáadása</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

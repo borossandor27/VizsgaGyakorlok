@@ -1,0 +1,8 @@
+[
+  { "id": 1, "mufaj_neve": "Krimi / Thriller" },
+  { "id": 2, "mufaj_neve": "Kaland / Fantasy" },
+  { "id": 3, "mufaj_neve": "Sci-fi / Akció" },
+  { "id": 4, "mufaj_neve": "Vígjáték / Dráma" },
+  { "id": 5, "mufaj_neve": "Dráma / Románc" },
+  { "id": 6, "mufaj_neve": "Horror / Thriller" }
+]

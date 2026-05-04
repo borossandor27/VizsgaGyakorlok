@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filmek – Klasszikus Filmek</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🎬 Klasszikus Filmek</a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Kezdőoldal</a></li>
+          <li class="nav-item"><a class="nav-link active" href="filmek.html">A filmek adatai</a></li>
+          <li class="nav-item"><a class="nav-link" href="hozzaadasFilm.html">Film hozzáadása</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <h2 class="mb-1">A Rock and Roll nagyjai</h2>
+    <!-- Sikeres betöltés visszajelzés -->
+    <div id="betoltesUzenet" class="alert alert-success alert-dismissible d-none mt-2" role="alert">
+      <span id="betoltesUzenetSzoveg"></span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  </div>
+
+  <!-- Filmkártyák konténere -->
+  <!-- 4d. feladat: sm méretben 1 hasábos, nagyobbakon 2 hasábos elrendezés -->
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 g-4" id="filmKartyak">
+      <!-- JS tölti fel a GET /api/film alapján -->
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <small>Klasszikus Filmek Nyilvántartó &copy; 2026</small>
+  </footer>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    const API = 'http://localhost:5500';
+
+    // 4b. feladat: Filmek lekérése REST API-val
+    async function filmekBetolt() {
+      try {
+        const res   = await fetch(`${API}/api/film`);
+        const filmek = await res.json();
+
+        const kontener = document.getElementById('filmKartyak');
+        kontener.innerHTML = '';
+
+        filmek.forEach(f => {
+          // Aktív évek száma kiszámítása
+          // Az eredeti feladatban: aktiv_evek pl. "1970-1991" vagy "1973-napjainkig"
+          // Filmek esetén: gyártási évtől 2025-ig (ha nincs záró év megadva)
+          const ev = f.gyartasi_ev;
+
+          // 4a. feladat: a kártyák címének szövegszíne ugyanolyan, mint az aktív menüponté
+          // CSS-sel: .card-title { color: rgb(236,236,236) !important; } – ezt a style.css-ben kell beállítani
+
+          kontener.innerHTML += `
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                  <span class="card-title fw-bold mb-0">${f.cim}</span>
+                  <span class="badge bg-secondary">${f.mufaj}</span>
+                </div>
+                <div class="card-body">
+                  <p class="mb-1"><strong>Származási helye:</strong> ${f.szarmazasi_orszag}</p>
+                  <p class="mb-1"><strong>Gyártási év:</strong> ${f.gyartasi_ev}</p>
+                  <p class="mb-1"><strong>Rendező:</strong> ${f.rendezo}</p>
+                  <p class="mb-1"><strong>Szereplők:</strong> ${f.szereplok || '–'}</p>
+                  <p class="mb-2"><strong>Legsikeresebb díjak:</strong> ${f.legsikeresebb_dijak || '–'}</p>
+                  ${f.kep_url
+                    ? `<img src="${f.kep_url}" alt="${f.cim}" class="img-fluid rounded mb-2">`
+                    : '<p class="text-muted fst-italic">Nincs kép</p>'
+                  }
+                  <!-- 4e. feladat: Aktív évek száma gomb – itt: "Filmkori infó" analóg gomb -->
+                  <button class="btn btn-outline-dark btn-sm w-100"
+                    onclick="alert('A(z) ${f.cim} ${new Date().getFullYear() - f.gyartasi_ev} éves film.')">
+                    A film kora
+                  </button>
+                </div>
+              </div>
+            </div>`;
+        });
+
+        // Sikeres betöltés visszajelzés
+        const uzDiv = document.getElementById('betoltesUzenet');
+        document.getElementById('betoltesUzenetSzoveg').textContent = 'Sikeres betöltés.';
+        uzDiv.classList.remove('d-none');
+
+      } catch (e) {
+        console.error('Hiba a filmek betöltésekor:', e);
+      }
+    }
+
+    filmekBetolt();
+  </script>
+</body>
+</html>
