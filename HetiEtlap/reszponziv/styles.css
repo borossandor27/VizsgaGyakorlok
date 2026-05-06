@@ -626,8 +626,13 @@ footer strong {
 }
 
 .ar-logo {
-    font-size: 3rem;
-    opacity: 0.5;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url("./images/tanyer.gif");
+    background-size: cover;
+    background-position: center center;
+    opacity: 1.0;
 }
 
 .ar-kozep {
