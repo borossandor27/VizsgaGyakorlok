@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heti étlap – Vasmunkás Étterem</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Oswald:wght@400;600&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="header-csik"><span></span><span></span><span></span><span></span></div>
+    <div class="header-inner">
+      <div class="logo-circle"></div>
+      <div class="header-cimek">
+        <h1>Vasmunkás Étterem</h1>
+        <p>Házi ízek, igazi konyha &mdash; minden nap frissen</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="hetiEtlap.html" class="active">Heti étlap</a></li>
+      <li><a href="ujEtel.html">Új étel felvitele</a></li>
+      <li><a href="#">Rólunk</a></li>
+      <li><a href="#">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <div class="oldal-wrap">
+
+    <!-- HÉT NAVIGÁCIÓ -->
+    <div class="het-nav">
+      <a href="#" id="elozoHet">&#8656; Előző hét</a>
+      <div class="aktualis">Aktuális hét</div>
+      <a href="#" id="kovetkezoHet">Következő hét &#8658;</a>
+    </div>
+
+    <!-- CÍM -->
+    <div class="etlap-cim">
+      <h2>Heti étlap</h2>
+      <div class="het-datuma" id="hetDatuma"></div>
+    </div>
+
+    <!-- NAPOK TÁBLÁZAT -->
+    <div id="etlapLista">
+      <!-- JS tölti fel -->
+    </div>
+
+    <!-- ÁRAK -->
+    <div class="ar-sav">
+      <div class="ar-logo">🍽️</div>
+      <div class="ar-kozep">
+        <div class="ar-sor-elem">
+          <span class="ar-cimke">Napi ár:</span>
+          <span class="ar-ertek">999 Ft</span>
+        </div>
+        <div class="ar-sor-elem">
+          <span class="ar-cimke">Heti ár:</span>
+          <div>
+            <span class="ar-athuzott">4.995 Ft</span>
+            &nbsp;
+            <span class="ar-kiemelt">4.500 Ft</span>
+          </div>
+        </div>
+      </div>
+      <div class="ar-logo">🍽️</div>
+    </div>
+
+    <div class="megjegyzes">Az étlapváltozás jogát fenntartjuk!</div>
+
+  </div>
+
+  <footer>
+    <p>Az étlapváltozás jogát fenntartjuk! &nbsp;|&nbsp; <strong>© Vasmunkás étterem</strong></p>
+  </footer>
+
+  <script>
+    // Étlap adatok (CSV/adatbázisból is betölthető)
+    const etlap = [
+      {
+        id: 1, nap: "hétfő", nap_sorsz: 1,
+        etelek: ["Újházi tyúkhúsleves", "Sült csirkecomb, rizi-bizi", "Túrórudi"],
+        kep: "./images/hetfo_csirkecomb.jpg"
+      },
+      {
+        id: 2, nap: "kedd", nap_sorsz: 2,
+        etelek: ["Babgulyás", "Mákos tészta", "Alma"],
+        kep: "./images/kedd_makosteszta.jpg"
+      },
+      {
+        id: 3, nap: "szerda", nap_sorsz: 3,
+        etelek: ["Ponty halászlé", "Rakott burgonya", "Szőlő"],
+        kep: "./images/szerda_halaszle.jpg"
+      },
+      {
+        id: 4, nap: "csütörtök", nap_sorsz: 4,
+        etelek: ["Csontleves", "Bécsi szelet, sült burgonya", "Uborkasaláta"],
+        kep: "./images/csutortok_rantotthus.jpg"
+      },
+      {
+        id: 5, nap: "péntek", nap_sorsz: 5,
+        etelek: ["Tejszínes leves", "Borsófőzelék, sült virsli", "Kókuszgolyó"],
+        kep: "./images/pentek_borsofozelek.jpg"
+      }
+    ];
+
+    // Aktuális hét hétfőjének kiszámítása
+    function getHetfo(datum) {
+      const d = new Date(datum);
+      const nap = d.getDay();
+      const diff = (nap === 0 ? -6 : 1 - nap);
+      d.setDate(d.getDate() + diff);
+      return d;
+    }
+
+    function formatDatum(d) {
+      return d.toLocaleDateString('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    let aktualisHetfo = getHetfo(new Date());
+
+    function hetDatumSzoveg(hetfo) {
+      const pentek = new Date(hetfo);
+      pentek.setDate(hetfo.getDate() + 4);
+      return formatDatum(hetfo) + ' – ' + formatDatum(pentek);
+    }
+
+    function renderEtlap() {
+      document.getElementById('hetDatuma').textContent = hetDatumSzoveg(aktualisHetfo);
+
+      const lista = document.getElementById('etlapLista');
+      lista.innerHTML = '';
+
+      etlap.forEach(nap => {
+        const sor = document.createElement('div');
+        sor.className = 'nap-sor';
+
+        const etelekHTML = nap.etelek.map(e => `<li>${e}</li>`).join('');
+
+        sor.innerHTML = `
+        <div class="nap-nev">${nap.nap}</div>
+        <div class="nap-etelek">
+          <ul>${etelekHTML}</ul>
+        </div>
+        <div class="nap-kep-placeholder">🍲</div>
+      `;
+
+        // Ha létezik kép, cseréljük le a placeholdert
+        const img = new Image();
+        img.src = nap.kep;
+        img.onload = () => {
+          const ph = sor.querySelector('.nap-kep-placeholder');
+          if (ph) {
+            const kepElem = document.createElement('img');
+            kepElem.src = nap.kep;
+            kepElem.alt = nap.nap + ' menü';
+            kepElem.className = 'nap-kep';
+            ph.replaceWith(kepElem);
+          }
+        };
+
+        lista.appendChild(sor);
+      });
+    }
+
+    // Hét navigáció
+    document.getElementById('elozoHet').addEventListener('click', e => {
+      e.preventDefault();
+      aktualisHetfo.setDate(aktualisHetfo.getDate() - 7);
+      renderEtlap();
+    });
+
+    document.getElementById('kovetkezoHet').addEventListener('click', e => {
+      e.preventDefault();
+      aktualisHetfo.setDate(aktualisHetfo.getDate() + 7);
+      renderEtlap();
+    });
+
+    renderEtlap();
+  </script>
+
+</body>
+
+</html>

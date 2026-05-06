@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Új étel felvitele – Vasmunkás Étterem</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-csik"><span></span><span></span><span></span><span></span></div>
+    <div class="header-inner">
+      <div class="logo-circle"></div>
+      <div class="header-cimek">
+        <h1>Vasmunkás Étterem</h1>
+        <p>Házi ízek, igazi konyha &mdash; minden nap frissen</p>
+      </div>
+    </div>
+  </header>
+
+
+<nav>
+  <ul>
+    <li><a href="index.html">Főoldal</a></li>
+    <li><a href="hetiEtlap.html">Heti étlap</a></li>
+    <li><a href="ujEtel.html" class="active">Új étel felvitele</a></li>
+    <li><a href="#">Rólunk</a></li>
+    <li><a href="#">Kapcsolat</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+
+  <h2 class="page-title">Új étel felvitele</h2>
+  <p class="page-sub">Az alábbi adatok kitöltésével vehetsz fel új ételt az étlapra. A <span style="color:var(--red);font-style:normal;">*</span> csillaggal jelölt mezők kitöltése kötelező.</p>
+
+  <div class="success-msg" id="successMsg">
+    ✅ Az étel sikeresen mentve lett az étlapra!
+  </div>
+
+  <form id="etelForm" novalidate>
+
+    <!-- ALAPADATOK -->
+    <div class="form-card">
+      <div class="form-card-title">🥘 Alapadatok</div>
+
+      <div class="form-group">
+        <label for="nev">Étel neve <span class="req">*</span></label>
+        <input type="text" id="nev" name="nev" placeholder="pl. Újházi tyúkhúsleves" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="kategoria">Kategória <span class="req">*</span></label>
+          <select id="kategoria" name="kategoria" required>
+            <option value="">— Válassz kategóriát —</option>
+            <option value="leves">Leves</option>
+            <option value="foetal">Főétel</option>
+            <option value="koret">Köret</option>
+            <option value="dessert">Desszert / Gyümölcs</option>
+            <option value="salata">Saláta</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nap">Nap <span class="req">*</span></label>
+          <select id="nap" name="nap" required>
+            <option value="">— Válassz napot —</option>
+            <option value="hetfo">Hétfő</option>
+            <option value="kedd">Kedd</option>
+            <option value="szerda">Szerda</option>
+            <option value="csutortok">Csütörtök</option>
+            <option value="pentek">Péntek</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="het">Hét dátuma <span class="req">*</span></label>
+          <input type="date" id="het" name="het" required>
+        </div>
+        <div class="form-group">
+          <label for="ar">Ár (Ft) <span class="req">*</span></label>
+          <input type="number" id="ar" name="ar" placeholder="pl. 999" min="0" step="1" required>
+          <div class="hint">Napi menü ára forintban</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="leiras">Leírás / Hozzávalók</label>
+        <textarea id="leiras" name="leiras" placeholder="pl. Friss zöldségekkel főzve, házi tésztával..."></textarea>
+        <div class="hint">Opcionális, de segít a vendégeknek az ételválasztásban</div>
+      </div>
+    </div>
+
+    <!-- ALLERGÉNEK -->
+    <div class="form-card">
+      <div class="form-card-title">⚠️ Allergének</div>
+      <div class="check-group">
+        <label class="check-item"><input type="checkbox" name="allergen" value="gluten"><span>Glutén</span></label>
+        <label class="check-item"><input type="checkbox" name="allergen" value="tej"><span>Tej / Laktóz</span></label>
+        <label class="check-item"><input type="checkbox" name="allergen" value="tojas"><span>Tojás</span></label>
+        <label class="check-item"><input type="checkbox" name="allergen" value="dio"><span>Diófélék</span></label>
+        <label class="check-item"><input type="checkbox" name="allergen" value="hal"><span>Hal</span></label>
+        <label class="check-item"><input type="checkbox" name="allergen" value="szoja"><span>Szója</span></label>
+        <label class="check-item"><input type="checkbox" name="allergen" value="zeller"><span>Zeller</span></label>
+        <label class="check-item"><input type="checkbox" name="allergen" value="mustár"><span>Mustár</span></label>
+      </div>
+    </div>
+
+    <!-- KÉP FELTÖLTÉS -->
+    <div class="form-card">
+      <div class="form-card-title">📷 Étel képe</div>
+
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="kepFajl" name="kepFajl" accept="image/*">
+        <span class="upload-icon">🖼️</span>
+        <div class="upload-text">Kattints vagy húzd ide a képet</div>
+        <div class="upload-hint">JPG, PNG, WEBP – max. 5 MB</div>
+      </div>
+
+      <div class="preview-wrap" id="previewWrap">
+        <img id="previewImg" src="" alt="Előnézet">
+        <div class="hint" style="margin-top:0.4rem;">Kattints a feltöltő mezőre a kép cseréjéhez</div>
+      </div>
+    </div>
+
+    <!-- GOMBOK -->
+    <div class="form-actions">
+      <button type="reset" class="btn btn-reset" id="resetBtn">Visszaállítás</button>
+      <button type="submit" class="btn btn-primary">✔ Étel mentése</button>
+    </div>
+
+  </form>
+</div>
+
+<footer>
+  <p>Az étlapváltozás jogát fenntartjuk! &nbsp;|&nbsp; <strong>© Vasmunkás étterem</strong></p>
+</footer>
+
+<script>
+  // Mai dátum beállítása alapértelmezettként
+  const hetInput = document.getElementById('het');
+  const ma = new Date();
+  const hetfo = new Date(ma);
+  hetfo.setDate(ma.getDate() - ((ma.getDay() + 6) % 7));
+  hetInput.value = hetfo.toISOString().split('T')[0];
+
+  // Képelőnézet
+  const kepFajl = document.getElementById('kepFajl');
+  const previewWrap = document.getElementById('previewWrap');
+  const previewImg = document.getElementById('previewImg');
+  const uploadZone = document.getElementById('uploadZone');
+
+  kepFajl.addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        previewImg.src = e.target.result;
+        previewWrap.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Drag & drop jelzés
+  uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+  uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
+  uploadZone.addEventListener('drop', e => { e.preventDefault(); uploadZone.classList.remove('dragover'); });
+
+  // Form submit
+  document.getElementById('etelForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nev = document.getElementById('nev').value.trim();
+    const kat = document.getElementById('kategoria').value;
+    const nap = document.getElementById('nap').value;
+    const ar = document.getElementById('ar').value;
+
+    if (!nev || !kat || !nap || !ar) {
+      alert('Kérlek töltsd ki az összes kötelező mezőt!');
+      return;
+    }
+
+    document.getElementById('successMsg').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.reset();
+    previewWrap.style.display = 'none';
+    hetInput.value = hetfo.toISOString().split('T')[0];
+
+    setTimeout(() => {
+      document.getElementById('successMsg').style.display = 'none';
+    }, 5000);
+  });
+
+  // Reset gomb
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    previewWrap.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

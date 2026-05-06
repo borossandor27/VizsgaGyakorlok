@@ -1,0 +1,984 @@
+/* ============================================================
+   Vasmunkás Étterem – közös stíluslap
+   ============================================================ */
+
+/* === VÁLTOZÓK === */
+:root {
+    --yellow: #f5f07a;
+    --yellow-dark: #e8e34a;
+    --red: #c0201a;
+    --red-dark: #8b1510;
+    --brown: #5a3210;
+    --cream: #fffde0;
+    --text: #2a1a00;
+    --border: rgba(192, 32, 26, 0.3);
+}
+
+/* === ALAP === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--yellow);
+    font-family: 'Lora', Georgia, serif;
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* ============================================================
+   FEJLÉC
+   ============================================================ */
+header {
+    background: var(--red);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 2rem 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Logó kör – GIF háttérképpel */
+.logo-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-image: url("./images/tanyer.gif");
+    background-size: cover;
+    background-position: center center;
+    border: 4px solid #f0c040;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo-icon {
+    max-width: 40px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+}
+
+/* .logo-text – index.html-ben használt osztály */
+.logo-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    color: var(--red);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+/* .logo-szoveg – hetiEtlap.html / ujEtel.html-ben használt osztály */
+.logo-szoveg {
+    font-family: 'Oswald', sans-serif;
+    font-size: 8px;
+    color: var(--red);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+/* Fejléc szöveg – index.html */
+.header-titles h1,
+.header-cimek h1 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.1;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.header-titles p,
+.header-cimek p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: #ffd97a;
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+}
+
+/* Dekoratív csíkok a fejlécben */
+.header-stripes,
+.header-csik {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    display: flex;
+    gap: 12px;
+    opacity: 0.12;
+}
+
+.header-stripes span,
+.header-csik span {
+    display: block;
+    flex: 1;
+    background: #fff;
+    transform: skewX(-8deg);
+}
+
+/* ============================================================
+   NAVIGÁCIÓ
+   ============================================================ */
+nav {
+    background: var(--red-dark);
+    border-bottom: 3px solid #f0c040;
+}
+
+nav ul {
+    max-width: 1100px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+nav a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffd97a;
+}
+
+/* ============================================================
+   GOMBOK (közös)
+   ============================================================ */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 3px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: var(--red);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--red-dark);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--red);
+    border: 2px solid var(--red);
+}
+
+.btn-reset {
+    background: transparent;
+    color: var(--red);
+    border: 2px solid var(--red);
+}
+
+.btn-reset:hover {
+    background: rgba(192, 32, 26, 0.08);
+}
+
+/* ============================================================
+   FOOTER (közös)
+   ============================================================ */
+footer {
+    background: var(--red-dark);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 1.5rem;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    border-top: 3px solid #f0c040;
+    margin-top: 2rem;
+}
+
+footer strong {
+    color: #ffd97a;
+}
+
+/* ============================================================
+   FŐOLDAL – hős szekció
+   ============================================================ */
+.hero {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero-text h2 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--red);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--brown);
+    margin-bottom: 1.5rem;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-card {
+    background: var(--cream);
+    border: 2px solid var(--red);
+    border-radius: 4px;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.hero-card-label {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--red);
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    padding: 3px 16px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.hero-card h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    color: var(--red);
+    text-align: center;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+}
+
+.mai-nap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.mai-sor {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.5rem 0.7rem;
+    background: var(--yellow);
+    border-left: 3px solid var(--red);
+    border-radius: 2px;
+}
+
+.mai-sor-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    color: var(--red);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    min-width: 55px;
+    padding-top: 1px;
+}
+
+.mai-sor-etelek {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.ar-sor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
+    background: var(--red);
+    color: #fff;
+    border-radius: 3px;
+}
+
+.ar-sor span:first-child {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+}
+
+.ar-sor strong {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ============================================================
+   FŐOLDAL – kártyák szekció
+   ============================================================ */
+.section {
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+    padding: 0 1.5rem;
+}
+
+.section-title {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--red);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+}
+
+.card {
+    background: var(--cream);
+    border: 1.5px solid rgba(192, 32, 26, 0.3);
+    border-radius: 4px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(192, 32, 26, 0.15);
+    border-color: var(--red);
+}
+
+.card-ikon {
+    font-size: 2.2rem;
+    margin-bottom: 0.7rem;
+    display: block;
+}
+
+.card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem;
+    color: var(--red);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--brown);
+    line-height: 1.6;
+}
+
+/* ============================================================
+   FŐOLDAL – info sáv
+   ============================================================ */
+.info-banner {
+    background: var(--red);
+    color: #fff;
+    padding: 2rem 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.info-banner-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.info-elem span {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.info-elem strong {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.info-elem p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 2px;
+}
+
+/* ============================================================
+   HETI ÉTLAP OLDAL
+   ============================================================ */
+.oldal-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+/* Hét navigáció */
+.het-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.3rem;
+}
+
+.het-nav a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    color: var(--red);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.het-nav a:hover {
+    opacity: 0.7;
+}
+
+.het-nav .aktualis {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    color: var(--brown);
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* Étlap cím */
+.etlap-cim {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--red);
+}
+
+.etlap-cim h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 2.8rem;
+    color: var(--red);
+    font-weight: 700;
+}
+
+.etlap-cim .het-datuma {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--brown);
+    margin-top: 0.2rem;
+}
+
+/* Napok sorai */
+.nap-sor {
+    display: grid;
+    grid-template-columns: 130px 1fr auto;
+    align-items: center;
+    gap: 0;
+    border-bottom: 2px solid var(--red);
+    padding: 1rem 0;
+    transition: background 0.15s;
+}
+
+.nap-sor:last-of-type {
+    border-bottom: none;
+}
+
+.nap-sor:hover {
+    background: rgba(255, 253, 200, 0.6);
+    border-radius: 3px;
+}
+
+.nap-nev {
+    font-family: 'Caveat', cursive;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--text);
+    padding-left: 0.5rem;
+}
+
+.nap-etelek {
+    padding: 0 1rem;
+}
+
+.nap-etelek ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nap-etelek li {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.7;
+    padding-left: 1.1rem;
+    position: relative;
+}
+
+.nap-etelek li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-style: normal;
+}
+
+.nap-kep {
+    width: 110px;
+    height: 75px;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.nap-kep-placeholder {
+    width: 110px;
+    height: 75px;
+    background: var(--cream);
+    border: 2px dashed var(--border);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+/* Árak sáv */
+.ar-sav {
+    margin-top: 1.5rem;
+    background: var(--cream);
+    border: 2px solid var(--red);
+    border-radius: 4px;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.ar-logo {
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.ar-kozep {
+    text-align: center;
+    flex: 1;
+}
+
+.ar-sor-elem {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.ar-cimke {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    color: var(--brown);
+    min-width: 80px;
+    text-align: right;
+}
+
+.ar-ertek {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.ar-athuzott {
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.ar-kiemelt {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--red);
+}
+
+.megjegyzes {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--brown);
+}
+
+/* ============================================================
+   ÚJ ÉTEL FELVITELE OLDAL
+   ============================================================ */
+.page-wrap {
+    max-width: 800px;
+    margin: 2.5rem auto 3rem;
+    padding: 0 1.5rem;
+}
+
+.page-title {
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.page-sub {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--brown);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--red);
+}
+
+/* Form kártyák */
+.form-card {
+    background: var(--cream);
+    border: 2px solid var(--red);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-card-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--red);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--brown);
+    letter-spacing: 0.3px;
+    margin-bottom: 0.4rem;
+}
+
+label .req {
+    color: var(--red);
+    margin-left: 2px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    background: var(--yellow);
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(192, 32, 26, 0.5);
+    background: #fffef0;
+}
+
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c0201a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 2.2rem;
+    font-style: normal;
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.hint {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    color: #8a6530;
+    margin-top: 0.3rem;
+}
+
+/* Képfeltöltés */
+.upload-zone {
+    border: 2px dashed var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    text-align: center;
+    background: var(--yellow);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+}
+
+.upload-zone:hover,
+.upload-zone.dragover {
+    border-color: var(--red);
+    background: #fffef0;
+}
+
+.upload-zone input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.upload-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.upload-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    color: var(--red);
+    font-weight: 600;
+}
+
+.upload-hint {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--brown);
+    margin-top: 0.3rem;
+}
+
+.preview-wrap {
+    display: none;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.preview-wrap img {
+    max-width: 200px;
+    max-height: 140px;
+    object-fit: cover;
+    border: 2px solid var(--red);
+    border-radius: 3px;
+}
+
+/* Allergén jelölők */
+.check-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.6rem;
+    margin-top: 0.3rem;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.7rem;
+    background: var(--yellow);
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    user-select: none;
+}
+
+.check-item:hover {
+    border-color: var(--red);
+    background: #fffef0;
+}
+
+.check-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--red);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.check-item span {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--text);
+}
+
+/* Form gombok */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+/* Sikeres mentés üzenet */
+.success-msg {
+    display: none;
+    background: #d4edda;
+    border: 1.5px solid #4cae4c;
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: #2d6a2d;
+    font-size: 0.95rem;
+}
+
+/* ============================================================
+   RESZPONZÍV
+   ============================================================ */
+@media (max-width: 680px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .header-inner {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .nap-kep,
+    .nap-kep-placeholder {
+        display: none;
+    }
+
+    .ar-logo {
+        display: none;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 1.2rem;
+    }
+
+    .form-actions {
+        justify-content: stretch;
+    }
+
+    .btn {
+        flex: 1;
+        text-align: center;
+    }
+}
