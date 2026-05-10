@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Film hozzáadása – Klasszikus Filmek</title>
+  <!-- TODO: Csatolja a Bootstrap CSS-t és a style.css-t! -->
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TODO 5b. feladat: Az oldalon a menü KÖZÉPEN jelenjen meg (justify-content-center)! -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🎬 Klasszikus Filmek</a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav">
+          <!-- TODO: Aktív menüpont kiemelése -->
+          <li class="nav-item"><a class="nav-link" href="index.html">Kezdőoldal</a></li>
+          <li class="nav-item"><a class="nav-link" href="/filmek">A filmek adatai</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/hozzaadasFilm">Film hozzáadása</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <h2 class="mb-4">Egy új film rögzítése</h2>
+
+    <!-- Hibakijelzés -->
+    <div id="hibaUzenet" class="alert alert-danger d-none" role="alert"></div>
+
+    <div class="row justify-content-start">
+      <div class="col-md-7">
+
+        <div class="mb-3">
+          <label for="filmCim" class="form-label">A film címe</label>
+          <textarea class="form-control" id="filmCim" rows="2"></textarea>
+        </div>
+
+        <!-- TODO 5c. feladat: A lenyíló lista elemeit az adatbázis szerverről töltse le!
+             GET /api/mufajok végponton érhetők el. -->
+        <div class="mb-3">
+          <label for="mufaj" class="form-label">A film műfaja</label>
+          <select class="form-select" id="mufaj">
+            <option value="">Válasszon műfajt...</option>
+            <!-- TODO: JS-sel töltse fel az API-ból érkező műfajokkal! -->
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="rendezo" class="form-label">A film rendezője</label>
+          <textarea class="form-control" id="rendezo" rows="2"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="gyartasiEv" class="form-label">Gyártási év</label>
+          <textarea class="form-control" id="gyartasiEv" rows="1"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="orszag" class="form-label">Származási ország</label>
+          <textarea class="form-control" id="orszag" rows="1"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="szereplok" class="form-label">Szereplők</label>
+          <textarea class="form-control" id="szereplok" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="dijak" class="form-label">Legsikeresebb díjak</label>
+          <textarea class="form-control" id="dijak" rows="2"></textarea>
+        </div>
+
+        <!-- TODO 5d. feladat: Adjon hozzá egy új beviteli mezőt!
+             Felirat: "A filmről készült filmplakát linkje"
+             Típus: url
+             Ügyeljen arra, hogy a stílusa megegyezzen a többi elem stílusával! -->
+
+        <button class="btn btn-dark w-100 mt-2" id="feltoltesGomb">Feltöltés</button>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    // TODO 5c. feladat: Töltse fel a műfaj select elemet az API-ból!
+    // GET /api/mufajok
+
+    // TODO 5e. feladat: A feltöltés gombra kattintva küldje el az adatokat
+    // POST /api/ujfilm végpontra.
+    // TODO 5f. feladat: Sikeres küldés esetén navigáljon a /filmek oldalra!
+    // Hiba esetén jelenítse meg a hibaüzenetet!
+  </script>
+</body>
+</html>

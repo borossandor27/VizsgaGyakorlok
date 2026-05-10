@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <!-- TODO 1. feladat: Adja hozzá a reszponzív viewport meta taget! -->
+  <title>Klasszikus filmek</title>
+  <!-- TODO 2. feladat: Csatolja a Bootstrap CSS-t! -->
+  <!-- TODO 2. feladat: Csatolja a saját style.css fájlt! -->
+</head>
+<body>
+
+  <!-- TODO 3b. feladat: Minden oldalon a navigációs sávon kiemelten látszik az aktuális menüpont -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🎬 Klasszikus Filmek</a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Kezdőoldal</a>
+          </li>
+          <li class="nav-item">
+            <!-- TODO 3d. feladat: Állítsa be, hogy kattintásra a /filmek útvonalra navigáljon (ne új lapon)! -->
+            <a class="nav-link" href="#">A filmek adatai</a>
+          </li>
+          <li class="nav-item">
+            <!-- TODO 3e. feladat: Állítsa be, hogy kattintásra a /hozzaadasFilm útvonalra navigáljon (ne új lapon)! -->
+            <a class="nav-link" href="#">Film hozzáadása</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TODO 3a. feladat: A start osztályhoz tartozó div háttérképe a filmszalag.png legyen (img/ mappából)! -->
+  <!-- TODO 3c. feladat: A start rész háttérképe ne ismétlődjön és töltse ki teljesen a keretet! -->
+  <div class="start">
+    <div class="container text-center py-5">
+      <h1 class="display-4 fw-bold text-white">A klasszikus filmek nagyjai</h1>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row justify-content-center g-4">
+
+      <div class="col-md-5">
+        <div class="card h-100 shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title">Filmek adatai</h5>
+            <p class="card-text">Böngésszen a klasszikus filmek között.</p>
+            <!-- TODO 3d. feladat: A gombra kattintva a /filmek útvonalra navigáljon (ne új lapon)! -->
+            <a href="#" class="btn btn-dark">Filmek adatai</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="card h-100 shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title">Film hozzáadása</h5>
+            <p class="card-text">Rögzítsen új filmet az adatbázisba.</p>
+            <!-- TODO 3e. feladat: A gombra kattintva a /hozzaadasFilm útvonalra navigáljon (ne új lapon)! -->
+            <a href="#" class="btn btn-dark">Film hozzáadása</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TODO 2. feladat: Csatolja a Bootstrap JS bundle-t! -->
+</body>
+</html>

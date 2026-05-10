@@ -1,0 +1,39 @@
+/* ============================================================
+   Klasszikus Filmek – Saját stíluslap
+   FELADAT: Az új szelektorokat az állomány VÉGÉN helyezze el!
+   ============================================================ */
+
+/* --- Hero / start szekció --- */
+.start {
+  background-image: url('../img/filmszalag.png');
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  /* TODO 3c. feladat: Állítsa be, hogy a háttérkép ne ismétlődjön,
+     és töltse ki teljesen a keretet! */
+}
+
+/* --- Kártyák --- */
+.card {
+  border: none;
+  border-radius: 12px;
+}
+
+.card-title {
+  /* TODO 4a. feladat: Állítsa be a kártyák címének szövegszínét
+     ugyanolyanra, mint az aktív menüpont szövegszíne! */
+}
+
+/* --- Képek reszponzivitása --- */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   IDE KERÜLJENEK AZ ÚJ SZELEKTOROK (a feladatleírás szerint)!
+   ============================================================ */
+
+/* TODO 3b. feladat: Az aktív menüpont kiemelése.
+   Szín: R:236, G:236, B:236 – félkövér.
+   Szelektor neve: .navbar-nav .nav-link.active  */
