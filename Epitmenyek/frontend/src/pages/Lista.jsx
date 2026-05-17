@@ -200,6 +200,12 @@ export default function Lista() {
                         <td>
                           <i className="bi bi-geo-alt-fill tabla-geo me-1" />
                           {e.telepules_nev}
+                          <a href={`https://www.google.com/maps/search/${encodeURIComponent(e.nev + ', ' + e.telepules_nev)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {e.telepules_nev}
+</a>
                         </td>
                         <td className="text-end tabla-szam">{e.magassag} m</td>
                         <td className="text-end tabla-szam">{e.epites_eve}</td>
