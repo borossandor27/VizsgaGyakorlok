@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Új építmény rögzítése – Épített Örökség</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAVIGÁCIÓ -->
+<nav class="navbar navbar-expand-md sticky-top" id="foNav">
+  <div class="container-xl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <span class="nav-ikon"><i class="bi bi-buildings"></i></span>
+      <span class="nav-cim">Épített Örökség</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav gap-1">
+        <li class="nav-item">
+          <a class="nav-link nav-gomb" href="index.html">
+            <i class="bi bi-house-door me-1"></i>Főoldal
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-gomb" href="lista.html">
+            <i class="bi bi-list-ul me-1"></i>Építmények
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-gomb active" href="uj.html">
+            <i class="bi bi-plus-circle me-1"></i>Új rögzítése
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ALOLDAL FEJLÉC -->
+<header class="al-fejlec">
+  <div class="container-xl">
+    <nav aria-label="breadcrumb" class="mb-2">
+      <ol class="breadcrumb morzsa">
+        <li class="breadcrumb-item"><a href="index.html">Főoldal</a></li>
+        <li class="breadcrumb-item"><a href="lista.html">Építmények</a></li>
+        <li class="breadcrumb-item active">Új rögzítése</li>
+      </ol>
+    </nav>
+    <h1 class="al-cim"><i class="bi bi-plus-circle me-2"></i>Új építmény rögzítése</h1>
+    <p class="al-alcim">Adja meg az új építmény adatait az alábbi űrlap segítségével</p>
+  </div>
+</header>
+
+<!-- DEMO FIGYELMEZTETÉS -->
+<div class="demo-figyelmezteto py-2">
+  <div class="container-xl text-center">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+    <strong>DEMO üzemmód</strong> – Az adatok valódi adatbázisba nem kerülnek mentésre. Az űrlap validációs és UX megoldásokat demonstrál.
+  </div>
+</div>
+
+<!-- FORM -->
+<main class="py-5">
+  <div class="container-xl">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+
+        <div class="urlap-keret">
+
+          <!-- Fejléc -->
+          <div class="urlap-fejlec">
+            <i class="bi bi-pencil-square me-2"></i>Építmény adatai
+          </div>
+
+          <div class="urlap-test p-4">
+
+            <!-- Sikeres mentés visszajelzés -->
+            <div id="sikeres-uzenet" class="alert alert-success d-flex align-items-center gap-2 d-none" role="alert">
+              <i class="bi bi-check-circle-fill fs-5"></i>
+              <div>
+                <strong>Sikeres rögzítés!</strong> Az új építmény adatai mentésre kerültek (DEMO).
+                <a href="lista.html" class="alert-link ms-2">Vissza a listához</a>
+              </div>
+            </div>
+
+            <!-- Hibaüzenet -->
+            <div id="hiba-uzenet" class="alert alert-danger d-flex align-items-center gap-2 d-none" role="alert">
+              <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+              <div id="hiba-szoveg">Kérjük, javítsa az alábbi hibákat!</div>
+            </div>
+
+            <div class="row g-4">
+
+              <!-- Azonosító -->
+              <div class="col-12 col-sm-4">
+                <label for="azon" class="form-label urlap-label">
+                  Azonosító <span class="kotelező">*</span>
+                </label>
+                <input type="number" class="form-control urlap-mezo" id="azon"
+                       placeholder="pl. 41" min="1" required/>
+                <div class="form-text urlap-seged">Egyedi egész szám</div>
+                <div class="invalid-feedback">Kötelező mező, pozitív egész szám!</div>
+              </div>
+
+              <!-- Neve -->
+              <div class="col-12 col-sm-8">
+                <label for="nev" class="form-label urlap-label">
+                  Az építmény neve <span class="kotelező">*</span>
+                </label>
+                <input type="text" class="form-control urlap-mezo" id="nev"
+                       placeholder="pl. Diósgyőri vár" maxlength="150" required/>
+                <div class="form-text urlap-seged">Legfeljebb 150 karakter</div>
+                <div class="invalid-feedback">Kötelező mező!</div>
+              </div>
+
+              <!-- Típus -->
+              <div class="col-12 col-sm-6">
+                <label for="tipus" class="form-label urlap-label">
+                  Típusa <span class="kotelező">*</span>
+                </label>
+                <select class="form-select urlap-mezo" id="tipus" required>
+                  <option value="">– Válasszon típust –</option>
+                  <option value="vár">Vár</option>
+                  <option value="templom">Templom</option>
+                  <option value="kolostor">Kolostor</option>
+                  <option value="torony">Torony</option>
+                  <option value="kapu">Kapu</option>
+                  <option value="kápolna">Kápolna</option>
+                  <option value="romkert">Romkert</option>
+                  <option value="emlékmű">Emlékmű</option>
+                  <option value="egyéb">Egyéb</option>
+                </select>
+                <div class="invalid-feedback">Kérjük, válasszon típust!</div>
+              </div>
+
+              <!-- Telepules -->
+              <div class="col-12 col-sm-6">
+                <label for="telepules" class="form-label urlap-label">
+                  Helyszín (település) <span class="kotelező">*</span>
+                </label>
+                <select class="form-select urlap-mezo" id="telepules" required>
+                  <option value="">– Válasszon települést –</option>
+                  <option value="1">Eger</option>
+                  <option value="2">Visegrád</option>
+                  <option value="3">Budapest</option>
+                  <option value="4">Sümeg</option>
+                  <option value="5">Boldogkő Váralja</option>
+                  <option value="6">Esztergom</option>
+                  <option value="7">Pécs</option>
+                  <option value="8">Pannonhalma</option>
+                  <option value="9">Tihany</option>
+                  <option value="10">Miskolc</option>
+                  <option value="11">Szigetvár</option>
+                  <option value="12">Kőszeg</option>
+                  <option value="13">Sárospatak</option>
+                  <option value="14">Füzér</option>
+                  <option value="15">Döbrönte</option>
+                  <option value="16">Csesznek</option>
+                  <option value="17">Somlóvásárhely</option>
+                  <option value="18">Tata</option>
+                  <option value="19">Drégely Palánk</option>
+                  <option value="20">Hollókő</option>
+                  <option value="21">Nógrád</option>
+                  <option value="22">Simontornya</option>
+                  <option value="23">Gyula</option>
+                  <option value="24">Boldva</option>
+                  <option value="25">Ják</option>
+                  <option value="26">Lébény</option>
+                  <option value="27">Sopron</option>
+                  <option value="28">Zirc</option>
+                  <option value="29">Báta</option>
+                  <option value="30">Győr</option>
+                  <option value="31">Székesfehérvár</option>
+                  <option value="32">Veszprém</option>
+                  <option value="33">Ópusztaszer</option>
+                  <option value="34">Kecskemét</option>
+                </select>
+                <div class="invalid-feedback">Kérjük, válasszon települést!</div>
+              </div>
+
+              <!-- Magasság -->
+              <div class="col-12 col-sm-6">
+                <label for="magassag" class="form-label urlap-label">
+                  Magasság (tszf., méterben) <span class="kotelező">*</span>
+                </label>
+                <div class="input-group">
+                  <input type="number" class="form-control urlap-mezo" id="magassag"
+                         placeholder="pl. 280" min="1" max="3000" required/>
+                  <span class="input-group-text urlap-addon">m</span>
+                </div>
+                <div class="form-text urlap-seged">Tengerszint feletti magasság</div>
+                <div class="invalid-feedback">Kötelező mező, 1–3000 közötti szám!</div>
+              </div>
+
+              <!-- Építés éve -->
+              <div class="col-12 col-sm-6">
+                <label for="epitesEve" class="form-label urlap-label">
+                  Építés éve <span class="kotelező">*</span>
+                </label>
+                <input type="number" class="form-control urlap-mezo" id="epitesEve"
+                       placeholder="pl. 1310" min="500" max="2025" required/>
+                <div class="form-text urlap-seged">500–2025 közötti évszám</div>
+                <div class="invalid-feedback">Kötelező mező, érvényes évszám (500–2025)!</div>
+              </div>
+
+            </div><!-- /row -->
+
+            <!-- Előnézet -->
+            <div id="elonezet-blokk" class="elonezet-sav mt-4 d-none">
+              <div class="elonezet-cim"><i class="bi bi-eye me-2"></i>Előnézet</div>
+              <div id="elonezet-tartalom" class="elonezet-tartalom"></div>
+            </div>
+
+            <!-- Gombok -->
+            <div class="d-flex flex-wrap gap-3 mt-4 pt-3 urlap-gombok">
+              <button type="button" class="btn urlap-mentes-gomb" id="mentesGomb" onclick="mentes()">
+                <i class="bi bi-floppy2 me-2"></i>Rögzítés (DEMO)
+              </button>
+              <button type="button" class="btn urlap-elonezet-gomb" onclick="elonezet()">
+                <i class="bi bi-eye me-2"></i>Előnézet
+              </button>
+              <a href="lista.html" class="btn urlap-vissza-gomb ms-auto">
+                <i class="bi bi-arrow-left me-2"></i>Vissza a listához
+              </a>
+            </div>
+
+          </div><!-- /urlap-test -->
+        </div><!-- /urlap-keret -->
+
+        <!-- SQL ELŐNÉZET -->
+        <div class="sql-blokk mt-4">
+          <div class="sql-fejlec">
+            <i class="bi bi-code-slash me-2"></i>Generált SQL INSERT (oktatási célra)
+          </div>
+          <pre class="sql-kod" id="sqlElonezet">-- Töltse ki az űrlapot az INSERT utasítás megtekintéséhez</pre>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="fo-lab">
+  <div class="container-xl text-center">
+    <p class="mb-1"><i class="bi bi-buildings me-2"></i>Magyarország Épített Öröksége &mdash; Oktatási mintaalkalmazás</p>
+    <p class="lab-kis">Bootstrap 5.3 &bull; epitmeny_db adatbázis &bull; DEMO üzemmód</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Valós idejű SQL generálás
+['azon','nev','tipus','telepules','magassag','epitesEve'].forEach(id => {
+  document.getElementById(id).addEventListener('input', frissitSQL);
+  document.getElementById(id).addEventListener('change', frissitSQL);
+});
+
+function frissitSQL() {
+  const a = document.getElementById('azon').value;
+  const n = document.getElementById('nev').value;
+  const t = document.getElementById('tipus').value;
+  const m = document.getElementById('magassag').value;
+  const tp = document.getElementById('telepules').value;
+  const e = document.getElementById('epitesEve').value;
+
+  if (!a && !n && !t) {
+    document.getElementById('sqlElonezet').textContent = '-- Töltse ki az űrlapot az INSERT utasítás megtekintéséhez';
+    return;
+  }
+  const nEsc = n.replace(/'/g,"''");
+  document.getElementById('sqlElonezet').textContent =
+    `INSERT INTO epitmeny (azon, nev, tipus, magassag, telepules_id, epites_eve)\nVALUES (${a||'?'}, '${nEsc||'?'}', '${t||'?'}', ${m||'?'}, ${tp||'?'}, ${e||'?'});`;
+}
+
+function validalas() {
+  let ok = true;
+  const mezok = ['azon','nev','tipus','telepules','magassag','epitesEve'];
+  mezok.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value || (el.required && !el.checkValidity())) {
+      el.classList.add('is-invalid');
+      el.classList.remove('is-valid');
+      ok = false;
+    } else {
+      el.classList.remove('is-invalid');
+      el.classList.add('is-valid');
+    }
+  });
+  return ok;
+}
+
+function elonezet() {
+  const n  = document.getElementById('nev').value;
+  const t  = document.getElementById('tipus').value;
+  const m  = document.getElementById('magassag').value;
+  const e  = document.getElementById('epitesEve').value;
+  const tp = document.getElementById('telepules');
+  const tpNev = tp.options[tp.selectedIndex]?.text || '–';
+
+  const blokk = document.getElementById('elonezet-blokk');
+  const tart  = document.getElementById('elonezet-tartalom');
+
+  if (!n && !t) {
+    blokk.classList.add('d-none');
+    return;
+  }
+
+  tart.innerHTML = `
+    <div class="row g-2">
+      <div class="col-6 col-md-3"><span class="elonezet-cimke">Neve</span><br><strong>${n || '–'}</strong></div>
+      <div class="col-6 col-md-3"><span class="elonezet-cimke">Típus</span><br><strong>${t || '–'}</strong></div>
+      <div class="col-6 col-md-3"><span class="elonezet-cimke">Helyszín</span><br><strong>${tpNev}</strong></div>
+      <div class="col-6 col-md-3"><span class="elonezet-cimke">Magasság / Év</span><br><strong>${m||'–'} m / ${e||'–'}</strong></div>
+    </div>
+  `;
+  blokk.classList.remove('d-none');
+}
+
+function mentes() {
+  document.getElementById('sikeres-uzenet').classList.add('d-none');
+  document.getElementById('hiba-uzenet').classList.add('d-none');
+
+  if (!validalas()) {
+    document.getElementById('hiba-uzenet').classList.remove('d-none');
+    document.getElementById('hiba-szoveg').textContent = 'Kérjük, töltse ki az összes kötelező mezőt helyesen!';
+    document.getElementById('hiba-uzenet').scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+
+  // DEMO: szimulált mentés
+  setTimeout(() => {
+    document.getElementById('sikeres-uzenet').classList.remove('d-none');
+    document.getElementById('sikeres-uzenet').scrollIntoView({behavior:'smooth', block:'center'});
+    // Mezők visszaállítása
+    ['azon','nev','tipus','telepules','magassag','epitesEve'].forEach(id => {
+      const el = document.getElementById(id);
+      el.value = '';
+      el.classList.remove('is-valid','is-invalid');
+    });
+    document.getElementById('elonezet-blokk').classList.add('d-none');
+    document.getElementById('sqlElonezet').textContent = '-- Töltse ki az űrlapot az INSERT utasítás megtekintéséhez';
+  }, 400);
+}
+</script>
+</body>
+</html>
