@@ -1,6 +1,6 @@
 # Gyógynövény Nyilvántartó Rendszer – Projektfeladat
 
-Ez a projekt egy komplex asztali és webes szoftverfejlesztési vizsgafeladat megvalósítása[cite: 504]. A rendszer Magyarország nevezetes gyógynövényeinek adatait, lelőhelyeit és hasznosítási kategóriáit tartja nyilván[cite: 522, 574]. Magában foglalja az adatok asztali (konzolos és grafikus) feldolgozását, valamint egy teljes webalkalmazást.
+Ez a projekt egy komplex asztali és webes szoftverfejlesztési vizsgafeladat megvalósítása. A rendszer Magyarország nevezetes gyógynövényeinek adatait, lelőhelyeit és hasznosítási kategóriáit tartja nyilván[cite: 522, 574]. Magában foglalja az adatok asztali (konzolos és grafikus) feldolgozását, valamint egy teljes webalkalmazást.
 
 ---
 
@@ -29,13 +29,13 @@ A projekt a `gyogynovenyek_db` elnevezésű adatbázisra épül. Az adatbázis i
 
 | Mező | Típus | Leírás |
 | :--- | :--- | :--- |
-| `azon` | INT (PK) | A gyógynövény egyedi azonosítója             |
-| `nev` | VARCHAR | A gyógynövény magyar megnevezése              |
-| `fajta` | VARCHAR | A növény latin tudományos neve             |
-| `lelohely_id` | INT (FK) | Külső kulcs, amely a `lelohely.id`-ra hivatkozik  |
+| `azon` | INT (PK) | A gyógynövény egyedi azonosítója |
+| `nev` | VARCHAR | A gyógynövény magyar megnevezése |
+| `fajta` | VARCHAR | A növény latin tudományos neve |
+| `lelohely_id` | INT (FK) | Külső kulcs, amely a `lelohely.id`-ra hivatkozik |
 | `gyujtes_eve` | INT | A gyűjtés/feljegyzés éve  |
-| `hasznositas` | VARCHAR | Kategória (pl. gyógyászat, élelmiszer, kozmetika)  |
-| `URL` | TEXT | Opcionális link a növény fényképéhez  |
+| `hasznositas` | VARCHAR | Kategória (pl. gyógyászat, élelmiszer, kozmetika) |
+| `URL` | TEXT | Opcionális link a növény fényképéhez |
 
 ---
 
