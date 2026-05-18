@@ -151,9 +151,9 @@ A feladat megoldása során egy grafikus felhasználói felülettel rendelkező 
 
 ### 3. Reszponzív viselkedésű weboldal készítés és formázás
 
-A feladat megoldása során egy reszponzív weboldalt kell készíteni HTML5, CSS3 és JavaScript használatával. A weboldalnak alkalmazkodnia kell különböző eszközök képernyőméreteihez és felhasználóbarát felületet kell biztosítania. A weboldal tartalmazhat statikus tartalmat, valamint interaktív elemeket is. 
+A feladat megoldása során egy reszponzív weboldalt kell készíteni HTML5, CSS3 és JavaScript használatával. A weboldalnak alkalmazkodnia kell különböző eszközök képernyőméreteihez és felhasználóbarát felületet kell biztosítania. A weboldal tartalmazhat statikus tartalmat, valamint interaktív elemeket is.
 A reszponzív viselkedés eléréséhez használhatók különböző technikák, például média lekérdezések (media queries), rugalmas rácsok (flexbox) vagy CSS grid. A weboldal formázásához használhatók különböző CSS keretrendszerek, például Bootstrap vagy Tailwind CSS.
-Mivel több lapos webdokumentumot kell készíteni, így elgedhetelen egy egyszerű navigációs menüt is készíteni, amely lehetővé teszi a felhasználók számára, hogy könnyen navigáljanak a weboldal különböző részei között.
+Mivel több lapos webdokumentumot kell készíteni, így elengedhetelen egy egyszerű navigációs menüt is készíteni, amely lehetővé teszi a felhasználók számára, hogy könnyen navigáljanak a weboldal különböző részei között.
 
 ```html
     <!-- Navigációs sáv -->
@@ -183,7 +183,52 @@ Mivel több lapos webdokumentumot kell készíteni, így elgedhetelen egy egysze
     </nav>
 ```
 
-Követelmény adatbevitelre alkalmas űrlap készítése, amely lehetővé teszi a felhasználók számára, hogy új adatokat adjanak hozzá a rendszerhez. Az űrlapnak tartalmaznia kell különböző típusú mezőket, például szöveges mezőket, legördülő listákat vagy jelölőnégyzeteket, amelyek segítségével a felhasználók megadhatják a szükséges információkat. 
+**landing page: `index.html`**
+
+Itt egy figyelemfelkeltő kezdőlapot kell készíteni, amely bemutatja a weboldal témáját és célját. A kezdőlapnak tartalmaznia kell egy nagy, figyelemfelkeltő képet vagy bannert, valamint egy rövid leírást a weboldalról. Emellett érdemes lehet néhány kiemelt információt vagy szolgáltatást is megjeleníteni, hogy a látogatók gyorsan megértsék, mit kínál a weboldal.
+
+```html
+<!-- header -->
+<header class="bg-primary text-white py-5">
+    <div class="container">
+      <div class="row justify-content-center overlay">
+        <h1 class="display-4">Öregfák</h1>
+        <p class="lead">Tudományos és kulturális örökség</p>
+        <div class="d-flex gap-3 mt-4">
+          <a href="fak.html" class="btn btn-light btn-lg">Fák listája</a>
+          <a href="hozzaadas.html" class="btn btn-outline-light btn-lg">Új fa hozzáadása</a>
+        </div>
+      </div>
+    </div>
+</header>
+```
+
+A fejlécet egyéni formázással és egy nagy háttérképpel lehet kiemelni, hogy azonnal megragadja a látogatók figyelmét. A gombok segítségével a látogatók könnyen navigálhatnak a weboldal különböző részei között.
+
+```css
+/* Egyéni stílus a fejléchez */
+header {
+    position: relative;
+    background-image: url('kepek/1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sötét átlátszó réteg a jobb olvashatóságért */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+```
+
+Követelmény adatbevitelre alkalmas űrlap készítése, amely lehetővé teszi a felhasználók számára, hogy új adatokat adjanak hozzá a rendszerhez. Az űrlapnak tartalmaznia kell különböző típusú mezőket, például szöveges mezőket, legördülő listákat vagy jelölőnégyzeteket, amelyek segítségével a felhasználók megadhatják a szükséges információkat. Az űrlapnak reszponzívnak kell lennie, hogy különböző eszközökön is jól használható legyen. Emellett érdemes lehet valamilyen visszajelzést is biztosítani a felhasználók számára, például egy sikeres mentés esetén megjelenő üzenetet vagy egy hiba esetén megjelenő figyelmeztetést.
 
 ```html
         <!-- Űrlap kártya -->

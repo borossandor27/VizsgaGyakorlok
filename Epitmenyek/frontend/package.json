@@ -1,7 +1,8 @@
 {
-  "name": "frontend_epitmenyek",
+  "name": "epitmeny-frontend",
+  "version": "1.0.0",
+  "description": "Épített Örökség – React + Vite frontend",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
