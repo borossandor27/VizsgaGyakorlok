@@ -276,6 +276,10 @@ body {
 
 /* ---- Táblázat ---- */
 .tabla-keret { background: #fff9f0; border: 1px solid #ddd0b8; border-radius: 4px; overflow: hidden; }
+.tabla-epitmeny td a {
+  font-family: var(--betu-cim); color: var(--szin-ko);
+  text-decoration: none; transition: color .15s; font-size: smaller;
+}
 .tabla-epitmeny thead tr { background: #2e1c0c; }
 .tabla-epitmeny thead th {
   font-family: var(--betu-cim); font-size: .8rem; letter-spacing: .06em;
