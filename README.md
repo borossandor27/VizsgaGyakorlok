@@ -337,8 +337,13 @@ npm pkg set type=module
 
 `src/main.jsx` fájl tartalma:
 
+Itt csak az útválasztó és a Bootstrap importálása van hozzáadva, a többi rész változatlan maradt.
+
 ```jsx
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
@@ -354,9 +359,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 `src/App.jsx` fájl tartalma:
 
+Definiáljuk a navigációs menüt és az útvonalakat a React Router segítségével. A menü egyszerű linkeket tartalmaz, amelyek lehetővé teszik a felhasználók számára, hogy könnyen navigáljanak a weboldal különböző részei között.
+
 ```jsx
 import React from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, NavLink } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 
@@ -364,8 +371,8 @@ export default function App() {
   return (
     <div>
       <nav style={{ display: 'flex', gap: '1rem' }}>
-        <Link to="/">Főoldal</Link>
-        <Link to="/about">Rólunk</Link>
+        <NavLink to="/">Főoldal</NavLink>
+        <NavLink to="/about">Rólunk</NavLink>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -426,10 +433,7 @@ export default function About() {
 
 ```jsx
 import { BrowserRouter } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, NavLink } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 
@@ -440,7 +444,7 @@ export default function App() {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">Weboldalam</Link>
+            <NavLink className="navbar-brand" to="/">Weboldalam</NavLink>
             <button
               className="navbar-toggler"
               type="button"
@@ -455,10 +459,10 @@ export default function App() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">Főoldal</Link>
+                  <NavLink className="nav-link" to="/">Főoldal</NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about">Rólunk</Link>
+                  <NavLink className="nav-link" to="/about">Rólunk</NavLink>
                 </li>
               </ul>
             </div>
