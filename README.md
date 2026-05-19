@@ -231,58 +231,58 @@ header {
 Követelmény adatbevitelre alkalmas űrlap készítése, amely lehetővé teszi a felhasználók számára, hogy új adatokat adjanak hozzá a rendszerhez. Az űrlapnak tartalmaznia kell különböző típusú mezőket, például szöveges mezőket, legördülő listákat vagy jelölőnégyzeteket, amelyek segítségével a felhasználók megadhatják a szükséges információkat. Az űrlapnak reszponzívnak kell lennie, hogy különböző eszközökön is jól használható legyen. Emellett érdemes lehet valamilyen visszajelzést is biztosítani a felhasználók számára, például egy sikeres mentés esetén megjelenő üzenetet vagy egy hiba esetén megjelenő figyelmeztetést.
 
 ```html
-        <!-- Űrlap kártya -->
-        <main class="row justify-content-center">
-            <div class="col-lg-8 col-md-10 col-12">
-                <div class="card shadow-sm border-0 rounded-4">
-                    <div class="card-body p-4 p-md-5">
-                        <form id="kepModositasForm">
-                            <!-- Fa kiválasztása -->
-                            <div class="mb-4">
-                                <label for="faSelect" class="form-label fw-semibold">🌲 Fa kiválasztása</label>
-                                <select class="form-select form-select-lg" id="faSelect" required>
-                                    <option selected disabled value="">Válasszon...</option>
-                                    <option value="10">10 - Platán (Budapest)</option>
-                                    <option value="11">11 - Hárs (Szeged)</option>
-                                    <option value="12">12 - Tölgy (Pécs)</option>
-                                    <option value="13">13 - Bükk (Miskolc)</option>
-                                    <option value="14">14 - Fenyő (Sopron)</option>
-                                </select>
-                                <div class="form-text">Válassza ki a módosítani kívánt fát.</div>
-                            </div>
+  <!-- Űrlap kártya -->
+  <main class="row justify-content-center">
+      <div class="col-lg-8 col-md-10 col-12">
+          <div class="card shadow-sm border-0 rounded-4">
+              <div class="card-body p-4 p-md-5">
+                  <form id="kepModositasForm">
+                      <!-- Fa kiválasztása -->
+                      <div class="mb-4">
+                          <label for="faSelect" class="form-label fw-semibold">🌲 Fa kiválasztása</label>
+                          <select class="form-select form-select-lg" id="faSelect" required>
+                              <option selected disabled value="">Válasszon...</option>
+                              <option value="10">10 - Platán (Budapest)</option>
+                              <option value="11">11 - Hárs (Szeged)</option>
+                              <option value="12">12 - Tölgy (Pécs)</option>
+                              <option value="13">13 - Bükk (Miskolc)</option>
+                              <option value="14">14 - Fenyő (Sopron)</option>
+                          </select>
+                          <div class="form-text">Válassza ki a módosítani kívánt fát.</div>
+                      </div>
 
-                            <!-- Új képlink mező -->
-                            <div class="mb-4">
-                                <label for="kepLink" class="form-label fw-semibold">🔗 Új képlink</label>
-                                <input type="url" class="form-control form-control-lg" id="kepLink"
-                                    placeholder="kepek/3.jpg vagy https://...">
-                                <div class="form-text">Megadhat relatív elérési utat (pl. kepek/1.jpg) vagy teljes
-                                    URL-t.</div>
-                            </div>
+                      <!-- Új képlink mező -->
+                      <div class="mb-4">
+                          <label for="kepLink" class="form-label fw-semibold">🔗 Új képlink</label>
+                          <input type="url" class="form-control form-control-lg" id="kepLink"
+                              placeholder="kepek/3.jpg vagy https://...">
+                          <div class="form-text">Megadhat relatív elérési utat (pl. kepek/1.jpg) vagy teljes
+                              URL-t.</div>
+                      </div>
 
-                            <!-- Előnézet (plusz funkció) -->
-                            <div class="mb-4">
-                                <label class="form-label fw-semibold">👁️ Előnézet</label>
-                                <div id="kepElonezet" class="border rounded-3 p-3 text-center bg-light"
-                                    style="min-height: 150px;">
-                                    <span class="text-muted">Kép előnézete itt jelenik meg...</span>
-                                </div>
-                            </div>
+                      <!-- Előnézet (plusz funkció) -->
+                      <div class="mb-4">
+                          <label class="form-label fw-semibold">👁️ Előnézet</label>
+                          <div id="kepElonezet" class="border rounded-3 p-3 text-center bg-light"
+                              style="min-height: 150px;">
+                              <span class="text-muted">Kép előnézete itt jelenik meg...</span>
+                          </div>
+                      </div>
 
-                            <!-- Gombok -->
-                            <div class="d-flex flex-wrap gap-3 mt-4">
-                                <button type="button" id="mentesBtn" class="btn btn-primary btn-lg px-5">
-                                    💾 Mentés
-                                </button>
-                                <button type="reset" class="btn btn-outline-secondary btn-lg px-4">
-                                    🗑️ Űrlap törlése
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </main>
+                      <!-- Gombok -->
+                      <div class="d-flex flex-wrap gap-3 mt-4">
+                          <button type="button" id="mentesBtn" class="btn btn-primary btn-lg px-5">
+                              💾 Mentés
+                          </button>
+                          <button type="reset" class="btn btn-outline-secondary btn-lg px-4">
+                              🗑️ Űrlap törlése
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </main>
 ```
 
 ### 4. Backend programozás
@@ -296,6 +296,7 @@ mkdir forras
 mkdir asztali
 mkdir backend
 cd backend
+npm init -y
 npm i express mysql2 cors
 npm pkg set type=module
 echo import express from 'express'; > index.js
@@ -315,6 +316,18 @@ echo     port: 3306 >> index.js
 echo }); >> index.js
 echo. >> index.js
 echo // vegpontok >> index.js
+echo app.get('/api/valami', (req, res) => { >> index.js
+echo     db.query('SELECT * FROM valami', (err, results) => { >> index.js
+echo         if (err) { >> index.js
+echo             console.error('Hiba történt:', err); >> index.js
+echo             res.status(500).json({ error: 'Hiba történt' }); >> index.js
+echo         } else { >> index.js
+echo             res.json(results); >> index.js
+echo         } >> index.js
+echo     }); >> index.js
+echo }); >> index.js
+echo. >> index.js
+echo // további végpontok (POST, PUT, DELETE) >> index.js
 echo. >> index.js
 echo app.listen(3000, () =^> ^{ >> index.js
 echo     console.log('Server is running on http://localhost:3000'); >> index.js
@@ -331,7 +344,7 @@ cd frontend
 npm create vite@latest my-react-app -- --template react
 cd my-react-app
 npm install
-npm install axios react-router-dom bootstrap bootstrap-icons
+npm install axios react-router-dom bootstrap react-bootstrap bootstrap-icons
 npm pkg set type=module
 ```
 
