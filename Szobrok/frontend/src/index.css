@@ -1,0 +1,92 @@
+/* ── React app globális stílusok ── */
+:root {
+  --nav-bg: #1a1a2e;
+  --aktiv:  rgb(150, 200, 255);
+  --siker-bg: #d1e7dd;
+  --hiba-bg:  #f8d7da;
+  --info-bg:  #d0e9ff;
+}
+
+body { font-family: 'Segoe UI', system-ui, sans-serif; }
+
+/* Navigáció */
+.navbar { background-color: var(--nav-bg) !important; }
+.navbar-brand, .nav-link { color: #f0f0f0 !important; font-weight: 500; }
+.nav-link.aktiv-link { color: var(--aktiv) !important; font-weight: 700; }
+.nav-link:hover { color: var(--aktiv) !important; }
+
+/* Hero */
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  min-height: 320px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; margin-bottom: 1.5rem;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(0,0,0,0.45); border-radius: 10px;
+}
+.hero-tartalom {
+  position: relative; z-index: 1;
+  text-align: center; color: #fff; padding: 2rem;
+}
+.hero-tartalom h1 { font-size: clamp(1.6rem,5vw,2.8rem); font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+.hero-tartalom p  { text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+
+/* Státusz sáv */
+.statusz-sav {
+  border-radius: 6px; padding: 0.6rem 1rem;
+  font-size: 0.9rem; margin-bottom: 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.statusz-sav.siker { background: var(--siker-bg); color: #0a3622; border: 1px solid #a3cfbb; }
+.statusz-sav.hiba  { background: var(--hiba-bg);  color: #58151c; border: 1px solid #f1aeb5; }
+.statusz-sav.info  { background: var(--info-bg);  color: #084298; border: 1px solid #9ec5fe; }
+
+/* Táblázat */
+.szobor-tabla th { background-color: var(--nav-bg); color: #f0f0f0; }
+.szobor-tabla td { vertical-align: middle; }
+.szobor-tabla img { width:52px; height:52px; object-fit:cover; border-radius:6px; }
+.torol-btn { background:#dc3545; color:#fff; border:none; border-radius:5px;
+  padding:0.25rem 0.7rem; font-size:0.85rem; cursor:pointer; }
+.torol-btn:hover { background:#b02a37; }
+.torol-btn:disabled { background:#aaa; cursor:not-allowed; }
+
+/* Kártyák */
+.funkcio-kartya {
+  border:1px solid #dee2e6; border-radius:10px; padding:1.5rem;
+  height:100%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.07);
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+
+/* Alkotó művek lista */
+.muvek-lista { list-style:none; padding:0; }
+.muvek-lista li {
+  padding:0.3rem 0.6rem; border-left:3px solid var(--aktiv);
+  margin-bottom:0.3rem; background:#f8f9fa;
+  border-radius:0 6px 6px 0; font-size:0.88rem;
+}
+
+/* Urlap kártya */
+.urlap-kartya {
+  background:#fff; border:1px solid #dee2e6; border-radius:12px;
+  padding:2rem; box-shadow:0 2px 10px rgba(0,0,0,.08);
+  max-width:680px; margin:1.5rem auto;
+}
+.urlap-fejlec {
+  background: var(--aktiv); color: #1a1a2e;
+  border-radius:8px 8px 0 0; margin:-2rem -2rem 1.5rem -2rem;
+  padding:1rem 1.5rem; font-weight:700; font-size:1.1rem;
+}
+
+/* Footer */
+footer { background: var(--nav-bg); color:#aaa; text-align:center;
+  padding:1rem; font-size:0.85rem; margin-top:3rem; }
+
+/* Animáció */
+@keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+.fade-in { animation: fadeIn 0.3s ease; }

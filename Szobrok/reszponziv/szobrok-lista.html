@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Szobrok listája</title>
+  <link rel="stylesheet" href="./bootstrap/css/sb-admin-2.min.css">
+  <link rel="stylesheet" href="szobrok.css">
+</head>
+
+<body>
+
+  <!-- ── Navigáció ── -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🗿 Szobrok</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+          <li class="nav-item"><a class="nav-link active" href="szobrok-lista.html">Szobrok listája</a></li>
+          <li class="nav-item"><a class="nav-link" href="kep-hozzaadas.html">Kép hozzáadása</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="d-flex justify-content-between align-items-center my-3">
+      <h4 class="mb-0 fw-bold">Szobrok listája</h4>
+      <button class="btn btn-outline-secondary btn-sm" onclick="listatBetolt()">Lista újratöltése</button>
+    </div>
+
+    <!-- Lekérdezési státusz -->
+    <div id="lekerdezesStatusz"></div>
+
+    <!-- Műveleti visszajelzés -->
+    <div id="muveletek"></div>
+
+    <!-- Táblázat -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover szobor-tabla">
+        <thead>
+          <tr>
+            <th>Azonosító</th>
+            <th>Személy</th>
+            <th>Hely</th>
+            <th>Avatás</th>
+            <th>Alkotó</th>
+            <th>Kép</th>
+            <th>Művelet</th>
+          </tr>
+        </thead>
+        <tbody id="szoborTorzs">
+          <tr>
+            <td colspan="7" class="text-center text-muted">Betöltés...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Szobrok nyilvántartása
+  </footer>
+
+  <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const API = 'http://localhost:3333/api';
+
+    function statuszMutat(elemId, szoveg, tipus) {
+      const el = document.getElementById(elemId);
+      el.innerHTML = `
+      <div class="statusz-sav ${tipus}">
+        <span>${szoveg}</span>
+        <button class="zaro-btn" onclick="this.parentElement.remove()">×</button>
+      </div>`;
+    }
+
+    async function listatBetolt() {
+      const tbody = document.getElementById('szoborTorzs');
+      tbody.innerHTML = '<tr><td colspan="7" class="text-center">Betöltés...</td></tr>';
+      try {
+        const res = await fetch(`${API}/szobrok`);
+        const json = await res.json();
+        statuszMutat('lekerdezesStatusz',
+          `Státuszkód: ${res.status} | ${json.uzenet}`,
+          res.ok ? 'siker' : 'hiba');
+
+        if (!res.ok || !json.adatok || json.adatok.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="7" class="text-center text-muted">Nincs adat.</td></tr>';
+          return;
+        }
+        tbody.innerHTML = '';
+        json.adatok.forEach(s => {
+          const kepHtml = s.kep_url
+            ? `<div class="kep-cella"><img src="${s.kep_url.startsWith('/') ? 'http://localhost:3333' + s.kep_url : s.kep_url}" alt="${s.szemely}"></div>`
+            : '<span class="nincs-kep">Nincs kép</span>';
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+          <td>${s.id}</td>
+          <td>${s.szemely}</td>
+          <td>${s.hely}</td>
+          <td>${s.avatas}</td>
+          <td>${s.alkoto_nev || '–'}</td>
+          <td>${kepHtml}</td>
+          <td><button class="torol-btn" onclick="torol(${s.id}, this)">Törlés</button></td>
+        `;
+          tbody.appendChild(tr);
+        });
+      } catch (e) {
+        statuszMutat('lekerdezesStatusz', 'Státuszkód: 503 | Hiba a lista lekérésekor!', 'hiba');
+        tbody.innerHTML = '<tr><td colspan="7" class="text-center text-danger">Szerver nem elérhető.</td></tr>';
+      }
+    }
+
+    async function torol(id, btn) {
+      if (!confirm(`Biztosan törli a(z) ${id} azonosítójú szobrot?`)) return;
+      btn.disabled = true;
+      try {
+        const res = await fetch(`${API}/szobrok/${id}`, { method: 'DELETE' });
+        const json = await res.json();
+        statuszMutat('muveletek',
+          `Státuszkód: ${res.status} | ${json.uzenet}`,
+          res.ok ? 'siker' : 'hiba');
+        if (res.ok) btn.closest('tr').remove();
+        else btn.disabled = false;
+      } catch (e) {
+        statuszMutat('muveletek', 'Törlési hiba – szerver nem elérhető.', 'hiba');
+        btn.disabled = false;
+      }
+    }
+
+    listatBetolt();
+  </script>
+</body>
+
+</html>

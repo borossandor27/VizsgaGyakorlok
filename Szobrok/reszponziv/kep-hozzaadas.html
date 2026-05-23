@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kép hozzáadása – Szobrok</title>
+  <link rel="stylesheet" href="./bootstrap/css/sb-admin-2.min.css">
+  <link rel="stylesheet" href="szobrok.css">
+</head>
+
+<body>
+
+  <!-- ── Navigáció ── -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🗿 Szobrok</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
+          <li class="nav-item"><a class="nav-link" href="szobrok-lista.html">Szobrok listája</a></li>
+          <li class="nav-item"><a class="nav-link active" href="kep-hozzaadas.html">Kép hozzáadása</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="urlap-kartya mt-4">
+      <h4>Kép hozzárendelése meglévő szoborhoz</h4>
+
+      <!-- Lekérdezési státusz -->
+      <div id="lekerdezesStatusz"></div>
+
+      <!-- 1. Alkotó kiválasztása -->
+      <div class="mb-3">
+        <label for="alkotóSel" class="form-label">1. Alkotó kiválasztása</label>
+        <select id="alkotóSel" class="form-select">
+          <option value="">-- Válasszon szobrászt --</option>
+        </select>
+      </div>
+
+      <!-- 2. Város + 3. Konkrét szobor – egy sorban -->
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-sm-6">
+          <label for="varosSel" class="form-label">2. Város kiválasztása</label>
+          <select id="varosSel" class="form-select" disabled>
+            <option value="">-- Válasszon települést --</option>
+          </select>
+        </div>
+        <div class="col-12 col-sm-6">
+          <label for="szoborSel" class="form-label">3. Konkrét szobor</label>
+          <select id="szoborSel" class="form-select" disabled>
+            <option value="">-- Válassza ki a személyt --</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Státusz és üzenet -->
+      <div id="urlap-statusz"></div>
+
+      <!-- Képfájl kiválasztása (csak szobor választás után jelenik meg) -->
+      <div id="kepSzekció" style="display:none;">
+        <hr>
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Képfájl kiválasztása</label>
+          <input type="file" id="kepFajl" class="form-control" accept="image/*">
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Vagy képlink (URL) megadása</label>
+          <input type="text" id="kepUrl" class="form-control" placeholder="https://... vagy /kepek/...">
+        </div>
+        <button class="btn btn-primary w-100" onclick="mentGomb()">Feltöltés és adatbázis frissítése</button>
+      </div>
+
+      <!-- Művelet visszajelzés -->
+      <div id="mentesStatusz" class="mt-3"></div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Szobrok nyilvántartása
+  </footer>
+
+  <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const API = 'http://localhost:3333/api';
+    let osszesSzobor = [];
+
+    function statuszMutat(elemId, szoveg, tipus) {
+      const el = document.getElementById(elemId);
+      el.innerHTML = `
+      <div class="statusz-sav ${tipus}">
+        <span>${szoveg}</span>
+        <button class="zaro-btn" onclick="this.parentElement.remove()">×</button>
+      </div>`;
+    }
+
+    // Alkotók betöltése
+    async function alkotokBetolt() {
+      try {
+        const res = await fetch(`${API}/alkotok`);
+        const json = await res.json();
+        statuszMutat('lekerdezesStatusz',
+          `Státuszkód: ${res.status} | ${json.uzenet} Rekordok száma: ${json.adatok.length}`,
+          res.ok ? 'info' : 'hiba');
+        const sel = document.getElementById('alkotóSel');
+        json.adatok.forEach(a => {
+          const opt = document.createElement('option');
+          opt.value = a.id;
+          opt.textContent = a.nev;
+          sel.appendChild(opt);
+        });
+      } catch (e) {
+        statuszMutat('lekerdezesStatusz', 'Státuszkód: 503 | Szerver nem elérhető.', 'hiba');
+      }
+    }
+
+    // Szobrok betöltése (az összes)
+    async function szoborokBetolt() {
+      try {
+        const res = await fetch(`${API}/szobrok`);
+        const json = await res.json();
+        osszesSzobor = json.adatok || [];
+      } catch (e) { osszesSzobor = []; }
+    }
+
+    // Alkotó változás → városok frissítése
+    document.getElementById('alkotóSel').addEventListener('change', function () {
+      const alkotoid = this.value;
+      const varosSel = document.getElementById('varosSel');
+      const szoborSel = document.getElementById('szoborSel');
+      varosSel.innerHTML = '<option value="">-- Válasszon települést --</option>';
+      szoborSel.innerHTML = '<option value="">-- Válassza ki a személyt --</option>';
+      szoborSel.disabled = true;
+      document.getElementById('kepSzekció').style.display = 'none';
+
+      if (!alkotoid) { varosSel.disabled = true; return; }
+
+      // Alkotóhoz tartozó szobrok városai
+      const szobrokAlkotonak = osszesSzobor.filter(s => {
+        // Ha az alkotó neve tartalmazza – egyszerű szűrés az alkoto_nev alapján
+        return s.alkoto_nev; // az összes szobort mutatjuk helyek szerint
+      });
+
+      // Helyek lekérése API-ból
+      fetch(`${API}/helyek`).then(r => r.json()).then(json => {
+        json.adatok.forEach(hely => {
+          const opt = document.createElement('option');
+          opt.value = hely;
+          opt.textContent = hely;
+          varosSel.appendChild(opt);
+        });
+        varosSel.disabled = false;
+      });
+    });
+
+    // Város változás → szobrok szűrése
+    document.getElementById('varosSel').addEventListener('change', function () {
+      const hely = this.value;
+      const alkotoid = document.getElementById('alkotóSel').value;
+      const szoborSel = document.getElementById('szoborSel');
+      szoborSel.innerHTML = '<option value="">-- Válassza ki a személyt --</option>';
+      document.getElementById('kepSzekció').style.display = 'none';
+
+      if (!hely) { szoborSel.disabled = true; return; }
+
+      // Szobrok szűrése hely szerint (adott alkotóhoz)
+      fetch(`${API}/szobrok/alkotonkent/${alkotoid}`).then(r => r.json()).then(json => {
+        const szurt = json.adatok.filter(s => s.hely === hely);
+        if (szurt.length === 0) {
+          szoborSel.innerHTML = '<option value="">Nincs szobor ezen a helyen</option>';
+          szoborSel.disabled = true;
+          return;
+        }
+        szurt.forEach(s => {
+          const opt = document.createElement('option');
+          opt.value = s.id;
+          opt.textContent = `${s.szemely} (${s.avatas})`;
+          szoborSel.appendChild(opt);
+        });
+        szoborSel.disabled = false;
+      });
+    });
+
+    // Szobor kiválasztás → képszekció megjelenítése
+    document.getElementById('szoborSel').addEventListener('change', function () {
+      document.getElementById('kepSzekció').style.display = this.value ? 'block' : 'none';
+      document.getElementById('mentesStatusz').innerHTML = '';
+    });
+
+    // Mentés gomb
+    async function mentGomb() {
+      const szoborId = document.getElementById('szoborSel').value;
+      if (!szoborId) return;
+
+      const fajl = document.getElementById('kepFajl').files[0];
+      const url = document.getElementById('kepUrl').value.trim();
+
+      if (!fajl && !url) {
+        statuszMutat('mentesStatusz', 'Adjon meg képfájlt vagy képlinket!', 'hiba');
+        return;
+      }
+
+      try {
+        let res, json;
+        if (fajl) {
+          // Fájl feltöltés
+          const fd = new FormData();
+          fd.append('kep', fajl);
+          res = await fetch(`${API}/szobrok/${szoborId}/kep`, { method: 'POST', body: fd });
+          json = await res.json();
+        } else {
+          // URL mentés
+          res = await fetch(`${API}/szobrok/${szoborId}/kep`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ kep_url: url })
+          });
+          json = await res.json();
+        }
+        statuszMutat('mentesStatusz',
+          `Státuszkód: ${res.status} | ${json.uzenet}`,
+          res.ok ? 'siker' : 'hiba');
+      } catch (e) {
+        statuszMutat('mentesStatusz', 'Hiba – szerver nem elérhető.', 'hiba');
+      }
+    }
+
+    alkotokBetolt();
+    szoborokBetolt();
+  </script>
+</body>
+
+</html>
