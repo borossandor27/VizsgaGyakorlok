@@ -61,5 +61,34 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\benyovszkymoric.jpg" />
+    <Content Include="img\bessenyeigyorgy.jpg" />
+    <Content Include="img\beszedesjozsef.jpg" />
+    <Content Include="img\bezeredjistvan.jpg" />
+    <Content Include="img\bocskai.jpg" />
+    <Content Include="img\csanylaszlo.jpg" />
+    <Content Include="img\fejtoferenc.jpg" />
+    <Content Include="img\hardygyula.jpg" />
+    <Content Include="img\horngyula.jpg" />
+    <Content Include="img\hosiminh.jpg" />
+    <Content Include="img\hunyadijanos.jpg" />
+    <Content Include="img\jedlik.jpg" />
+    <Content Include="img\kablaylajos.jpg" />
+    <Content Include="img\kukac.jpg" />
+    <Content Include="img\michelberger.jpg" />
+    <Content Include="img\michelbergerpal.jpg" />
+    <Content Include="img\mikszathkalman.jpg" />
+    <Content Include="img\mikszathkalman2.jpg" />
+    <Content Include="img\neumannjanos.jpg" />
+    <Content Include="img\ordogszilveszter.jpg" />
+    <Content Include="img\ovariferenc.jpg" />
+    <Content Include="img\petofi.jpg" />
+    <Content Include="img\rodolfo.jpg" />
+    <Content Include="img\vandorsandor.jpg" />
+    <Content Include="img\vedresistvan.jpg" />
+    <Content Include="img\vedresistvan75.jpg" />
+    <Content Include="img\zorkoczybela.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
